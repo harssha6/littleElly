@@ -13,24 +13,33 @@ module.exports = {
 				'accent-bold':'#FF9D51',
 				accent2:'#4A7C60', 
 				accent3:'#6F322E',
+				purple: "#B892F9",
 				yellow: {
 					DEFAULT: '#F5CC4F',
 					100: "#FCF8EB",
+				},
+				blue: {
+					DEFAULT: '#78ADF9',
+					100: "#78ADF9",
 				},
 				'shades-blue-dark': "#052B4C",
 				'neutral-dark-grey': "#1B2226",
 				"dark-gray": "#1B2226",
 				primary: {
-					DEFAULT: '#FF6F24'
+					DEFAULT: '#EE7F82'
 				},
 				secondary: {
 					DEFAULT: '#FFC784'
 				},
 				green: {
+					200: "#A5D27C",
 					300: '#F5CC4F',
 					400: '#4A7C60',
 					500: '#3C674F',
 					600: '#0A5E2F'
+				},
+				orange: {
+					200: "#F6BD60"
 				},
 				gray: {
 					100: "#CFD7DD",
@@ -47,11 +56,11 @@ module.exports = {
 					100: "#564101"
 				},
 				red: {
+					200: "#EE7F82",
 					500: '#A9342D',
+					600: "#FF7162",
+					800: '#904D4F'
 				},
-				blue: {
-					100: "#EFFAF8",
-				}
 			},
 			gap: {
 				'xl': "60px",
@@ -65,6 +74,7 @@ module.exports = {
 				'l': '32px',
 				"m": "24px",
 				'r': '16px',
+				's': '8px',
 
 			},
 			margin: {
@@ -72,6 +82,8 @@ module.exports = {
 				'l': '32px',
 				"m": "24px",
 				'r': '16px',
+				's': '8px',
+
 			},
 			
 		
@@ -81,8 +93,9 @@ module.exports = {
 
 		},
 		fontFamily: {
-			'display': ['"DM Sans"', 'sans-serif'],
-			'sans': ['"DM Sans"', 'sans-serif'],
+			'display': ['"Grandstander"', 'sans-serif'],
+			'sans': ['"Nunito Sans"', 'sans-serif'],
+			'grandstander': ['"Grandstander"', 'sans-serif'],
 		}
 	},
 	// safelist: [

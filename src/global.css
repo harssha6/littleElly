@@ -49,16 +49,21 @@ html {
   border-radius: 9999px;
   background-color: rgba(0, 0, 0, 0.6);
 }
+dd {
+  display: list-item;
 
+  padding-inline-start: 1ch;
+}
 .hero {
-  height: calc(100svh - 120px);
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 20px);
+  /* height: calc(100svh - 120px); */
+  /* height: calc(100vh - 120px); */
 }
 @media not all and (min-width: 1000px) {
-  .hero {
+  /* .hero {
     height: calc(85svh - 80px);
     height: calc(85vh - 80px);
-  }
+  } */
 }
 /* .daisy {
   opacity: 1;

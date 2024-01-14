@@ -1,0 +1,59 @@
+---
+import Section from "../system/Section.astro"
+import Text from "../system/Text.astro"
+import EventCard from "./EventCard.astro"
+import student3 from "../../images/student3.png"
+import testimonial2 from '../../images/testimonial/2.png'
+import testimonial3 from '../../images/testimonial/3.png'
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
+const data = {
+    title: 'Ekam Voices',
+    subtitle: 'Stories of Transformation and Growth',
+    data: [
+      {
+        img: student3,
+        title: "New Year Celebrations in the school",
+        desc: 'Kindergartners who are relatively younger than their classroom peers are at risk for doing less well in school. doing less well in school.',
+      },
+      {
+        img: student3,
+        title: "New Year Celebrations in the school",
+        desc: "Kindergartners who are relatively younger than their classroom peers are at risk for doing less well in school. doing less well in school.",
+      },
+      {
+        img: student3,
+        title: "New Year Celebrations in the school",
+        desc: 'Kindergartners who are relatively younger than their classroom peers are at risk for doing less well in school. doing less well in school.',
+      },
+    ],
+}
+---
+
+<Section class="flex flex-col items-center gap-l" style={{
+    background: "linear-gradient(180deg, rgba(217, 233, 255, 0.00) 0%, rgba(251, 222, 206, 0.00) 0.01%, #FBDECE 47.82%)"
+}}>
+    <div class="text-center">
+        <Text type="h2" class="text-[#253B70]">
+            News & <span class="text-red-600">Events</span>
+        </Text>
+        <Text type="base">
+            Stay updated with the latest happenings from our centres
+        </Text>
+    </div>
+    <div class="flex gap-m">
+        {data.data.map((item, index) => (
+            <EventCard {...item} />
+        ))}
+    </div>
+    <div class="flex w-[160px] justify-between">
+        <FilledArrowCircle
+            svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}
+            color={"#EE7F82"}
+      />
+        <FilledArrowCircle
+        svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px]"}
+        color={"#EE7F82"}
+      />
+      </div>
+    
+</Section>

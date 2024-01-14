@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets'
+import program1 from '../images/programs/program1.png'
+import program2 from '../images/programs/program2.png'
+import program3 from '../images/programs/program3.png'
+import program4 from '../images/programs/program4.png'
+import program5 from '../images/programs/program5.png'
+import Section from './system/Section.astro'
+import Text from './system/Text.astro'
+import MultiStyleText from './system/MultiStyleText.astro'
+import Button from './system/Button.astro'
+
+export const programData = [
+    {
+        title: 'Toddler',
+        subtitle: 'age 1 Year +',
+        image: program2,
+        titleClass: 'text-red-200',
+        subTitleClass: 'text-red-200',
+
+
+    },
+    {
+        title: 'Play Group',
+        subtitle: 'age 2 Years +',
+        image: program1,
+        titleClass: 'text-green-200',
+        subTitleClass: 'text-green-200',
+    },
+    {
+        title: 'nursery',
+        subtitle: 'age 3 Years +',
+        image: program3,
+        titleClass: 'text-blue-200',
+        subTitleClass: 'text-blue-200',
+
+    },
+    {
+        title: 'LKG & UKG',
+        subtitle: 'age 4 & 5 Years +',
+        image: program4,
+        titleClass: 'text-purple-200',
+        subTitleClass: 'text-purple-200',
+    },
+    {
+        title: 'Daycare',
+        subtitle: 'age 5 Years +',
+        image: program5,
+        titleClass: 'text-orange-200',
+        subTitleClass: 'text-orange-200',
+    },
+]
+
+---
+<Section class="flex flex-col gap-l items-center" style="background: linear-gradient(0deg, #FEF7F9 0%, #FEF7F9 100%);">
+    <div>
+        <Text type="h2" class="text-center">Our
+            <br />
+            <MultiStyleText
+                classes={["text-purple", "text-red-200", "text-green-200", "text-orange-200", "text-purple", "text-primary", "text-green-200", "text-orange-200"]}
+                text="Programs"
+            >
+
+            </MultiStyleText>
+        </Text>
+    </div>
+    <div class="flex flex-wrap item-center justify-center gap-[100px]">
+        {
+            programData.map((item, index) => (
+                <div class="flex flex-col items-center justify-center gap-l">
+                    <div class="flex flex-col items-center justify-center">
+                        <Image src={item.image} alt={item.title} class="w-[300px] h-[300px]" />
+                        <div class="mb-[15px] mt-[10px]">
+                            <svg  width="100%" height="17" viewBox="0 0 183 17" fill="none">
+                                <ellipse opacity="0.05" cx="91.7114" cy="8.65234" rx="90.75" ry="8.25" fill="#1C1C1C"/>
+                            </svg>
+                        </div>
+                        <Text type="h3" class={`text-[2.25rem] font-bold text-center ${item.titleClass} leading-0 uppercase`}>{item.title}</Text>
+                        <Text type="base" class={`font-display text-xl font-bold text-center uppercase ${item.subTitleClass}`}>{item.subtitle}</Text>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+    <Button type="secondary" class="mt-[4px]">
+        View Details
+    </Button>
+
+</Section>

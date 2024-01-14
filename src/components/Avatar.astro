@@ -1,0 +1,9 @@
+---
+import { Image } from "astro:assets";
+
+const defaultSize = 50;
+
+const { size = defaultSize, src } = Astro.props;
+---
+
+<Image class="rounded" src={src} alt="User Avatar" style={{ width: `${size}px`, height: `${size}px` }} />

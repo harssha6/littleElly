@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro"
+import Text from "../system/Text.astro";
+interface props {
+    title: string;
+    desc: string;
+    img: ImageMetadata;
+}
+const {title,desc,img }  = Astro.props as props;
+---
+
+<div class="flex flex-col gap-r bg-white py-[10px] px-[5px] rounded-[25px] w-fit max-w-[310px]">
+    <div class="flex flex-col gap-r p-r border-dashed border-[3px] border-[#FF7162] rounded-[25px]">
+        <Image class={"rounded-[23px]"} src={img} alt={title} />
+        <Text type="h3" class="text-[24px] font-bold text-[#253B70] mt-[6px] font-sans">{title}</Text>
+        <Text type="base" class="!text-[18px] text-[#425175] font-[400]">{desc}</Text>
+    </div>
+</div>

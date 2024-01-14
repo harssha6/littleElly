@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import Text from "./system/Text.astro";
+const { text, img, className, title, subtitle, titleClass, subtitleClass, textHtml} = Astro.props;
+
+---
+<div class:list={["flex-col fill-[linear-gradient(180deg,#FFECCE_0%,#FFF_52.66%)] stroke-[1.872px] stroke-orange-300 stroke-opacity-30 overflow-hidden relative flex aspect-[2.18125] max-w-[349px] items-center px-20 py-9", className]}>
+    <Image
+      loading="lazy"
+      alt={"cloud"}
+      src={img}
+      class="absolute h-full w-full  object-center inset-0"
+    />
+    <slot name="text">
+        <Text set:html={textHtml} type="h3" class="font-sans relative text-current text-center !text-[24px] !leading-8 !tracking-[2.62px] uppercase whitespace-nowrap">
+          {title}
+        </Text>
+        <Text type="h2" class="!text-[40px] font-display relative text-current text-center font-black whitespace-nowrap">
+          {subtitle}
+        </Text>
+    </slot>
+  </div>

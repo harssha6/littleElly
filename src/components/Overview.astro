@@ -1,0 +1,39 @@
+---
+import MultiStyleText from "./system/MultiStyleText.astro"
+import Section from "./system/Section.astro"
+import Text from "./system/Text.astro"
+import { Image } from "astro:assets"
+import Student1 from "../images/student1.png"
+import CloudText from "./CloudText.astro"
+import OrangeCloud from "../images/clouds/orange.png"
+import BlueCloud from "../images/clouds/blue.png"
+import PurpleCloud from "../images/clouds/purple.png"
+import GreenCloud from "../images/clouds/green.png"
+import RedCloud from "../images/clouds/red.png"
+---
+<Section class="flex flex-row">
+    
+    <div class="flex flex-col gap-9">
+        <Text type="h2">
+            Our  <MultiStyleText
+            text="Overview" 
+            classes={["text-primary", "text-purple", "text-[#78ADF9]", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-[#78ADF9]"]}
+         />
+        </Text>
+        <Image height={300} width={300} src={Student1} alt="student" />
+    </div>
+    <div class="flex flex-col ml-auto">
+      <div class="flex gap-l justify-center items-center">
+          <CloudText img={OrangeCloud} title={"CENTRES"} subtitle={'130 +'} className="text-orange-200" /> 
+          <CloudText img={BlueCloud} title={"STUDENTS"} subtitle={'2000 +'} className="text-[#78ADF9] !pt-11" /> 
+      </div>
+      <div class="flex pt-xl justify-center items-center">
+        <CloudText img={RedCloud} title="FACULTY" subtitle={'2000 +'} className="text-primary !pt-9" /> 
+        <CloudText img={PurpleCloud} title="YEARS" subtitle={'17'} className="text-purple !pt-8 mt-[-100px]" /> 
+        <CloudText img={GreenCloud} textHtml="STUDENT-<br>TEACHER RATIO" subtitle={'17'} className="text-green-200 !pt-8" /> 
+        
+      </div>
+    </div>
+
+    </div>
+</Section>

@@ -1,0 +1,127 @@
+---
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+import Text from "../components/system/Text.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "./Hero.astro";
+import ProgramHero from "../images/program/hero.png"
+import Button from "../components/system/Button.astro";
+import Section from "../components/system/Section.astro";
+import MultiStyleText from "../components/system/MultiStyleText.astro";
+import program1 from '../images/programs/program1.png'
+import { Image } from "astro:assets";
+import GoToCta from "../components/GoToCta.astro";
+import Footer from "../components/landingPage/Footer.astro";
+const programData = [
+    {
+        title: 'Toddler',
+        subtitle: 'age 1 Year +',
+        image: program1,
+        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+    },
+    {
+        title: 'Play Group',
+        subtitle: 'age 2 Years +',
+        image: program1,
+        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+
+
+    },
+    {
+        title: 'nursery',
+        subtitle: 'age 3 Years +',
+        image: program1,
+        titleClass: 'text-red-200',
+        subTitleClass: 'text-red-200',
+        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+
+
+
+    },
+    {
+        title: 'LKG & UKG',
+        subtitle: 'age 4 & 5 Years +',
+        image: program1,
+        titleClass: 'text-green-200',
+        subTitleClass: 'text-green-200',
+        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+
+
+    },
+    {
+        title: 'Daycare',
+        subtitle: 'age 5 Years +',
+        image: program1,
+        titleClass: 'text-blue-200',
+        subTitleClass: 'text-blue-200',
+        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+
+
+    },
+]
+---
+
+<Layout
+  title="Admissions | Best International K12 Primary Schools South bengalore Electronic City"
+>
+<div class="flex flex-col">
+    <TopNavigationBar />
+    <div
+      class="h-[76svh] flex"
+      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
+    >
+      <Hero
+        showSlide={false}
+        config={
+          {bgImage: ProgramHero.src}
+        }
+        contentDirection="items-end"
+        className="overflow-hidden font-roundo pb-0"
+      >
+      <div slot="title">
+          <!-- <div class="p-20"></div> -->
+          <Text type="h2">
+            Our  <span class="text-yellow">Programs</span>
+      </div>
+      <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]">
+        <Text type="h4" class="text-[#AF7F30] tracking-[2px] uppercase font-[700] font-sans text-[20px]">
+          Apply Now
+        </Text>
+      </Button>
+      </Hero>
+    </div>
+    <Section class="bg-[#FDF2E5]">
+      <div>
+        <Text type="h2" class="text-center">Our
+            <br />
+            <MultiStyleText
+                classes={["text-purple", "text-red-200", "text-green-200", "text-orange-200", "text-purple", "text-primary", "text-green-200", "text-orange-200"]}
+                text="Programs"
+            >
+
+            </MultiStyleText>
+        </Text>
+    </div>
+    <div class="flex flex-col gap-xl mt-[100px]">
+      {
+        programData.map((item, index )=> {
+          return (
+            <div class="flex gap-xl">
+              <Image src={program1} alt="pro"/>
+              <div class="flex flex-col">
+                <Text type="h3" class={`text-2xl font-bold ${item.titleClass}`}>{item.title}</Text>
+                <Text type="base" class={`text-xl font-bold ${item.subTitleClass}`}>{item.subtitle}</Text>
+                <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r`}>{item.desc}</Text>
+              </div>
+              </div>
+          )
+        })
+      }
+      
+    </div>
+   
+    </Section>
+    <GoToCta />
+    <Footer />
+</div>
+
+</Layout>

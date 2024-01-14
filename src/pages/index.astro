@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 import TopNavigationBar from "../components/TopNavigationBar.astro";
-import WhyEkam from "../components/landingPage/whyEkam.astro";
+import Why from "../components/landingPage/why.astro";
 import Campus from "../components/landingPage/campus.astro";
 import Testimonial from "../components/landingPage/Testimonial.astro";
 import Hero from "./LandingPageHero.astro";
@@ -11,7 +11,7 @@ import Showcase from "./Showcase.astro";
 import GoToCta from "../components/GoToCta.astro";
 import Academics from "../components/landingPage/Academics.astro";
 import OtherOfferings from "../components/landingPage/OtherOfferings.astro";
-
+import AnotherHero from "./AnotherHero.astro";
 import Text from "../components/system/Text.astro";
 import Section from "../components/system/Section.astro";
 
@@ -53,6 +53,9 @@ import slide12Mb from "../image/slides/mb/12.webp";
 import Achievements from "../components/Achievements.astro";
 import Affiliations from "../components/Affiliations.astro";
 import AdvisoryBoard from "../components/AdvisoryBoard.astro";
+import Overview from "../components/Overview.astro";
+import Events from "../components/landingPage/Events.astro";
+import Program from "../components/Program.astro";
 ---
 
 <Layout title="Home | Best International K12 Primary Schools South bengalore Electronic City">
@@ -60,174 +63,26 @@ import AdvisoryBoard from "../components/AdvisoryBoard.astro";
     <TopNavigationBar />
     <div
       class="hero flex"
-      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
-      <Hero
-        showSlide={true}
-        slideImages={[
-          // {
-          //   slide: [
-          //     {
-          //       src: slide7.src,
-          //       media: "(min-width: 768px)",
-          //       position: "center 64%",
-          //     },
-          //     { src: slide2Mb.src, media: "(max-width: 768px)" },
-          //   ],
-
-          //   type: "image",
-          //   picture: true,
-          // },
-          // {
-          //   slide: [
-          //     {
-          //       src: slide1.src,
-          //       media: "(min-width: 768px)",
-          //       position: "center 64%",
-          //     },
-          //     { src: slide8Mb.src, media: "(max-width: 768px)" },
-          //   ],
-          //   picture: true,
-          //   type: "image",
-          // },
-          {
-            slide: [
-              { src: slide8.src, media: "(min-width: 768px)", position: "top" },
-              { src: slide1Mb.src, media: "(max-width: 768px)", position: "top" },
-            ],
-            picture: true,
-            type: "image",
-            position: "bottom",
-          },
-          {
-            slide: [
-              {
-                src: slide5.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide3Mb.src, media: "(max-width: 768px)", position: "top", },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide9.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide9Mb.src, media: "(max-width: 768px)", position: "top", },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide10.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide10Mb.src, media: "(max-width: 768px)", position: "top", },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide11.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide11Mb.src, media: "(max-width: 768px)", position: "top", },
-            ],
-            picture: true,
-            type: "image",
-          },
-          {
-            slide: [
-              {
-                src: slide12.src,
-                media: "(min-width: 768px)",
-                position: "center 64%",
-              },
-              { src: slide12Mb.src, media: "(max-width: 768px)", position: "top", },
-            ],
-            picture: true,
-            type: "image",
-          },
-          // {
-          //   slide: [
-          //     {
-          //       src: slide2.src,
-          //       media: "(min-width: 768px)",
-          //       position: "center 64%",
-          //     },
-          //     { src: slide7Mb.src, media: "(max-width: 768px)" },
-          //   ],
-          //   picture: true,
-          //   type: "image",
-          // },
-          // {
-          //   slide: [
-          //     {
-          //       src: slide3.src,
-          //       media: "(min-width: 768px)",
-          //       position: "center 64%",
-          //     },
-          //     { src: slide5Mb.src, media: "(max-width: 768px)" },
-          //   ],
-          //   picture: true,
-          //   type: "image",
-          // },
-          // {
-          //   slide: [
-          //     {
-          //       src: slide4.src,
-          //       media: "(min-width: 768px)",
-          //       position: "center 64%",
-          //     },
-          //     { src: slide6Mb.src, media: "(max-width: 768px)" },
-          //   ],
-          //   picture: true,
-          //   type: "image",
-          // },
-          // {
-          //   slide: [
-          //     {
-          //       src: slide6.src,
-          //       media: "(min-width: 768px)",
-          //       position: "center 64%",
-          //     },
-          //     { src: slide4Mb.src, media: "(max-width: 768px)" },
-          //   ],
-          //   picture: true,
-          //   type: "image",
-          // },
-          
-          // {slide: [
-          //   { src: slide8.src, media: "(min-width: 768px)", position: 'bottom', },
-          //   { src: slide8.src, media: "(max-width: 768px)" },
-          // ], picture: true, type: 'image'},
-        ]}
-        contentDirection="items-end"
-        className="overflow-hidden font-roundo"
-      >
-        <HeroTitle slot="title" />
-      </Hero>
+      <AnotherHero />
     </div>
+    <Overview />
+    <Why  />
+    <Program  />
+    <Events />
+    <Testimonial />
+    <GoToCta />
+    <Footer /> 
+
   </div>
 </Layout>
-<WhyEkam />
-<Section class="py-[10px]">
-  <Affiliations />
-</Section>
-<Section class="pb-0 !px-0 max-md:pb-0 max-md:!px-0">
-  <Showcase showSocial={false} />
-</Section>
+<!-- <WhyEkam /> -->
+<!-- <Section class="py-[10px]"> -->
+  <!-- <Affiliations /> -->
+<!-- </Section> -->
+<!-- <Section class="pb-0 !px-0 max-md:pb-0 max-md:!px-0"> -->
+  <!-- <Showcase showSocial={false} /> -->
+<!-- </Section> -->
 
 
 
@@ -237,17 +92,17 @@ import AdvisoryBoard from "../components/AdvisoryBoard.astro";
         </svg>
         
       </div> -->
-<Academics />
+<!-- <Academics />
 <div class="pt-[60px] max-md:pt-[10px]"></div>
 <OtherOfferings/>
-<Campus />
+<Campus /> -->
 
 <!-- <Achievements /> -->
-<Testimonial />
+<!-- <Testimonial />
 <AdvisoryBoard />
 
 <GoToCta />
-<Footer />
+<Footer /> -->
 
 <!-- width:60px;
     height:60px;

@@ -58,11 +58,17 @@ import campus13 from "../image/campus/throwball.jpg";
 import campus14 from "../image/campus/bb2.jpg";
 import campus15 from "../image/campus/football2.jpeg";
 import campus16 from "../image/campus/swim2.jpeg";
-
+import principlePhoto from "../images/campus/gas/principle.png"
+import student1 from "../images/campus/gas/student.png"
 
 import { Image } from "astro:assets";
 import Gallery from "../components/Gallery.astro";
 import GalleryWithDescription from "../components/GalleryWithDescription.astro";
+import Button from "../components/system/Button.astro";
+import Events from "../components/landingPage/Events.astro";
+import Why from "../components/landingPage/why.astro";
+import MultiStyleText from "../components/system/MultiStyleText.astro";
+import Marker from "../components/system/Marker.astro";
 
 const toppers = campusConfig?.toppers;
 ---
@@ -85,304 +91,70 @@ const toppers = campusConfig?.toppers;
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
       >
-        <div slot="title">
-          <Text type="h2">Discover our Campus</Text>
-          <div class="p-1"></div>
-          <Text type="base" class="text-white w-[65%] max-md:w-full">
-            Located near the bustling Electronic City, our campus is surrounded
-            by lush greenery , offering a peaceful environment for focused
-            education.
-          </Text>
-        </div>
+          <div slot="title">
+            <!-- <div class="p-20"></div> -->
+            <Text type="h2">
+              Little Elly -  <span class="text-yellow">HSR Layout</span>
+             </Text> 
+             <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60] mt-r">
+              <Text type="h4" class="text-[#AF7F30] tracking-[2px] uppercase font-[700] font-sans text-[20px]">
+                Apply Now
+              </Text>
+            </Button>
+          </div>
       </Hero>
     </div>
   </div>
+  <Events />
+ <Section class="flex items-center flex-col gap-l">
+    <Text type="h2" class="text-purple text-center">Centre <span class="text-red-200">Head</span></Text>
+    <div class="text-[#FFF7F0] rounded-[100px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center">
+      <div class="basis-[50%]">
+        <Text type="h3" class="text-primary">Mrs. Karishma</Text>
+        <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>A child’s life is like a piece of paper on which every person leaves a mark. At Little Elly – Agara, Mrs Karishma believes in truly giving the quality and fun filled learning experience. With an Engineering degree, Mrs Karishma has lead Little Elly Preschool Agara branch with a vision to provide the best quality education to children and to make their foundation year’s fun filled and enriching. Her passion and dedication towards the Centre have made it one of the renowned centres in and around Agara.</Text>
+      </div>
+      <div class="basis-[50%]">
+        <Image src={principlePhoto} alt="principle" class="object-contain max-h-[400px]" />
+      </div>
+      <div></div>
 
-  <Section class="items-start text-left">
-    <!-- <Text type="subtitle" class='!text-left'>
-      INSPIRING FEATS
+    </div>
+ </Section>
+ <Why />
+ <Section class="gap-l flex flex-col items-center">
+    <Text type="h2" class="text-center">
+      <MultiStyleText text="HAPPY" classes={["text-purple", "text-blue", "text-green-200", "text-orange-200", "text-primary"]} />
+      <br /><span class="text-primary">Curriculum</span>
     </Text>
-    <p class="p-2"></p> -->
-    <div class="flex flex-row justify-between">
-      <div>
-        <Text type="h2">Our Facilities</Text>
-        <Text type="lg">
-          Our Philosophy: Empowering Through <span class="text-primary"
-            >Inquiry</span
-          >
-        </Text>
-      </div>
-      <div class="w-[130px] max-md:w-[60px] flex-shrink-0">
-        <Image
-          class="w-full h-full object-contain"
-          src={blobSmall}
-          alt="blob"
-        />
-      </div>
-    </div>
-
-    <div
-      class="mt-[60px] w-full flex flex-col items-center px-[44px] max-md:px-[0px] gap-20 max-md:gap-16"
-    >
-      <div class="flex flex-row max-md:flex-col w-full gap-16 justify-between">
-        <DeckCard
-          class="relative left-2 max-md:-left-2"
-          images={[
-            { src: campus3.src, alt: "campus1" },
-            { src: campus1.src, alt: "campus1" },
-            { src: campus2.src, alt: "campus1" },
-          ]}
-          target="classroom-facilities"
-          id="deck-classroom-facilities"
-        />
-        <div>
-          <Text type="h3">
-            <span class="text-primary">Academic</span> Facilities
-          </Text>
-          <div class="p-2"></div>
-          <Text type="base" class="w-[90%]">
-            Step into our modern, spacious classrooms equipped with the latest
-            educational technology. We prioritise comfort and up-to-date
-            resources to support your child’s optimal learning experience.
-            <br />
-            <br />
-            <ul class="list-inside list-disc flex flex-col gap-2">
-              <li>Digitally Enabled Classrooms</li>
-              <li>Wonder Room for Pre primary</li>
-              <li>Well-stocked libraries</li>
-              <li>Multi-purpose Amphitheatres</li>
-              <li>CC TV Monitoring for added security.</li>
-            </ul>
-          </Text>
-          <div class="p-3"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
-            data-modal-target="classroom-facilities"
-            data-target-deck="deck-classroom-facilities"
-          >
-            View Facilities
-          </Text>
-        </div>
-      </div>
-      <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
-        <div class="max-md:order-2">
-          <Text type="h3">
-            <span class="text-primary">STEM</span> Labs
-          </Text>
-          <div class="p-2"></div>
-          <Text type="base" class="w-[90%]">
-            Explore our modern STEM labs at Ekam, where curiosity meets
-            innovation. They are meticulously designed, adhering to the highest
-            safety standards. Here, students embark on hands-on experiments,
-            unlocking the mysteries of science and technology in an environment
-            that sparks intellectual curiosity and creativity.
-          </Text>
-          <div class="p-3"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
-            data-modal-target="science-labs"
-            data-target-deck="deck-science-labs"
-          >
-            View Labs
-          </Text>
-        </div>
-        <DeckCard
-          class="relative"
-          images={[
-            { src: campus6.src, alt: "campus1" },
-            { src: campus7.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
-          ]}
-          target="science-labs"
-          id="deck-science-labs"
-        />
-      </div>
-      <div class="flex flex-row-reverse max-md:flex-col w-full gap-20 justify-between">
-        <div class="max-md:order-2">
-          <Text type="h3">
-            <span class="text-primary">Healthcare </span> Facilities
-          </Text>
-          <div class="p-2"></div>
-          <Text type="base" class="w-[90%]">
-            Our school is committed to the well-being of our students, providing a comprehensive health care facility staffed with qualified medical personnel. On-site medical services are available during school hours, equipped to handle immediate health concerns and routine check-ups. We ensure a healthy school environment with regular health awareness programs and workshops. In addition, emergency protocols are in place to address any urgent medical situations swiftly and efficiently.
-          </Text>
-          <!-- <div class="p-3"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
-            data-modal-target="science-labs"
-            data-target-deck="deck-science-labs"
-          >
-            View Labs
-          </Text> -->
-        </div>
-        <Image src={infirmary} class="w-[380px] h-[260px]" alt="ALt text" />
-      </div>
-      <div class="flex flex-row-reverse max-md:flex-col w-full gap-20 justify-between">
-        <DeckCard
-          class="relative left-2 max-md:-left-2"
-          images={[
-            { src: campus9.src, alt: "campus1" },
-            { src: campus10.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
-          ]}
-          target="sports-facilities"
-          id="deck-sports-facilities"
-        />
-        <div>
-          <Text type="h3">
-            <span class="text-primary">Sports</span> Facilities
-          </Text>
-          <div class="p-2"></div>
-          <Text type="base" class="w-[90%]">
-            Sports ensure the good physical, mental and emotional health of children.
-            Ekam International has outstanding infrastructure with vibrant sports facilities. 
-            <br/><br/>
-            School has two magnificent grounds for football, kabaddi, kho kho and athletics, well structured basketball and volleyball courts, well equipped & well netted cricket arena, well fenced skating arena with smooth flooring. Indoor games like chess, carom, TT etc along with one well designed & structured swimming pool.
-
-            <!-- International size courts and sports infrastructure as well as
-            expert professional coaches support a variety of sport activities
-            like swimming, basketball, football, volleyball, chess, handball,
-            netball, karate, cricket, skating, lawn tennis, and
-            badminton.
-            <br />
-            <br />
-             The students are also exposed to opportunities to participate in
-            varied recreational programs that include gymnastics, aerobics,
-            yoga, athletics and exercise. -->
-          </Text>
-          <div class="p-3"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
-            data-modal-target="sports-facilities"
-            data-target-deck="deck-sports-facilities"
-          >
-            View Sport Facilities
-          </Text>
-        </div>
-      </div>
-      <!-- <div class="flex flex-row max-md:flex-col w-full gap-20 justify-between">
-        <div class="max-md:order-2">
-          <Text type="h3">
-            <span class="text-primary italic">Extra-curricular</span> Facilities
-          </Text>
-          <div class="p-2"></div>
-          <Text type="base" class="w-[90%]">
-            At Ekam Edify, we’re equipped with modern facilities and a dedicated
-            faculty to support a diverse range of student interests. From
-            Literature, Performing Arts, Visual Arts, Music, to hands-on
-            experiences in Design & Technology, we offer a comprehensive array
-            of enriching activities for our students.
-          </Text>
-          <div class="p-3"></div>
-          <Text
-            type="sm"
-            class="uppercase text-primary underline tracking-widest font-semibold cursor-pointer"
-            data-modal-target="extra-curricular-facilities"
-            data-target-deck="deck-extra-curricular-facilities"
-          >
-            View Facilities
-          </Text>
-        </div>
-        <DeckCard
-          class="relative"
-          images={[
-            { src: slide1.src, alt: "campus1" },
-            { src: slide1.src, alt: "campus2" },
-            // {src: slide3, alt: 'campus3'},
-          ]}
-          target="extra-curricular-facilities"
-          id="deck-extra-curricular-facilities"
-        />
-      </div> -->
-    </div>
-  </Section>
-
-  <div
-    class="w-full rounded-t-[120px] max-md:rounded-t-[30px] max-md:px-[30px] max-md:py-[40px]
-      bg-black-100 pt-[98px] px-[66px] h-[620px] text-white
-      relative
-      overflow-hidden"
-    style={{
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-    }}
-  >
-    <div class="absolute w-full h-full top-0 left-0">
-      <Image
-        src={transportBus}
-        alt="transportBus"
-        class="w-full h-full object-cover"
-      />
-      <div
-        class="absolute w-full h-full top-0 left-0
-          bg-[linear-gradient(88deg,_rgba(0,_0,_0,_0.87)_24.8%,_rgba(0,_0,_0,_0.00)_70%)]
-          max-md:bg-[linear-gradient(182deg,_rgba(0,_0,_0,_0.86)_49.8%,_rgba(0,_0,_0,_0.00)_220%)]"
-      >
-      </div>
-    </div>
-    <div class="relative z-10">
-      <Text type="h2">Transport <span>Vehicles</span></Text>
-      <div class="p-3"></div>
-      <Text type="base" class="w-[50%] max-md:w-full">
-        Ekam International has 20 buses well equipped with GPS & CCTV. Ekam school buses are spacious with a required capacity to accommodate students. Every bus has a teacher and helper to ensure proper discipline & safety of students. School bus drivers are responsible to pick & drop the children to their respective stops.
+    <div class="flex gap-l items-center">
+      <Text type="base" class="flex-basis-[40%]" >
+        We often say <span class="text-primary font-bold">A Happy Child means Happy Family</span> because a 
+        joyful child brings happiness to everyone around them. 
+        A child's happiness is like sunshine, spreading warmth and positivity. 
+        Their joy can positively affect the well-being of every family, and our goal is to create
+         a world filled with this kind of happiness.
+         <br />
+         <br />
+          <div class="flex items-center gap-r">
+            <Marker />
+            Building an atmosphere of excitement, celebration, and joy within the learning process
+          </div>
+          <div class="flex items-center gap-r mt-[18px]">
+            <Marker />
+            Play-based activities designed to nurture holistic development of a child
+          </div>
+          <div class="flex items-center gap-r mt-[18px]">
+            <Marker />
+            Impart practical life skills to cultivate abilities that go beyond academics        </div>
+          <div class="flex items-center gap-r mt-[18px]">
+            <Marker />
+            Promoting enquiry-based learning to develop curiosity in young learners
+          </div>
+        
       </Text>
-      <div class="p-3"></div>
-      <div class="flex flex-row items-center">
-        <div class="w-[14px] h-[17px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            viewBox="0 0 14 17"
-            fill="none"
-          >
-            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
-            ></path>
-          </svg>
-        </div>
-        <div class="px-2"></div>
-        <Text type="base">GPS Enabled Buses</Text>
-      </div>
-      <div class="p-2"></div>
-      <div class="flex flex-row items-center">
-        <div class="w-[14px] h-[17px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            viewBox="0 0 14 17"
-            fill="none"
-          >
-            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
-            ></path>
-          </svg>
-        </div>
-        <div class="px-2"></div>
-        <Text type="base">Equipped with CCTV</Text>
-      </div>
-      <div class="p-2"></div>
-      <div class="flex flex-row items-center">
-        <div class="w-[14px] h-[17px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            viewBox="0 0 14 17"
-            fill="none"
-          >
-            <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="white"
-            ></path>
-          </svg>
-        </div>
-        <div class="px-2"></div>
-        <Text type="base">Bus attendant and teacher accompany students</Text>
-      </div>
+      <Image src={student1} alt={"student"} class="object-contain max-h-[400px] flex-basis-[60%]" />
     </div>
-  </div>
+ </Section>
   <GoToCta />
 
   <div id="contact-us" style="scroll-margin: 60px;">

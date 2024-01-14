@@ -3,66 +3,35 @@ import campusImage from "../image/gotoctabg.jpeg";
 import FilledArrowCircle from "./icons/FilledArrowCircle.astro";
 import Constrain from "./system/Constrain.astro";
 import Text from "./system/Text.astro";
+import logo from "../images/logo.png";
+import { Image } from "astro:assets";
+import Student from "../image/student5.png"
+
 ---
 
 <div
-  class="p-xl flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
-        max-md:p-m max-sm:items-start card"
+  class="flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
+        max-md:p-m max-sm:items-start card bg-[#FEF7F9] p-[40px]"
 
   onclick="window.location.href='/admissions'"
 >
-  <div
-    class="absolute inset-0 img"
-    style=`
-background: linear-gradient(
-  to left,
-  rgba(27, 34, 38, 0.6),
-  rgba(27, 34, 38, 1)
-), url(${campusImage.src});
-background-size: cover;
-background-repeat: no-repeat;
-`
-  >
-  </div>
-  <div class="flex justify-between w-full max-w-[1500px] m-auto items-center">
-    <div
-      class="flex flex-col gap-10 items-start justify-start shrink-0 relative"
-    >
-      <div class="flex flex-col gap-[30px]">
-        <div class="flex gap-8 flex-col">
-          <Text type="h2" class="text-white">
-            Ready for Growth<br />
-             and <span>Exploration?</span>
-          </Text>
-          <div
-            class="flex flex-col max-md:flex-row max-md:items-center max-md:w-[calc(100vw-40px)] max-md:justify-between"
-          >
-            <Text type="lg" class="text-white font-normal w-auto flex-1 max-md:!text-base">
-              Admission open for <a
-                href="/admissions"
-                class="text-primary underline font-bold">AY 2024-25</a
-              > now!
-            </Text>
-            <p
-              class="font-display uppercase text-gray-800 text-4xl font-bold max-sm:text-[28px] flex gap-3 items-center max-s:text-2xl"
-            >
-              <span class="max-s:flex hidden">
-                <FilledArrowCircle
-                  svgClass={"w-[50px] h-[50px]"}
-                  color={"#FF6F24"}
-                />
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="flex justify-between w-full max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed">
+   <div class="flex flex-col px-xl py-l gap-[36px] basis-[50%]">
+    <Image src={logo} alt="logo" />
+    <Text type="h2" class="text-[#4E000D]">
+      Admissions <br> Open <br> for <span class="text-primary">2023-24!!</span>
+    </Text>
     <div class="text-primary max-s:hidden button">
       <FilledArrowCircle
-        svgClass={"w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px]"}
-        color={"#FF6F24"}
+        svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px]"}
+        color={"#EE7F82"}
       />
     </div>
+   </div>
+   <div class="bg-[#FFD1D3] basis-[50%] flex items-center">
+    <Image class={'max-h-[400px] object-contain'} src={Student} alt={'student'} />
+   </div>
+
   </div>
 </div>
 

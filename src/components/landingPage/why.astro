@@ -1,0 +1,170 @@
+---
+import whyChooseEdify from "../../images/whyChooseEdify.png";
+import Button from "../system/Button.astro";
+import { Image } from "astro:assets";
+import Text from "../system/Text.astro";
+import Sal from "../system/Sal.astro";
+import Section from "../system/Section.astro";
+import Scribble from "../Scribble.astro";
+import gridBG from "../../fillers/gridBG.svg"
+import Affiliations from "../Affiliations.astro";
+import MultiStyleText from "../system/MultiStyleText.astro";
+import Student2 from "../../images/Student2.png";
+import Rope from "../../image/decorations/rope.png";
+import Birds from "../../image/decorations/birds.png";
+import Why1 from "../../image/why/why1.png";
+import Why2 from "../../image/why/why2.png"
+import student from "../../images/student2.png"
+import Marker from "../system/Marker.astro";
+
+---
+
+<Section class="flex flex-col gap-2 pr-[40px] ] !p-0">
+  <div class="flex justify-between items-center">
+    <Image src={Rope} alt={"rope"} ></Image>
+    <Sal preset="slide-up" d="100" t="400">
+      <Text type="h2" class="text-center">
+        Why Choose <br />
+        <span class="relative">
+          Little <MultiStyleText type="h2"text="Elly?" classes={[
+            "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
+          ]} />
+            
+        </span>
+      </Text>
+      <Text type="regular" class="mt-[10px] !font-[700] !text-3xl text-[#1C1C1C] text-center">
+        A world of <span class="text-primary">Endless</span> {" "}
+        <MultiStyleText 
+        classes={[
+          "text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple"
+        ]}
+        text="Possibilities" />
+      </Text>
+    </Sal>
+    <Image src={Birds} alt={"birds"} ></Image>
+
+  </div>
+  <Section>
+    <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative">
+      <div class="max-md:order-2 basis-[50%]">
+            <Text type="base">
+              The first five years are significantly important for a child’s development, a time when kids rapidly absorb knowledge and experiences. Research indicates that over 90% of a child’s brain development happens in these early years. At this critical stage, preschools play a vital role by providing a safe and engaging environment for exploration, learning, and growth.
+            </Text>
+      </div>
+        <Image
+          class="w-[384px] max-md:w-[210px]"
+          src={Why1}
+          alt="Why choose Ekam??"
+        />
+    </div>
+    <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative">
+      <Sal preset="fade" d="400" t="400" class="flex-shrink-0">
+        <Image
+          class="w-[384px] max-md:w-[210px]"
+          src={Why2}
+          alt="Why choose Ekam??"
+        />
+      </Sal>
+      <div class="max-md:order-2 basis-[50%]">
+          <Sal preset="slide-up" d="300" t="400">
+            <Text type="base">
+              The first five years are significantly important for a child’s development, a time when kids rapidly absorb knowledge and experiences. Research indicates that over 90% of a child’s brain development happens in these early years. At this critical stage, preschools play a vital role by providing a safe and engaging environment for exploration, learning, and growth.
+            </Text>
+          </Sal>
+      </div>
+     
+    </div>
+  </Section>
+</Section>
+<Section class="flex flex-col gap-l">
+  <Text type="h2" class="text-primary text-center">
+    <MultiStyleText
+      text="HAPPY"
+      classes={["text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary"]}
+    ></MultiStyleText>
+    <br />
+    Curriculum
+  </Text>
+
+      <div class="px-5">
+        <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+         <div class="basis-[50%]">
+
+           <Text type="base" >
+             We often say <span class="text-primary font-bold">A Happy Child means Happy Family</span> because a 
+             joyful child brings happiness to everyone around them. 
+             A child's happiness is like sunshine, spreading warmth and positivity. 
+             Their joy can positively affect the well-being of every family, and our goal is to create
+              a world filled with this kind of happiness.
+              <br />
+              <br />
+               <div class="flex items-center gap-r">
+                 <Marker />
+                 Building an atmosphere of excitement, celebration, and joy within the learning process
+               </div>
+               <div class="flex items-center gap-r mt-[18px]">
+                 <Marker />
+                 Play-based activities designed to nurture holistic development of a child
+               </div>
+               <div class="flex items-center gap-r mt-[18px]">
+                 <Marker />
+                 Impart practical life skills to cultivate abilities that go beyond academics        </div>
+               <div class="flex items-center gap-r mt-[18px]">
+                 <Marker />
+                 Promoting enquiry-based learning to develop curiosity in young learners
+               </div>
+             
+           </Text>
+         </div>
+          <div class="basis-[50%] flex">
+
+            <div class="flex flex-col ml-5 max-md:w-full max-md:ml-0">
+              <div class="bg-violet-50 rounded-[61.485px] w-fit">
+                <Text type="regular" class=" text-[#3C3C3C] !text-2xl px-4 py-1.5  max-md:pr-5 font-semibold font-display whitespace-nowrap">
+                  <span class="text-3xl text-purple">H</span>olistic Approach
+                </Text>
+              </div>
+              <div class="pill text-purple"></div>
+              <div class="bg-[#DFECFF] rounded-[61.485px] w-fit">
+                <Text type="regular" class=" text-[#3C3C3C] !text-2xl px-4 py-1.5 rounded-[61.485px] max-md:pr-5 font-semibold font-display whitespace-nowrap">
+                  <span class="text-3xl text-blue">A</span>ppreciative Enquiry
+                </Text>
+              </div>
+              <div class="pill text-blue"></div>
+              <Text type="regular" class="bg-[#EFFFE1] text-[#3C3C3C] !text-2xl px-4 py-1.5 rounded-[61.485px] max-md:pr-5 font-semibold font-display whitespace-nowrap w-fit">
+                <span class="text-3xl text-green-200">P</span>urposeful Play
+              </Text>
+              <div class="pill text-green-200"></div>
+              <Text type="regular" class="bg-[#FFF6E8] text-[#3C3C3C] !text-2xl px-4 py-1.5 rounded-[61.485px] max-md:pr-5 font-semibold font-display whitespace-nowrap w-fit">
+                <span class="text-3xl text-orange-200">P</span>ractical Life Skills
+              </Text>
+              <div class="pill text-orange-200"></div>
+              <Text type="regular" class="bg-[#FFF4F4] text-[#3C3C3C] !text-2xl px-4 py-1.5 rounded-[61.485px] max-md:pr-5 font-semibold font-display whitespace-nowrap w-fit">
+                <span class="text-3xl text-primary">Y</span>ay Pedagogy
+              </Text>
+            </div>
+            <div class="flex flex-col ml-5 max-md:w-full max-md:ml-0">
+              <Image
+                loading="lazy"
+                src={student}
+                alt={"student"}
+                class="aspect-[0.69] object-contain object-center w-[268px] overflow-hidden shrink-0 max-w-full mt-44 max-md:mt-10"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+</Section>
+<!-- <div class="pt-8" /> -->
+<style>
+  .pill{
+    position: relative;
+    width: 0px;
+    border: 1px dashed currentColor;
+    height: 30px;
+    margin-inline: auto;
+  }
+  
+</style>

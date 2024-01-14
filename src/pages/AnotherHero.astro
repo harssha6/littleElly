@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets"
+import MultiStyleText from "../components/system/MultiStyleText.astro"
+import Text from "../components/system/Text.astro"
+import CloudImage from "../icons/cloud.svg"
+import Button from "../components/system/Button.astro"
+import CloudBannerImage from "../image/cloudBg.png"
+import Student from "../image/heroStudent.png"
+import Person from "../image/person.png"
+import CloudLeft from "../image/decorationCloud.png"
+import Elephant from "../image/decorations/elephant.png"
+import Olly from "../image/decorations/olly.png"
+import studentLeft from "../image/decorations/studentLeft.png"
+import Monkey from "../image/decorations/monkey.png"
+import Sun from "../image/decorations/sun.png"
+
+
+---
+<!-- Pre-school -->
+<div class="flex pt-[130px] items-center w-full">
+    <!-- title -->
+  <Image src={CloudImage} class="absolute top-0 left-0 w-[300px] h-[300px]" alt={"decoration"} />
+  <Image src={CloudLeft} class="absolute top-0 right-0 h-[700px]" alt={"decoration"} />
+  <!-- <div class="w-[100px] h-[300px] bg-red">
+sdfsdfsd
+  </div> -->
+  <Image src={Olly} class="absolute left-[5%] top-[30%] object-contain h-[200px]" alt={"decoration"} />
+  <Image src={Monkey} class="absolute right-[5%] top-[30%] object-contain h-[200px]" alt={"decoration"} />
+  <Image src={Sun} class="absolute right-[7%] top-[16%] object-contain h-[100px] z-[-1]" alt={"decoration"} />
+
+  <div class="flex items-center flex-col">
+
+    <div class="flex flex-col items-center gap-s">
+        <Text type="h2" class="text-center text-primary">
+            A Happy <br> <MultiStyleText style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}} text="Pre-school" class="text-primary"
+                classes={[
+                    "text-purple",
+                    "text-primary",
+                    "text-green-200",
+                    "text-yellow-200",
+                    "text-primary",
+                    "text-purple",
+                    "text-green-200",
+                    "text-yellow-200",
+                    "text-purple",
+                    "text-primary",
+                ]}
+            />
+        </Text>
+        <Text type="regular" class="text-red-800 font-[800] font-sans">
+            Take your kid on an adventure of learning!
+        </Text>
+        <Button>Enquire Now!</Button>
+    </div>
+    <Image src={Student} class="w-[400px] object-contain mt-[30px]" alt={"student holds"} />
+    <div class="flex-col relative flex min-h-[522px] justify-center items-center px-16 py-12 max-md:px-5 w-screen bottom-[80px] z-[-1]">
+        <Image src={Elephant} class="absolute left-[5%] top-[-20%] object-contain h-[150px] z-[9999]" alt={"decoration"} />
+        <Image src={studentLeft} class="absolute right-[5%] top-[-20%] object-contain h-[200px] z-[9999]" alt={"decoration"} />
+        
+        <Image
+          loading="lazy"
+          src={CloudBannerImage}
+          alt={"cloud"}
+          class="absolute h-full w-full object-cover object-center inset-0"
+        />
+        <span class="relative flex w-[885px] max-w-full flex-col mt-5 mb-16 items-start max-md:mb-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="66" height="47" viewBox="0 0 66 47" fill="none">
+                <path opacity="0.1" d="M28.1062 33.1331C28.1062 40.6739 22.8505 46.3867 14.8526 46.3867C6.85469 46.3867 -0.000648499 39.9884 -0.000648499 28.5629C-0.000648499 14.3952 10.7394 2.28409 24.6785 -0.00102234V8.45388C16.6807 10.0535 10.7394 15.7662 10.7394 22.3931C12.1104 21.479 13.9385 20.7935 16.9092 20.7935C22.8505 20.7935 28.1062 25.1352 28.1062 33.1331ZM65.125 33.1331C65.125 40.6739 59.6407 46.3867 51.6428 46.3867C43.8735 46.3867 36.7896 39.9884 36.7896 28.5629C36.7896 14.3952 47.5297 2.28409 61.6973 -0.00102234V8.45388C53.6994 10.0535 47.7582 15.7662 47.7582 22.1645C49.1292 21.2505 51.1858 20.7935 53.928 20.7935C59.8692 20.7935 65.125 25.1352 65.125 33.1331Z" fill="#2D2D2D"/>
+            </svg>
+            <Text type="h2" class="text-[#1E1E1E] !font-[300] !text-[3vw] text-center">
+                ...focus is not only on academics, but also encourage students to be
+                <br />
+               <span class="text-rose-400 !font-[700] text-center">creative thinkers</span>
+            </Text>
+          <span class="items-stretch self-center flex gap-3.5 mt-5">
+            <Image
+              loading="lazy"
+              src={Person}
+              alt={"person"}
+              class="aspect-square object-contain object-center w-[68px] overflow-hidden shrink-0 max-w-full"
+            />
+            <Text type="h4" class="font-sans text-neutral-800 text-2xl font-medium leading-9 my-auto">
+              Mr. K.S. Nathan, Parent
+            </Text>
+          </span>
+        </span>
+    </div>
+  </div>
+
+<div>
