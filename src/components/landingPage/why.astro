@@ -22,25 +22,26 @@ import Marker from "../system/Marker.astro";
 <Section class="flex flex-col gap-2 pr-[40px] ] !p-0">
   <div class="flex justify-between items-center">
     <Image src={Rope} alt={"rope"} ></Image>
-    <Sal preset="slide-up" d="100" t="400">
-      <Text type="h2" class="text-center">
-        Why Choose <br />
-        <span class="relative">
-          Little <MultiStyleText type="h2"text="Elly?" classes={[
-            "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
-          ]} />
-            
-        </span>
-      </Text>
-      <Text type="regular" class="mt-[10px] !font-[700] !text-3xl text-[#1C1C1C] text-center">
-        A world of <span class="text-primary">Endless</span> {" "}
-        <MultiStyleText 
-        classes={[
-          "text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple"
-        ]}
-        text="Possibilities" />
-      </Text>
-    </Sal>
+      <div>
+
+        <Text type="h2" class="text-center">
+          Why Choose <br />
+          <span class="relative">
+            Little <MultiStyleText type="h2"text="Elly?" classes={[
+              "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
+            ]} />
+              
+          </span>
+        </Text>
+        <Text type="regular" class="mt-[10px] !font-[700] !text-3xl text-[#1C1C1C] text-center">
+          A world of <span class="text-primary">Endless</span> {" "}
+          <MultiStyleText 
+          classes={[
+            "text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple"
+          ]}
+          text="Possibilities" />
+        </Text>
+      </div>
     <Image src={Birds} alt={"birds"} ></Image>
 
   </div>
@@ -58,19 +59,20 @@ import Marker from "../system/Marker.astro";
         />
     </div>
     <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative">
-      <Sal preset="fade" d="400" t="400" class="flex-shrink-0">
         <Image
           class="w-[384px] max-md:w-[210px]"
           src={Why2}
           alt="Why choose Ekam??"
         />
-      </Sal>
       <div class="max-md:order-2 basis-[50%]">
-          <Sal preset="slide-up" d="300" t="400">
-            <Text type="base">
-              The first five years are significantly important for a child’s development, a time when kids rapidly absorb knowledge and experiences. Research indicates that over 90% of a child’s brain development happens in these early years. At this critical stage, preschools play a vital role by providing a safe and engaging environment for exploration, learning, and growth.
-            </Text>
-          </Sal>
+        <div>
+          <Text type="base">
+            The first five years are significantly important for a child’s development, a time when kids rapidly absorb knowledge and experiences. Research indicates that over 90% of a child’s brain development happens in these early years. At this critical stage, preschools play a vital role by providing a safe and engaging environment for exploration, learning, and growth.
+          </Text>
+        </div>
+          <!-- <Sal preset="slide-up" d="300" t="400">
+            
+          </Sal> -->
       </div>
      
     </div>
