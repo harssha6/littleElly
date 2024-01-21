@@ -11,7 +11,7 @@ import PurpleCloud from "../images/clouds/purple.png"
 import GreenCloud from "../images/clouds/green.png"
 import RedCloud from "../images/clouds/red.png"
 ---
-<Section class="flex flex-row">
+<Section class="flex flex-row max-md:flex-col justify-between items-center">
     
     <div class="flex flex-col gap-9">
         <Text type="h2">
@@ -22,18 +22,16 @@ import RedCloud from "../images/clouds/red.png"
         </Text>
         <Image height={300} width={300} src={Student1} alt="student" />
     </div>
-    <div class="flex flex-col ml-auto">
-      <div class="flex gap-l justify-center items-center">
+    <div class="flex flex-col">
+      <div class="flex gap-l justify-center items-center max-md:flex-col">
           <CloudText img={OrangeCloud} title={"CENTRES"} subtitle={'130 +'} className="text-orange-200" /> 
           <CloudText img={BlueCloud} title={"STUDENTS"} subtitle={'2000 +'} className="text-[#78ADF9] !pt-11" /> 
       </div>
-      <div class="flex pt-xl justify-center items-center">
+      <div class="flex pt-xl gap-l justify-center items-center max-md:flex-col">
+        <CloudText img={PurpleCloud} title="YEARS" subtitle={'17'} className="text-purple !pt-8" /> 
         <CloudText img={RedCloud} title="FACULTY" subtitle={'2000 +'} className="text-primary !pt-9" /> 
-        <CloudText img={PurpleCloud} title="YEARS" subtitle={'17'} className="text-purple !pt-8 mt-[-100px]" /> 
-        <CloudText img={GreenCloud} textHtml="STUDENT-<br>TEACHER RATIO" subtitle={'17'} className="text-green-200 !pt-8" /> 
         
       </div>
     </div>
 
-    </div>
 </Section>
