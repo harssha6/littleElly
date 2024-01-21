@@ -90,3 +90,170 @@ const { title = 'Best CBSE School in Bangalore | Ekam School' } = Astro.props;
 	// 	observer.observe(element)
 	// })
 </script>
+<script>
+	import Swiper from "swiper";
+  
+	import { Autoplay } from "swiper/modules";
+	
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		initSwiper()
+		console.log('initSwiper')
+		initTicker()
+  
+	});
+  
+	function initSwiper() {
+	  const swiperData = JSON.parse(document.querySelector(`.hero-swiper`).dataset.swiperData)
+	  
+	  const swiperLine = document.querySelector('[swiper-line]')
+	  const swiperLabel = document.querySelector('[swiper-label]')
+  
+	  const prevBtn = document.querySelector('[data-prev="hero-swiper"]')
+	  const nextBtn = document.querySelector('[data-next="hero-swiper"]')
+	  const swipers = document.querySelectorAll('.hero-swiper')
+	  swipers.forEach(item => {
+		const swiper = new Swiper(item, {
+		// Optional parameters
+		modules: [Autoplay],
+		direction: "horizontal",
+		loop: true,
+		effect: "coverflow",
+		slidesPerView: 1.2,
+		centeredSlides: true,
+		spaceBetween: 10,
+		speed: 700,
+		autoplay: {
+		  delay: 2000,
+		  disableOnInteraction: false,
+		},
+	  });
+	  swiper.on('transitionStart', () => {
+		swiperLine.classList.add('hide-line')
+		swiperLabel.classList.add('hide-text')
+	  })
+  
+	  swiper.on('sliderMove', () => {
+		swiperLine.classList.add('hide-line')
+		swiperLabel.classList.add('hide-text')
+	  })
+	  swiper.on('transitionEnd', (e) => {
+		const labelText = swiperData[e.realIndex]?.text
+		swiperLabel.innerText = labelText
+		swiperLine.classList.remove('hide-line')
+		swiperLabel.classList.remove('hide-text')
+	  })
+  
+	  prevBtn.addEventListener('click', () => {
+		swiper.slidePrev()
+	  })
+  
+	  nextBtn.addEventListener('click', () => {
+		swiper.slideNext()
+	  })
+	  })
+	 
+	  
+	}
+	
+	
+	function initTicker() {
+	  const tickers = document.querySelectorAll('[data-ticker]');
+	  console.log('tickers', tickers)
+	  tickers.forEach(ticker => {
+
+		const list = ticker.querySelector('.ticker__list');
+		const clone = list.cloneNode(true);
+		ticker.appendChild(clone);
+		slider(ticker)
+	  })
+  
+	  }
+	  function slider(ticker){
+		// const event = new CustomEvent('reinit-sliders');
+		// document.dispatchEvent(event);
+  
+  
+		let currentScroll = 0;
+		const maxScroll = ticker.scrollWidth / 2;
+		const scrollSpeed = 2;
+		let isManualScrolling = false;
+		let isCursorOverTicker = false;
+		let scriptResetScroll = false;
+		const tickerDir = ticker.dataset['data-ticker-dir']
+		ticker.scrollLeft = maxScroll;
+		console.log(ticker.scrollLeft,"scrollLeft");
+		function updateScroll() {
+			if (isManualScrolling) {
+				requestAnimationFrame(updateScroll);
+				return;
+			}
+			
+			currentScroll -= scrollSpeed;
+  
+			if (currentScroll >= maxScroll) {
+				scriptResetScroll = true;
+				ticker.scrollLeft = 0;
+				currentScroll = 0;
+			} else {
+				ticker.scrollLeft = currentScroll;
+			}
+  
+			requestAnimationFrame(updateScroll);
+		}
+		updateScroll();
+  
+		  function handleManualScroll() {
+			  if (scriptResetScroll) {
+				  scriptResetScroll = false;
+				  return;
+			  }
+  
+			  const newScrollLeft = ticker.scrollLeft;
+			  // console.log('newScrollLeft', newScrollLeft)
+			  if (newScrollLeft <= 0) {
+				  // User scrolled left past the start
+				  scriptResetScroll = true;
+				  ticker.scrollLeft = maxScroll;
+				  currentScroll = maxScroll;
+			  } else if (newScrollLeft >= maxScroll) {
+				  // User scrolled right past the halfway point
+				  scriptResetScroll = true;
+				  ticker.scrollLeft = 0;
+				  currentScroll = 0;
+			  }
+		  }
+  
+		  ticker.addEventListener('scroll', handleManualScroll);
+  
+		  ticker.addEventListener('mouseenter', () => {
+			  isManualScrolling = true;
+			  isCursorOverTicker = true;
+		  });
+  
+		  ticker.addEventListener('touchstart', () => {
+			isManualScrolling = true;
+			isCursorOverTicker = true;
+		  });
+		  
+		  ticker.addEventListener('mouseleave', () => {
+			  isManualScrolling = false;
+			  isCursorOverTicker = false;
+			  currentScroll = ticker?.scrollLeft
+		  });
+  
+		  ticker.addEventListener('touchend', () => {
+			  isManualScrolling = false;
+			  isCursorOverTicker = false;
+			  currentScroll = ticker?.scrollLeft
+		  });
+		  ticker?.addEventListener('scrollend', () => {
+			if (isManualScrolling && !isCursorOverTicker)  {
+			  isManualScrolling = false;
+			  currentScroll = ticker?.scrollLeft
+			}
+		  });
+	  }
+  
+  
+  </script>

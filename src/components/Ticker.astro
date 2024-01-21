@@ -1,11 +1,12 @@
 ---
 import Text from "./system/Text.astro";
-const { items,id } = Astro.props
+const { items,id,dir='left' } = Astro.props
 import TickerCard from "./TickerCard.astro";
+
 
 ---
 
-  <div class="ticker max-md:!hidden block no-scrollbar will-change-scroll max-md:w-full" data-ticker>
+  <div class="ticker max-md:!hidden block no-scrollbar will-change-scroll max-md:w-full" data-ticker data-ticker-dir={dir}>
     <div class="ticker__list">
       {items.map((item, i) => (
         <TickerCard 
@@ -51,6 +52,7 @@ import TickerCard from "./TickerCard.astro";
     </div>
   </div>
 
+
 <style>
 .ticker {
   display: flex;
@@ -74,184 +76,3 @@ import TickerCard from "./TickerCard.astro";
 
 </style>
 
-<script>
-  import Swiper from "swiper";
-
-  import { Autoplay } from "swiper/modules";
-  
-  
-
-  document.addEventListener("DOMContentLoaded", function() {
-      initSwiper()
-      initTicker()
-
-  });
-
-  function initSwiper() {
-    const swiperData = JSON.parse(document.querySelector(`.hero-swiper`).dataset.swiperData)
-    
-    const swiperLine = document.querySelector('[swiper-line]')
-    const swiperLabel = document.querySelector('[swiper-label]')
-
-    const prevBtn = document.querySelector('[data-prev="hero-swiper"]')
-    const nextBtn = document.querySelector('[data-next="hero-swiper"]')
-
-    const swiper = new Swiper(".hero-swiper", {
-      // Optional parameters
-      modules: [Autoplay],
-      direction: "horizontal",
-      loop: true,
-      effect: "coverflow",
-      slidesPerView: 1.2,
-      centeredSlides: true,
-      spaceBetween: 10,
-      speed: 700,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-    });
-    swiper.on('transitionStart', () => {
-      swiperLine.classList.add('hide-line')
-      swiperLabel.classList.add('hide-text')
-    })
-
-    swiper.on('sliderMove', () => {
-      swiperLine.classList.add('hide-line')
-      swiperLabel.classList.add('hide-text')
-    })
-    swiper.on('transitionEnd', (e) => {
-      const labelText = swiperData[e.realIndex]?.text
-      swiperLabel.innerText = labelText
-      swiperLine.classList.remove('hide-line')
-      swiperLabel.classList.remove('hide-text')
-    })
-
-    prevBtn.addEventListener('click', () => {
-      swiper.slidePrev()
-    })
-
-    nextBtn.addEventListener('click', () => {
-      swiper.slideNext()
-    })
-    
-  }
-  
-  
-  function initTicker() {
-    const ticker = document.querySelector('[data-ticker]');
-    const list = document.querySelector('.ticker__list');
-    const clone = list.cloneNode(true);
-    ticker.appendChild(clone);
-
-    // console.log('ticker', ticker)
-    
-    const slidersId = [
-      'slider-branded-calendar',
-      'ticker-branded-calendar',
-      'slider-glentree-magazine',
-      'ticker-glentree-magazine'
-    ]
-
-    slidersId.forEach(slideId => {
-      const slides = document?.querySelectorAll(`[data-slides="${slideId}"]`)
-      slides.forEach((slide, index) => {
-        // slide.id = slide.id + index
-        const slideItems = slide.querySelectorAll(`[data-slide="${slideId}"]`)
-                
-        slide.dataset.slide = slide.dataset.slide + '-' +  index
-  
-        slideItems.forEach((item, i) => {
-          item.dataset.slide = item.dataset.slide + '-' +  index
-        })
-  
-      })
-    })
-    
-
-    // trigger event to re init slider
-    const event = new CustomEvent('reinit-sliders');
-    document.dispatchEvent(event);
-
-
-    let currentScroll = 0;
-    const maxScroll = ticker.scrollWidth / 2;
-    const scrollSpeed = 2;
-    let isManualScrolling = false;
-    let isCursorOverTicker = false;
-    let scriptResetScroll = false;
-
-    function updateScroll() {
-        if (isManualScrolling) {
-            requestAnimationFrame(updateScroll);
-            return;
-        }
-        
-        currentScroll += scrollSpeed;
-
-        if (currentScroll >= maxScroll) {
-            scriptResetScroll = true;
-            ticker.scrollLeft = 0;
-            currentScroll = 0;
-        } else {
-            ticker.scrollLeft = currentScroll;
-        }
-
-        requestAnimationFrame(updateScroll);
-    }
-    updateScroll();
-
-    function handleManualScroll() {
-        if (scriptResetScroll) {
-            scriptResetScroll = false;
-            return;
-        }
-
-        const newScrollLeft = ticker.scrollLeft;
-        // console.log('newScrollLeft', newScrollLeft)
-        if (newScrollLeft <= 0) {
-            // User scrolled left past the start
-            scriptResetScroll = true;
-            ticker.scrollLeft = maxScroll;
-            currentScroll = maxScroll;
-        } else if (newScrollLeft >= maxScroll) {
-            // User scrolled right past the halfway point
-            scriptResetScroll = true;
-            ticker.scrollLeft = 0;
-            currentScroll = 0;
-        }
-    }
-
-    ticker.addEventListener('scroll', handleManualScroll);
-
-    ticker.addEventListener('mouseenter', () => {
-        isManualScrolling = true;
-        isCursorOverTicker = true;
-    });
-
-    ticker.addEventListener('touchstart', () => {
-      isManualScrolling = true;
-      isCursorOverTicker = true;
-    });
-    
-    ticker.addEventListener('mouseleave', () => {
-        isManualScrolling = false;
-        isCursorOverTicker = false;
-        currentScroll = ticker?.scrollLeft
-    });
-
-    ticker.addEventListener('touchend', () => {
-        isManualScrolling = false;
-        isCursorOverTicker = false;
-        currentScroll = ticker?.scrollLeft
-    });
-    ticker?.addEventListener('scrollend', () => {
-      if (isManualScrolling && !isCursorOverTicker)  {
-        isManualScrolling = false;
-        currentScroll = ticker?.scrollLeft
-      }
-    });
-  }
-
-
-</script>

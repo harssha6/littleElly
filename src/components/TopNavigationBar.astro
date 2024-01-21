@@ -445,24 +445,24 @@ const shouldBeActive = (item, activePath) => {
         menu.classList.remove("visible");
       }, 50);
     });
-    menu.addEventListener("mouseover", () => {
-      clearTimeout(removeTimeout);
-    });
-    menu.addEventListener("mouseout", () => {
-      // menu.classList.remove('visible')
-    });
+    // menu.addEventListener("mouseover", () => {
+    //   clearTimeout(removeTimeout);
+    // });
+    // menu.addEventListener("mouseout", () => {
+    //   // menu.classList.remove('visible')
+    // });
   });
 
   // mobile menu
   const menuToggle = document.querySelector("#menuToggle") as HTMLInputElement;
   const mobileMenu = document.querySelector(".mobileMenu") as HTMLDivElement;
 
-  menuToggle.addEventListener("click", () => {
+  // menuToggle.addEventListener("click", () => {
 
-    mobileMenu.classList.toggle("visible");
+  //   mobileMenu.classList.toggle("visible");
 
-    document.querySelector('.menu-bar').classList.toggle('active')
-  });
+  //   document.querySelector('.menu-bar').classList.toggle('active')
+  // });
   const mobileMenuParents = document.querySelectorAll(
     ".mobileMenuParent"
   ) as NodeListOf<HTMLDivElement>;
