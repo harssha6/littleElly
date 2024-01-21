@@ -6,17 +6,17 @@ import Text from "./system/Text.astro";
 import logo from "../images/logo.png";
 import { Image } from "astro:assets";
 import Student from "../image/student5.png"
-
+const { className } = Astro.props; 
 ---
 
 <div
-  class="flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
-        max-md:p-m max-sm:items-start card bg-[#FEF7F9] p-[40px]"
-
+  class:list=`flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
+        max-md:p-m max-sm:items-start card bg-[#FEF7F9] p-[40px] ${className}`
   onclick="window.location.href='/admissions'"
 >
   <div class="flex justify-between w-full max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed">
-   <div class="flex flex-col px-xl py-l gap-[36px] basis-[50%]">
+   <div class="flex flex-col px-xl py-l gap-[36px] basis-[45%]">
+   
     <Image src={logo} alt="logo" />
     <Text type="h2" class="text-[#4E000D]">
       Admissions <br> Open <br> for <span class="text-primary">2023-24!!</span>
@@ -27,14 +27,28 @@ import Student from "../image/student5.png"
         color={"#EE7F82"}
       />
     </div>
-   </div>
-   <div class="bg-[#FFD1D3] basis-[50%] flex items-center">
+  </div>
+  <div class=" w-[100px] flex flex-col bg-transparent relative left-[40px]">
+    <div class="bg-[white] basis-[100%] rounded-full"></div>
+    <div class="bg-[white] basis-[100%] rounded-full"></div>
+    <div class="bg-[white] basis-[100%] rounded-full"></div>
+    <div class="bg-[white] basis-[100%] rounded-full"></div>
+    <div class="bg-[white] basis-[100%] rounded-full"></div>
+ </div>
+  
+   <div class="bg-[#FFD1D3] basis-[55%] flex items-center">
     <Image class={'max-h-[400px] object-contain'} src={Student} alt={'student'} />
    </div>
 
   </div>
 </div>
 
+<style>
+  .decoration{
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2273%22%20height%3D%22155%22%20viewBox%3D%220%200%2073%20155%22%20fill%3D%22none%22%3E%0A%3Cpath%20d%3D%22M-0.000105582%20154.663C19.1595%20154.663%2037.5343%20146.534%2051.0822%20132.065C64.6301%20117.595%2072.2412%2097.9702%2072.2412%2077.5073C72.2412%2057.0443%2064.6301%2037.4194%2051.0822%2022.9499C37.5344%208.48045%2019.1595%200.351563%20-9.15527e-05%200.351559L-0.000102382%2077.5072L-0.000105582%20154.663Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+  }
+</style>
 <style>
   .card {
     cursor: pointer;

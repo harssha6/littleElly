@@ -56,6 +56,11 @@ import AdvisoryBoard from "../components/AdvisoryBoard.astro";
 import Overview from "../components/Overview.astro";
 import Events from "../components/landingPage/Events.astro";
 import Program from "../components/Program.astro";
+import Ticker from "../components/Ticker.astro";
+import Marker from "../components/system/Marker.astro";
+import Student from "../images/student4.png";
+import { Image } from "astro:assets";
+
 ---
 
 <Layout title="Home | Best International K12 Primary Schools South bengalore Electronic City">
@@ -69,6 +74,38 @@ import Program from "../components/Program.astro";
     <Overview />
     <Why  />
     <Program  />
+    <Section class="p-[30px] px-[70px]">
+      <div class="text-[#FFF7F0] rounded-[50px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center">
+        <div class="basis-[50%]">
+          <Text type="h3" class="text-[#FF7162] !text-[35px]">Daycare Facility</Text>
+          <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>Our daycare facilities provide a child-friendly environment with a stimulating curriculum that includes various interest-focused activities for different age groups.</Text>
+          <br >
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Trained and competent staff</Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Open door policy for parents
+            </Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Headed by a visionary leadership team
+            </Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Our 12-month academic year allows for <br /> admissions into the daycare at any point during <br /> the year.
+            </Text>
+          </div>
+        </div>
+        <div class="basis-[50%]">
+          <Image src={Student} alt="principle" class="object-contain max-h-[400px]" />
+        </div>
+  
+      </div>
+    </Section>
     <Events />
     <Testimonial />
     <GoToCta />

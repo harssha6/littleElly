@@ -6,6 +6,8 @@ import student3 from "../../images/student3.png"
 import testimonial2 from '../../images/testimonial/2.png'
 import testimonial3 from '../../images/testimonial/3.png'
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
+import Carousel from "../system/Carousel.astro"
+import CarouselCard from "../system/CarouselCard.astro"
 const data = {
     title: 'Ekam Voices',
     subtitle: 'Stories of Transformation and Growth',
@@ -40,11 +42,20 @@ const data = {
             Stay updated with the latest happenings from our centres
         </Text>
     </div>
-    <div class="flex gap-m">
-        {data.data.map((item, index) => (
+    <Carousel
+    arrowsContainerClass="mt-4"
+    class="gap-m overflow-scroll"
+    id="news-events-container"
+  >
+    
+      {data.data.map((item, index) => (
+          <CarouselCard>
             <EventCard {...item} />
+            </CarouselCard>
         ))}
-    </div>
+  </Carousel>
+
+<!--   
     <div class="flex w-[160px] justify-between">
         <FilledArrowCircle
             svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}
@@ -55,5 +66,5 @@ const data = {
         color={"#EE7F82"}
       />
       </div>
-    
+     -->
 </Section>

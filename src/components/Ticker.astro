@@ -1,0 +1,257 @@
+---
+import Text from "./system/Text.astro";
+const { items,id } = Astro.props
+import TickerCard from "./TickerCard.astro";
+
+---
+
+  <div class="ticker max-md:!hidden block no-scrollbar will-change-scroll max-md:w-full" data-ticker>
+    <div class="ticker__list">
+      {items.map((item, i) => (
+        <TickerCard 
+          item={item}
+          type={'ticker'}
+        />
+      ))}
+    </div>
+  </div>
+  <div class="max-md:block hidden hero-swiper no-scrollbar will-change-scroll max-md:w-full" data-swiper-data={JSON.stringify(items)}>
+    <div class="swiper-wrapper mt-5">
+      {items.map((item, i) => (
+        <TickerCard 
+          item={item}
+          type="swiper"
+        />
+      ))}
+    </div>
+    <div class="pt-[30px]"></div>
+  </div>
+  <div class="w-full hidden max-md:flex flex-col items-center -mt-[30px]">
+    <div class="h-[clamp(25px,2.187vw,42px)] w-[1px]">
+      <div class="h-full bg-[#898987] w-full transition-[height] transition-smooth duration-500 [&.hide-line]:h-0" swiper-line></div>
+    </div>
+    <div class="flex flex-row justify-between w-[96%] max-w-[350px]"> 
+      <div class="w-[35px] h-[35px]" data-prev="hero-swiper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 38" fill="none">
+          <rect x="0.5" y="1.27344" width="36" height="36" rx="18" fill="white"/>
+          <rect x="0.5" y="1.27344" width="36" height="36" rx="18" stroke="#D2D2D2"/>
+          <path opacity="0.8" d="M20.6748 16.9688L18.0198 19.6238L20.6748 22.2788C20.7382 22.3421 20.7698 22.4171 20.7698 22.5038C20.7698 22.5904 20.7382 22.6654 20.6748 22.7288L19.8448 23.5588C19.7815 23.6221 19.7065 23.6538 19.6198 23.6538C19.5332 23.6538 19.4582 23.6221 19.3948 23.5588L15.6848 19.8488C15.6215 19.7854 15.5898 19.7104 15.5898 19.6238C15.5898 19.5371 15.6215 19.4621 15.6848 19.3988L19.3948 15.6888C19.4582 15.6254 19.5332 15.5938 19.6198 15.5938C19.7065 15.5938 19.7815 15.6254 19.8448 15.6888L20.6748 16.5188C20.7382 16.5821 20.7698 16.6571 20.7698 16.7438C20.7698 16.8304 20.7382 16.9054 20.6748 16.9688Z" fill="#1F1F1F" fill-opacity="0.8"/>
+          </svg>
+      </div>
+      <Text type="base" class="group-hover:underline ticker-text mt-1 font-bold transition-opacity transition-smooth duration-500 [&.hide-text]:opacity-0 flex flex-row items-center -top-[2px]" swiper-label>
+        Branded Calendar
+      </Text>
+      <div class="w-[35px] h-[35px] -scale-100 items-center" data-next="hero-swiper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 38" fill="none">
+          <rect x="0.5" y="1.27344" width="36" height="36" rx="18" fill="white"/>
+          <rect x="0.5" y="1.27344" width="36" height="36" rx="18" stroke="#D2D2D2"/>
+          <path opacity="0.8" d="M20.6748 16.9688L18.0198 19.6238L20.6748 22.2788C20.7382 22.3421 20.7698 22.4171 20.7698 22.5038C20.7698 22.5904 20.7382 22.6654 20.6748 22.7288L19.8448 23.5588C19.7815 23.6221 19.7065 23.6538 19.6198 23.6538C19.5332 23.6538 19.4582 23.6221 19.3948 23.5588L15.6848 19.8488C15.6215 19.7854 15.5898 19.7104 15.5898 19.6238C15.5898 19.5371 15.6215 19.4621 15.6848 19.3988L19.3948 15.6888C19.4582 15.6254 19.5332 15.5938 19.6198 15.5938C19.7065 15.5938 19.7815 15.6254 19.8448 15.6888L20.6748 16.5188C20.7382 16.5821 20.7698 16.6571 20.7698 16.7438C20.7698 16.8304 20.7382 16.9054 20.6748 16.9688Z" fill="#1F1F1F" fill-opacity="0.8"/>
+          </svg>
+      </div>
+    </div>
+  </div>
+
+<style>
+.ticker {
+  display: flex;
+  max-width: 100vw;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+.ticker__list {
+  display: flex;
+  margin-top: 20px;
+  /* animation: ticker 50s infinite linear; */
+}
+.ticker:hover .ticker__list {
+  /* animation-play-state: paused; */
+}
+@keyframes ticker {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+</style>
+
+<script>
+  import Swiper from "swiper";
+
+  import { Autoplay } from "swiper/modules";
+  
+  
+
+  document.addEventListener("DOMContentLoaded", function() {
+      initSwiper()
+      initTicker()
+
+  });
+
+  function initSwiper() {
+    const swiperData = JSON.parse(document.querySelector(`.hero-swiper`).dataset.swiperData)
+    
+    const swiperLine = document.querySelector('[swiper-line]')
+    const swiperLabel = document.querySelector('[swiper-label]')
+
+    const prevBtn = document.querySelector('[data-prev="hero-swiper"]')
+    const nextBtn = document.querySelector('[data-next="hero-swiper"]')
+
+    const swiper = new Swiper(".hero-swiper", {
+      // Optional parameters
+      modules: [Autoplay],
+      direction: "horizontal",
+      loop: true,
+      effect: "coverflow",
+      slidesPerView: 1.2,
+      centeredSlides: true,
+      spaceBetween: 10,
+      speed: 700,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+    });
+    swiper.on('transitionStart', () => {
+      swiperLine.classList.add('hide-line')
+      swiperLabel.classList.add('hide-text')
+    })
+
+    swiper.on('sliderMove', () => {
+      swiperLine.classList.add('hide-line')
+      swiperLabel.classList.add('hide-text')
+    })
+    swiper.on('transitionEnd', (e) => {
+      const labelText = swiperData[e.realIndex]?.text
+      swiperLabel.innerText = labelText
+      swiperLine.classList.remove('hide-line')
+      swiperLabel.classList.remove('hide-text')
+    })
+
+    prevBtn.addEventListener('click', () => {
+      swiper.slidePrev()
+    })
+
+    nextBtn.addEventListener('click', () => {
+      swiper.slideNext()
+    })
+    
+  }
+  
+  
+  function initTicker() {
+    const ticker = document.querySelector('[data-ticker]');
+    const list = document.querySelector('.ticker__list');
+    const clone = list.cloneNode(true);
+    ticker.appendChild(clone);
+
+    // console.log('ticker', ticker)
+    
+    const slidersId = [
+      'slider-branded-calendar',
+      'ticker-branded-calendar',
+      'slider-glentree-magazine',
+      'ticker-glentree-magazine'
+    ]
+
+    slidersId.forEach(slideId => {
+      const slides = document?.querySelectorAll(`[data-slides="${slideId}"]`)
+      slides.forEach((slide, index) => {
+        // slide.id = slide.id + index
+        const slideItems = slide.querySelectorAll(`[data-slide="${slideId}"]`)
+                
+        slide.dataset.slide = slide.dataset.slide + '-' +  index
+  
+        slideItems.forEach((item, i) => {
+          item.dataset.slide = item.dataset.slide + '-' +  index
+        })
+  
+      })
+    })
+    
+
+    // trigger event to re init slider
+    const event = new CustomEvent('reinit-sliders');
+    document.dispatchEvent(event);
+
+
+    let currentScroll = 0;
+    const maxScroll = ticker.scrollWidth / 2;
+    const scrollSpeed = 2;
+    let isManualScrolling = false;
+    let isCursorOverTicker = false;
+    let scriptResetScroll = false;
+
+    function updateScroll() {
+        if (isManualScrolling) {
+            requestAnimationFrame(updateScroll);
+            return;
+        }
+        
+        currentScroll += scrollSpeed;
+
+        if (currentScroll >= maxScroll) {
+            scriptResetScroll = true;
+            ticker.scrollLeft = 0;
+            currentScroll = 0;
+        } else {
+            ticker.scrollLeft = currentScroll;
+        }
+
+        requestAnimationFrame(updateScroll);
+    }
+    updateScroll();
+
+    function handleManualScroll() {
+        if (scriptResetScroll) {
+            scriptResetScroll = false;
+            return;
+        }
+
+        const newScrollLeft = ticker.scrollLeft;
+        // console.log('newScrollLeft', newScrollLeft)
+        if (newScrollLeft <= 0) {
+            // User scrolled left past the start
+            scriptResetScroll = true;
+            ticker.scrollLeft = maxScroll;
+            currentScroll = maxScroll;
+        } else if (newScrollLeft >= maxScroll) {
+            // User scrolled right past the halfway point
+            scriptResetScroll = true;
+            ticker.scrollLeft = 0;
+            currentScroll = 0;
+        }
+    }
+
+    ticker.addEventListener('scroll', handleManualScroll);
+
+    ticker.addEventListener('mouseenter', () => {
+        isManualScrolling = true;
+        isCursorOverTicker = true;
+    });
+
+    ticker.addEventListener('touchstart', () => {
+      isManualScrolling = true;
+      isCursorOverTicker = true;
+    });
+    
+    ticker.addEventListener('mouseleave', () => {
+        isManualScrolling = false;
+        isCursorOverTicker = false;
+        currentScroll = ticker?.scrollLeft
+    });
+
+    ticker.addEventListener('touchend', () => {
+        isManualScrolling = false;
+        isCursorOverTicker = false;
+        currentScroll = ticker?.scrollLeft
+    });
+    ticker?.addEventListener('scrollend', () => {
+      if (isManualScrolling && !isCursorOverTicker)  {
+        isManualScrolling = false;
+        currentScroll = ticker?.scrollLeft
+      }
+    });
+  }
+
+
+</script>

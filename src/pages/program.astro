@@ -8,54 +8,113 @@ import Button from "../components/system/Button.astro";
 import Section from "../components/system/Section.astro";
 import MultiStyleText from "../components/system/MultiStyleText.astro";
 import program1 from '../images/programs/program1.png'
-import { Image } from "astro:assets";
+import program2 from '../images/programs/program2.png'
+import program3 from '../images/programs/program3.png'
+import program4 from '../images/programs/program4.png'
+import program5 from '../images/programs/program5.png'
 import GoToCta from "../components/GoToCta.astro";
 import Footer from "../components/landingPage/Footer.astro";
+import { Image } from "astro:assets";
+import Marker from "../components/system/Marker.astro";
+import BirdFlower from "../image/decorations/bird-sun.png";
+import Flowers from "../image/decorations/flowers.png";
+import Flower from "../image/decorations/flower.png";
+import Rainbows from "../image/decorations/rainbows.png";
+import Student from "../images/student4.png";
+
 const programData = [
     {
         title: 'Toddler',
-        subtitle: 'age 1 Year +',
-        image: program1,
-        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+        subtitle: 'Age criteria: 18 months +',
+        image: program2,
+        titleClass: 'text-red-200',
+        subTitleClass: 'text-red-200 uppercase',
+        subText: '(Adult to child ratio- 1:5)',
+        desc: "The toddler curriculum at Little Elly is well structured and designed to encourage the holistic development of children who are in the process of rapid physical and cognitive development. The emphasis is on creating a supportive and engaging atmosphere for toddlers' growth and development through their critical years of learning.",
+        skills: [
+          "Constructive play",
+          "Sensory exploration",
+          "Mark making learning",
+          "Artistic movement ",
+          "Emergent Literacy",
+        ],
+        decorationImage: BirdFlower,
     },
     {
         title: 'Play Group',
         subtitle: 'age 2 Years +',
         image: program1,
-        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
+        titleClass: 'text-[#A5D27C]',
+        subTitleClass: 'text-[#A5D27C]',
 
-
+        desc: "The Playgroup Program at Little Elly focuses on happy learning evolving in the school environment. We concentrate on the wholesome development of the child by conducting age–appropriate activities. Our Monthly theme includes an engaging package of hands-on activities blended with STEM-based learning.",
+        skills: [
+          "Pre-writing skills ",
+          "Cognitive development",
+          "Social and emotional learning",
+          "Gross and fine motor skills  ",
+          "Language and communication skills",
+          "Exploring the world through themes",
+          "Early literacy and pre- math concepts ",
+        ],
+        subText: '(Adult to child ratio- 2:15)',
+        decorationImage: Flower,
     },
     {
         title: 'nursery',
         subtitle: 'age 3 Years +',
-        image: program1,
-        titleClass: 'text-red-200',
-        subTitleClass: 'text-red-200',
-        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
-
-
-
+        image: program3,
+        titleClass: 'text-[#78ADF9]',
+        
+        subTitleClass: 'text-[#78ADF9]',
+        desc: "The Nursery Program at Little Elly is well-equipped with concepts that mould our little tots as inquisitive learners. The education journey of a child is fostered through the love for learning. The focus is to strike a balance between play based learning blending it with structured learning. ",
+        skills: [
+          "Communication Skills ",
+          "Dramatic play and role play",
+          "Story Time",
+          "Visual stimulation through play   ",
+          "Hands on learning",
+          "Literacy and Math concepts",
+          "Introduction of Phonics  ",
+          "Sensory based learning"
+        ],
+        subText: '(Adult to child ratio- 2:18)',
+        decorationImage: Flowers,
     },
     {
         title: 'LKG & UKG',
         subtitle: 'age 4 & 5 Years +',
-        image: program1,
-        titleClass: 'text-green-200',
-        subTitleClass: 'text-green-200',
-        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
-
-
+        image: program5,
+        titleClass: 'text-[#B892F9]',
+        subTitleClass: 'text-[#B892F9]',
+        desc: "The LKG program at Little Elly caters to our curious learners. Here the focus for kids is to learn concepts through hands-on learning and to encourage them to express themselves by building a strong vocabulary. We create an environment to set up a clear and consistent routine for the children.",
+        skills: [
+          "Mindful activities ",
+          "Spoken language",
+          "Social skills and creative arts",
+          "Pre-reading skills  ",
+          "Regional languages",
+          "General awareness",
+        ],
+        subText: '(Adult to child ratio- 2:20)',
+        decorationImage: Rainbows,
     },
     {
         title: 'Daycare',
         subtitle: 'age 5 Years +',
         image: program1,
-        titleClass: 'text-blue-200',
-        subTitleClass: 'text-blue-200',
-        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity."
-
-
+        titleClass: 'text-[#F6BD60]',
+        subTitleClass: 'text-[#F6BD60]',
+        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity.",
+        skills: [
+          "Independent reading and writing skills ",
+          "Mathematical concepts",
+          "Advance phonics skills",
+          "Logical learning   ",
+          "Problem solving skills ",
+          "Environmental awareness",
+        ],
+        subText: '(Adult to child ratio- 2:20)',
     },
 ]
 ---
@@ -101,26 +160,82 @@ const programData = [
             </MultiStyleText>
         </Text>
     </div>
-    <div class="flex flex-col gap-xl mt-[100px]">
+    <div class="flex flex-col gap-r mt-[100px]">
       {
         programData.map((item, index )=> {
           return (
-            <div class="flex gap-xl">
-              <Image src={program1} alt="pro"/>
-              <div class="flex flex-col">
-                <Text type="h3" class={`text-2xl font-bold ${item.titleClass}`}>{item.title}</Text>
-                <Text type="base" class={`text-xl font-bold ${item.subTitleClass}`}>{item.subtitle}</Text>
-                <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r`}>{item.desc}</Text>
+            <div>
+              <div class="flex gap-xl">
+                <Image class={`${index % 2 !== 0 && 'order-1'} object-contain max-h-[300px]`} src={item.image} alt="pro"/>
+                <div class="flex flex-col">
+                  <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
+                  <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] font-display`}>{item.subtitle}</Text>
+                  <Text type="base" class={`text-xl font-[700] font-display`}>{item.subText}</Text>
+  
+                  <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-[160%] max-w-[62ch]`}>{item.desc}</Text>
+                  <br />
+                  <Text type="base">The curriculum focuses to develop basic skills such as:</Text>
+                  <br />
+                 
+                  {
+                    item.skills && item.skills.map((skill) => {
+                      return (
+                      <div class="flex items-center gap-r">
+                        <Marker color="#EE7F82" />
+                        <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-[0]`}>{skill}</Text>
+  
+                        </div>
+                      )
+                    })
+                  }
+                  
+  
+                </div>
+                </div>
+                <div class={`${index % 2 == 0 ? 'ml-auto' : '' } w-fit p-r`}>
+                  {item.decorationImage && <Image src={item.decorationImage} alt="bird" /> }
+                </div>
               </div>
-              </div>
+
           )
         })
       }
       
     </div>
    
+      <div class="text-[#FFF7F0] rounded-[50px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center mt-xl">
+        <div class="basis-[50%]">
+          <Text type="h3" class="text-[#FF7162] !text-[35px]">Daycare Facility</Text>
+          <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>Our daycare facilities provide a child-friendly environment with a stimulating curriculum that includes various interest-focused activities for different age groups.</Text>
+          <br >
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Trained and competent staff</Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Open door policy for parents
+            </Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Headed by a visionary leadership team
+            </Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Our 12-month academic year allows for <br /> admissions into the daycare at any point during <br /> the year.
+            </Text>
+          </div>
+        </div>
+        <div class="basis-[50%]">
+          <Image src={Student} alt="principle" class="object-contain max-h-[400px]" />
+        </div>
+  
+      </div>
     </Section>
-    <GoToCta />
+    <GoToCta className="!bg-[#FDF2E5]" />
+
     <Footer />
 </div>
 

@@ -13,6 +13,8 @@ import testimonial2 from '../../images/testimonial/2.png'
 import testimonial3 from '../../images/testimonial/3.png'
 import student3 from "../../images/student3.png"
 import Scribble from '../Scribble.astro';
+import Carousel from '../system/Carousel.astro';
+import CarouselCard from '../system/CarouselCard.astro';
 
 const testimonials = {
     title: 'Ekam Voices',
@@ -49,21 +51,31 @@ const subtitle = testimonials.subtitle;
     <Text type={'base'} class='font-bold text-center'>Hear from our Parents!</Text>
 
   <div class="flex flex-row gap-7 max-sm:flex-col max-sm:gap-0">
+    <Carousel
+      arrowsContainerClass="mt-4"
+      class="flex flex-row gap-7 max-sm:flex-col max-sm:gap-0 overflow-scroll"
+      id="news-events-container"
+    >
     {data.slice(1).map(item => {
       return (
-        <TestimonicalCard 
-            quote={item.quote}
-            author={item?.author}
-            image={item.image}
-            ctaText={item.ctaText}
-            ctaLink={item.ctaLink}
-            className="bg-transparent"
-        />
+        <CarouselCard>
+            <TestimonicalCard 
+                quote={item.quote}
+                author={item?.author}
+                image={item.image}
+                ctaText={item.ctaText}
+                ctaLink={item.ctaLink}
+                className="bg-transparent"
+            />
+          </CarouselCard>
       )
     })}
+    </Carousel>
+  
 
   </div>
-  <div class="flex w-[160px] justify-between">
+ 
+  <!-- <div class="flex w-[160px] justify-between">
     <FilledArrowCircle
         svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}
         color={"#EE7F82"}
@@ -72,7 +84,18 @@ const subtitle = testimonials.subtitle;
     svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px]"}
     color={"#EE7F82"}
   />
-  </div>
+  </div> -->
 
 
 </Section>
+<div class=" w-full h-[150px] flex bg-transparent relative bg-[red]">
+  {
+    Array(6).fill("").map((_, i) => (
+      <div class="basis-[100%] rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 117" fill="none">
+<path d="M0.468471 -3.86623C0.468468 27.939 13.1031 58.4416 35.5928 80.9313C58.0825 103.421 88.5851 116.056 120.39 116.056C152.196 116.056 182.698 103.421 205.188 80.9314C227.678 58.4417 240.312 27.9391 240.312 -3.8662L120.39 -3.86622L0.468471 -3.86623Z" fill="#FBDECE"/>
+</svg></div>
+    ))
+  }
+  
+</div>

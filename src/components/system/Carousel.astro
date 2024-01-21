@@ -1,5 +1,6 @@
 ---
 import arrow from "../../icons/arrow.svg?raw"
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
 
 const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro.props
 ---
@@ -21,15 +22,29 @@ const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro
       arrowsContainerClass
     ]}
   >
-    <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-prev-button data-target={id}>
-      <div class="w-full h-full -scale-100 bg-[#333] text-white flex items-center justify-center rounded-full">
-        <div class="relative left-[1px]" set:html={arrow} />
-      </div>
-    </div>
-    <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-next-button data-target={id}>
-      <div class="w-full h-full scale-100 bg-[#333] flex text-white items-center justify-center rounded-full">
-        <div class="relative left-[1px]" set:html={arrow}  />
-      </div>
+      <div class="mt-[40px] flex justify-between w-[150px]">
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-prev-button data-target={id}>
+          <div class="w-full h-full -scale-100 bg-[#333] text-white flex items-center justify-center rounded-full">
+            <div class="relative left-[1px] ">
+              <FilledArrowCircle
+              svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] bg-white rounded-full"}
+              color={"#FF7162"}
+          />
+              
+            </div>
+          </div>
+        </div>
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-next-button data-target={id}>
+          <div class="w-full h-full scale-100 bg-[#333] flex text-white items-center justify-center rounded-full">
+            <div class="relative left-[1px] rotate-180 text-white bg-white rounded-full" >
+              <FilledArrowCircle
+                  pathClass={"text-white"}
+                  svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}
+                  color={"#FF7162"}
+            />
+            </div>
+          </div>
+          </div>
       </div>
   </div>
 </div>

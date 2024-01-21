@@ -1,0 +1,74 @@
+---
+import Text from "./system/Text.astro";
+import { Image } from "astro:assets";
+import Slide from './system/Slide.astro';
+
+const { item, type, fill } = Astro.props
+---
+<div class="flex swiper-slide md:!w-[auto] flex-col items-center group ml-0 max-md:ml-0">
+  <div 
+    class:list={[
+      `ticker__item w-[clamp(320px,24.125vw,400px)] h-[clamp(320px,24.125vw,400px)] bg-teal-200 text-5xl 
+      text-center text-black flex items-center
+      max-md:w-full
+      justify-center border relative`,
+      item.class
+    ]} style={{
+      boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.10)',
+    }}>
+    {item.type === 'video' && 
+      <video
+        loop
+        autoplay
+        muted
+        playsinline
+        disableRemotePlayback
+        class:list={[
+          "object-cover",
+          item.fill === 'cover' && 'h-full'
+        ]}
+      >
+        <source src={item.src} type="video/mp4" />
+      </video>
+    }
+    {item.type === 'image' && 
+      <Image
+        src={item.src}
+        alt={item.alt || "Image"}
+        class="w-full h-full object-cover rounded-[20px]"
+        width={600}
+      />
+    }
+    {item.type === 'slide' && 
+    <Slide
+      slides={item.slides.map(slide => ({
+        image: slide,
+        position: 'center'
+      }))}
+      id={type + '-' + item?.slideId}
+    />
+    }
+
+  </div>
+  {item.text && (
+    <div class="h-[clamp(25px,2.187vw,42px)] bg-[#898987] w-[1px] max-md:hidden">
+    </div>
+    <Text type="base" class="group-hover:underline ticker-text mt-1 font-bold max-md:hidden">
+      {item.text}
+    </Text>
+  )}
+</div>
+
+<style>
+
+.swiper-slide  {
+  transform: scale(0.95) !important;
+  transition: transform 0.7s ease-in-out;
+}
+
+.swiper-slide-active  {
+  transform: scale(1) !important;
+  transition: transform 0.7s ease-in-out;
+}
+
+</style>

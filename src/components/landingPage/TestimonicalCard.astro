@@ -16,7 +16,7 @@ interface TestimonialProps {
 const {image,quote,author,ctaText,ctaLink,imageFade=false,className} = Astro.props as TestimonialProps
 ---
 
-<div class=`overflow-hidden mt-l flex flex-row  max-md:flex-col max-md:h-auto ${className} flex-1 bg-white rounded-[35px] py-[16px] px-[30px]`>
+<div class=`overflow-hidden mt-l flex flex-row  max-md:flex-col max-md:h-auto ${className} flex-1 bg-white rounded-[35px] py-[16px] px-[30px] max-w-[510px]`>
     <!-- <div class='min-w-[34vw] max-md:w-[100%] max-md:min-h-[136px] bg-cover bg-center rounded-lg' style={{
       backgroundImage: `${imageFade ? 'linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%),' : ''} url(${image})`
     }}> -->

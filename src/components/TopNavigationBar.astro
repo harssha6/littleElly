@@ -23,11 +23,11 @@ const menu: Array<Menu> = [
     title: "Home",
     link: "/",
   },
-  {
-    title: "About Us",
-    link: "/about",
+  // {
+  //   title: "About Us",
+  //   link: "/about",
 
-  },
+  // },
   {
     title: "Centers",
     link: "/campus",
@@ -95,8 +95,10 @@ const shouldBeActive = (item, activePath) => {
         <img src={logo.src} alt="Ekam's Logo"  />
       </a>
     </div>
-    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0 bg-white border-[3px] border-[#F6BD60]	border-solid py-[19px] px-[48px] rounded-[5rem]"
+    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0 border-[3px] border-[#F6BD60]	border-solid py-[19px] px-[48px] rounded-[5rem]"
       style={{
+        background: 'rgba(253, 253, 253, 0.80)',
+
         boxShadow: "0px 3.24px 15px 0px rgba(0, 0, 0, 0.05)",
       }}
     >
@@ -117,7 +119,7 @@ const shouldBeActive = (item, activePath) => {
                     <a
                       href={item.link}
                       class:list={[
-                        "text-black font-semibold hover:underline font-sans",
+                        "text-black font-semibold hover:underline font-display uppercase",
                         shouldBeActive(item, activePath) && "!text-primary",
                       ]}
                     >
@@ -125,7 +127,7 @@ const shouldBeActive = (item, activePath) => {
                     </a>
                   ) : (
                     <span 
-                      class:list={["text-black font-semibold hover:underline font-sans",
+                      class:list={["text-black font-semibold hover:underline font-display uppercase",
                       shouldBeActive(item, activePath) && "!text-primary",
                     ]}
                     >
@@ -168,7 +170,7 @@ const shouldBeActive = (item, activePath) => {
                         <a
                           href={subitem.link}
                           class:list={[
-                            "text-black font-semibold hover:underline font-sans",
+                            "text-black font-semibold hover:underline font-display",
                             // subitem.link === activePath && '!text-primary'
                           ]}
                         >
@@ -185,8 +187,8 @@ const shouldBeActive = (item, activePath) => {
               <a
                 href={item?.link}
                 class:list={[
-                  "text-black hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-sans font-semibold",
-                  item.link === activePath && "!text-primary",
+                  "text-[#00204D] font-[300] hover:underline  mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-display uppercase font-semibold",
+                  item.link === activePath && "!text-primary !font-bold",
                 ]}
               >
                 {item.title}
