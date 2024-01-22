@@ -11,14 +11,15 @@ const { className } = Astro.props;
 
 <div
   class:list=`flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
-        max-md:p-m max-sm:items-start card bg-[#FEF7F9] p-[40px] ${className} overflow-hidden`
-  onclick="window.location.href='/admissions'"
+        max-md:p-m max-sm:items-start bg-[#FEF7F9] ${className} overflow-hidden pb-[60px]`
 
 >
-  <div class="flex justify-between w-full max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed max-sm:flex-col max-sm:isolate max-sm:overflow-hidden max-sm:relative overflow-hidden">
+  <div class="flex justify-between w-full card max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed max-sm:flex-col max-sm:isolate max-sm:overflow-hidden max-sm:relative overflow-hidden" 
+    onclick="window.location.href='/admissions'"
+  >
    <div class="flex flex-col px-xl py-l gap-[36px] basis-[45%]">
    
-    <Image src={logo} alt="logo" />
+    <Image src={logo} alt="logo" class="w-[150px]" />
     <Text type="h2" class="text-[#4E000D]">
       Admissions <br> Open <br> for <span class="text-primary">2023-24!!</span>
     </Text>

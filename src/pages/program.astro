@@ -21,14 +21,15 @@ import Flowers from "../image/decorations/flowers.png";
 import Flower from "../image/decorations/flower.png";
 import Rainbows from "../image/decorations/rainbows.png";
 import Student from "../images/student4.png";
+import DaycareFacilities from "./daycare-facilities.astro";
 
 const programData = [
     {
         title: 'Toddler',
         subtitle: 'Age criteria: 18 months +',
         image: program2,
-        titleClass: 'text-red-200',
-        subTitleClass: 'text-red-200 uppercase',
+        titleClass: 'text-[#EE7F82]',
+        subTitleClass: 'text-[#EE7F82]',
         subText: '(Adult to child ratio- 1:5)',
         desc: "The toddler curriculum at Little Elly is well structured and designed to encourage the holistic development of children who are in the process of rapid physical and cognitive development. The emphasis is on creating a supportive and engaging atmosphere for toddlers' growth and development through their critical years of learning.",
         skills: [
@@ -82,8 +83,8 @@ const programData = [
         decorationImage: Flowers,
     },
     {
-        title: 'LKG & UKG',
-        subtitle: 'age 4 & 5 Years +',
+        title: 'LKG',
+        subtitle: 'age 4 Years +',
         image: program5,
         titleClass: 'text-[#B892F9]',
         subTitleClass: 'text-[#B892F9]',
@@ -100,12 +101,12 @@ const programData = [
         decorationImage: Rainbows,
     },
     {
-        title: 'Daycare',
+        title: 'UKG',
         subtitle: 'age 5 Years +',
         image: program1,
         titleClass: 'text-[#F6BD60]',
         subTitleClass: 'text-[#F6BD60]',
-        desc: "Little Elly’s Toddler Headstart program focuses on nurturing young minds in a home-like environment, helping them discover their surroundings comfortably to kickstart their learning journey. We help children grow into confident explorers at their own pace, learning through tailored activities that nurture their language, math, and creativity.",
+        desc: "The UKG program at Little Elly focuses on building the foundational skills to prepare children to learn more advanced concepts and develop independent reading and writing skills. Here we create a supportive and stimulating learning environment and prepare them to build a strong foundation for formal schooling.",
         skills: [
           "Independent reading and writing skills ",
           "Mathematical concepts",
@@ -141,36 +142,27 @@ const programData = [
           <Text type="h2">
             Our  <span class="text-yellow">Programs</span>
       </div>
-      <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]">
+      <div slot="ctaButton" />
+      <!-- <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]">
         <Text type="h4" class="text-[#AF7F30] tracking-[2px] uppercase font-[700] font-sans text-[20px]">
           Apply Now
         </Text>
-      </Button>
+      </Button> -->
       </Hero>
     </div>
     <Section class="bg-[#FDF2E5]">
-      <div>
-        <Text type="h2" class="text-center">Our
-            <br />
-            <MultiStyleText
-                classes={["text-purple", "text-red-200", "text-green-200", "text-orange-200", "text-purple", "text-primary", "text-green-200", "text-orange-200"]}
-                text="Programs"
-            >
-
-            </MultiStyleText>
-        </Text>
-    </div>
-    <div class="flex flex-col gap-r mt-[100px]">
+    
+    <div class="flex flex-col gap-[60px] items-center">
       {
         programData.map((item, index )=> {
           return (
             <div>
               <div class="flex gap-xl max-sm:flex-col items-center">
-                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-h-[300px]`} src={item.image} alt="pro"/>
+                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-h-[300px] max-w-[300px]`} src={item.image} alt="pro"/>
                 <div class="flex flex-col">
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
                   <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] font-display`}>{item.subtitle}</Text>
-                  <Text type="base" class={`text-xl font-[700] font-display`}>{item.subText}</Text>
+                  <Text type="base" class={`text-xl text-black/70 font-[700] font-display`}>{item.subText}</Text>
   
                   <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-[160%] max-w-[62ch]`}>{item.desc}</Text>
                   <br />
@@ -181,7 +173,7 @@ const programData = [
                     item.skills && item.skills.map((skill) => {
                       return (
                       <div class="flex items-center gap-r">
-                        <Marker color="#EE7F82" />
+                      <Marker color={item.subTitleClass.replace('text-', '').replace('[', '').replace(']', '')} />
                         <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-[0]`}>{skill}</Text>
   
                         </div>
@@ -192,9 +184,9 @@ const programData = [
   
                 </div>
                 </div>
-                <div class={`${index % 2 == 0 ? 'ml-auto' : '' } w-fit p-r`}>
+               {/*  <div class={`${index % 2 == 0 ? 'ml-auto' : '' } w-fit p-r`}>
                   {item.decorationImage && <Image src={item.decorationImage} alt="bird" /> }
-                </div>
+                </div> */}
               </div>
 
           )
@@ -203,36 +195,7 @@ const programData = [
       
     </div>
    
-      <div class="text-[#FFF7F0] rounded-[50px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center mt-xl max-sm:flex-col-reverse">
-        <div class="basis-[50%]">
-          <Text type="h3" class="text-[#FF7162] !text-[35px]">Daycare Facility</Text>
-          <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>Our daycare facilities provide a child-friendly environment with a stimulating curriculum that includes various interest-focused activities for different age groups.</Text>
-          <br >
-          <div class="flex items-center gap-r">
-            <Marker color="#F6BD60" />
-            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Trained and competent staff</Text>
-          </div>
-          <div class="flex items-center gap-r">
-            <Marker color="#F6BD60" />
-            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Open door policy for parents
-            </Text>
-          </div>
-          <div class="flex items-center gap-r">
-            <Marker color="#F6BD60" />
-            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Headed by a visionary leadership team
-            </Text>
-          </div>
-          <div class="flex items-center gap-r">
-            <Marker color="#F6BD60" />
-            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Our 12-month academic year allows for <br /> admissions into the daycare at any point during <br /> the year.
-            </Text>
-          </div>
-        </div>
-        <div class="basis-[50%]">
-          <Image src={Student} alt="principle" class="object-contain max-h-[400px] max-sm:h-[200px]" />
-        </div>
-  
-      </div>
+<DaycareFacilities/>
     </Section>
     <GoToCta className="!bg-[#FDF2E5]" />
 
