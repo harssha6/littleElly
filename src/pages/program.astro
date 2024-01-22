@@ -165,8 +165,8 @@ const programData = [
         programData.map((item, index )=> {
           return (
             <div>
-              <div class="flex gap-xl">
-                <Image class={`${index % 2 !== 0 && 'order-1'} object-contain max-h-[300px]`} src={item.image} alt="pro"/>
+              <div class="flex gap-xl max-sm:flex-col items-center">
+                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-h-[300px]`} src={item.image} alt="pro"/>
                 <div class="flex flex-col">
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
                   <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] font-display`}>{item.subtitle}</Text>
@@ -203,7 +203,7 @@ const programData = [
       
     </div>
    
-      <div class="text-[#FFF7F0] rounded-[50px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center mt-xl">
+      <div class="text-[#FFF7F0] rounded-[50px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center mt-xl max-sm:flex-col-reverse">
         <div class="basis-[50%]">
           <Text type="h3" class="text-[#FF7162] !text-[35px]">Daycare Facility</Text>
           <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>Our daycare facilities provide a child-friendly environment with a stimulating curriculum that includes various interest-focused activities for different age groups.</Text>
@@ -229,7 +229,7 @@ const programData = [
           </div>
         </div>
         <div class="basis-[50%]">
-          <Image src={Student} alt="principle" class="object-contain max-h-[400px]" />
+          <Image src={Student} alt="principle" class="object-contain max-h-[400px] max-sm:h-[200px]" />
         </div>
   
       </div>

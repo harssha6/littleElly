@@ -108,13 +108,13 @@ const toppers = campusConfig?.toppers;
   <Events />
  <Section class="flex items-center flex-col gap-l">
     <Text type="h2" class="text-purple text-center">Centre <span class="text-red-200">Head</span></Text>
-    <div class="text-[#FFF7F0] rounded-[100px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center">
-      <div class="basis-[50%]">
+    <div class="text-[#FFF7F0] rounded-[30px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center  max-sm:flex-col">
+      <div class="basis-[50%] max-sm:order-1">
         <Text type="h3" class="text-primary">Mrs. Karishma</Text>
         <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>A child’s life is like a piece of paper on which every person leaves a mark. At Little Elly – Agara, Mrs Karishma believes in truly giving the quality and fun filled learning experience. With an Engineering degree, Mrs Karishma has lead Little Elly Preschool Agara branch with a vision to provide the best quality education to children and to make their foundation year’s fun filled and enriching. Her passion and dedication towards the Centre have made it one of the renowned centres in and around Agara.</Text>
       </div>
-      <div class="basis-[50%]">
-        <Image src={principlePhoto} alt="principle" class="object-contain max-h-[400px]" />
+      <div class="basis-[50%] max-sm:order-0">
+        <Image src={principlePhoto} alt="principle" class="object-contain max-h-[400px] max-sm:h-[200px]" />
       </div>
       <div></div>
 
@@ -126,8 +126,8 @@ const toppers = campusConfig?.toppers;
       <MultiStyleText text="HAPPY" classes={["text-purple", "text-blue", "text-green-200", "text-orange-200", "text-primary"]} />
       <br /><span class="text-primary">Curriculum</span>
     </Text>
-    <div class="flex gap-l items-center">
-      <Text type="base" class="flex-basis-[40%]" >
+    <div class="flex gap-l items-center max-sm:flex-col">
+      <Text type="base" class="flex-basis-[40%] order-2" >
         We often say <span class="text-primary font-bold">A Happy Child means Happy Family</span> because a 
         joyful child brings happiness to everyone around them. 
         A child's happiness is like sunshine, spreading warmth and positivity. 
@@ -152,7 +152,7 @@ const toppers = campusConfig?.toppers;
           </div>
         
       </Text>
-      <Image src={student1} alt={"student"} class="object-contain max-h-[400px] flex-basis-[60%]" />
+      <Image src={student1} alt={"student"} class="object-contain max-h-[400px] flex-basis-[60%] max-sm:h-[200px]" />
     </div>
  </Section>
   <GoToCta />

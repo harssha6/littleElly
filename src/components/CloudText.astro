@@ -9,13 +9,13 @@ const { text, img, className, title, subtitle, titleClass, subtitleClass, textHt
       loading="lazy"
       alt={"cloud"}
       src={img}
-      class="absolute h-full w-full  object-center inset-0"
+      class="absolute h-full w-full  object-center inset-0 max-sm:w-[90%] max-sm:h-[90%]"
     />
     <slot name="text">
-        <Text set:html={textHtml} type="h3" class="font-sans relative text-current text-center !text-[24px] !leading-8 !tracking-[2.62px] uppercase whitespace-nowrap">
+        <Text set:html={textHtml} type="h3" class="font-sans relative text-current text-center !text-[24px] !leading-8 !tracking-[2.62px] uppercase whitespace-nowrap max-sm:!text-base">
           {title}
         </Text>
-        <Text type="h2" class="!text-[40px] font-display relative text-current text-center font-black whitespace-nowrap">
+        <Text type="h2" class="!text-[40px] font-display relative text-current text-center font-black whitespace-nowrap  max-sm:!text-base">
           {subtitle}
         </Text>
     </slot>

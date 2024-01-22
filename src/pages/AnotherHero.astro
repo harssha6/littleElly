@@ -19,47 +19,50 @@ import Sun from "../image/decorations/sun.png"
 <!-- Pre-school -->
 <div class="flex pt-[130px] items-center w-full">
     <!-- title -->
-  <Image src={CloudImage} class="absolute top-0 left-0 w-[300px] h-[300px]" alt={"decoration"} />
-  <Image src={CloudLeft} class="absolute top-0 right-0 h-[700px]" alt={"decoration"} />
+  <Image src={CloudImage} class="absolute top-0 left-0 max-w-[300px] max-h-[300px] w-[40.5vw] h-[40.5vw]" alt={"decoration"} />
+  <Image src={CloudLeft} class="absolute top-0 right-0 max-h-[700px] max-sm:h-[74vw] max-sm:w-[34vw]" alt={"decoration"} />
   <!-- <div class="w-[100px] h-[300px] bg-red">
 sdfsdfsd
   </div> -->
-  <Image src={Olly} class="absolute left-[5%] top-[30%] object-contain h-[200px]" alt={"decoration"} />
-  <Image src={Monkey} class="absolute right-[5%] top-[30%] object-contain h-[200px]" alt={"decoration"} />
-  <Image src={Sun} class="absolute right-[7%] top-[16%] object-contain h-[100px] z-[-1]" alt={"decoration"} />
+  <Image src={Olly} class="absolute left-[5%] top-[30%] object-contain h-[200px] max-sm:h-[100px] max-sm:left-[1%] max-sm:top-[45%] w-auto" alt={"decoration"} />
+  <Image src={Monkey} class="absolute right-[5%] top-[30%] object-contain h-[200px] max-sm:h-[100px] w-auto max-sm:top-[45%]" alt={"decoration"} />
+  <Image src={Sun} class="absolute right-[7%] top-[16%] object-contain h-[100px] z-[-1]  max-sm:h-[50px] max-sm:right-[-1%]" alt={"decoration"} />
 
   <div class="flex items-center flex-col">
 
     <div class="flex flex-col items-center gap-s">
         <Text type="h2" class="text-center text-primary">
-            A Happy <br> <MultiStyleText style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}} text="Pre-school" class="text-primary"
-                classes={[
-                    "text-purple",
-                    "text-primary",
-                    "text-green-200",
-                    "text-yellow-200",
-                    "text-primary",
-                    "text-purple",
-                    "text-green-200",
-                    "text-yellow-200",
-                    "text-purple",
-                    "text-primary",
-                ]}
-            />
+            A Happy <br> 
+            <span style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}}>
+              <MultiStyleText  text="Pre-school" class="text-primary"
+                  classes={[
+                      "text-purple",
+                      "text-primary",
+                      "text-green-200",
+                      "text-[#F6BD60]",
+                      "text-primary",
+                      "text-purple",
+                      "text-green-200",
+                      "text-[#F6BD60]",
+                      "text-purple",
+                      "text-primary",
+                  ]}
+              />
+            </span>
         </Text>
-        <Text type="regular" class="text-red-800 font-[800] font-sans">
+        <Text type="regular" class="text-red-800 font-[800] font-sans text-center">
             Take your kid on an adventure of learning!
         </Text>
-        <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]" onclick=>
+        <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]" class="mt-r" >
           <a href="/admissions">
 
-            <Text type="h4" class="text-[#AF7F30] tracking-[2px] uppercase font-[700] font-sans text-[20px]">
+            <Text type="base" class="text-[#AF7F30] !tracking-[2px] uppercase font-[700] font-sans text-[20px]">
               Apply Now
             </Text>
           </a>
         </Button>
     </div>
-    <Image src={Student} class="w-[400px] object-contain mt-[30px]" alt={"student holds"} />
+    <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[80vw] max-sm:mt-[100px]" alt={"student holds"} />
     <div class="flex-col relative flex min-h-[522px] justify-center items-center px-16 py-12 max-md:px-5 w-screen bottom-[80px] z-[-1]">
         <Image src={Elephant} class="absolute left-[5%] top-[-20%] object-contain h-[150px] z-[9999]" alt={"decoration"} />
         <Image src={studentLeft} class="absolute right-[5%] top-[-20%] object-contain h-[200px] z-[9999]" alt={"decoration"} />

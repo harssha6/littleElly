@@ -22,27 +22,23 @@ const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro
       arrowsContainerClass
     ]}
   >
-      <div class="mt-[40px] flex justify-between w-[150px]">
+      <div class="mt-[40px] flex justify-between w-[100px]">
         <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-prev-button data-target={id}>
-          <div class="w-full h-full -scale-100 bg-[#333] text-white flex items-center justify-center rounded-full">
             <div class="relative left-[1px] ">
               <FilledArrowCircle
-              svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] bg-white rounded-full"}
+              svgClass={"w-full h-full bg-white rounded-full rotate-180"}
               color={"#FF7162"}
           />
               
-            </div>
           </div>
         </div>
         <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-next-button data-target={id}>
-          <div class="w-full h-full scale-100 bg-[#333] flex text-white items-center justify-center rounded-full">
-            <div class="relative left-[1px] rotate-180 text-white bg-white rounded-full" >
+            <div class="relative left-[1px] text-white bg-white rounded-full" data-next-button data-target={id} >
               <FilledArrowCircle
                   pathClass={"text-white"}
-                  svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}
+                  svgClass={"w-full h-full rotate"}
                   color={"#FF7162"}
             />
-            </div>
           </div>
           </div>
       </div>

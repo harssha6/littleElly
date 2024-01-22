@@ -84,16 +84,37 @@ const shouldBeActive = (item, activePath) => {
 
   return item.link === activePath || (!!submenuItem && !submenuItem.forceInactive)
 }
+
+const maxsm = (stringOfClasses) => {
+  const classess = stringOfClasses.split(' ')
+  return classess.map(c => `max-sm:${c}`).join(' ')
+}
 ---
 <div class="fixed z-[999]">
   
   <header
-    class="font-roundo w-screen m relative  py-1 pl-10 px-14 max-md:px-5 box-border flex flex-row justify-between items-center h-[130px]"
+    class=`font-roundo w-screen m relative  py-1 
+    pl-10 px-14 max-md:px-5 box-border flex flex-row 
+    justify-between items-center h-[130px] max-sm:h-[80px] 
+    max-sm:bg-white max-sm:mt-3 max-sm:w-[95vw]
+    max-sm:border-[3px] max-sm:border-[#F6BD60] max-sm:border-solid max-sm:py-[19px]
+    max-sm:px-[48px] max-sm:rounded-[5rem] max-sm:mx-[2.5vw] max-sm:px-[20px]
+    `
     >
     <div class="flex flex-row items-center">    
-      <a href="/" class="relative z-10 daisy daisy-fixed daisy-1 w-[195px] max-sm:w-[80%] max-sm:max-w-[260px] max-md:pl-4">
+      <a href="/" class="relative z-10 daisy daisy-fixed daisy-1 w-[195px] max-sm:w-[60%] max-sm:max-w-[260px] max-md:pl-4 max-sm:p-0">
         <img src={logo.src} alt="Ekam's Logo"  />
       </a>
+    </div>
+    <div class="max-md:block hidden">
+      <form autocomplete="off">
+        <div id="menuToggle">
+          <input class="menu-checkbox" type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </form>
     </div>
     <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0 border-[3px] border-[#F6BD60]	border-solid py-[19px] px-[48px] rounded-[5rem]"
       style={{
@@ -202,7 +223,7 @@ const shouldBeActive = (item, activePath) => {
   
     
   
-    <div class="mobileMenu absolute top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll bg-white" class="max-md:visible hidden">
+    <div class="mobileMenu fixed top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll bg-white" class="max-md:visible hidden">
       {menu.map(item => {
         if (item.submenu && item.submenu.length > 0) {
           return (
@@ -445,24 +466,24 @@ const shouldBeActive = (item, activePath) => {
         menu.classList.remove("visible");
       }, 50);
     });
-    // menu.addEventListener("mouseover", () => {
-    //   clearTimeout(removeTimeout);
-    // });
-    // menu.addEventListener("mouseout", () => {
-    //   // menu.classList.remove('visible')
-    // });
+    menu.addEventListener("mouseover", () => {
+      clearTimeout(removeTimeout);
+    });
+    menu.addEventListener("mouseout", () => {
+      menu.classList.remove('visible')
+    });
   });
 
   // mobile menu
   const menuToggle = document.querySelector("#menuToggle") as HTMLInputElement;
   const mobileMenu = document.querySelector(".mobileMenu") as HTMLDivElement;
 
-  // menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", () => {
 
-  //   mobileMenu.classList.toggle("visible");
+    mobileMenu.classList.toggle("visible");
 
-  //   document.querySelector('.menu-bar').classList.toggle('active')
-  // });
+    document.querySelector('.menu-bar').classList.toggle('active')
+  });
   const mobileMenuParents = document.querySelectorAll(
     ".mobileMenuParent"
   ) as NodeListOf<HTMLDivElement>;

@@ -75,8 +75,10 @@ import { Image } from "astro:assets";
     <Why  />
     <Program  />
     <Section class="p-[30px] px-[70px]">
-      <div class="text-[#FFF7F0] rounded-[50px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center">
-        <div class="basis-[50%]">
+      <div class="text-[#FFF7F0] rounded-[50px] flex
+        max-sm:flex-col
+        gap-l bg-[#FFF7F0] p-l justify-center items-center max-sm:p-r">
+        <div class="basis-[50%] max-sm:order-1">
           <Text type="h3" class="text-[#FF7162] !text-[35px]">Daycare Facility</Text>
           <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>Our daycare facilities provide a child-friendly environment with a stimulating curriculum that includes various interest-focused activities for different age groups.</Text>
           <br >
@@ -100,8 +102,8 @@ import { Image } from "astro:assets";
             </Text>
           </div>
         </div>
-        <div class="basis-[50%]">
-          <Image src={Student} alt="principle" class="object-contain max-h-[400px]" />
+        <div class="basis-[50%] max-sm:order-0">
+          <Image src={Student} alt="principle" class="object-contain max-h-[400px] max-sm:h-[200px]" />
         </div>
   
       </div>
