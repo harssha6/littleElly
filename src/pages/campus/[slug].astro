@@ -30,9 +30,9 @@ import config from "../../../config";
 import TopperCard from "../../components/TopperCard.astro";
 import Heading from "../../components/system/Heading.astro";
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
-import slide1 from "../images/slides/01.webp";
+// import slide1 from "../images/slides/01.webp";
 // import slide2 from "../images/slides/02.webp";
-import slide3 from "../images/slides/03.webp";
+// import slide3 from "../images/slides/03.webp";
 import slide4 from "../images/slides/04.webp";
 import slide5 from "../images/slides/05.webp";
 import transportBus from "../image/campus/transport.jpeg";
@@ -74,6 +74,14 @@ import Marker from "../../components/system/Marker.astro";
 
 const toppers = campusConfig?.toppers;
 
+import slide1 from "../../images/slides/1.png";
+import slide2 from "../../images/slides/2.png";
+import slide3 from "../../images/slides/3.png";
+
+
+import slide1MB from "../../image/slides/mb/special/1.png";
+import slide2MB from "../../image/slides/mb/special/3.png";
+import slide3MB from "../../image/slides/mb/2.png";
 
 
 const { slug = '' } = Astro.params
@@ -123,7 +131,9 @@ const page = pages.find(page => page.name === slug)?.page
         config={{ title: "Welcome to EKAM", bgImage: campus1 }}
         showSlide={true}
         slideImages={[
-          { slide: campusBG.src, position: "center 64%", type: "image" },
+          { slide: slide1.src, position: "center 64%", type: "image" },
+          { slide: slide2.src, position: "center 64%", type: "image" },
+          { slide: slide3.src, position: "center 64%", type: "image" },
         ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
@@ -167,7 +177,7 @@ const page = pages.find(page => page.name === slug)?.page
            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>{page?.centreHead.description}</Text>
          </div>
          <div class="max-sm:order-0 flex-shrink-0">
-           <Image src={page.centreHead.img} alt="principle" class="h-[400px] sm:h-[300px] object-cover object-center" width={400} height={300} />
+           <Image src={page.centreHead.img} alt="principle" class="h-[500px] sm:h-[300px] object-cover object-top" width={400} height={500} />
          </div>
          <div></div>
    

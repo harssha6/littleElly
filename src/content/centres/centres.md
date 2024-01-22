@@ -48,7 +48,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Padma R Singh
-                img: /images/subcenter/MsPadmaRSingh-AkshayaNagar-BegurRoad-CenterHead.jpg
+                img: /images/Centers/subcenter/MsPadmaRSingh-AkshayaNagar-BegurRoad-CenterHead.jpg
                 experience: 
                 description: |
                   Ms. Padma R Singh holds Masters in Science & Bachelor of Education.She’s been into teaching from past 25 years. Her fondness for children drove her to start a preschool.\nShe takes personal interest at school and works proactively everyday to cater to all areas with equal interest.
@@ -67,7 +67,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Karishma
-                img: /images/subcenter/agarahsrlayout-centerhead.jpg
+                img: /images/Centers/subcenter/agarahsrlayout-centerhead.jpg
                 experience: 
                 description: |
                   A child’s life is like a piece of paper on which every person leaves a mark. At Little Elly – Agara, Mrs Karishma believes in truly giving the quality and fun filled learning experience. With an Engineering degree, Mrs Karishma has lead Little Elly Preschool Agara branch with a vision to provide the best quality education to children and to make their foundation year’s fun filled and enriching.\nHer passion and dedication towards the Centre have made it one of the renowned centres in and around Agara.
@@ -87,7 +87,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Sreedevi Ravichand / Ms. Ekta Mitra
-                img: /images/subcenter/EktaMitra-Arekere-CenterHead.JPG
+                img: /images/Centers/subcenter/EktaMitra-Arekere-CenterHead.JPG
                 experience: 
                 description: |
                   The Center is led by Mrs. Ekta Mitra and Mrs. Sreedevi Ravichand have over a decade of experience each in the field of Early Childcare and Development.\nMrs. Ekta Mitra started her career as a lecturer and being a mom who thoroughly enjoyed the company of her kids, soon took up to her passion and started the “Little Elly” branches at Arekere and Nobo Nagar. To further pursue her interest in childcare, she also took up advance studies on Early Childhood Education and Counselling in Canada. She also won the best Entrepreneur Award in the year 2017.\nMrs. Sreedevi Ravichand started her career as a teacher and developed a passion for working with little children. She joined Little Elly in 2010 and has a decade of experience in Early Childcare and Development. She has worked in multiple capacities as a teacher and a co-ordinator.\nShe is also the recipient of the Best Co-ordinator award at LE for two years in a row.
@@ -215,7 +215,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Sobha B S
-                img: /images/subcenter/MsSobhaBS-Banashankari1stStage-Banashankari3rdStage-CenterHead.jpg
+                img: /images/Centers/subcenter/MsSobhaBS-Banashankari1stStage-Banashankari3rdStage-CenterHead.jpg
                 experience: 
                 description: |
                   My name is Sobha Shivashankar Bhat and I am basically a teacher. I did my Post graduation in science and B Ed in Science in 1994. I am also a rank holder of B Ed. In the Science group of my batch. I believe in creative teaching methodologies along with basic cultural foundation practices. I am very passionate about small children which made me to join the Little Elly family in the year 2011 to start a preschool in Banashankari 1st Stage and I started another center in Banashankari 3rd stage also. I am sure that I can train my students with the help of my skillful teachers’ team to give them a strong foundation. I feel happy and successful when I find my school parents happy about their experience at Little Elly..
@@ -324,7 +324,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Anusha C K
-                img: /images/subcenter/banashankari2ndstage-centerhead.jpg
+                img: /images/Centers/subcenter/banashankari2ndstage-centerhead.jpg
                 experience: 
                 description: |
                   Centre Head – BSK 2nd Stage ANUSHA C K, is a BE graduate. Her love for children encouraged her to give up her corporate career as a JAVA developer and pursue her passion. She has worked in various leadership positions during her carrier. Her passion to do something in early childhood education inspired her to be part of “LITTLE ELLY” family.\nShe has also worked significantly towards training many software engineers for continuous development. Having an expertise in art and craft she has been dedicated in refining policies and programs to ensure that the learning environment is more interactive and creative for children. As a person she has always been inclined towards doing something that helps the society in some way or the other.
@@ -343,7 +343,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Sobha B S
-                img: /images/subcenter/MsSobhaBS-Banashankari1stStage-Banashankari3rdStage-CenterHead.jpg
+                img: /images/Centers/subcenter/MsSobhaBS-Banashankari1stStage-Banashankari3rdStage-CenterHead.jpg
                 experience: 
                 description: |
                   My name is Sobha Shivashankar Bhat and I am basically a teacher. I did my Post graduation in science and B Ed in Science in 1994. I am also a rank holder of B Ed. In the Science group of my batch. I believe in creative teaching methodologies along with basic cultural foundation practices. I am very passionate about small children which made me to join the Little Elly family in the year 2011 to start a preschool in Banashankari 1st Stage and I started another center in Banashankari 3rd stage also. I am sure that I can train my students with the help of my skillful teachers’ team to give them a strong foundation. I feel happy and successful when I find my school parents happy about their experience at Little Elly..
@@ -362,7 +362,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Ruby Shankar
-                img: /images/subcenter/basavanagar-centerhead.jpg
+                img: /images/Centers/subcenter/basavanagar-centerhead.jpg
                 experience: 
                 description: |
                   Ms. Ruby Shankar, center Head Basavanagar, for the past 6 years, holds an MA MPhil degree in English Literature alongside her post graduate Diploma in computer application and Diploma in Sanskrit. She is a classical dancer and has had an exceptionally successful career for over 12 years in the field of teaching.\nHer compassion towards children has always motivated her to explore a new dimension. Last year has taken up a second franchise for the same brand at CV Raman Nagar and also started the LETTER Training program, a yet another successful vertical of Learning Edge.
@@ -580,7 +580,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Antony Mala
-                img: /images/subcenter/AntonyMala-Basaveshwarnagar-CenterHead.jpg
+                img: /images/Centers/subcenter/AntonyMala-Basaveshwarnagar-CenterHead.jpg
                 experience: 
                 description: |
                   Active person likes to create an environment where the kids can experience what reality is.\nShe holds Masters in History and Archaeology, and MPhil degree alongside B.Ed in English and Social Science. She has wide experience as a Lecturer. She loves exploring different fields, 5 years of experience as News Anchor in ETV Kannada, worked as freelance News Reader in FM Rainbow and AIR and also worked as Medical Transcriptionist.\nShe is dedicated in enabling growing young minds to achieve their goals; she looks forward in shaping young minds and make a difference in the lives of the kids.
@@ -689,7 +689,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Padma R Singh
-                img: /images/subcenter/MsPadmaRSingh-AkshayaNagar-BegurRoad-CenterHead.jpg
+                img: /images/Centers/subcenter/MsPadmaRSingh-AkshayaNagar-BegurRoad-CenterHead.jpg
                 experience: 
                 description: |
                   Ms. Padma R Singh holds Masters in Science & Bachelor of Education. She’s been into teaching from past 25 years. Her fondness for children drove her to start a preschool.\nShe takes personal interest at school and works proactively everyday to cater to all areas with equal interest.
@@ -718,7 +718,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Dr. Shamala H.S
-                img: /images/subcenter/bellandur-centerhead.jpg
+                img: /images/Centers/subcenter/bellandur-centerhead.jpg
                 experience: 
                 description: |
                   Qualification: MBBS Work Experience: Worked at Dr.Ambedkar Medical college as a lecturer.
@@ -756,7 +756,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. NAGASHREE PATTABHI
-                img: /images/subcenter/BTM-layout-center-head.jpg
+                img: /images/Centers/subcenter/BTM-layout-center-head.jpg
                 experience: 
                 description: |
                   Nagashree Pattabhi is currently a practitioner of preschool education, child counseling and parent counseling with 18 years of experience. She holds a Masters degree in Commerce from Bangalore University.\nNagashree took up the franchise of Little Elly Preschool in 2007 and has been running the same successfully. She is the first franchisee of Little Elly chain of preschools.\nAlongside her passion for children, Nagashree also actively pursues her interest in music by being involved in classical and semi-classical music events in her community.
@@ -794,7 +794,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Shobha Rajan
-                img: /images/subcenter/Shoba-new-new1.jpg
+                img: /images/Centers/subcenter/Shoba-new-new1.jpg
                 experience: 
                 description: |
                   Shobha Ranjan holds a degree in Fashion Designing from NIFT – Delhi, and her passion in art and designing persuaded her to do a graphic designing course from Colorado University, USA. She has been associated with “Little Elly” for the last 3 years, and her skills in designing, leads to creative learning with fun for kids. She has a good track record in delivering high quality care for kids.
@@ -900,7 +900,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Shilpa Kurian
-                img: /images/subcenter/gottigere-centerhead.jpg
+                img: /images/Centers/subcenter/gottigere-centerhead.jpg
                 experience: 
                 description: |
                   Shilpa has done her Bachelors in business management and Masters in international business. She is running the centre since 2015.
@@ -919,7 +919,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs.Priyadarshini R
-                img: /images/subcenter/gubbalala-centerhead.JPG
+                img: /images/Centers/subcenter/gubbalala-centerhead.JPG
                 experience: 
                 description: |
                   Mrs.Priyadarshini R, holds a Masters degree in Business Administration from Bangalore University with a specialization in Human Resource Management. With a true passion to work with the youngest learners, she stepped aside from her career of  8+ yrs  as HR manager.  Helping children progress in all areas of development is a challenge she honors to accept daily. With a will to keep rediscovering herself, she would like to use all her varied experience and boundless energy to head the Gubbalala branch and strive to create a community of learners that nurtures growth in a positive and fun environment..
@@ -976,7 +976,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms Ummal Jamal
-                img: /images/subcenter/hbr-layout-center-head-photo.jpg
+                img: /images/Centers/subcenter/hbr-layout-center-head-photo.jpg
                 experience: 
                 description: |
                   Ms Ummal Jamal is a dynamic educational professional with more than 10 years of experience in Administration, Human Resources and various Leadership roles. She has a bachelor in commerce and is deeply passionate about providing high-quality education, both in and outside the classroom, to ensure the students have the best possible chances of success both while at school and in the future. She believes every child has a unique talent, so she works to improve teaching methodologies accordingly. She executes activity-based curriculum in the best way with a highly experienced, qualified and effective teaching team. Her passion for child care and love for children has made her a part of Little Elly Preschool.
@@ -1010,7 +1010,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Deepthi R S
-                img: /images/subcenter/hoodi-centerhead.jpg
+                img: /images/Centers/subcenter/hoodi-centerhead.jpg
                 experience: 
                 description: |
                   Deepthi R.S holds a Master’s Degree in Business Management, and a certified Handwriting Analyst. Her dream of working with children and love and desire to make a real difference in the lives of young children, a true passion for education came true with the opportunity of taking up the franchise of “Little Elly”.\nShe believes that the main characteristics in a preschool are Patience, Compassion, Confidence, Innovation & Making learning fun. Her goal is to make the very first step out of home for the little ones a warm welcome to the world of Education!
@@ -1054,7 +1054,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Praveena Devarapu
-                img: /images/subcenter/PraveenaLE-Horamavu-CenterHead.jpeg
+                img: /images/Centers/subcenter/PraveenaLE-Horamavu-CenterHead.jpeg
                 experience: 
                 description: |
                   I am Praveena and I am engaged with Child Education, Child Care and Child Management activities from 2009 and hence boasting an experience of 14 years.\nWork Experience:\nWorked as a part-time employee with Little Elly as a Day-Care Coordinator for 2 years.\nWorked with Blueberry Kidz Early Learning Centre as a Preschool Coordinator for 5.5 years.\nRunning my own Pre-school and Daycare Centre in Deva Matha Central School, inside the school campus from 2018.
@@ -1111,7 +1111,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Judith V Mammen
-                img: /images/subcenter/indiranagar-centerhead.jpg
+                img: /images/Centers/subcenter/indiranagar-centerhead.jpg
                 experience: 
                 description: |
                   We believe that –“Joy is at the heart of everything we do”. Holding a postgraduate in Literature and Management, they have over 15yrs of experience in the field of education and service. They are passionate about working with young minds and unlocking the child’s potential through creative, stimulating and dynamic channels.
@@ -1140,7 +1140,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms Monika D Senthil
-                img: /images/subcenter/isrolayout-centerhead.jpg
+                img: /images/Centers/subcenter/isrolayout-centerhead.jpg
                 experience: 
                 description: |
                   Ms Monika D Senthil holds a degree in MBA. She has been the head of Operations in hospital care and hones a decades experience in Human Resource Management .She has a zeal for service to  community. And thus she has taken the  initiative in shaping young minds and involved herself in Nation Building work. She has been heading the Little Elly center, ISRO layout for the past 4 years. With her natural prowess to lead a team , she sees to it that her team works in tandem and harmony  in helping the tiny tots discover their skills and excel in phenomenal ways. Alongside management she enjoys  teaching the lower kindergarten kids. Sympathetic  and stern are her two faces , as she believes discipling the kids plays a key role in grooming them while imparting early education. Her great interpersonal skills makes her a success amongst all the stakeholders.
@@ -1171,7 +1171,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Sharadha Shivshankar
-                img: /images/subcenter/jakkur-centerhead.jpg
+                img: /images/Centers/subcenter/jakkur-centerhead.jpg
                 experience: 
                 description: |
                   Sharada ShivShankar is a postgraduate from Bangalore University as well as from Rajasthan University. She has taught in reputed public schools as a TGT Social science and English teacher in major metro cities across India and has 25 years of teaching experience. She has also worked as HOD of Social science and as Head Examiner in a reputed C.B.S.E school. She is adept at best teaching practices and has a passion for teaching. She is well versed in the art of child development and psychology.
@@ -1309,7 +1309,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Rajalakshmi Visweswaran
-                img: /images/subcenter/kudlu-centerhead.jpg
+                img: /images/Centers/subcenter/kudlu-centerhead.jpg
                 experience: 
                 description: |
                   A native of Chennai, having a Hospitality background, her passion towards children got her into what she is currently doing. Mrs. Rajalakshmi Visweswaran has been a successful preschool educationist for more than a decade now. Having centres in Bangalore and Chennai, She has the inbuilt drive, ability and enthusiasm which has helped her in maintaining a positive approach to her work and spread the joy of learning among the little scholars. Her approach towards teaching is – show immense love to children, so that teaching becomes a joyful experience and learning becomes fun for the children.
@@ -1348,7 +1348,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Nazneen.N
-                img: /images/subcenter/NazneenN-Mahadevpura-CenterHead.jpg
+                img: /images/Centers/subcenter/NazneenN-Mahadevpura-CenterHead.jpg
                 experience: 
                 description: |
                   Mrs. Nazneen N is a post graduate in business studies with 5 years of corporate experience in Human Resources. Through her own experience, she discovered her interest in early education 7 years back and has immediately given wings to her aspirations of entrepreneurship since 2012. She believes that early education years are a crucial phase for a childs’ development as the impression that a child makes in a preschool lasts a lifetime.
@@ -1397,7 +1397,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Lakshmi Sirish
-                img: /images/subcenter/narayananagar-centerhead.jpg
+                img: /images/Centers/subcenter/narayananagar-centerhead.jpg
                 experience: 
                 description: |
                   Lakshmi Sirish is a postgraduate with vast experience in teaching. She has been a lecturer at VHD college for women.\nFor the past ten years she has successfully managed Corporate Day Care Centre. Her passion and dedication has helped her build a great rapport with children and immense respect from parents.
@@ -1439,7 +1439,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Sreedevi Ravichand / Ms. Ekta Mitra
-                img: /images/subcenter/nobonagar-centerhead.jpg
+                img: /images/Centers/subcenter/nobonagar-centerhead.jpg
                 experience: 
                 description: |
                   The Centre is led by Mrs. Ekta Mitra and Mrs. Sreedevi Ravichand who have over a decade of experience each in the field of “Early Childcare and Development”.\nMrs. Ekta Mitra started her career as a lecturer and being a mom who thoroughly enjoyed the company of her kids, soon took up to her passion and started “Little Elly” branches at Arekere and Nobo Nagar. To further pursue her interest in childcare, she also took up advance studies on “Early Childhood Education” and “Counselling” in Canada. She also won the best Entrepreneur Award in the year 2017.\nMrs. Sreedevi Ravichand started her career as a teacher and developed a passion for working with little children. She joined “Little Elly” in 2010 and has a decade of experience in Early Childcare and Development. She has worked in multiple capacities as a teacher and Co-Ordinator.\nShe is also the recipient of the “Best Co-Ordinator” award at “Little Elly” for two years in a row.
@@ -1481,7 +1481,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Rinku Jha
-                img: /images/subcenter/padmanabhanagar-centerhead.jpg
+                img: /images/Centers/subcenter/padmanabhanagar-centerhead.jpg
                 experience: 
                 description: |
                   My name is Rinku Jha and I am a teacher and an artist. I have extensive experience in teaching and was a part of the Kumarans school for more than 15 years. I have also been running supplementary education and hobby classes for K12 students for more than a decade.\nIn my experience I have learnt that the earlier a holistic approach to a child’s education is undertaken, the better the results.Because of this and my varied experience of providing all round development to kids, I am now excited to partner with Little Elly to provide top notch education to pre nursery kids. I am sure that with my passion and experience along with Little Elly’s expertise, we will deliver the best for our kids.
@@ -1500,7 +1500,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Poonam Joshi
-                img: /images/subcenter/pailayout-centerhead.jpg
+                img: /images/Centers/subcenter/pailayout-centerhead.jpg
                 experience: 
                 description: |
                   Ms. Poonam Joshi started “Little Elly” preschool Pai layout branch with a vision to provide the best quality education to children and to make their foundation years fun filled and enriching. Her passion and dedication towards the Centre have made it one of the renowned centres of “Little Elly” chain of preschools. With her deep understanding of the early childhood needs to be mixed with her natural desire to empower herself, she comes across as a woman with great entrepreneur skills and a woman of substance. Strive to excel and Deliver Quality are her mottos which she has successfully imbibed in all those who work with her.
@@ -1543,7 +1543,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Rashmi Devi C J
-                img: /images/subcenter/RR_Nagar_CenterHead_Photo.jpeg
+                img: /images/Centers/subcenter/RR_Nagar_CenterHead_Photo.jpeg
                 experience: 
                 description: |
                   Rashmi, Centre Head of Little Elly, RR Nagar, with an M.Sc. and B.Ed. degree, worked in ICSE and CBSE boards with an experience of more than 15 years. \nMy passion towards education and my affection for kids made me start a preschool. I prioritize by giving the safest and the best learning environment to our little ones, which keeps the parents stress-free. In love with the innocence of kids, I focus on a child's needs, their uniqueness, comfort, and make learning fun. \nMy Goal is to make the journey of our little ones be the best and fun-filled.
@@ -1620,7 +1620,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Usha Gudi
-                img: /images/subcenter/tavarekere-centerhead.jpg
+                img: /images/Centers/subcenter/tavarekere-centerhead.jpg
                 experience: 
                 description: |
                   Ms. Usha Harish Gudi started “Little Elly” preschool Tavarekere branch with a vision to provide the best quality education to children and to make their foundation years fun filled and enriching. Her passion and dedication towards the Centre have made it one of the renowned centre’s of “Little Elly” chain of preschools. With her deep understanding of the early childhood needs to be mixed with her natural desire to empower herself, she comes across as a woman with great entrepreneur skills and a woman of substance. Strive to excel and Deliver Quality are her mottos which she has successfully imbibed in all those who work with her.
@@ -1702,7 +1702,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mr. Maheshwar. B
-                img: /images/subcenter/yelahankanewtown-centerhead.jpg
+                img: /images/Centers/subcenter/yelahankanewtown-centerhead.jpg
                 experience: 
                 description: |
                   Having mission to give better education to tiny tots, Mr. Maheshwar started “Nandi Education Trust” with like-minded people. He is basically a Postgraduate in Science with about 18 years of experience in life science industry. The triggering point which made him to take up this preschool is to strengthen the child’s potential by identifying their own true potential and converting them into a right direction for the future life. And also the dynamics and diverse aspects of early childhood education and care made him to think a lot. He loves children and likes to spend time with them.
@@ -1731,7 +1731,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: TINA CHOWDHURY NEGI
-                img: /images/subcenter/Tinachowdhury-CH.jpg
+                img: /images/Centers/subcenter/Tinachowdhury-CH.jpg
                 experience: 
                 description: |
                   Ms Tina Chowdhury  Negi is an Accounts and Marketing graduate with specialization in Business Administration and Communications from Calcutta University. She has been further groomed on the nuances of business administration as an entrepreneur and as Director in Science & Management College, and Dental College in Kolkata. She has always been active on various social initiatives like cultural coordination amongst neighbourhood communities in Bengaluru, volunteering for the local disaster management teams and hospitals during COVID outbreak and various NGOs for child care, support and upliftment. With a will to keep rediscovering herself, she would like to use all her varied experience and boundless energy to Head, Little Elly, Panathur branch and make a difference in the field of early education and grooming of young kids, which are the future of our nation.
@@ -1750,7 +1750,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Kalpana Veeradhi
-                img: /images/subcenter/Kalpana-Veeradhi-CH.jpg
+                img: /images/Centers/subcenter/Kalpana-Veeradhi-CH.jpg
                 experience: 
                 description: |
                   She took over management of “Little Elly” JP Nagar 7th Phase from December 2015. She is a Montessori trained teacher with 10- 12 years of experience. She was successfully running a Montessori school prior to taking over “Little Elly”
@@ -1788,7 +1788,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Hemalatha
-                img: /images/subcenter/Hemalatha-CH.jpg
+                img: /images/Centers/subcenter/Hemalatha-CH.jpg
                 experience: 
                 description: |
                   Hemalatha K is a passionate early childhood education Teacher/Counsellor with experience in a few of the leading Preschools in Bangalore. Proficient and well-trained in handling the Preschool goers and adept in many renowned educational philosophies, aimed at supporting a child academically, emotionally, and socially by nurturing and prospering them to face the real world. With an immense passion and with a great intent to serve and expand her horizon, she just stepped into a new role as “KR Puram Centre-Head” for the prestigious and one of the leading Concept Preschools “Little-Elly”.
@@ -1826,7 +1826,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Kavitha
-                img: /images/subcenter/Kavitha-CH.jpg
+                img: /images/Centers/subcenter/Kavitha-CH.jpg
                 experience: 
                 description: |
                   Highly experienced & passionate about working with children. Fostered strong relationships with children as well as parents through communication, flexibility, patience and creativity.
@@ -1882,7 +1882,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Beena Robin
-                img: /images/subcenter/basavanpura-centrehead.jpeg
+                img: /images/Centers/subcenter/basavanpura-centrehead.jpeg
                 experience: 
                 description: |
                   Ms. Beena Robin is a mother, an academician, and a storyteller. She is a scholar from the Regional Institution of Education, an ex Delhi Public School faculty member, and the franchise owner of Abacus ProLearn. She is actively working in developing young minds as Center Head for India’s favorite chain of preschools, Little Elly, Gottigere. She is passionate about cultivating a child’s potential through creative and lateral thinking.
@@ -1941,7 +1941,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Rashmi Dheeraj
-                img: /images/subcenter/ashoknagar-centerhead.jpg
+                img: /images/Centers/subcenter/ashoknagar-centerhead.jpg
                 experience: 
                 description: |
                   Mrs. Rashmi Dheeraj, Centre Head of Ashok Nagar Mangalore, love for children encouraged her to pursue her passion. She is also a certified Art Educator and has been associated with children from the last 6 years. She is a very proactive and enterprising person. Her love for children made her start a preschool, as she believes that preschool is very important in child’s life as it helps children to strengthen their social and emotional development. It also helps them to gain a sense of self worth and build self-confidence. As a person she has always believed and been inclined towards doing something that helps the society in some way or the other.
@@ -1979,7 +1979,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Rashmi Dheeraj
-                img: /images/subcenter/kadri-centerhead.jpg
+                img: /images/Centers/subcenter/kadri-centerhead.jpg
                 experience: 
                 description: |
                   Mrs. Rashmi Dheeraj, Centre Head of Kadri Mangalore, her love for children encouraged her to pursue her passion. She is also a certified Art Educator and has been associated with children for the last 6 years. She is a very proactive and enterprising person. Her love towards children made her to start a preschool, as she believes that preschool is very important as it helps children to strengthen their social and emotional development. It also helps them to gain a sense of self worth and build self-confidence. As a person, she has always believed and been inclined towards doing something that helps society in some way or the other. 
@@ -1998,7 +1998,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Kavitha B Das
-                img: /images/subcenter/kuthar-centerhead.jpg
+                img: /images/Centers/subcenter/kuthar-centerhead.jpg
                 experience: 
                 description: |
                   Mrs. Kavitha .B. Das  holds a B.Sc. B. Ed degree, having a rich experience of almost three decades in the field of education including 18 years of diverse experience in CBSE, Gulf  Board from Sultanate of Oman. She began her own school in 2011 named “Progressive Kids Garden” at Kuthar, Mangalore and teamed up with “Little Elly” Group since 2017.\nShe believes in the thought, “Service to the kids is service to the Nation”. Henceforth she has dedicated her entire career into Primary Education.
@@ -2019,7 +2019,7 @@ centers:
               centreHead:
                 title: Center Head
                 name: Dr. Lakshmi Ravi
-                img: /images/subcenter/gokulam_CenterHead.jpg
+                img: /images/Centers/subcenter/gokulam_CenterHead.jpg
                 experience: 
                 description: |
                   Dr. Lakshmi Ravi is a medical doctor who did her schooling and college in Bombay. She worked in various hospitals initially in her career.  Her passion for working with children prompted her to take up the Little Elly franchise.  She believes that a happy and secure child learns faster and better and associates learning with fun and hence she strives to create a happy and warm environment at school.
@@ -2038,7 +2038,7 @@ centers:
               centreHead:
                 title: Center Head and Coordinator
                 name: Ms. Sushma S P
-                img: /images/subcenter/hebbal_CenterHead_Coordinator.jpeg
+                img: /images/Centers/subcenter/hebbal_CenterHead_Coordinator.jpeg
                 experience: 
                 description: |
                   I’m a BE computer Science MBA graduate. The passion of working with kids has made me quit my IT profession and start off this preschool. I believe that activity-based learning is one of the best ways to teach our little ones; the activities involved in the curriculum made me get associated with LittleElly. I want to provide a fun based and safe learning system to the little ones in and around, so that kids get perfect on what they are learning.  Giving our kids the best environment and exposure leads to a better tomorrow.
@@ -2057,7 +2057,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Hajira Sultana
-                img: /images/subcenter/kalyangiri-centerhead.jpg
+                img: /images/Centers/subcenter/kalyangiri-centerhead.jpg
                 experience: 
                 description: |
                   Holds a Masters in Business Administration (MBA) from the Mysore University. Her penchant for mentoring young children in the family in their school projects and co-curricular activities motivated her to explore the talent further. The much needed push in the educational field came through her tie up with schools for International speech and drama classes. What started off as a hobby soon turned into a passion when the entrepreneur in her decided on starting her own preschool.\nEducation is one among the sectors most affected by the Covid pandemic, and closure of schools have caused damage that is difficult to repair. In such a challenging scenario, Hajira was determined to set up the preschool. This is when she decided on going for a franchise with Little Elly.\nHajira carries a rich work experience as a successful Human Resource personnel before foraying into the educational field. A thorough professional, Hajira always believes in hard work, executing her imagination, and enjoying whatever she does. She also enjoys driving, making friends, travelling and cooking.
@@ -2076,7 +2076,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Shilpa Akshaya
-                img: /images/subcenter/ramakrishnanagar-centerhead.jpg
+                img: /images/Centers/subcenter/ramakrishnanagar-centerhead.jpg
                 experience: 
                 description: |
                   Ms. Shilpa Akshaya is centre Head and Co-Ordinator of Ramakrishna Nagar, Mysore. She holds master’s degree in Law. Her love towards children made her start a preschool. She believes that preschools are very important and helps children to strengthen their social and emotional skills. Her intention is to provide an environment for children to explore, gain a sense of self, play with peers and build self-confidence.
@@ -2137,7 +2137,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs Rajeswari
-                img: /images/subcenter/alapakkam-centerhead.jpeg
+                img: /images/Centers/subcenter/alapakkam-centerhead.jpeg
                 experience: 
                 description: |
                   Mrs Rajeswari is a Passionate teacher who has been teaching for more than 15 years. This enthusiastic passion for teaching children has driven her into the endeavour of “Preschool Education”. She has been working with young minds for more than a decade and the rich experience has given her a huge success in this profession. She has created a benchmark In moulding children towards holistic development. She strongly believes that the foundation of good health is to be laid during preschool age. This vision of nurturing kids with all the elements into becoming responsible citizens is what Rajeswari, strives for.
@@ -2190,7 +2190,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Meenakshi
-                img: /images/subcenter/chitlapakkam-centerhead.jpg
+                img: /images/Centers/subcenter/chitlapakkam-centerhead.jpg
                 experience: 
                 description: |
                   M.Com and Montessori in early childhood education. I am a soft-spoken person and love teaching kids to the core. My experience as a kindergarten school teacher and doing a professional course in Montessori made me realize the impact of Montessori methodologies in Kids cognitive development. With my strong administrative skills, deep rooted clear work ethics, I lead a team of enthusiastic teachers and staff who work together to cater to all parents needs to deliver world-class early childhood education for each and every child in a classroom. I believe that each kid is unique and has to be handled differently.
@@ -2247,7 +2247,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Mahalaskhmi Jayaprakash
-                img: /images/subcenter/pallavaram-centerhead.jpg
+                img: /images/Centers/subcenter/pallavaram-centerhead.jpg
                 experience: 
                 description: |
                   Ms. Mahalaskhmi Jayaprakash with her prior practice in Preschools started LITTLE ELLY PALLAVARAM to provide standard & quality education in a fun-filled method which turns into a stable platform for children to approach the future world. Her concrete vision of prospective educational requirements has turned the school in a very short span into an outstanding preschool of the area. Being an innovative person who is passionate and hardworking, she has the curiosity to reveal potential niche opportunities.
@@ -2296,7 +2296,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Mrs. Krupashankri
-                img: /images/subcenter/perambur-centrehead.jpg
+                img: /images/Centers/subcenter/perambur-centrehead.jpg
                 experience: 
                 description: |
                   Mrs Krupashankari, who heads the Perambur center in Chennai, is a commerce graduate, strong in academics and an enthusiast in sports cum extra-curricular activities. She started her career in a global bank and in parallel honed her skills towards coaching kids as she felt “one of the ways to serve the society can be done through grooming the young minds” – not only through imparting knowledge but also educating them on the values, ethos, discipline and respect to others. She got herself certified in Montessori and early childhood education and post which worked as a Kindergarten Teacher in a reputed school before pursuing her dream to lead a pre-school as Director and decided to ensue through the franchisee model with most reputed pre-school chain Little Elly.
@@ -2405,7 +2405,7 @@ centers:
               centreHead:
                 title: Center Head
                 name: Sandhiya
-                img: /images/subcenter/Sandhiya_centerHead.jpeg
+                img: /images/Centers/subcenter/Sandhiya_centerHead.jpeg
                 experience: 
                 description: |
                   This is Sandhiya, born and brought up in Chennai. At Hindustan University I have graduated with MSW psychiatry. Worked with multiple NGOs as counselors. Mother of Magizh Maaran (2 years). Hobbies Reading books and listening to music. Good at interacting with kids.
@@ -2428,7 +2428,7 @@ centers:
               centreHead:
                 title: Center Head
                 name: Ms. Pooja
-                img: /images/subcenter/balewadi_CenterHead.jpeg
+                img: /images/Centers/subcenter/balewadi_CenterHead.jpeg
                 experience: 
                 description: |
                   I have been involved with early childcare and education for more than 10 years, a bulk of which has been with this lovely organization, Little Elly. Have always liked little children around me apart from being curious observers of various interesting stages through which they grow. Have realized that to be a good teacher, one has to be a keen observer. Association with this field has taught me things like patience, listening skills and human relations.
@@ -2447,7 +2447,7 @@ centers:
               centreHead:
                 title: Center Head
                 name: Ms. Debjani
-                img: /images/subcenter/wagholi_CenterHead.jpg
+                img: /images/Centers/subcenter/wagholi_CenterHead.jpg
                 experience: 
                 description: |
                   My name is Debjani and I come with an experience of over 13 years in pre-primary education. I am also a skilled Indian Classical dancer with a number of stage performances to my credit. I’ve always felt driven to be a pre-primary school educator and it gives me a great sense of pride to be able to facilitate the growth and development of young children. I am extremely passionate and continuously look forward to honing my teaching skills as I work with young minds at school. It is this passion and enthusiasm that has motivated me to build my own set up at Little Elly Wagholi. Through this new setup of ours, I will strive to bring out the best of my experience and abilities and be able to act as a guiding light for the little ones.
@@ -2487,7 +2487,7 @@ centers:
               centreHead:
                 title: Center Head
                 name: Ms. Jyothi Shetty
-                img: ../../../../assets/images/Centers/mumbai_CenterHead.jpeg
+                img: /images/Centers/mumbai_CenterHead.jpeg
                 experience: 
                 description: |
                   Every child should be educated, happy and most importantly loved. Jyoti has always felt very strongly about that. While working out of India she assisted in schools whenever she had some time free from her actual job and that is where her passion for teaching in a fun way came about.\nMaking sure that every child is learning, happy and safe in the preschool space is of utmost importance to her. She believes Little Elly provides all of that and more.
