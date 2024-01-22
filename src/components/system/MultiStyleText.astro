@@ -8,9 +8,8 @@ let styles = [
   { color: 'pink' }    // style for 'o'
 ];
 ---
-
-  {text.split('').map((letter, index) => (
-    <span class={classes[index]}>
-      {letter}
-    </span>
-  ))}
+{text.split('').map((letter, index) => (
+  <span class={classes[index]}>
+    {letter}
+  </span>
+))}
