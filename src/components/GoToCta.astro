@@ -11,10 +11,11 @@ const { className } = Astro.props;
 
 <div
   class:list=`flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
-        max-md:p-m max-sm:items-start card bg-[#FEF7F9] p-[40px] ${className}`
+        max-md:p-m max-sm:items-start card bg-[#FEF7F9] p-[40px] ${className} overflow-hidden`
   onclick="window.location.href='/admissions'"
+
 >
-  <div class="flex justify-between w-full max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed max-sm:flex-col max-sm:isolate max-sm:overflow-hidden max-sm:relative">
+  <div class="flex justify-between w-full max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed max-sm:flex-col max-sm:isolate max-sm:overflow-hidden max-sm:relative overflow-hidden">
    <div class="flex flex-col px-xl py-l gap-[36px] basis-[45%]">
    
     <Image src={logo} alt="logo" />
