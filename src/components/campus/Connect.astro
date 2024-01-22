@@ -20,42 +20,19 @@ interface Campus {
   mapEmbedLink: string;
 }
 
-// const { 
-//     details,
-//     mapEmbedLink = "s"
-//   } = Astro.props as Campus
-
-const details = {
-  phoneNo: {
-    label: "Call us On",
-    value: "+91 9900077180, +91 9900077181",
-    type: "contact",
-  },
-  mail: {
-    label: "Mail us at",
-    value: "For enquiries: edifyspoc@gmail.com",
-    type: "mail",
-  },
-  address: {
-    label: "We are here",
-    value:
-      "#388/0, 6th Main Cross, 14th Cross, Sector C, Surya Nagar Phase 2, Anekal Chandapura Main Road, Electronic City, Bengaluru, Karnataka 562106",
-    type: "address",
-  },
-  workingHours: {
-    label: "Working Hours",
-    value:
-      "Mon-Sat 8:30 AM to 4:00 PM",
-    type: "time",
-  },
-}
+const { 
+    details,
+    mapEmbedLink = ""
+  } = Astro.props as Campus
 
 
-const mapEmbedLink = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124473.81699496626!2d77.57988053690653!3d12.855752943284935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6e9686b28fdd%3A0x82510ac506e21268!2sEdify%20School%20Electronic%20City!5e0!3m2!1sen!2sin!4v1695826162555!5m2!1sen!2sin'
+
+// const mapEmbedLink = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124473.81699496626!2d77.57988053690653!3d12.855752943284935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6e9686b28fdd%3A0x82510ac506e21268!2sEdify%20School%20Electronic%20City!5e0!3m2!1sen!2sin!4v1695826162555!5m2!1sen!2sin'
 ---
 
 <div class="p-xl max-md:px-6">
-        <Text type="h2" class="text-center">Connect with <span>Ekam</span></Text>
+        <Text type="h3" class="text-center">Get In</Text>
+        <Text type="h2" class="text-center text-primary">Touch</Text>
         <div class='flex justify-between gap-8 mt-10 text-black items-center max-md:flex-col max-md:px-0 max-md:mt-6 max-md:mb-8'>
         <div class='h-full w-full'>
             <div class="flex flex-col">

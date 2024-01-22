@@ -27,6 +27,7 @@ const centerPageSchema = z.object({
   centreCoordinator: centerCoordinatorSchema.optional().nullable(),
   aboutUs: aboutUsSchema.optional().nullable(),
   address: z.string().optional().nullable(),
+  addressTitle: z.string().optional().nullable(),
   telephone: z.string().optional().nullable(),
   telephone_1: z.string().optional().nullable(),
   email: z.string().optional().nullable(),

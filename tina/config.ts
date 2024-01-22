@@ -101,6 +101,11 @@ const centerPage = {
     },
     {
       type: "string",
+      label: "Address Title",
+      name: "addressTitle",
+    },
+    {
+      type: "string",
       label: "Address",
       name: "address",
     },
