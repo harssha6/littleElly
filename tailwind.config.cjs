@@ -94,7 +94,7 @@ module.exports = {
 		},
 		fontFamily: {
 			'display': ['"Grandstander"', 'sans-serif'],
-			'sans': ['"Nunito Sans"', 'sans-serif'],
+			'sans': ['"Nunito"', 'sans-serif'],
 			'grandstander': ['"Grandstander"', 'sans-serif'],
 		}
 	},

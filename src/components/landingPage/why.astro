@@ -14,6 +14,7 @@ import Rope from "../../image/decorations/rope.png";
 import Birds from "../../image/decorations/birds.png";
 import Why1 from "../../image/why/why1.png";
 import Why2 from "../../image/why/why2.png"
+import Why3 from "../../image/why/why3.png"
 import student from "../../images/student2.png"
 import Marker from "../system/Marker.astro";
 
@@ -27,7 +28,7 @@ import Marker from "../system/Marker.astro";
         <Text type="h2" class="text-center">
           Why Choose <br />
           <span class="relative">
-            Little <MultiStyleText type="h2"text="Elly?" classes={[
+            <span class="text-primary">Little </span> <MultiStyleText type="h2"text="Elly?" classes={[
               "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
             ]} />
               
@@ -49,7 +50,7 @@ import Marker from "../system/Marker.astro";
     <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
       <div class="max-md:order-2 basis-[50%]">
             <Text type="base">
-              The first five years are significantly important for a child’s development, a time when kids rapidly absorb knowledge and experiences. Research indicates that over 90% of a child’s brain development happens in these early years. At this critical stage, preschools play a vital role by providing a safe and engaging environment for exploration, learning, and growth.
+              The significance of providing stimulation during the early years of a child's life is sometimes significantly undervalued. This is when your child is most receptive and malleable with their brain developing over 90%. This period is marked by a continuous evolution of intellectual curiosity, rendering it the most influential and <span class="text-primary font-bold">defining phase in your child's life.</span> 
             </Text>
       </div>
         <Image
@@ -67,7 +68,7 @@ import Marker from "../system/Marker.astro";
       <div class="max-md:order-2 basis-[50%]">
         <div>
           <Text type="base">
-            The first five years are significantly important for a child’s development, a time when kids rapidly absorb knowledge and experiences. Research indicates that over 90% of a child’s brain development happens in these early years. At this critical stage, preschools play a vital role by providing a safe and engaging environment for exploration, learning, and growth.
+            At Little Elly, we are committed to equipping each child with a safe and engaging environment to explore and thrive during these crucial years. Given the substantial mental and cognitive growth at this time, Little Elly’s programs are curated to enhance children's emotional, intellectual, and aesthetic capabilities that<span class="text-primary font-bold"> cater to their specific needs.</span> 
           </Text>
         </div>
           <!-- <Sal preset="slide-up" d="300" t="400">
@@ -78,6 +79,44 @@ import Marker from "../system/Marker.astro";
     </div>
   </Section>
 </Section>
+
+<Section class="flex flex-col gap-2 pr-[40px] ] !p-0">
+  <div class="flex justify-between items-center">
+    <Image src={Rope} alt={"rope"} class={'w-20'} ></Image>
+      <div>
+
+        <Text type="h2" class="text-center">
+          Our <br />
+          <span class="relative">
+            <span class="text-primary">Elly </span> <MultiStyleText type="h2"text="Universe" classes={[
+              "text-purple","text-blue","text-green-200", "text-orange-200", "text-purple", "text-green-200","text-blue", "text-green-200"
+            ]} />
+              
+          </span>
+        </Text>
+       
+      </div>
+    <Image src={Birds} alt={"birds"} class={'w-20'} ></Image>
+
+  </div>
+  <Section>
+    <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
+      <div class="max-md:order-2 basis-[50%]">
+            <Text type="base">
+              Elly is not your ordinary preschool mascot. She is lovable, friendly, and embodies all the qualities we want our children to embrace; kindness, curiosity, and a warm heart. Elly is more than just a character; she’s a teacher, a friend and a source of endless wonder for our children. <br>  <br> At Little Elly your child is not just taking their first step towards school but is becoming a part of this joyful world. As they explore the captivating journeys of the 'Elly World' and the enchanting 'Natterjack Forest' They are encouraged to engage in activities that involve <span class="text-primary font-bold">“LOOK, READ, MAKE and DO” with Olly & Elly</span> 
+            </Text>
+      </div>
+        <Image
+          class="w-[384px] max-md:w-[210px]"
+          src={Why3}
+          alt="Why choose Ekam??"
+        />
+    </div>
+
+  </Section>
+</Section>
+
+
 <Section class="flex flex-col gap-l">
   <Text type="h2" class="text-primary text-center">
     <MultiStyleText

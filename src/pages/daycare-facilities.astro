@@ -1,0 +1,48 @@
+ ---
+import { Image } from "astro:assets"
+import MultiStyleText from "../components/system/MultiStyleText.astro"
+import Text from "../components/system/Text.astro"
+import Button from "../components/system/Button.astro"
+import Section from "../components/system/Section.astro"
+import Marker from "../components/system/Marker.astro"
+import Marker from "../components/system/Marker.astro";
+import daycare from "../images/student4.png";
+
+
+---
+
+
+ <Section class="p-[30px] px-[70px]">
+      <div class="text-[#FFF7F0] rounded-[50px] flex
+        max-sm:flex-col
+        gap-l bg-[#FFF7F0] p-l justify-center items-center max-sm:p-r">
+        <div class="basis-[50%] max-sm:order-1">
+          <Text type="h3" class="text-[#FF7162] !text-[35px]">Daycare Facility</Text>
+          <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>Our daycare facilities provide a child-friendly environment with a stimulating curriculum that includes various interest-focused activities for different age groups.</Text>
+          <br >
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Trained and competent staff</Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Open door policy for parents
+            </Text>
+          </div>
+          <div class="flex items-center gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Headed by a visionary leadership team
+            </Text>
+          </div>
+          <div class="flex items-start gap-r">
+            <Marker color="#F6BD60" />
+            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-8`}>Our 12-month academic year allows for admissions into the daycare at any point during the year.
+            </Text>
+          </div>
+        </div>
+        <div class="basis-[50%] max-sm:order-0">
+          <Image src={daycare} alt="principle" class="object-contain max-h-[400px] max-sm:h-[200px]" />
+        </div>
+  
+      </div>
+    </Section>
