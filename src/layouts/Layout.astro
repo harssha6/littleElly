@@ -33,6 +33,9 @@ const { title = 'Best CBSE School in Bangalore | Ekam School' } = Astro.props;
 			media="print"
 			onload="this.media='all'" 
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
 		<!-- <l	ink rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
@@ -104,13 +107,13 @@ const { title = 'Best CBSE School in Bangalore | Ekam School' } = Astro.props;
 	});
   
 	function initSwiper() {
-	  const swiperData = JSON.parse(document.querySelector(`.hero-swiper`).dataset.swiperData)
+	//   const swiperData = JSON.parse(document.querySelectorAll(`.hero-swiper`))
 	  
 	  const swiperLine = document.querySelector('[swiper-line]')
 	  const swiperLabel = document.querySelector('[swiper-label]')
   
-	  const prevBtn = document.querySelector('[data-prev="hero-swiper"]')
-	  const nextBtn = document.querySelector('[data-next="hero-swiper"]')
+	  const prevBtn = document.querySelectorAll('[data-prev="hero-swiper"]')
+	  const nextBtn = document.querySelectorAll('[data-next="hero-swiper"]')
 	  const swipers = document.querySelectorAll('.hero-swiper')
 	  swipers.forEach(item => {
 		const swiper = new Swiper(item, {
@@ -138,19 +141,23 @@ const { title = 'Best CBSE School in Bangalore | Ekam School' } = Astro.props;
 		swiperLabel.classList.add('hide-text')
 	  })
 	  swiper.on('transitionEnd', (e) => {
-		const labelText = swiperData[e.realIndex]?.text
-		swiperLabel.innerText = labelText
+		// const labelText = swiperData[e.realIndex]?.text
+		swiperLabel.innerText = "s"
 		swiperLine.classList.remove('hide-line')
 		swiperLabel.classList.remove('hide-text')
 	  })
-  
-	  prevBtn.addEventListener('click', () => {
-		swiper.slidePrev()
+	  prevBtn.forEach(btn => {
+		btn.addEventListener('click', () => {
+			swiper.slidePrev()
+	  	})
+	  })
+	  nextBtn.forEach(btn => {
+		btn.addEventListener('click', () => {
+			swiper.slideNext()
+	  })
 	  })
   
-	  nextBtn.addEventListener('click', () => {
-		swiper.slideNext()
-	  })
+	  
 	  })
 	 
 	  
