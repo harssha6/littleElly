@@ -12,10 +12,17 @@ import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 
 const { data } = await getEntry('centres', 'centres')
 
-const { centers } = data
+let { centers } = data
 
-// centers[0].districts[0]?.district
-
+centers = centers?.map(center => ({
+    state: center?.state,
+    districts: center?.districts?.map(district => ({
+        district: district?.district,
+        centres: district?.centres?.map(centre => ({
+            centre: centre?.centre,
+        }))
+    }))
+}))
 
 ---
 <Section class="flex flex-col gap-l items-center">

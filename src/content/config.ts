@@ -1,8 +1,37 @@
 import { z, defineCollection } from 'astro:content';
 
+const centerHeadSchema = z.object({
+  title: z.string().optional().nullable(),
+  name: z.string().optional().nullable(),
+  img: z.string().optional().nullable(),
+  experience: z.string().optional().nullable(),
+  description: z.string().optional().nullable(),
+});
+
+const centerCoordinatorSchema = z.object({
+  title: z.string().optional().nullable(),
+  name: z.string().optional().nullable(),
+  img: z.string().optional().nullable(),
+  experience: z.string().optional().nullable(),
+  description: z.string().optional().nullable(),
+});
+
+const aboutUsSchema = z.object({
+  text: z.string().optional().nullable(),
+  description: z.string().optional().nullable(),
+});
+
 const centerPageSchema = z.object({
-  principalName: z.string().optional(),
+  subtitle: z.string().optional().nullable(),
+  centreHead: centerHeadSchema.optional().nullable(),
+  centreCoordinator: centerCoordinatorSchema.optional().nullable(),
+  aboutUs: aboutUsSchema.optional().nullable(),
+  address: z.string().optional().nullable(),
+  telephone: z.string().optional().nullable(),
+  telephone_1: z.string().optional().nullable(),
+  email: z.string().optional().nullable(),
 }).optional();
+
 
 const centresCollection = defineCollection({
   type: 'content',

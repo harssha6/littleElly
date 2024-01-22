@@ -71,6 +71,42 @@ import MultiStyleText from "../../components/system/MultiStyleText.astro";
 import Marker from "../../components/system/Marker.astro";
 
 const toppers = campusConfig?.toppers;
+
+
+
+const { slug = '' } = Astro.params
+
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+
+const { data } = await getEntry('centres', 'centres')
+
+let { centers } = data
+
+
+const states = centers.map(center => ({name: center?.state, page: center.page})).filter(state => state.name)
+
+const districts = centers.map(center => center.districts)
+    .flat()
+    .filter(district => district?.district)
+    .map(item => ({ name: item?.district, page: item?.page }))
+
+
+const centres = centers.map(center => center.districts)
+    .flat()
+    .map(district => district?.centres)
+    .flat()
+    .filter(centre => centre?.centre)
+    .map(item => ({ name: item?.centre, page: item?.page }))
+
+const pages = [
+  ...states,
+  ...districts,
+  ...centres
+]
+
+const page = pages.find(page => page.name === slug)?.page
+
+console.log('page --> ', page)
 ---
 
 <Layout
@@ -236,3 +272,7 @@ const toppers = campusConfig?.toppers;
     margin-top: 16px;
   }
 </style>
+
+<script define:vars={{ page }}>
+  console.log('states -->', page)
+</script>

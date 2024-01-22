@@ -7,6 +7,7 @@ const branch =
   process.env.HEAD ||
   "main";
 
+
 const centerPage = {
   type: "object",
   label: "Add Page",
@@ -14,11 +15,112 @@ const centerPage = {
   fields: [
     {
       type: "string",
-      label: "Principal Name",
-      name: "principalName",
-    }
+      label: "Subtitle",
+      name: "subtitle",
+    },
+    {
+      type: "object",
+      label: "Centre Head",
+      name: "centreHead",
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        },
+        {
+          type: "image",
+          label: "Image URL",
+          name: "img",
+        },
+        {
+          type: "string",
+          label: "Experience",
+          name: "experience",
+        },
+        {
+          type: "rich-text",
+          label: "Description",
+          name: "description",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Centre Coordinator",
+      name: "centreCoordinator",
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        },
+        {
+          type: "image",
+          label: "Image URL",
+          name: "img",
+        },
+        {
+          type: "string",
+          label: "Experience",
+          name: "experience",
+        },
+        {
+          type: "rich-text",
+          label: "Description",
+          name: "description",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "About Us",
+      name: "aboutUs",
+      fields: [
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+        {
+          type: "rich-text",
+          label: "Description",
+          name: "description",
+        },
+      ],
+    },
+    {
+      type: "string",
+      label: "Address",
+      name: "address",
+    },
+    {
+      type: "string",
+      label: "Telephone",
+      name: "telephone",
+    },
+    {
+      type: "string",
+      label: "Additional Telephone",
+      name: "telephone_1",
+    },
+    {
+      type: "string",
+      label: "Email",
+      name: "email",
+    },
   ],
-}
+};
 
 export default defineConfig({
   branch,
