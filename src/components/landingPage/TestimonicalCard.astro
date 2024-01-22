@@ -32,10 +32,19 @@ const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, de
     </slot> -->
     <div class='flex flex-col justify-around border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden'>
       <Image class={"rounded-[23px]"} src={student3} alt={"image"} class="h-[300px]" />
-       <div class="p-r">
+      
+      <div class="p-r">
+        <div>
+          <Text type="regular" class="text-[#121212] font-[700] italic">
+            I am glad I chose Little Elly because
+          </Text>
+          <Text type="regular" class="text-[#EE7F82] font-[700]">
+             I feel that a spark was ignited in <br /> Pragathi and I couldn’t be happier. 
+          </Text>
+        </div>
         <Text
             type={'regular'}
-            class={'max-md:w-[80%] max-sm:text-center text-[#12121]'}
+            class={'max-md:w-[80%] max-sm:text-center text-[#12121] mt-r'}
         >
          {desc}
         </Text>
