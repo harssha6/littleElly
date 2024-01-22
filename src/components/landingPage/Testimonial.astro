@@ -19,7 +19,7 @@ import { Image } from 'astro:assets';
 import HeartIllustration from "../../image/decorations/heart.png";
 import SparkleIllustration from "../../image/decorations/sparkle.png";
 import FlowerIllustration from "../../image/decorations/creative-flower.png";
-import StarIllustration from "../../image/decorations/creative-flower.png";
+import StarIllustration from "../../image/decorations/star.png";
 
 const testimonials = {
     title: 'Ekam Voices',
@@ -69,19 +69,19 @@ const subtitle = testimonials.subtitle;
 ---
 
 <Section class="flex flex-col items-center bg-[#FBDECE] gap-4 pt-0 px-0">
-    <div class="flex w-full justify-center items-center gap-xl">
-      <div class="flex max-h-[100px] gap-l">
-        <Image src={FlowerIllustration} alt={"heart"} class={'object-contain'} ></Image>
-        <Image src={SparkleIllustration} alt={"heart"} class={'object-contain'}></Image>
+    <div class="flex w-full justify-center items-center gap-xl max-sm:gap-r">
+      <div class="flex max-h-[80px] gap-l max-sm:gap-r max-sm:flex-col">
+        <Image src={FlowerIllustration} alt={"heart"} class={'object-contain max-sm:w-[40px]'} ></Image>
+        <Image src={SparkleIllustration} alt={"heart"} class={'object-contain max-sm:w-[40px]'}></Image>
       </div>
       <div>
        <Text type={'h2'} class='text-[#1E2F67] text-center'>Testimonials</Text>
 
         <Text type={'base'} class='font-bold text-center'>Hear from our Parents!</Text>
       </div>
-       <div class="flex max-h-[100px] gap-l">
-         <Image src={HeartIllustration} alt={"heart"} class={'object-contain'} ></Image>
-         <Image src={StarIllustration} alt={"heart"} class={'object-contain'} ></Image>
+       <div class="flex max-h-[80px] gap-l max-sm:gap-r max-sm:flex-col">
+         <Image src={HeartIllustration} alt={"heart"} class={'object-contain max-sm:w-[40px]'} ></Image>
+         <Image src={StarIllustration} alt={"heart"} class={'object-contain max-sm:w-[40px]'} ></Image>
        </div>
 
     </div>

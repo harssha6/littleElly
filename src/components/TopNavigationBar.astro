@@ -99,6 +99,7 @@ const maxsm = (stringOfClasses) => {
     max-sm:bg-white max-sm:mt-3 max-sm:w-[95vw]
     max-sm:border-[3px] max-sm:border-[#F6BD60] max-sm:border-solid max-sm:py-[19px]
     max-sm:px-[48px] max-sm:rounded-[5rem] max-sm:mx-[2.5vw] max-sm:px-[20px]
+    max-sm:mt-[40px]
     `
     >
     <div class="flex flex-row items-center">    
@@ -223,7 +224,7 @@ const maxsm = (stringOfClasses) => {
   
     
   
-    <div class="mobileMenu fixed top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll bg-white" class="max-md:visible hidden">
+    <div class="mobileMenu fixed top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
       {menu.map(item => {
         if (item.submenu && item.submenu.length > 0) {
           return (
