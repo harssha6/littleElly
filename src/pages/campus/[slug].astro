@@ -61,6 +61,8 @@ import campus16 from "../../image/campus/swim2.jpeg";
 import principlePhoto from "../../images/campus/gas/principle.png"
 import student1 from "../../images/campus/gas/student.png"
 
+import aboutLittleEllyPlaceholder from "../../images/aboutLittleEllyPlaceholder.png";
+
 import { Image } from "astro:assets";
 import Gallery from "../../components/Gallery.astro";
 import GalleryWithDescription from "../../components/GalleryWithDescription.astro";
@@ -106,7 +108,6 @@ const pages = [
 
 const page = pages.find(page => page.name === slug)?.page
 
-console.log('page --> ', page)
 ---
 
 <Layout
@@ -130,7 +131,7 @@ console.log('page --> ', page)
           <div slot="title">
             <!-- <div class="p-20"></div> -->
             <Text type="h2">
-              Little Elly -  <span class="text-yellow">HSR Layout</span>
+              Little Elly -  <span class="text-yellow">{slug}</span>
              </Text> 
              <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60] mt-r">
               <Text type="h4" class="text-[#AF7F30] tracking-[2px] uppercase font-[700] font-sans text-[20px]">
@@ -141,21 +142,38 @@ console.log('page --> ', page)
       </Hero>
     </div>
   </div>
-  <Events />
- <Section class="flex items-center flex-col gap-l">
-    <Text type="h2" class="text-purple text-center">Centre <span class="text-red-200">Head</span></Text>
-    <div class="text-[#FFF7F0] rounded-[30px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center  max-sm:flex-col">
-      <div class="basis-[50%] max-sm:order-1">
-        <Text type="h3" class="text-primary">Mrs. Karishma</Text>
-        <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>A child’s life is like a piece of paper on which every person leaves a mark. At Little Elly – Agara, Mrs Karishma believes in truly giving the quality and fun filled learning experience. With an Engineering degree, Mrs Karishma has lead Little Elly Preschool Agara branch with a vision to provide the best quality education to children and to make their foundation year’s fun filled and enriching. Her passion and dedication towards the Centre have made it one of the renowned centres in and around Agara.</Text>
-      </div>
-      <div class="basis-[50%] max-sm:order-0">
-        <Image src={principlePhoto} alt="principle" class="object-contain max-h-[400px] max-sm:h-[200px]" />
-      </div>
-      <div></div>
-
-    </div>
- </Section>
+  <!-- <Events /> -->
+  {page?.centreHead && page?.centreHead.description && (
+    <Section class="flex items-center flex-col gap-l">
+       <Text type="h2" class="text-[#253b70] text-center">About <span class="text-red-200">Centre</span></Text>
+       <div class="text-[#FFF7F0] rounded-[30px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center  max-sm:flex-col">
+        <div class="max-sm:order-0 flex-shrink-0">
+          <Image src={aboutLittleEllyPlaceholder} alt="principle" class="h-[400px] sm:h-[300px] object-cover object-center" width={400} height={300} />
+        </div>
+         <div class="max-sm:order-1">
+           <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>{page?.aboutUs?.description}</Text>
+         </div>
+         <div></div>
+   
+       </div>
+    </Section>
+  )}
+  {page?.centreHead && page?.centreHead.description && (
+    <Section class="flex items-center flex-col gap-l">
+       <Text type="h2" class="text-[#253b70] text-center">Centre <span class="text-red-200">Head</span></Text>
+       <div class="text-[#FFF7F0] rounded-[30px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center  max-sm:flex-col">
+         <div class="max-sm:order-1">
+           <Text type="h3" class="text-primary">{page?.centreHead.name}</Text>
+           <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>{page?.centreHead.description}</Text>
+         </div>
+         <div class="max-sm:order-0 flex-shrink-0">
+           <Image src={page.centreHead.img} alt="principle" class="h-[400px] sm:h-[300px] object-cover object-center" width={400} height={300} />
+         </div>
+         <div></div>
+   
+       </div>
+    </Section>
+  )}
  <Why />
  <Section class="gap-l flex flex-col items-center">
     <Text type="h2" class="text-center">
@@ -188,7 +206,7 @@ console.log('page --> ', page)
           </div>
         
       </Text>
-      <Image src={student1} alt={"student"} class="object-contain max-h-[400px] flex-basis-[60%] max-sm:h-[200px]" />
+      <Image src={student1} alt={"student"} class="object-contain max-h-[400px] flex-basis-[60%] max-sm:h-[300px]" />
     </div>
  </Section>
   <GoToCta />
@@ -198,32 +216,32 @@ console.log('page --> ', page)
       details={{
         phoneNo: {
           label: "Call us On",
-          value: "+91 80 26667333, +91 80 26667444",
+          value: page?.telephone,
           type: "contact",
         },
         workingHours: {
           label: "Mail us at",
-          value: "info@insightacademy.in",
+          value: page?.email,
           type: "mail",
         },
         address: {
           label: "We are here",
           value:
-            "#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062",
+            page?.address,
           type: "address",
         },
       }}
-      mapEmbedLink="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin"
+      mapEmbedLink={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&q=${page?.addressTitle + ','+ page?.address}`}
     />
   </div>
-  <Gallery
+  <!-- <Gallery
     id="classroom-facilities"
     gallery={[
       { src: campus1.src, caption: "Digitally Enabled Classrooms" },
       { src: campus4.src, caption: "Wonder Room" },
       { src: campus3.src, caption: "Well-stocked Library" },
     ]}
-/>
+/> -->
   <GoToCta className="!bg-[white]" />
   <Footer />
 
