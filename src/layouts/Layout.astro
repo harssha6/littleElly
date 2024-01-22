@@ -180,16 +180,24 @@ const { title = 'Best CBSE School in Bangalore | Ekam School' } = Astro.props;
 		let isManualScrolling = false;
 		let isCursorOverTicker = false;
 		let scriptResetScroll = false;
-		const tickerDir = ticker.dataset['data-ticker-dir']
-		ticker.scrollLeft = maxScroll;
+		const tickerDir = ticker.dataset.dir
+		if (tickerDir === 'right') {
+			ticker.scrollLeft = maxScroll;
+		}
 		console.log(ticker.scrollLeft,"scrollLeft");
 		function updateScroll() {
 			if (isManualScrolling) {
 				requestAnimationFrame(updateScroll);
 				return;
 			}
-			
-			currentScroll -= scrollSpeed;
+
+
+			if (tickerDir === 'right') {
+				currentScroll -= scrollSpeed;
+			} else {
+				currentScroll += scrollSpeed;
+			}
+
   
 			if (currentScroll >= maxScroll) {
 				scriptResetScroll = true;

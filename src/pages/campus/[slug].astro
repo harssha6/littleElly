@@ -1,34 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
-import TopNavigationBar from "../components/TopNavigationBar.astro";
+import TopNavigationBar from "../../components/TopNavigationBar.astro";
 
-import Updates from "../components/landingPage/Updates/index.astro";
-import LFL from "../components/landingPage/LFL.astro";
-import WhyGlentree from "../components/landingPage/whyEkam.astro";
+import Updates from "../../components/landingPage/Updates/index.astro";
+import LFL from "../../components/landingPage/LFL.astro";
+import WhyGlentree from "../../components/landingPage/whyEkam.astro";
 
-import Testimonial from "../components/landingPage/Testimonial.astro";
-import BigAdmissionCTA from "../components/BigAdmissionCTA.astro";
-import Hero from "./LandingPageHero.astro";
+import Testimonial from "../../components/landingPage/Testimonial.astro";
+import BigAdmissionCTA from "../../components/BigAdmissionCTA.astro";
+import Hero from "../LandingPageHero.astro";
 
-import "../global.css";
+import "../../global.css";
 
 // import '@fontsource/nunito-sans';
-import GlentreeFamily from "../components/landingPage/GlentreeFamily.astro";
-import Footer from "../components/landingPage/Footer.astro";
-import Text from "../components/system/Text.astro";
-import Section from "../components/system/Section.astro";
-import YoutubeEmbed from "../components/YoutubeEmbed.astro";
-import Showcase from "./Showcase.astro";
-import GoToCta from "../components/GoToCta.astro";
-import Academics from "../components/landingPage/Academics.astro";
+import GlentreeFamily from "../../components/landingPage/GlentreeFamily.astro";
+import Footer from "../../components/landingPage/Footer.astro";
+import Text from "../../components/system/Text.astro";
+import Section from "../../components/system/Section.astro";
+import YoutubeEmbed from "../../components/YoutubeEmbed.astro";
+import Showcase from "../Showcase.astro";
+import GoToCta from "../../components/GoToCta.astro";
+import Academics from "../../components/landingPage/Academics.astro";
 import campus1 from "../images/campus/gas/gallery/1.jpeg";
 import campus2 from "../images/campus/gas/gallery/2.jpeg";
 import campus3 from "../images/campus/gas/gallery/3.jpeg";
-import HeroTitle from "../components/HeroTitle.astro";
-import config from "../../config";
-import TopperCard from "../components/TopperCard.astro";
-import Heading from "../components/system/Heading.astro";
+import HeroTitle from "../../components/HeroTitle.astro";
+import config from "../../../config";
+import TopperCard from "../../components/TopperCard.astro";
+import Heading from "../../components/system/Heading.astro";
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
 import slide1 from "../images/slides/01.webp";
 // import slide2 from "../images/slides/02.webp";
@@ -36,39 +36,39 @@ import slide3 from "../images/slides/03.webp";
 import slide4 from "../images/slides/04.webp";
 import slide5 from "../images/slides/05.webp";
 import transportBus from "../image/campus/transport.jpeg";
-import DeckCard from "../components/DeckCard.astro";
-import Connect from "../components/campus/Connect.astro";
+import DeckCard from "../../components/DeckCard.astro";
+import Connect from "../../components/campus/Connect.astro";
 import blobSmall from "../fillers/blobSmall.png";
-import campusBG from "../image/campusBG.jpg";
+import campusBG from "../../image/campusBG.jpg";
 
-import campus1 from "../image/campus/classroom.jpeg";
-import campus2 from "../image/campus/cs-2.jpeg";
-import campus3 from "../image/campus/library.jpeg";
-import campus4 from "../image/campus/wonderroom.jpeg";
-import campus5 from "../image/campus/science-chem.jpeg";
-import campus6 from "../image/campus/science-bio.jpeg";
-import infirmary from "../image/campus/infirmary.jpg";
-import campus7 from "../image/campus/science-phy.jpeg";
-import campus8 from "../image/campus/bbcourt.png";
-import campus9 from "../image/campus/football.jpeg";
-import campus10 from "../image/campus/pool.jpeg";
-import campus11 from "../image/campus/crick.jpeg";
-import campus12 from "../image/campus/skating.jpg";
-import campus13 from "../image/campus/throwball.jpg";
-import campus14 from "../image/campus/bb2.jpg";
-import campus15 from "../image/campus/football2.jpeg";
-import campus16 from "../image/campus/swim2.jpeg";
-import principlePhoto from "../images/campus/gas/principle.png"
-import student1 from "../images/campus/gas/student.png"
+import campus1 from "../../image/campus/classroom.jpeg";
+import campus2 from "../../image/campus/cs-2.jpeg";
+import campus3 from "../../image/campus/library.jpeg";
+import campus4 from "../../image/campus/wonderroom.jpeg";
+import campus5 from "../../image/campus/science-chem.jpeg";
+import campus6 from "../../image/campus/science-bio.jpeg";
+import infirmary from "../../image/campus/infirmary.jpg";
+import campus7 from "../../image/campus/science-phy.jpeg";
+import campus8 from "../../image/campus/bbcourt.png";
+import campus9 from "../../image/campus/football.jpeg";
+import campus10 from "../../image/campus/pool.jpeg";
+import campus11 from "../../image/campus/crick.jpeg";
+import campus12 from "../../image/campus/skating.jpg";
+import campus13 from "../../image/campus/throwball.jpg";
+import campus14 from "../../image/campus/bb2.jpg";
+import campus15 from "../../image/campus/football2.jpeg";
+import campus16 from "../../image/campus/swim2.jpeg";
+import principlePhoto from "../../images/campus/gas/principle.png"
+import student1 from "../../images/campus/gas/student.png"
 
 import { Image } from "astro:assets";
-import Gallery from "../components/Gallery.astro";
-import GalleryWithDescription from "../components/GalleryWithDescription.astro";
-import Button from "../components/system/Button.astro";
-import Events from "../components/landingPage/Events.astro";
-import Why from "../components/landingPage/why.astro";
-import MultiStyleText from "../components/system/MultiStyleText.astro";
-import Marker from "../components/system/Marker.astro";
+import Gallery from "../../components/Gallery.astro";
+import GalleryWithDescription from "../../components/GalleryWithDescription.astro";
+import Button from "../../components/system/Button.astro";
+import Events from "../../components/landingPage/Events.astro";
+import Why from "../../components/landingPage/why.astro";
+import MultiStyleText from "../../components/system/MultiStyleText.astro";
+import Marker from "../../components/system/Marker.astro";
 
 const toppers = campusConfig?.toppers;
 ---

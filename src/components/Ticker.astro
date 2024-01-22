@@ -6,7 +6,7 @@ import TickerCard from "./TickerCard.astro";
 
 ---
 
-  <div class="ticker max-md:!hidden block no-scrollbar will-change-scroll max-md:w-full" data-ticker data-ticker-dir={dir}>
+  <div class="ticker max-md:!hidden block no-scrollbar will-change-scroll max-md:w-full" data-ticker data-dir={dir}>
     <div class="ticker__list">
       {items.map((item, i) => (
         <TickerCard 

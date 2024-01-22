@@ -8,14 +8,17 @@ import { GET } from '../pages/api/centers'
 
 import SearchIcon from '../icons/SearchIcon.svg'
 
-const data = await GET(Astro)
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 
-const { data: centers } = await data.json()
+const { data } = await getEntry('centres', 'centres')
 
-console.log(JSON.stringify(centers))
+const { centers } = data
+
+// centers[0].districts[0]?.district
+
 
 ---
-<Section class="flex flex-col gap-l items-center" style="background: linear-gradient(0deg, #FEF7F9 0%, #FEF7F9 100%);">
+<Section class="flex flex-col gap-l items-center">
     <div>
         <Text type="h2" class="text-center">Our
             <br />
@@ -34,15 +37,25 @@ console.log(JSON.stringify(centers))
         <input
             class="w-full pl-[35px] h-full absolute top-0 z-10 left-0 rounded-full text-[18px] font-bold placeholder:text-[#717171]/50 focus:outline-dotted focus:outline-primary focus:outline-[2px] focus:outline-offset-4"
             placeholder="Search by location like “Bangalore”"
+            data-search-center
         />
         <button class="w-[65px] h-[65px] bg-primary rounded-full flex-shrink-0 relative z-20"></button>
     </div>
-    <div class="w-full  px-[30px] py-6">
-        <div class="w-full h-[1px] bg-black/10 mb-[10px]"></div>
+    <div class="w-full  px-[30px] py-6 bg-white border rounded-[12px] border-black/10">
+            <Text type="base">
+                <div class="font-[600] flex flex-row text-[#7b7b7b]" data-bread-crumbs>
+                    <a data-bread-crumb-type="state" href="#" class="text-[#7b7b7b] [&.active]:text-[#1c1c1c] block [&.active]:underline active">Home</a>
+                    <span class="mx-[10px] hidden">{'>'}</span>
+                    <a data-bread-crumb-type="district" href="#" class="text-[#7b7b7b] [&.active]:text-[#1c1c1c] [&.active]:underline hidden"></a>
+                    <span class="mx-[10px] hidden">{'>'}</span>
+                    <a data-bread-crumb-type="center" href="#" class="text-[#7b7b7b] [&.active]:text-[#1c1c1c] [&.active]:underline hidden"></a>
+                </div>
+            </Text>
+        <div class="w-full h-[1px] bg-black/10 my-[10px]"></div>
 
-        <div class="w-full flex flex-row gap-l items-center">
-            {centers.map(center => (
-                <div class="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] h-[90px] flex flex-row items-center justify-center">
+        <div class="w-full flex flex-row flex-wrap gap-4 items-center" data-centres-container data-centers={JSON.stringify(centers)}>
+            {centers?.map(center => (
+                <div class="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] h-[90px] flex flex-row items-center justify-center" data-type="state" data-id={center?.state} data-center-pill>
                     <Text type="base" class="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{center?.state}</Text>
                     <div class="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -55,3 +68,283 @@ console.log(JSON.stringify(centers))
     </div>
 
 </Section>
+
+<script>
+    import Fuse from 'fuse.js'
+
+    
+    
+    const centreContainer = document.querySelector('[data-centres-container]')
+    const stateElements = centreContainer.querySelectorAll('[data-center-pill]')
+    const searchElement = document.querySelector('[data-search-center]')
+
+    const centerContainerHTML = centreContainer.cloneNode(true)
+    centerContainerHTML.innerHTML = ''
+    const centerContainerTemplate = centreContainer.cloneNode(true)
+
+    const pillElementTemplate = stateElements[0].cloneNode(true)
+
+
+    // console.log('stateElements...', stateElements)
+
+    const centers = JSON.parse(centreContainer.dataset.centers)
+
+    const states = centers.map(center => center?.state).filter(state => state).map(item => ({ name: item, type: 'state' }))
+    const districts = centers.map(center => center?.districts)
+        .flat()
+        .map(district => district?.district)
+        .filter(district => district)
+        .map(item => ({ name: item, type: 'district' }))
+    const centres = centers.map(center => center?.districts).flat().map(district => district?.centres)
+        .flat()
+        .map(centre => centre?.centre)
+        .filter(centre => centre)
+        .map(item => ({ name: item, type: 'center' }))
+
+    console.log('centers....', centres)
+
+    const fuse = new Fuse([...states, ...districts, ...centres], {
+        keys: ['name'],
+        includeScore: true,
+        threshold: 0.3
+    })
+
+    searchElement.addEventListener('input', (e) => {
+        const query = e.target.value
+
+        const results = fuse.search(query)
+
+        clearPills()
+
+        if (query.length === 0) {
+            setHome()
+            return
+        }
+
+        const setSearchResult = (results, type) => {
+
+            
+            const emptyDiv = document.createElement('div')
+            emptyDiv.style.width = '100%'
+
+            emptyDiv.innerHTML += `<h3 class="my-2 text-2xl font-bold capitalize">${type}</h3>`
+
+            const pillContainer = centerContainerTemplate.cloneNode(true)
+            pillContainer.innerHTML = ''
+            emptyDiv.appendChild(pillContainer)
+
+            console.log('called with --> ',
+            results.map(result => result.item.name), type, 'Search Results', pillContainer)
+            setPills(results.map(result => result.item.name), type, 'Search Results', pillContainer, false)
+ 
+            centreContainer.appendChild(emptyDiv)
+        }
+        
+        if (results && results.length > 0) {
+
+            let stateResults = results.filter(result => result.item.type === 'state')
+            let districtResults = results.filter(result => result.item.type === 'district')
+            let centerResults = results.filter(result => result.item.type === 'center')
+            clearPills() 
+            if (stateResults.length > 0) {
+                setSearchResult(stateResults, 'state')
+              
+                
+                
+                // appendSearchResults(stateResults, 'state')
+            }
+            if (districtResults.length > 0) {
+                setSearchResult(districtResults, 'district')
+            }
+            if (centerResults.length > 0) {
+                setSearchResult(centerResults, 'center')
+            }
+        } else {
+            clearPills()
+            centreContainer.innerHTML = '<h3>No results found</h3>'
+            // setHome()
+        }
+        console.log('trigger...')
+
+        console.log('results...', results)
+    })    
+
+    let types = ['state', 'district', 'center']
+
+
+    stateElements.forEach(element => {
+        element.addEventListener('click', (e) => {
+            onPillClick(element.dataset.type, element.dataset.id, element.target)
+        })
+    })
+
+    const setHome = () => {
+        setPills(centers.map(center => center?.state), 'state', 'Home')
+    }
+
+    const homeBreadcrumb = document.querySelector('[data-bread-crumb-type="state"]')
+    const stateBreadcrumb = document.querySelector('[data-bread-crumb-type="district"]')
+    const districtBreadcrumb = document.querySelector('[data-bread-crumb-type="center"]')
+
+    homeBreadcrumb.addEventListener('click', (e) => {
+        e.preventDefault()
+        setHome()
+    })
+
+    stateBreadcrumb.addEventListener('click', (e) => {
+        e.preventDefault()
+        onPillClick('state', stateBreadcrumb.innerText)
+    })
+
+    const baseURL = window.location.origin
+    
+
+    const onPillClick = (type, id) => {
+        clearPills()
+
+        console.log('pill click???')
+        
+        let newPills = []
+        let newType = ''
+        let isRedirectingToPage = false
+
+        if (type === 'state') {
+            let districts = centers.find(center => center?.state === id)?.districts
+            if (districts && districts.length > 0) {
+                newPills = districts.map(district => district?.district)
+                newType = 'district'
+            } else {
+                isRedirectingToPage = true
+            }
+            
+        } else if (type === 'district') {
+            let districts = centers.map(center => center.districts).flat()
+            let thisDistrict = districts.find(district => district?.district === id)
+            if (thisDistrict?.centres) {
+                newPills = thisDistrict?.centres.map(centre => centre?.centre)
+            } else {
+                isRedirectingToPage = true
+            }
+            newType = 'center'
+            console.log('newpills...', newPills, thisDistrict)
+        } else if (type === 'center') {
+            isRedirectingToPage = true
+        }
+
+        if (isRedirectingToPage) {
+            window.location.href = `${baseURL}/campus/${id}`
+        }
+
+
+
+        setPills(newPills, newType, id)
+
+    }
+
+    const clearPills = () => {
+        
+        centreContainer.innerHTML = ''
+    }
+
+    const setPills = (pills, newType, id, target, clear = true) => {
+        if (clear) {
+            clearPills()
+        }
+
+        console.log('pillls...', pills)
+        pills.forEach(text => {
+            const pillElement = pillElementTemplate.cloneNode(true)
+            pillElement.dataset.type = newType
+
+            pillElement.dataset.id = text
+
+            pillElement.childNodes[0].textContent = text
+
+            pillElement.addEventListener('click', (e) => {
+                onPillClick(newType, text)
+            })
+
+            if (target) {
+                target.appendChild(pillElement)
+            } else {
+                centreContainer.appendChild(pillElement)
+            }
+        })
+
+        updateBreadCrumbs(newType, id)
+
+    }
+
+    const updateBreadCrumbs = (type, id) => {
+        // pattern: Home > State > District > Center
+
+        const breadCrumbs = document.querySelector('[data-bread-crumbs]')
+        const breadCrumbElements = breadCrumbs.querySelectorAll('*')
+
+        breadCrumbElements.forEach(element => {
+            element.classList.remove('active')
+        })
+
+        if (id == 'Search Results') {
+            breadCrumbElements[0].classList.remove('hidden')
+            breadCrumbElements[0].classList.remove('active')
+            breadCrumbElements[0].innerText = 'Home'
+
+            breadCrumbElements[1].classList.remove('hidden')
+
+            breadCrumbElements[2].classList.add('active')
+            breadCrumbElements[2].classList.remove('hidden')
+            breadCrumbElements[2].innerText = id
+
+            breadCrumbElements[3].classList.add('hidden')
+
+            breadCrumbElements[4].classList.add('hidden')
+            breadCrumbElements[4].classList.remove('active')
+        } else if (type === 'state') {
+            breadCrumbElements[0].classList.remove('hidden')
+            breadCrumbElements[0].classList.add('active')
+            breadCrumbElements[0].innerText = 'Home'
+
+            breadCrumbElements[1].classList.add('hidden')
+
+            breadCrumbElements[2].classList.add('hidden')
+            breadCrumbElements[2].classList.remove('active')
+
+            breadCrumbElements[3].classList.add('hidden')
+
+            breadCrumbElements[4].classList.add('hidden')
+            breadCrumbElements[4].classList.remove('active')
+        } else if (type === 'district') {
+            breadCrumbElements[0].classList.remove('hidden')
+            breadCrumbElements[0].classList.remove('active')
+
+            breadCrumbElements[1].classList.remove('hidden')
+
+            breadCrumbElements[2].classList.remove('hidden')
+            breadCrumbElements[2].classList.add('active')
+            breadCrumbElements[2].innerText = id
+            
+
+            breadCrumbElements[3].classList.add('hidden')
+
+            breadCrumbElements[4].classList.add('hidden')
+            breadCrumbElements[4].classList.remove('active')
+        } else if (type === 'center') {
+            breadCrumbElements[0].classList.remove('hidden')
+            breadCrumbElements[0].classList.remove('active')
+
+            breadCrumbElements[1].classList.remove('hidden')
+
+            breadCrumbElements[2].classList.remove('hidden')
+            breadCrumbElements[2].classList.remove('active')
+
+            breadCrumbElements[3].classList.remove('hidden')
+
+            breadCrumbElements[4].classList.remove('hidden')
+            breadCrumbElements[4].classList.add('active')
+            breadCrumbElements[4].innerText = id
+        }
+    }
+
+
+</script>
