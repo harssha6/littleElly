@@ -11,7 +11,7 @@ import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
 import Carousel from "../system/Carousel.astro"
 import CarouselCard from "../system/CarouselCard.astro"
 const data = {
-    title: 'Ekam Voices',
+    title: 'Little Elly Voices',
     subtitle: 'Stories of Transformation and Growth',
     data: [
       {
@@ -46,8 +46,8 @@ const data = {
     </div>
     <Carousel
     arrowsContainerClass="mt-4"
-    class="gap-m overflow-scroll w-fit mx-auto"
-    id="news-events-container"
+    class="gap-m overflow-scroll w-fit max-md:w-[unset] mx-auto"
+    id="news-events-carousel"
   >
     
       {data.data.map((item, index) => (

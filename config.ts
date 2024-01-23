@@ -163,7 +163,7 @@ const data: Data = {
   
   ctaLink: 'https://www.insightacademy.in/',
   school: {
-    discription: 'Ekam Academy, launched in 2007, ranks among the best schools in Bangalore. Upholding the principle of "Quality Education for All", we create an inclusive, secular educational landscape where all students can flourish, instilling strong academics and comprehensive growth beyond traditional classroom confines.',
+    discription: 'Little Elly, launched in 2007, ranks among the best schools in Bangalore. Upholding the principle of "Quality Education for All", we create an inclusive, secular educational landscape where all students can flourish, instilling strong academics and comprehensive growth beyond traditional classroom confines.',
     
   },
   campus: [
@@ -188,7 +188,7 @@ const data: Data = {
           image: principalknk,
           name: "Mrs.May Ruth D'Souza",
           role: 'PRINCIPAL',
-          body: "Ekam Academy, founded in 2007, is a school dedicated to providing quality education for all children, regardless of their intelligence, physical condition, or challenges. With a focus on holistic development and a committed team of well-trained teachers, the school goes beyond the minimum requirements to offer additional facilities and enhance students' learning abilities. The strong partnership between students, parents, and the institution fosters a foundation for a better future."
+          body: "Little Elly, founded in 2007, is a school dedicated to providing quality education for all children, regardless of their intelligence, physical condition, or challenges. With a focus on holistic development and a committed team of well-trained teachers, the school goes beyond the minimum requirements to offer additional facilities and enhance students' learning abilities. The strong partnership between students, parents, and the institution fosters a foundation for a better future."
         }
       ],
       academic: [
@@ -205,7 +205,7 @@ const data: Data = {
         },
         {
           title: 'Class 1-5',
-          description: 'At Ekam Academy, students from class 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
+          description: 'At Little Elly, students from class 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
           images: [grade1knk],
           highlights: [
             "Limited class sizes",
@@ -216,7 +216,7 @@ const data: Data = {
         },
         {
           title: 'Class 6-10',
-          description: 'Preparation for board exams starts in class 6 at Ekam Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
+          description: 'Preparation for board exams starts in class 6 at Little Elly, instilling not just academic rigor but also discipline, confidence, and time management skills.',
           images: [grade6knk],
           highlights: [
             "Focus is to prepare students for Grade 10",
@@ -237,7 +237,7 @@ const data: Data = {
         
         {
           title: 'Coding & CS Class',
-          description: "Ekam Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
+          description: "Little Elly integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
           images: [ComputerClass],
           
         },
@@ -267,7 +267,7 @@ const data: Data = {
         },
         {
           title: 'Computer Science Class',
-          description: "Ekam Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          description: "Little Elly's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
           images: [ComputerClass],
           
         },
@@ -343,7 +343,7 @@ const data: Data = {
           image: principalmrth,
           name: 'Mrs. Ramola Melita Dsouza',
           role: 'PRINCIPAL',
-          body: 'At Ekam, we prioritize nurturing creativity and critical thinking in students. Our mission is to foster happiness, peace, and harmony while preparing them for a rapidly changing world. Our dedicated teachers guide students to understand and imagine beyond classroom boundaries. We offer a well-rounded curriculum and encourage participation in co-curricular activities, promoting qualities like honesty, empathy, and respect, shaping them into future global citizens.'
+          body: 'At Little Elly, we prioritize nurturing creativity and critical thinking in students. Our mission is to foster happiness, peace, and harmony while preparing them for a rapidly changing world. Our dedicated teachers guide students to understand and imagine beyond classroom boundaries. We offer a well-rounded curriculum and encourage participation in co-curricular activities, promoting qualities like honesty, empathy, and respect, shaping them into future global citizens.'
         }
       ],
       academic: [
@@ -395,7 +395,7 @@ const data: Data = {
       facilities: [
         {
           title: 'Robotics Class',
-          description: 'Ekam Academy emphasizes hands-on learning through our continually upgraded, modern labs. With  ',
+          description: 'Little Elly emphasizes hands-on learning through our continually upgraded, modern labs. With  ',
           images: [RoboticClass],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
           
@@ -403,19 +403,19 @@ const data: Data = {
         
         {
           title: 'Computer Science Class',
-          description: "Ekam Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          description: "Little Elly's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
           images: [ComputerClass],
           
         },
         
         {
           title: 'Activities Room for KG',
-          description: "Ekam Academy integrates technology into education, providing computer learning with a dedicated",
+          description: "Little Elly integrates technology into education, providing computer learning with a dedicated",
           images: [KgClass]
         },
         {
           title: 'Computer Science Class',
-          description: "Ekam Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          description: "Little Elly's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
           images: [ComputerClass],
           
         },
@@ -472,7 +472,7 @@ const data: Data = {
     
   ],
   testimonials: {
-    title: 'Ekam Voices',
+    title: 'Little Elly Voices',
     subtitle: 'Stories of Transformation and Growth',
     data: [
       {
@@ -483,12 +483,12 @@ const data: Data = {
       },
       {
         image: testimonial2,
-        quote: 'Ekam Academy has enriched my life! The supportive teachers and engaging activities have truly made my school years memorable.',
+        quote: 'Little Elly has enriched my life! The supportive teachers and engaging activities have truly made my school years memorable.',
         author: '- SANATAN (grade 10)',
       },
       {
         image: testimonial1,
-        quote: 'At Ekam Academy, every day is an adventure! The fascinating blend of academics and co-curriculars instills in us the love for learning.',
+        quote: 'At Little Elly, every day is an adventure! The fascinating blend of academics and co-curriculars instills in us the love for learning.',
         author: '- SANATAN (grade 10)',
 
       },

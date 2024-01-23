@@ -2,7 +2,7 @@
 import arrow from "../../icons/arrow.svg?raw"
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
 
-const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro.props
+const { class: className, id, stackOnMobile, arrowsContainerClass = '', } = Astro.props
 ---
 
 <div>
@@ -19,7 +19,7 @@ const { class: className, id, stackOnMobile, arrowsContainerClass = '' } = Astro
     class:list={[
       "w-fit h-fit top-0 left-0 z-50 flex flex-row items-center  justify-between pointer-events-none gap-l mx-auto",
       stackOnMobile && 'max-md:hidden',
-      arrowsContainerClass
+      arrowsContainerClass,
     ]}
   >
       <div class="mt-[40px] flex justify-between w-[100px]">
