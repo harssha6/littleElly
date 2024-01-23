@@ -52,7 +52,7 @@ export const programData = [
 ]
 
 ---
-<Section class="flex flex-col gap-l items-center" style="background: linear-gradient(0deg, #FEF7F9 0%, #FEF7F9 100%);">
+<Section class="flex flex-col gap-l max-md:pt-10 items-center" style="background: linear-gradient(0deg, #FEF7F9 0%, #FEF7F9 100%);">
     <div>
         <Text type="h2" class="text-center">Our
             <br />
@@ -69,14 +69,14 @@ export const programData = [
             programData.map((item, index) => (
                 <div class="flex flex-col items-center justify-center gap-l max-sm:gap-r">
                     <div class="flex flex-col items-center justify-center">
-                        <Image src={item.image} alt={item.title} class="w-[300px] h-[300px] max-sm:max-w-[150px] max-sm:max-h-[150px]" />
+                        <Image src={item.image} alt={item.title} class="w-[300px] h-[300px] max-sm:max-w-[250px] max-sm:max-h-[250px]" />
                         <div class="mb-[15px] mt-[10px]">
                             <svg  width="100%" height="17" viewBox="0 0 183 17" fill="none">
                                 <ellipse opacity="0.05" cx="91.7114" cy="8.65234" rx="90.75" ry="8.25" fill="#1C1C1C"/>
                             </svg>
                         </div>
                         <Text type="h3" class={`text-[2.25rem] font-bold text-center ${item.titleClass} leading-0 uppercase`}>{item.title}</Text>
-                        <Text type="base" class={`font-display text-xl font-bold text-center uppercase ${item.subTitleClass}`}>{item.subtitle}</Text>
+                        <Text type="base" class={`font-display text-xl max-md:!text-[20px] font-bold text-center uppercase ${item.subTitleClass}`}>{item.subtitle}</Text>
                     </div>
                 </div>
             ))
