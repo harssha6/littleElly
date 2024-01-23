@@ -20,7 +20,7 @@ import Background from "../components/system/Background.astro"
 
 ---
 <!-- Pre-school -->
-<div class="flex pt-[130px] items-center w-full max-sm:pt-[160px]">
+<div class="flex pt-[130px] items-center w-full max-sm:pt-[170px] h-auto max-sm:max-h-[133svh] max-sm:min-h-[133svh] max-sm:h-[133svh] max-sm:block">
   <Background  />
     <!-- title -->
   <Image src={CloudImage} class="absolute top-0 left-0 max-w-[300px] max-h-[300px] w-[40.5vw] h-[40.5vw] max-sm:hidden" alt={"decoration"} />
@@ -28,15 +28,13 @@ import Background from "../components/system/Background.astro"
   <!-- <div class="w-[100px] h-[300px] bg-red">
 sdfsdfsd
   </div> -->
-  <Image src={Olly} class="absolute left-[5%] top-[30%] object-contain h-[200px] max-sm:h-[100px] max-sm:left-[1%] max-sm:top-[20%] w-auto" alt={"decoration"} />
-  <Image src={Monkey} class="absolute right-[5%] top-[30%] object-contain h-[200px] max-sm:h-[100px] w-auto max-sm:top-[20%]" alt={"decoration"} />
+  <Image src={Olly} class="absolute left-[5%] top-[30%] object-contain h-[200px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%] w-auto" alt={"decoration"} />
+  <Image src={Monkey} class="absolute right-[5%] top-[30%] object-contain h-[200px] max-sm:h-[100px] w-auto max-sm:top-[15%]" alt={"decoration"} />
   <Image src={Sun} class="absolute right-[7%] top-[16%] object-contain h-[100px] z-[-1]  max-sm:h-[50px] max-sm:right-[-1%] max-sm:hidden" alt={"decoration"} />
-  <Image src={Elephant} class="absolute left-[2%] top-[44%] object-contain h-[140px] z-[9999] hidden max-sm:flex w-[140px]" alt={"decoration"} />
-  <Image src={studentLeft} class="absolute right-[2%] top-[44%] object-contain h-[140px] z-[9999] hidden max-sm:flex w-[140px]" alt={"decoration"} />
   
   <div class="flex items-center flex-col">
 
-    <div class="flex flex-col items-center gap-s">
+    <div class="flex flex-col items-center gap-s relative">
         <Text type="h2" class="text-center text-primary text-[4.5rem] !leading-11">
             A Happy <br> 
             <span style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}}>
@@ -60,18 +58,22 @@ sdfsdfsd
         Where every day is an <br class="hidden max-md:block" />unforgettable <br class="block max-md:hidden" />
           adventure of learning
         </Text>
-        <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]" class="mt-m" >
+        <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]" class="mt-m max-md:mt-[20px]" >
           <a href="/admissions">
-            <Text type="base" class="text-[#AF7F30] !tracking-[2px] uppercase font-[700] font-sans text-[20px]">
+
+            <Text type="base" class="text-[#AF7F30] !tracking-[2px] uppercase font-[700] font-sans text-[20px] max-md:text-[16px]">
               Apply Now
             </Text>
           </a>
         </Button>
+
+        <Image src={Elephant} class="absolute left-[-14%] bottom-[-68%] object-contain h-[120px] z-[100] hidden max-sm:flex w-[120px]" alt={"decoration"} />
+        <Image src={studentLeft} class="absolute right-[-13%] bottom-[-68%] object-contain h-[120px] z-[100] hidden max-sm:flex w-[120px]" alt={"decoration"} />
     </div>
-    <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[80vw] max-sm:mt-[100px] z-[-1]" alt={"student holds"} />
+    <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[50vw] max-sm:mt-[40%] z-[-1]" alt={"student holds"} />
     <div class="flex-col relative flex justify-center items-center px-16 py-12 max-md:px-5 w-screen bottom-[80px] z-[-1]">
-        <Image src={Elephant} class="absolute left-[3%] top-[-30%] object-contain h-[150px] z-[9999] max-sm:hidden" alt={"decoration"} />
-        <Image src={studentLeft} class="absolute right-[5%] top-[-30%] object-contain h-[200px] z-[9999] max-sm:hidden" alt={"decoration"} />
+        <Image src={Elephant} class="absolute left-[3%] top-[-30%] object-contain h-[150px] z-[100] max-sm:hidden" alt={"decoration"} />
+        <Image src={studentLeft} class="absolute right-[5%] top-[-30%] object-contain h-[200px] z-[100] max-sm:hidden" alt={"decoration"} />
         
         <!-- <Image
           loading="lazy"
@@ -88,22 +90,22 @@ sdfsdfsd
         </picture>
       
         <span class="relative flex  max-w-full flex-col mb-16 items-start">
-            <svg class="ml-[-77px]" xmlns="http://www.w3.org/2000/svg" width="66" height="47" viewBox="0 0 66 47" fill="none">
+            <svg class="ml-[-77px] block max-md:hidden" xmlns="http://www.w3.org/2000/svg" width="66" height="47" viewBox="0 0 66 47" fill="none">
                 <path opacity="0.1" d="M28.1062 33.1331C28.1062 40.6739 22.8505 46.3867 14.8526 46.3867C6.85469 46.3867 -0.000648499 39.9884 -0.000648499 28.5629C-0.000648499 14.3952 10.7394 2.28409 24.6785 -0.00102234V8.45388C16.6807 10.0535 10.7394 15.7662 10.7394 22.3931C12.1104 21.479 13.9385 20.7935 16.9092 20.7935C22.8505 20.7935 28.1062 25.1352 28.1062 33.1331ZM65.125 33.1331C65.125 40.6739 59.6407 46.3867 51.6428 46.3867C43.8735 46.3867 36.7896 39.9884 36.7896 28.5629C36.7896 14.3952 47.5297 2.28409 61.6973 -0.00102234V8.45388C53.6994 10.0535 47.7582 15.7662 47.7582 22.1645C49.1292 21.2505 51.1858 20.7935 53.928 20.7935C59.8692 20.7935 65.125 25.1352 65.125 33.1331Z" fill="#2D2D2D"/>
             </svg>
-            <Text type="h2" class="text-[#111] !font-[400] !text-[3vw] text-center">
-              This is a place where  our <br> child feels 
-               <span class="text-[#EE7F82] font-[700]">loved, valued, <br> and excited to learn</span>
+            <Text type="h2" class="text-[#111] !font-[400] !text-[3vw] max-md:!text-[18px] text-center max-md:mt-3 mt-0">
+              This is a place where  our <br class="max-md:hidden block"> child feels 
+               <span class="text-[#EE7F82] font-[700]">loved, valued, <br class="max-md:hidden block"> and excited to learn</span>
                 <br />
             </Text>
-          <span class="items-stretch self-center flex gap-3.5 mt-5">
+          <span class="items-stretch self-center flex gap-3.5 mt-5 max-md:mt-2">
             <Image
               loading="lazy"
               src={Person}
               alt={"person"}
-              class="aspect-square object-contain object-center w-[68px] overflow-hidden shrink-0 max-w-full"
+              class="aspect-square object-contain object-center w-[68px] max-md:w-[40px] overflow-hidden shrink-0 max-w-full"
             />
-            <Text type="h4" class="font-sans text-[#1B2226] font-[600] text-2xl leading-9 my-auto">
+            <Text type="h4" class="font-sans text-[#1B2226] font-[600] !text-2xl max-md:!text-[18px] leading-9 my-auto">
               Dr Alina, Mother of Viaani
             </Text>
           </span>
