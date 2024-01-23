@@ -17,13 +17,13 @@ const { className } = Astro.props;
   <div class="flex justify-between w-full card max-w-[1200px] m-auto  bg-white rounded-[25px] border-[4px] border-primary border-dashed max-sm:flex-col max-sm:isolate max-sm:overflow-hidden max-sm:relative overflow-hidden" 
     onclick="window.location.href='/admissions'"
   >
-   <div class="flex flex-col px-xl py-l gap-[36px] basis-[45%]">
+   <div class="flex flex-col px-l py-l gap-[36px] basis-[45%]">
    
     <Image src={logo} alt="logo" class="w-[150px]" />
-    <Text type="h2" class="text-[#4E000D]">
+    <Text type="h2" class="text-[#4E000D] max-md:text-[40px]">
       Admissions <br> Open <br> for <span class="text-primary">2023-24!!</span>
     </Text>
-    <div class="text-primary max-s:hidden button ">
+    <div class="text-primary button ">
       <FilledArrowCircle
         svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px]"}
         color={"#EE7F82"}
@@ -39,7 +39,7 @@ const { className } = Astro.props;
  </div>
   
    <div class="bg-[#FFD1D3] basis-[55%] flex items-center max-sm:absolute max-sm:inset-0 max-sm:z-[-1] max-sm:opacity-[.7]">
-    <Image class={'max-h-[400px] object-contain max-sm:opacity-[.2]'} src={Student} alt={'student'} />
+    <Image class={'max-h-[400px] object-contain max-md:opacity-[0]'} src={Student} alt={'student'} />
    </div>
 
   </div>

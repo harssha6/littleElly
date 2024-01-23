@@ -4,6 +4,8 @@ import Text from "../components/system/Text.astro";
 import Layout from "../layouts/Layout.astro";
 import Hero from "./Hero.astro";
 import ProgramHero from "../images/program/hero.png"
+import campus1 from "../images/campus/gas/gallery/1.jpeg";
+import ProgramHero from "../images/program/hero.png"
 import Button from "../components/system/Button.astro";
 import Section from "../components/system/Section.astro";
 import MultiStyleText from "../components/system/MultiStyleText.astro";
@@ -22,6 +24,9 @@ import Flower from "../image/decorations/flower.png";
 import Rainbows from "../image/decorations/rainbows.png";
 import Student from "../images/student4.png";
 import DaycareFacilities from "./daycare-facilities.astro";
+import slide1 from "../images/slides/1.png";
+import slide2 from "../images/slides/2.png";
+import slide3 from "../images/slides/3.png";
 
 const programData = [
     {
@@ -129,26 +134,25 @@ const programData = [
       class="h-[76svh] flex"
       style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
-      <Hero
-        showSlide={false}
-        config={
-          {bgImage: ProgramHero.src}
-        }
-        contentDirection="items-end"
-        className="overflow-hidden font-roundo pb-0"
-      >
+    <Hero
+    config={{ title: "Welcome to EKAM", bgImage: campus1 }}
+    showSlide={true}
+    slideImages={[
+      { slide: slide1.src, position: "center 64%", type: "image" },
+      { slide: slide2.src, position: "center 64%", type: "image" },
+      { slide: slide3.src, position: "center 64%", type: "image" },
+    ]}
+    contentDirection="items-end"
+    className="overflow-hidden font-roundo"
+  >
       <div slot="title">
-          <!-- <div class="p-20"></div> -->
-          <Text type="h2">
-            Our  <span class="text-yellow">Programs</span>
+        <!-- <div class="p-20"></div> -->
+        <Text type="h2">
+          Our  <span class="text-yellow">Programs</span>
+         </Text> 
+
       </div>
-      <div slot="ctaButton" />
-      <!-- <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]">
-        <Text type="h4" class="text-[#AF7F30] tracking-[2px] uppercase font-[700] font-sans text-[20px]">
-          Apply Now
-        </Text>
-      </Button> -->
-      </Hero>
+  </Hero>  
     </div>
     <Section class="bg-[#FDF2E5]">
     
@@ -158,10 +162,10 @@ const programData = [
           return (
             <div>
               <div class="flex gap-xl max-sm:flex-col items-center">
-                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-h-[300px] max-w-[300px]`} src={item.image} alt="pro"/>
+                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} src={item.image} alt="pro"/>
                 <div class="flex flex-col">
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
-                  <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] font-display`}>{item.subtitle}</Text>
+                  <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] max-md:text-[20px] font-display`}>{item.subtitle}</Text>
                   <Text type="base" class={`text-xl text-black/70 font-[700] font-display`}>{item.subText}</Text>
   
                   <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-[160%] max-w-[62ch]`}>{item.desc}</Text>
