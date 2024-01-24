@@ -35,11 +35,11 @@ import Sun from "../image/decorations/gifs/sun.gif"
 sdfsdfsd
   </div> -->
 
-  <div class="absolute top-[20%] left-[15%]">
+  <div class="absolute top-[20%] left-[15%]" data-hero-top-animal>
   <Image src={music} class=" z-40 absolute top-[24%] right-[20%] object-contain h-[30px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%] w-auto" alt={"decoration"} />
   <Image src={Olly} class="  object-contain h-[200px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%] w-auto" alt={"decoration"} />
 </div>
-  <div class="absolute right-[15%] top-[20%] ">
+  <div class="absolute right-[15%] top-[20%] " data-hero-top-animal>
     <Image src={Sun} class=" absolute right-[-40%] object-contain h-[100px] z-[-1]  max-sm:h-[50px] max-sm:right-[-1%] max-sm:hidden" alt={"decoration"} />
     <Image src={Monkey} class=" object-contain h-[200px] max-sm:h-[100px] w-auto max-sm:top-[15%]" alt={"decoration"} />
 </div>
@@ -47,6 +47,7 @@ sdfsdfsd
   <div class="flex items-center flex-col">
 
     <div class="flex flex-col items-center gap-s relative">
+      <div class="flex flex-col items-center gap-s" data-hero-container>
         <Text type="h2" class="text-center text-primary text-[4.5rem] !leading-11">
             A Happy <br> 
             <span style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}}>
@@ -78,6 +79,7 @@ sdfsdfsd
             </Text>
           </a>
         </Button>
+      </div>
 
         <Image src={Elephant} class="absolute left-[-14%] bottom-[-68%] object-contain h-[120px] z-[100] hidden max-sm:flex w-[120px]" alt={"decoration"} />
         <Image src={arya} class="absolute right-[-13%] bottom-[-68%] object-contain h-[120px] z-[100] hidden max-sm:flex w-[120px]" alt={"decoration"} />

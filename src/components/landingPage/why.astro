@@ -22,33 +22,37 @@ import Marker from "../system/Marker.astro";
 
 <Section class="flex flex-col gap-2 pr-[40px] ] !p-0">
   <div class="flex justify-between items-center">
-    <Image src={Rope} alt={"rope"} class={'max-sm:w-20 object-contain'} ></Image>
+    <Image src={Rope} alt={"rope"} class={'max-sm:w-20 object-contain'} data-appear data-y={0}></Image>
       <div>
 
         <Text type="h2" class="text-center">
-          Why Choose <br />
-          <span class="relative">
-            <span class="text-primary">Little </span> <MultiStyleText type="h2"text="Elly?" classes={[
-              "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
-            ]} />
-              
-          </span>
+          <div data-appear>
+            Why Choose <br />
+            <span class="relative">
+              <span class="text-primary">Little </span> <MultiStyleText type="h2"text="Elly?" classes={[
+                "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
+              ]} />
+                
+            </span>
+          </div>
         </Text>
-        <Text type="regular" class="mt-[10px] !font-[700] !text-3xl max-md:!text-[20px] max-md:leading-[100%] text-[#1C1C1C] text-center">
-          A world of <span class="text-primary">Endless</span> {" "}
-          <MultiStyleText 
-          classes={[
-            "text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple"
-          ]}
-          text="Possibilities" />
+        <Text type="regular" class="mt-[10px] !font-[700] !text-3xl max-md:!text-[20px] max-md:leading-[100%] text-[#1C1C1C] text-center" data-appear={1}>
+          <div  data-appear={1}>
+            A world of <span class="text-primary">Endless</span> {" "}
+            <MultiStyleText 
+            classes={[
+              "text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple"
+            ]}
+            text="Possibilities" />
+          </div>
         </Text>
       </div>
-    <Image src={Birds} alt={"birds"} class={'max-sm:w-20  object-contain'} ></Image>
+    <Image src={Birds} alt={"birds"} class={'max-sm:w-20  object-contain'} data-appear data-y={0}></Image>
 
   </div>
   <Section>
     <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
-      <div class="max-md:order-2 basis-[50%]">
+      <div class="max-md:order-2 basis-[50%]" data-appear>
             <Text type="base">
               The significance of providing stimulation during the early years of a child's life is sometimes significantly undervalued. This is when your child is most receptive and malleable with their brain developing over 90%. This period is marked by a continuous evolution of intellectual curiosity, rendering it the most influential and <span class="text-primary font-bold">defining phase in your child's life.</span> 
             </Text>
@@ -57,6 +61,7 @@ import Marker from "../system/Marker.astro";
           class="w-[384px] max-md:w-[95%]"
           src={Why1}
           alt="Why choose Little Elly??"
+          data-appear={1}
         />
     </div>
     <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
@@ -64,9 +69,10 @@ import Marker from "../system/Marker.astro";
           class="w-[384px] max-md:w-[95%]"
           src={Why2}
           alt="Why choose Little Elly??"
+          data-appear
         />
       <div class="max-md:order-2 basis-[50%]">
-        <div>
+        <div data-appear>
           <Text type="base">
             At Little Elly, we are committed to equipping each child with a safe and engaging environment to explore and thrive during these crucial years. Given the substantial mental and cognitive growth at this time, Little Elly’s programs are curated to enhance children's emotional, intellectual, and aesthetic capabilities that<span class="text-primary font-bold"> cater to their specific needs.</span> 
           </Text>

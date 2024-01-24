@@ -97,6 +97,94 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 	import Swiper from "swiper";
   
 	import { Autoplay } from "swiper/modules";
+
+	import { gsap } from "gsap";
+      
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	import Lenis from '@studio-freight/lenis'
+
+	const lenis = new Lenis({
+		duration: 2.5,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+	})
+
+	lenis.on('scroll', (e) => {
+		console.log(e)
+	})
+
+	lenis.on('scroll', ScrollTrigger.update)
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.ticker.add((time)=>{
+		lenis.raf(time * 1000)
+	})
+
+	gsap.ticker.lagSmoothing(0)
+
+	const heroContainer = document.querySelector('[data-hero-container]')
+
+	const heroTopAnimal = document.querySelectorAll('[data-hero-top-animal]')
+
+
+
+	gsap.to(heroContainer, {
+    scale: 0.9,
+    opacity: 0,
+    duration: 3,
+    scrollTrigger: {
+      trigger: heroContainer, 
+      start: "100% 50%",
+      end: "120% 20%",
+      scrub: true,
+			// markers: true,
+    }
+  });
+	
+	heroTopAnimal.forEach((animal, i) => {
+		gsap.to(animal, {
+			y: (20 + i * 80) * -1,
+			scale: 0.8 + i * 0.3,
+			opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: animal, 
+				start: "100% 50%",
+				end: "120% 20%",
+				scrub: true,
+				// markers: true,
+			}
+		});
+	})
+
+
+	const appearElements = document.querySelectorAll('[data-appear]')
+
+	appearElements.forEach(element => {
+		const order = element.dataset.appear || 0
+		const trigger = element.dataset.trigger
+			? document.querySelector(`[data-parent="${element.dataset.trigger}"]`) 
+			: element
+
+		let delay = element.dataset.delay || 0 + (0.1 * order)
+		let y = element.dataset.y || 30 + (5 * order)
+		gsap.fromTo(element, {
+			opacity: 0,
+			y,
+		}, {
+			opacity: 1,
+			y: 0,
+			delay,
+			duration: 1,
+			scrollTrigger: {
+				trigger, 
+				start: "100% 80%",
+				end: "120% 70%",
+			}
+		});
+	})
 	
 	
 	document.addEventListener("DOMContentLoaded", function() {

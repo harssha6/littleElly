@@ -15,25 +15,26 @@ import cloud2 from "../images/clouds/2.png"
 import cloud3 from "../images/clouds/3.png"
 import cloud4 from "../images/clouds/4.png"
 ---
-<Section class="flex flex-row max-md:flex-col justify-between items-center max-sm:gap-l">
+<Section class="flex flex-row max-md:flex-col justify-between items-start max-sm:gap-l">
     
     <div class="flex flex-col gap-9 max-md:items-center max-md:gap-4">
-        <Text type="h2" class="max-sm:text-center">
-            Our  <MultiStyleText
-            text="Overview" 
-            classes={["text-primary", "text-purple", "text-[#78ADF9]", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-[#78ADF9]"]}
-         />
-        </Text>
-        <Image height={300} width={300} src={Student1} alt="student" class={'max-sm:w-[150px]'} />
+        <div data-appear data-parent="overview-section">
+            <Text type="h2" class="max-sm:text-center">
+                Our  <MultiStyleText
+                text="Overview" 
+                classes={["text-primary", "text-purple", "text-[#78ADF9]", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-[#78ADF9]"]}
+             />
+        </div>
+        <Image height={300} width={300} src={Student1} alt="student" class={'max-sm:w-[150px]'} data-appear={1} data-trigger="overview-section" data-y={50} />
     </div>
-    <div class="flex flex-col max-md:w-full gap-lg max-md:gap-l">
+    <div class="flex flex-col max-md:w-full gap-l max-md:gap-l">
       <div class="flex gap-l justify-around items-center max-md:flex-row max-md:gap-0">
-          <CloudText img={OrangeCloud} title={"CENTRES"} subtitle={'130 +'} className="text-orange-200" /> 
-          <CloudText img={BlueCloud} title={"STUDENTS"} subtitle={'2000 +'} className="text-[#78ADF9] !pt-11 max-md:!pt-2" /> 
+          <CloudText i={2} img={OrangeCloud} title={"CENTRES"} subtitle={'130 +'} className="text-orange-200" /> 
+          <CloudText i={3} img={BlueCloud} title={"STUDENTS"} subtitle={'2000 +'} className="text-[#78ADF9] !pt-11 max-md:!pt-2" /> 
       </div>
       <div class="flex gap-l justify-around items-center max-md:flex-row max-md:gap-0">
-          <CloudText img={PurpleCloud} title="YEARS" subtitle={'17'} className="text-purple !pt-8 max-md:!pt-2" /> 
-          <CloudText img={BlueCloud} title={"STUDENTS"} subtitle={'2000 +'} className="text-[#78ADF9] !pt-11 max-md:!pt-2" /> 
+          <CloudText i={4} img={PurpleCloud} title="YEARS" subtitle={'17'} className="text-purple !pt-8 max-md:!pt-2" /> 
+          <CloudText i={5} img={RedCloud} title={"FACULTY"} subtitle={'650 +'} className="text-primary !pt-11 max-md:!pt-2" /> 
       </div>
       
       <div class="flex pt-xl gap-l justify-center items-center max-md:flex-row max-md:pt-r">
