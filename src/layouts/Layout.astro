@@ -192,9 +192,11 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 
 		let delay = element.dataset.delay || 0 + (0.1 * order)
 		let y = element.dataset.y || 30 + (5 * order)
+		let x = element.dataset.x || 0
 		gsap.fromTo(element, {
 			opacity: 0,
 			y,
+			x,
 		}, {
 			opacity: 1,
 			y: 0,

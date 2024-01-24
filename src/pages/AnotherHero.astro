@@ -50,22 +50,22 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
 ---
 
 <!-- Pre-school -->
-<div class="flex pt-[130px] items-center w-full relative max-sm:pt-[170px] h-auto max-sm:max-h-[133svh] max-sm:min-h-[133svh] max-sm:h-[133svh] max-sm:block">
+<div class="flex pt-[130px] items-center w-full relative max-sm:pt-[170px] h-auto max-sm:max-h-[133svh] max-sm:min-h-[133svh] max-sm:h-[133svh] max-sm:block overflow-hidden">
   <Background  />
     <!-- title -->
-<!--    
-  <Image src={CloudImage} class="absolute top-0 left-0 max-w-[300px] max-h-[300px] w-[40.5vw] h-[40.5vw] max-sm:hidden" alt={"decoration"} />
-  <Image src={CloudLeft} class="absolute top-0 right-0 max-h-[700px] max-sm:h-[74vw] max-sm:w-[34vw] max-sm:hidden" alt={"decoration"} /> -->
+
+  <Image src={CloudImage} class="absolute top-0 left-0 max-w-[300px] max-h-[300px] w-[40.5vw] h-[40.5vw] max-sm:hidden" alt={"decoration"} data-appear data-delay={0} data-y={0} data-trigger="hero-container" />
+  <Image src={CloudLeft} class="absolute top-0 right-0 max-h-[700px] max-sm:h-[74vw] max-sm:w-[34vw] max-sm:hidden" alt={"decoration"} data-appear data-delay={0} data-y={0} data-trigger="hero-container" />
 
   <!-- <div class="w-[900px] absolute -top-[20%] left-[-15%]  -top-[20%] left-[-15%]" set:html={leftCloudSVG}> -->
-  <div data-parent="hero-container" data-left-cloud class="w-[900px] absolute -top-[264px] left-[-216px]" set:html={leftCloudSVG} />
-  <div data-right-cloud class="w-[700px] absolute -top-[94px] right-[-96px]" set:html={rightCloudSVG} />
+  <!-- <div data-parent="hero-container" data-left-cloud class="w-[900px] absolute -top-[264px] left-[-216px]" set:html={leftCloudSVG} />
+  <div data-right-cloud class="w-[700px] absolute -top-[94px] right-[-96px]" set:html={rightCloudSVG} /> -->
 
-  <div class="absolute top-[18%] left-[15%]" data-hero-top-animal data-appear data-delay={2.1}>
+  <div data-parent="hero-container" class="absolute top-[18%] left-[15%]" data-hero-top-animal data-appear data-delay={1.2}>
     <Image src={music} class="z-40 absolute top-0 right-[20%] object-contain h-[30px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%] w-auto" alt={"decoration"} />
     <Image src={Olly} class="  object-contain h-[200px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%] w-auto" alt={"decoration"}  />
   </div>
-  <div class="absolute right-[15%] top-[20%]" data-hero-top-animal data-appear data-delay={2.3}>
+  <div class="absolute right-[15%] top-[20%]" data-hero-top-animal data-appear data-delay={1.4}>
     <Image src={Sun} class=" absolute right-[-40%] object-contain h-[80px] z-[-1]  max-sm:h-[50px] max-sm:right-[-1%] max-sm:hidden" alt={"decoration"} />
     <Image src={Monkey} class=" object-contain h-[200px] max-sm:h-[100px] w-auto max-sm:top-[15%]" alt={"decoration"} />
   </div>
@@ -76,8 +76,8 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
     <div class="flex flex-col items-center gap-s relative">
       <div class="flex flex-col items-center gap-s" data-hero-container>
         <Text type="h2" class="text-center text-primary text-[4.5rem] !leading-11">
-            <div data-delay={1.2} data-appear>A Happy</div>
-            <div data-delay={1.4} data-appear={1} style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}}>
+            <div data-delay={0.4} data-appear>A Happy</div>
+            <div data-delay={0.6} data-appear={1} style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}}>
               <MultiStyleText  text="Pre-school" class="text-primary"
                   classes={[
                       "text-purple",
@@ -94,13 +94,13 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
               />
               </div>
         </Text>
-        <div data-delay={1.7} data-appear={2}>
+        <div data-delay={0.8} data-appear={2}>
           <Text type="regular" class="text-red-800 font-[800] leading-[120%] font-sans text-center !text-[26px] max-md:!text-[18px]">
           Where every day is an <br class="hidden max-md:block" />unforgettable <br class="block max-md:hidden" />
             adventure of learning
           </Text>
         </div>
-        <div  data-delay={2} data-appear={3}>
+        <div  data-delay={1} data-appear={3}>
           <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]" class="mt-m max-md:mt-[20px]" >
             <a href="/admissions">
   
@@ -115,10 +115,10 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
         <Image src={Elephant} class="absolute left-[-14%] bottom-[-68%] object-contain h-[120px] z-[100] hidden max-sm:flex w-[120px]" alt={"decoration"} />
         <Image src={arya} class="absolute right-[-13%] bottom-[-68%] object-contain h-[120px] z-[100] hidden max-sm:flex w-[120px]" alt={"decoration"} />
     </div>
-    <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[50vw] max-sm:mt-[40%] z-[-1]" alt={"student holds"} data-appear data-delay={2.6} data-trigger="hero-container" />
+    <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[50vw] max-sm:mt-[40%] z-[-1]" alt={"student holds"} data-appear data-delay={1.2} data-trigger="hero-container" />
 
 
-    <div class="absolute left-[10%] bottom-[38%] z-[50]" data-appear data-delay={2.3}  data-trigger="hero-container">
+    <div class="absolute left-[10%] bottom-[38%] z-[50]" data-appear data-delay={1.6}  data-trigger="hero-container">
       <Image src={heartgif} class=" z-[42]  absolute top-[-10%] left-[42%] object-contain h-[50px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%]" alt={"decoration"} />  
       <Image src={Elephant} class=" z-10  object-contain h-[150px]  max-sm:hidden" alt={"decoration"} />
     </div>
@@ -126,12 +126,12 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
     <div class="flex-col relative flex justify-center items-center w-screen bottom-[80px]">
     
 
-      <div data-appear data-delay={2.3}  data-trigger="hero-container" class="w-[200px] h-[400px] absolute right-[5%] top-[-20%] z-[50]">
+      <div data-appear data-delay={1.8}  data-trigger="hero-container" class="w-[200px] h-[400px] absolute right-[5%] top-[-20%] z-[50]">
         <Image src={arya} class="absolute right-[5%] top-[-30%] object-contain h-[400px] z-[100] max-sm:hidden" alt={"decoration"} />
         <Image src={heartgif2} class="absolute object-contain h-[80px] right-[-20px] top-[-40px] z-[100] max-sm:hidden" alt={"decoration"} />  
       </div>
 
-        <picture class="w-full" data-appear data-delay={2.2} data-trigger="hero-container">
+        <picture class="w-full" data-appear data-delay={2} data-trigger="hero-container">
           <source srcset={CloudBannerImage.src} media="(min-width: 768px)" />
           <source srcset={MbCloudBannerImage.src} media="(max-width: 767px)" />
           <img src={MbCloudBannerImage.src} alt="cloud" class="absolute w-full object-cover object-center inset-0" />
