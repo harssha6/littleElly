@@ -123,6 +123,29 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 
 	gsap.ticker.lagSmoothing(0)
 
+
+	const leftCloud = document.querySelector('[data-left-cloud]')
+	const rightCloud = document.querySelector('[data-right-cloud]')
+
+	leftCloud?.querySelectorAll('path').forEach((path, i) => {
+		gsap.to(path, {
+			x: -230,
+			y: -230,
+			duration: 0.7 + i * 0.2,
+			delay: 0.1 + i * 0.1,
+			
+		});
+	})
+	rightCloud?.querySelectorAll('path').forEach((path, i) => {
+		gsap.to(path, {
+			x: 400,
+			y: -230,
+			duration: 0.7 + i * 0.2,
+			delay: 0.1 + i * 0.1,
+			
+		});
+	})
+
 	const heroContainer = document.querySelector('[data-hero-container]')
 
 	const heroTopAnimal = document.querySelectorAll('[data-hero-top-animal]')
@@ -138,7 +161,6 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
       start: "100% 50%",
       end: "120% 20%",
       scrub: true,
-			// markers: true,
     }
   });
 	
@@ -152,7 +174,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 			scrollTrigger: {
 				trigger: animal, 
 				start: "100% 50%",
-				end: "120% 20%",
+				end: "140% 20%",
 				scrub: true,
 				// markers: true,
 			}
