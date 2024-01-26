@@ -105,8 +105,8 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 	import Lenis from '@studio-freight/lenis'
 
 	const lenis = new Lenis({
-		duration: 2.5,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+		duration: 0.6,
+    // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
 	})
 
 	lenis.on('scroll', (e) => {
@@ -194,15 +194,13 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 				start: "100% 50%",
 				end: "140% 20%",
 				scrub: true,
-				// markers: true,
 			}
 		});
 	})
 
-	console.log('helllo..')
-
 
 	const appearElements = document.querySelectorAll('[data-appear]')
+	
 
 	appearElements.forEach(element => {
 		const order = element.dataset.appear || 0
@@ -213,8 +211,10 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 		let delay = element.dataset.delay || 0 + (0.1 * order)
 		let y = element.dataset.y || 30 + (5 * order)
 		let x = element.dataset.x || 0
+		let opacity = element.dataset.opacity || 0
+		const duration = element.dataset.t || 1
 		gsap.fromTo(element, {
-			opacity: 0,
+			opacity,
 			y,
 			x,
 		}, {
@@ -222,7 +222,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 			y: 0,
 			x: 0,
 			delay,
-			duration: 1,
+			duration,
 			scrollTrigger: {
 				trigger, 
 				start: "100% 80%",
@@ -403,6 +403,118 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 			}
 		  });
 	  }
+
+		const heroSectionBg = document.querySelector('[data-hero-section-bg]')
+		const heroSectionStudent = document.querySelector('[data-hero-section-student]')
+
+		gsap.to(heroSectionBg, {
+			// y: (20 + i * 80) * -1,
+			scale: 1.1,
+			// opacity: 0,
+			// opacity: 0,
+			// y: 20,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true
+			}
+		});
+		gsap.to(heroSectionStudent, {
+			// y: (20 + i * 80) * -1,
+			scale: 1.2,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true
+			}
+		});
+
+
+		gsap.to('[data-hero-arya]', {
+			scale: 1.1,
+			y: -20,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true
+			}
+		})
+		gsap.to('[data-hero-elephant]', {
+			scale: 1.1,
+			y: -20,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true,
+			}
+		})
+		gsap.to('[data-baloon]', {
+			scale: 1.1,
+			y: -100,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true,
+			}
+		})
+		gsap.to('[data-hero-elephant-heart]', {
+			scale: 1.1,
+			x: 20,
+			y: -20,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true,
+			}
+		})
+		gsap.to('[data-hero-elephant]', {
+			scale: 1.1,
+			y: -20,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true,
+			}
+		})
+  
+		gsap.to('[data-bottom-cloud]', {
+			scale: 1.1,
+			// opacity: 0,
+			// opacity: 0,
+			duration: 3,
+			scrollTrigger: {
+				trigger: heroSectionBg, 
+				start: "100% 90%",
+				end: "180% 40%",
+				scrub: true,
+			}
+		})
   
   
   </script>
