@@ -48,6 +48,7 @@ const { id, class: className='', containerClass } = Astro.props
 
   targetClose.forEach(target => {
     target.addEventListener('click', () => {
+      console.log('close...', target.dataset.modalClose)
       const modal = document.querySelector(`[data-modal-id="${target.dataset.modalClose}"]`)
       modal?.classList.add('modal-hidden')
     })
