@@ -18,6 +18,8 @@ import Why3 from "../../image/why/why3.png"
 import student from "../../images/student2.png"
 import Marker from "../system/Marker.astro";
 
+import gift from "../../image/decorations/gifs/gift.gif"
+
 ---
 
 <Section class="flex flex-col gap-2 pr-[40px] ] !p-0">
@@ -65,12 +67,22 @@ import Marker from "../system/Marker.astro";
         />
     </div>
     <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
-        <Image
-          class="w-[384px] max-md:w-[95%]"
+        <div>
+          <Image
+          src={gift} 
+          alt="gift"
+          class= "absolute z-[10] w-[70px] left-[30%] bottom-[10%]" 
+          /> 
+            
+          
+          <Image
+          class="relative w-[384px] max-md:w-[95%]"
+          data-appear
           src={Why2}
           alt="Why choose Little Elly??"
-          data-appear
         />
+
+      </div>
       <div class="max-md:order-2 basis-[50%]">
         <div data-appear>
           <Text type="base">
