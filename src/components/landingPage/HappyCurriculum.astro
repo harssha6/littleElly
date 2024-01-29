@@ -294,7 +294,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       line.classList.remove('active')
     })
     descriptions.forEach(description => {
-      description.childNodes[0]?.classList.remove('active')
+      description.children[0].classList && description.children[0]?.classList.remove('active')
     })
   }
 
@@ -302,7 +302,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     clearBoard()
     boards[index].classList.add('active')
     descriptionLines[index].classList.add('active')
-    descriptions[index].childNodes[0]?.classList.add('active')
+    descriptions[index].children[0] && descriptions[index].children[0]?.classList.add('active')
     currentBoard = (index + 1) % boards.length
   }
 
