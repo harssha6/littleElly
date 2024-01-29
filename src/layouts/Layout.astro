@@ -27,7 +27,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
 			<link 
-			href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap"
 			rel="stylesheet" 
 			type="text/css"
 			media="print"
@@ -230,6 +230,65 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 			}
 		});
 	})
+
+	const characterBG1  =  document.querySelector('[data-character-bg-1]')
+	const characterBG2  =  document.querySelector('[data-character-bg-2]')
+	const characterBG3  =  document.querySelector('[data-character-bg-3]')
+	const characterBG4  =  document.querySelector('[data-character-bg-4]')
+
+	gsap.from(characterBG1, {
+		y: -80 * 2,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-character-trigger]', 
+			start: "0% 100%",
+			end: "100% 0%",
+			scrub: true,
+		}
+	});
+	const characters =  document.querySelectorAll('[data-character]')
+	characters.forEach((character, i) => {
+		gsap.from(character, {
+		y: -80 * 2.2,
+			duration: 3,
+			scrollTrigger: {
+				trigger: '[data-character-trigger]', 
+				start: "0% 100%",
+				end: "100% 0%",
+				scrub: true,
+			}
+		});
+	})
+	gsap.from(characterBG2, {
+		y: -100 * 2,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-character-trigger]', 
+			start: "0% 100%",
+			end: "100% 0%",
+			scrub: true,
+		}
+	});
+	gsap.from(characterBG3, {
+		y: -90 * 4,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-character-trigger]', 
+			start: "0% 100%",
+			end: "100% 00%",
+			scrub: true,
+		}
+	});
+	gsap.from(characterBG4, {
+		y: -80 * 6.5,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-character-trigger]', 
+			start: "0% 100%",
+			end: "100% 0%",
+			scrub: true,
+		}
+	});
 	
 	
 	

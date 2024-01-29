@@ -1,0 +1,323 @@
+---
+import Text from '../../components/system/Text.astro'
+import MultiStyleText from '../../components/system/MultiStyleText.astro'
+import bottomCloud from './bottomCloud.svg'
+import { Image } from 'astro:assets'
+
+const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg width="88" height="197" viewBox="0 0 88 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 0.95H16.95V1V99V99.05H17H18H18.05V99V1V0.95H18H17Z" fill="#A97837" stroke="#3C2415" stroke-width="0.1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.3191 96.4456C14.3054 96.4456 11.8623 98.8886 11.8623 101.902V116.15H22.7758V101.902C22.7758 98.8886 20.3327 96.4456 17.3191 96.4456ZM17.3193 106.45C19.161 106.45 20.654 104.957 20.654 103.115C20.654 101.273 19.161 99.7802 17.3193 99.7802C15.4776 99.7802 13.9846 101.273 13.9846 103.115C13.9846 104.957 15.4776 106.45 17.3193 106.45Z" fill="${secondaryColor}"/>
+<path d="M69 0.95H68.95V1V99V99.05H69H70H70.05V99V1V0.95H70H69Z" fill="#A97837" stroke="#3C2415" stroke-width="0.1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M69.5144 96.4456C66.5007 96.4456 64.0576 98.8886 64.0576 101.902V116.15H74.9711V101.902C74.9711 98.8886 72.5281 96.4456 69.5144 96.4456ZM69.5139 106.45C71.3555 106.45 72.8485 104.957 72.8485 103.115C72.8485 101.273 71.3555 99.7802 69.5139 99.7802C67.6722 99.7802 66.1792 101.273 66.1792 103.115C66.1792 104.957 67.6722 106.45 69.5139 106.45Z" fill="${secondaryColor}"/>
+<path d="M78.9308 117.587C78.9308 115.256 78.0052 113.022 76.3576 111.374C74.7099 109.726 72.4752 108.801 70.1451 108.801C67.815 108.801 65.5803 109.726 63.9327 111.374C62.285 113.022 61.3594 115.256 61.3594 117.587L70.1451 117.587L78.9308 117.587Z" fill="${primaryColor}"/>
+<path d="M61.3596 117.587C61.3596 115.256 60.4339 113.022 58.7863 111.374C57.1386 109.726 54.9039 108.801 52.5738 108.801C50.2437 108.801 48.009 109.726 46.3614 111.374C44.7137 113.022 43.7881 115.256 43.7881 117.587L52.5738 117.587L61.3596 117.587Z" fill="${primaryColor}"/>
+<path d="M43.7878 117.587C43.7878 115.256 42.8621 113.022 41.2145 111.374C39.5669 109.726 37.3322 108.801 35.002 108.801C32.6719 108.801 30.4372 109.726 28.7896 111.374C27.1419 113.022 26.2163 115.256 26.2163 117.587L35.002 117.587L43.7878 117.587Z" fill="${primaryColor}"/>
+<path d="M26.2165 117.587C26.2165 115.256 25.2909 113.022 23.6432 111.374C21.9956 109.726 19.7609 108.801 17.4308 108.801C15.1006 108.801 12.8659 109.726 11.2183 111.374C9.57066 113.022 8.64502 115.256 8.64502 117.587L17.4308 117.587L26.2165 117.587Z" fill="${primaryColor}"/>
+<path d="M8.64533 187.827C8.64533 190.157 9.57096 192.391 11.2186 194.039C12.8663 195.687 15.1009 196.612 17.4311 196.612C19.7612 196.612 21.9959 195.687 23.6435 194.039C25.2912 192.391 26.2168 190.157 26.2168 187.827L17.4311 187.827L8.64533 187.827Z" fill="${primaryColor}"/>
+<path d="M26.2166 187.826C26.2166 190.157 27.1423 192.391 28.7899 194.039C30.4375 195.687 32.6722 196.612 35.0023 196.612C37.3325 196.612 39.5672 195.687 41.2148 194.039C42.8624 192.391 43.7881 190.157 43.7881 187.826L35.0024 187.826L26.2166 187.826Z" fill="${primaryColor}"/>
+<path d="M43.7879 187.827C43.7879 190.157 44.7135 192.391 46.3612 194.039C48.0088 195.687 50.2435 196.612 52.5736 196.612C54.9038 196.612 57.1384 195.687 58.7861 194.039C60.4337 192.391 61.3594 190.157 61.3594 187.827L52.5736 187.827L43.7879 187.827Z" fill="${primaryColor}"/>
+<path d="M61.3597 187.826C61.3597 190.157 62.2853 192.391 63.933 194.039C65.5806 195.687 67.8153 196.612 70.1454 196.612C72.4755 196.612 74.7102 195.687 76.3579 194.039C78.0055 192.391 78.9312 190.157 78.9312 187.826L70.1454 187.826L61.3597 187.826Z" fill="${primaryColor}"/>
+<path d="M78.9711 187.868C81.3012 187.868 83.5359 186.943 85.1836 185.295C86.8312 183.647 87.7568 181.413 87.7568 179.083C87.7568 176.752 86.8312 174.518 85.1836 172.87C83.5359 171.223 81.3012 170.297 78.9711 170.297L78.9711 179.083L78.9711 187.868Z" fill="${primaryColor}"/>
+<path d="M78.9711 170.297C81.3012 170.297 83.5359 169.371 85.1836 167.724C86.8312 166.076 87.7568 163.841 87.7568 161.511C87.7568 159.181 86.8312 156.946 85.1836 155.299C83.5359 153.651 81.3012 152.725 78.9711 152.725L78.9711 161.511L78.9711 170.297Z" fill="${primaryColor}"/>
+<path d="M78.9711 152.725C81.3012 152.725 83.5359 151.8 85.1836 150.152C86.8312 148.504 87.7568 146.27 87.7568 143.94C87.7568 141.61 86.8312 139.375 85.1836 137.727C83.5359 136.08 81.3012 135.154 78.9711 135.154L78.9711 143.94L78.9711 152.725Z" fill="${primaryColor}"/>
+<path d="M78.9711 135.154C81.3012 135.154 83.5359 134.228 85.1836 132.581C86.8312 130.933 87.7568 128.698 87.7568 126.368C87.7568 124.038 86.8312 121.803 85.1836 120.156C83.5359 118.508 81.3012 117.583 78.9711 117.583L78.9711 126.368L78.9711 135.154Z" fill="${primaryColor}"/>
+<path d="M8.78623 117.51C6.4561 117.51 4.22142 118.436 2.57377 120.083C0.926128 121.731 0.000489914 123.966 0.000489433 126.296C0.000488952 128.626 0.926126 130.86 2.57377 132.508C4.22142 134.156 6.4561 135.081 8.78622 135.081L8.78623 126.296L8.78623 117.51Z" fill="${primaryColor}"/>
+<path d="M8.78623 135.081C6.4561 135.081 4.22142 136.007 2.57377 137.655C0.926128 139.302 0.000489914 141.537 0.000489433 143.867C0.000488952 146.197 0.926126 148.432 2.57377 150.079C4.22142 151.727 6.4561 152.653 8.78622 152.653L8.78623 143.867L8.78623 135.081Z" fill="${primaryColor}"/>
+<path d="M8.78623 152.653C6.4561 152.653 4.22142 153.578 2.57377 155.226C0.926128 156.874 0.000489914 159.108 0.000489433 161.439C0.000488952 163.769 0.926126 166.003 2.57377 167.651C4.22142 169.299 6.4561 170.224 8.78622 170.224L8.78623 161.439L8.78623 152.653Z" fill="${primaryColor}"/>
+<path d="M8.78623 170.224C6.4561 170.224 4.22142 171.15 2.57377 172.797C0.926128 174.445 0.000489914 176.68 0.000489433 179.01C0.000488952 181.34 0.926126 183.575 2.57377 185.222C4.22142 186.87 6.4561 187.796 8.78622 187.796L8.78623 179.01L8.78623 170.224Z" fill="${primaryColor}"/>
+<rect x="8.5" y="117.51" width="71" height="71" fill="${primaryColor}"/>
+</svg>
+`
+
+const shadow = (color: string) => `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 106 11" fill="none">
+<ellipse opacity="0.2" cx="52.9977" cy="5.58827" rx="52.9448" ry="4.84462" fill="${color}"/>
+</svg>`
+
+// H.A.P.P.Y Curriculum  
+
+// Holistic Approach- An approach that recognises the interconnectedness of various developmental domains and aims to address the overall well-being of the child.
+
+// Appreciative Enquiry- An optimistic and strengths-based approach to teaching that focuses on recognizing the positive aspects of each child’s learning journey and inspiring them to further develop their strengths.
+
+// Purposeful Play- Ensuring that play-based activities are intentionally designed to promote specific learning outcomes and support overall development. 
+
+// Practical Life Skills- Thoughtful and beneficial incorporation of practical life skills to empower children with essential abilities that go beyond traditional academic knowledge.
+
+// Yay Pedagogy- A dynamic and engaging educational approach designed to create an atmosphere of excitement, celebration, and joy within the learning process that recognises that when children feel excited about learning, they are more likely to be actively engaged and retain information.
+const boards = [
+  {
+    text: 'H',
+    primaryColor: '#B892F9',
+    secondaryColor: '#8D4CFC',
+    textColor: '#823AFD',
+    title: 'Holistic Approach',
+    class: '[&>span]:text-[#8D4CFC] [&>span]:font-[500]',
+    description: 'An approach that recognises the interconnectedness of various <span>developmental domains</span> and aims to address the <span>overall well-being</span> of the child.',
+    lineClass: '[&.active]:h-[90px]'
+  },
+  {
+    text: 'A',
+    primaryColor: '#A5D27C',
+    secondaryColor: '#5C8735',
+    textColor: '#5C8F2E',
+    title: 'Appreciative Enquiry',
+    class: '[&>span]:text-[#5C8735] [&>span]:font-[500]',
+    description: 'An optimistic and <span>strengths-based approach</span> to teaching that focuses on recognizing the positive aspects of each child’s <span>learning journey and inspiring</span> them to further develop their strengths.',
+    lines: 3,
+    lineClass: '[&.active]:h-[90px]'
+  },
+  {
+    text: 'P',
+    primaryColor: '#F6BD60',
+    secondaryColor: '#A97B33',
+    textColor: '#AA7A2B',
+    title: 'Purposeful Play',
+    class: '[&>span]:text-[#A97B33] [&>span]:font-[500]',
+    description: 'Ensuring that <span>play-based activities</span> are intentionally designed to promote <span>specific learning outcomes</span> and support overall development.',
+    lines: 2,
+    lineClass: '[&.active]:h-[90px]'
+  },
+  {
+    text: 'P',
+    primaryColor: '#C3DCFF',
+    secondaryColor: '#4B84D5',
+    textColor: '#6DA2EE',
+    title: 'Practical Life Skills',
+    class: '[&>span]:text-[#4B84D5] [&>span]:font-[500]',
+    description: 'Thoughtful and beneficial incorporation of <span>practical life skills</span> to empower children with essential abilities that go beyond <span>traditional academic knowledge</span>.',
+    lines: 3,
+    lineClass: '[&.active]:h-[90px]'
+  },
+  {
+    text: 'Y',
+    primaryColor: '#FBD1D2',
+    secondaryColor: '#C76668',
+    textColor: '#EE7F82',
+    title: 'Yay Pedagogy',
+    class: '[&>span]:text-[#C76668] [&>span]:font-[500]',
+    description: 'A <span>dynamic and engaging</span> educational approach designed to create an atmosphere of <span>excitement, celebration, and joy</span> within the learning process.',
+    lines: 4,
+    lineClass: '[&.active]:h-[120px]'
+  },
+]
+
+const boardWithLongestDescription = boards.reduce((prev, current) => {
+  if (prev.description.length > current.description.length) {
+    return prev
+  }
+  return current
+})
+---
+<div 
+  style={{
+    background: 'linear-gradient(279deg, #E5F0FF -1.4%, rgba(255, 255, 255, 0.00) 99.99%)'
+  }}
+>
+  
+  <div class="flex flex-row gap-[80px] px-[70px]">
+    <div>
+      <div class="pt-[66px]" />
+      <Text type="h2" class="text-primary">
+        <MultiStyleText
+          text="HAPPY"
+          classes={["text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary"]}
+        ></MultiStyleText>
+        <br />
+        <span class="[text-decoration-line:wavy]">
+          Curriculum
+        </span>
+      </Text>
+      <div class="pt-[40px]" />
+      <Text type="base" class="text-[#1B2226] leading-[160%] !font-[400]">
+        We often say <span class="text-[#EE7F82] font-[700]">A Happy Child means Happy Family</span> because a joyful child brings happiness to everyone around them. A child's happiness is like sunshine, spreading warmth and positivity. 
+      </Text>
+    </div>
+    <div>
+      <div class="flex flex-row overflow-hidden">
+        {boards.map((board, i) => (
+          <div class:list={[
+            "board flex flex-col px-[17px] items-center",
+            i === 0 ? "pl-[0px]" : "",
+            i === boards.length - 1 ? "pr-[0px]" : "",
+          ]} data-happy-board>
+            <div class="w-[100px] relative left-[10px] h-[216px] flex justify-center items-end text-[56px] font-display font-bold" style={{ color: board.textColor }}>
+              <div class="w-full h-full absolute top-0 left-0" set:html={boardSVG(board.primaryColor, board.secondaryColor)}></div>
+              <div class="text-center pointer-events-none bottom-[14px] left-[-5px] relative z-20">
+                {board.text}
+              </div>
+            </div>
+            <div data-shadow class="w-[106px] h-[10px]  relative" set:html={shadow(board.textColor)}></div>
+            <div class="mt-[20px]" />
+            <Text data-title type="h4" class="font-[600] text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
+              {board.title}
+            </Text>
+          </div>
+        ))}
+      </div>
+
+      <div class="pt-[40px]" />
+    
+      <div class="relative">
+          <div class="opacity-0">
+            <div 
+              class:list={[
+                "[&.active]:h-full [&.active]:opacity-100 opacity-0 h-[none] w-[4px] absolute top-0 left-0",
+              ]} 
+              style={{
+                background: boardWithLongestDescription.primaryColor
+              }}>
+            </div>
+            <div>
+              <Text
+                type="base" 
+                class:list={[
+                  "mt-[10px] transition-opacity font-display font-[400] text-[#4C4C4C] [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto",
+                  boardWithLongestDescription.class
+                ]}
+                set:html={boardWithLongestDescription.title}
+              >
+              </Text>
+            </div>
+          </div>
+          {boards.map((board, i) =>  (
+            <div class="absolute top-0 left-0 flex flex-row items-center gap-6">
+              <div 
+                data-description-line
+                class:list={[
+                  "h-[0px] w-[4px] flex-shrink-0 duration-700 transition-[height]",
+                  i === 0 ? "active" : "none",
+                  board.lineClass
+                ]} 
+                style={{
+                  background: board.primaryColor
+                }}>
+              </div>
+              <div data-description>
+                <Text
+                  type="base" 
+                  class:list={[
+                    "mt-[10px] duration-700 transition-opacity font-display font-[400] text-[#4C4C4C] [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto",
+                    i === 0 ? "active" : "none",
+                    board.class
+                  ]}
+                  set:html={board.description}
+                >
+                </Text>
+              </div>
+            </div>
+          ))}
+        </div>
+    </div>
+  </div>
+
+  <div class="w-full h-[100px] mt-[140px]">
+    <Image src={bottomCloud} alt="bottom cloud" class="w-full h-full object-cover object-center" />
+  </div>
+
+</div>
+
+
+<style>
+  .board > div:first-child {
+    transform: translateY(-60px);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.5s;
+    transition-property: transform;
+  }
+  .board > div[data-shadow] {
+    transform: scale(0);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.5s;
+    transition-property: transform;
+  }
+  .board.active > div[data-shadow] {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.5s;
+    transition-property: transform;
+  }
+  .board > [data-title] {
+    opacity: 0;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.5s;
+    transition-property: opacity;
+  }
+  .board.active > [data-title] {
+    opacity: 1;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.5s;
+    transition-property: opacity;
+  }
+  .board.active > div:first-child {
+    transform: translateY(0px);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 0.5s;
+    transition-property: transform;
+  }
+</style>
+
+
+<script>
+  const boards = document.querySelectorAll('[data-happy-board]')
+  let timer = null
+  let currentBoard = 0
+
+  const descriptionLines = document.querySelectorAll('[data-description-line]')
+  const descriptions = document.querySelectorAll('[data-description]')
+
+
+  const setIntervalImmediate = (fn, ms) => {
+    fn()
+    return setInterval(fn, ms)
+  }
+
+  let closeAutoPlay = () => {}
+
+  boards.forEach((board, i) => {
+    board.addEventListener('mouseenter', () => {
+      closeAutoPlay()
+      setBoard(i)
+    })
+    board.addEventListener('mouseleave', () => {
+      // setTimeout(() => {
+        currentBoard = 0
+        closeAutoPlay = startAutoPlay()
+      // }, 1000)
+    })
+  })
+
+  const clearBoard = () => {
+    boards.forEach(board => {
+      board.classList.remove('active')
+    })
+    descriptionLines.forEach(line => {
+      line.classList.remove('active')
+    })
+    descriptions.forEach(description => {
+      description.childNodes[0]?.classList.remove('active')
+    })
+  }
+
+  const setBoard = (index = currentBoard) => {
+    clearBoard()
+    boards[index].classList.add('active')
+    descriptionLines[index].classList.add('active')
+    descriptions[index].childNodes[0]?.classList.add('active')
+    currentBoard = (index + 1) % boards.length
+  }
+
+
+  const startAutoPlay = () => {
+    timer = setIntervalImmediate(() => {
+      setBoard(currentBoard)
+    }, 3000)
+    console.log('Started Timer: ', timer.ref)
+    return () => {
+      clearInterval(timer)
+      console.log('Cleared Timer: ', timer.ref)
+    }
+  }
+
+  closeAutoPlay = startAutoPlay()
+
+</script>

@@ -3,66 +3,28 @@ import Layout from "../layouts/Layout.astro";
 
 import TopNavigationBar from "../components/TopNavigationBar.astro";
 import Why from "../components/landingPage/why.astro";
-import Campus from "../components/landingPage/campus.astro";
 import Testimonial from "../components/landingPage/Testimonial.astro";
-import Hero from "./LandingPageHero.astro";
 import Footer from "../components/landingPage/Footer.astro";
-import Showcase from "./Showcase.astro";
 import GoToCta from "../components/GoToCta.astro";
-import Academics from "../components/landingPage/Academics.astro";
-import OtherOfferings from "../components/landingPage/OtherOfferings.astro";
 import AnotherHero from "./AnotherHero.astro";
 import DaycareFacilities from "./daycare-facilities.astro";
-import Text from "../components/system/Text.astro";
-import Section from "../components/system/Section.astro";
-
 import "../global.css";
 
-import HeroTitle from "../components/HeroTitle.astro";
+
 import config from "../../config";
-import TopperCard from "../components/TopperCard.astro";
+
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
 
-import slide1 from "../image/slides/1.jpeg";
-import slide2 from "../image/slides/2.jpeg";
-import slide3 from "../image/slides/3.jpeg";
-import slide4 from "../image/slides/4.jpeg";
-import slide5 from "../image/slides/5.jpeg";
-import slide6 from "../image/slides/6.jpeg";
-import slide7 from "../image/slides/7.jpg";
-import slide8 from "../image/slides/8.jpeg";
-import slide9 from "../image/slides/9.webp";
-import slide10 from "../image/slides/10.webp";
-import slide11 from "../image/slides/11.webp";
-import slide12 from "../image/slides/12.webp";
 
-import slide1Mb from "../image/slides/mb/1.png";
-import slide2Mb from "../image/slides/mb/2.png";
-import slide3Mb from "../image/slides/mb/3.png";
-import slide4Mb from "../image/slides/mb/4.png";
-import slide5Mb from "../image/slides/mb/5.png";
-import slide6Mb from "../image/slides/mb/6.png";
-import slide7Mb from "../image/slides/mb/7.png";
-import slide8Mb from "../image/slides/mb/8.png";
-
-import slide9Mb from "../image/slides/mb/9.webp";
-import slide10Mb from "../image/slides/mb/10.webp";
-import slide11Mb from "../image/slides/mb/11.webp";
-import slide12Mb from "../image/slides/mb/12.webp";
-
-
-import Achievements from "../components/Achievements.astro";
-import Affiliations from "../components/Affiliations.astro";
-import AdvisoryBoard from "../components/AdvisoryBoard.astro";
 import Overview from "../components/Overview.astro";
 import Events from "../components/landingPage/Events.astro";
 import Program from "../components/Program.astro";
-import Ticker from "../components/Ticker.astro";
-import Marker from "../components/system/Marker.astro";
-import Student from "../images/student4.png";
-import { Image } from "astro:assets";
+import HappyCurriculum from "../components/landingPage/HappyCurriculum.astro";
+
 
 import FindCenter from '../components/findCenter.astro'
+import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
+
 ---
 
 <Layout title="Home | Best International K12 Primary Schools South bengalore Electronic City">
@@ -75,6 +37,8 @@ import FindCenter from '../components/findCenter.astro'
     </div>
     <Overview />
     <Why/>
+    <MeetCharacters />
+    <HappyCurriculum />
     <Program  />
     <DaycareFacilities />
     <FindCenter/>

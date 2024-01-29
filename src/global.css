@@ -148,3 +148,9 @@ html.lenis {
 /* [data-appear] {
   opacity: 0;
 } */
+
+.transition-smooth {
+  transition-timing-function: cubic-bezier(.4,0,.2,1) !important;
+  /* transition-duration: .5s !important; */
+  /* transition-delay: .1s !important; */
+}

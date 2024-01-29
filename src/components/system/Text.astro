@@ -80,6 +80,7 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
 {
   type === "p" && (
     <p
+
       class:list={["text-lg max-md:text-base", className]}
       style={style}
       {...props}
