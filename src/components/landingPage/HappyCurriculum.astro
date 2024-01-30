@@ -5,7 +5,7 @@ import bottomCloud from './bottomCloud.svg'
 import { Image } from 'astro:assets'
 import starGif from '../../image/decorations/gifs/gif2.webp'
 
-const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg width="88" height="197" viewBox="0 0 88 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg width="100%" height="100%" viewBox="0 0 88 197" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17 0.95H16.95V1V99V99.05H17H18H18.05V99V1V0.95H18H17Z" fill="#A97837" stroke="#3C2415" stroke-width="0.1"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3191 96.4456C14.3054 96.4456 11.8623 98.8886 11.8623 101.902V116.15H22.7758V101.902C22.7758 98.8886 20.3327 96.4456 17.3191 96.4456ZM17.3193 106.45C19.161 106.45 20.654 104.957 20.654 103.115C20.654 101.273 19.161 99.7802 17.3193 99.7802C15.4776 99.7802 13.9846 101.273 13.9846 103.115C13.9846 104.957 15.4776 106.45 17.3193 106.45Z" fill="${secondaryColor}"/>
 <path d="M69 0.95H68.95V1V99V99.05H69H70H70.05V99V1V0.95H70H69Z" fill="#A97837" stroke="#3C2415" stroke-width="0.1"/>
@@ -54,7 +54,7 @@ const boards = [
     title: 'Holistic Approach',
     class: '[&>span]:text-[#8D4CFC] [&>span]:font-[500]',
     description: 'An approach that recognises the interconnectedness of various <span>developmental domains</span> and aims to address the <span>overall well-being</span> of the child.',
-    lineClass: '[&.active]:h-[90px]'
+    lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[140px]'
   },
   {
     text: 'A',
@@ -65,7 +65,7 @@ const boards = [
     class: '[&>span]:text-[#5C8735] [&>span]:font-[500]',
     description: 'An optimistic and <span>strengths-based approach</span> to teaching that focuses on recognizing the positive aspects of each child’s <span>learning journey and inspiring</span> them to further develop their strengths.',
     lines: 3,
-    lineClass: '[&.active]:h-[90px]'
+    lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[160px]'
   },
   {
     text: 'P',
@@ -76,7 +76,7 @@ const boards = [
     class: '[&>span]:text-[#A97B33] [&>span]:font-[500]',
     description: 'Ensuring that <span>play-based activities</span> are intentionally designed to promote <span>specific learning outcomes</span> and support overall development.',
     lines: 2,
-    lineClass: '[&.active]:h-[90px]'
+    lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[140px]'
   },
   {
     text: 'P',
@@ -87,7 +87,7 @@ const boards = [
     class: '[&>span]:text-[#4B84D5] [&>span]:font-[500]',
     description: 'Thoughtful and beneficial incorporation of <span>practical life skills</span> to empower children with essential abilities that go beyond <span>traditional academic knowledge</span>.',
     lines: 3,
-    lineClass: '[&.active]:h-[90px]'
+    lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[140px]'
   },
   {
     text: 'Y',
@@ -115,7 +115,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   }}
 >
   
-  <div class="flex flex-row gap-[80px] px-[70px]">
+  <div class="flex flex-row max-md:flex-col gap-[80px] px-[70px] max-md:px-[20px]">
     <div>
       <div class="pt-[66px]" />
       <Text type="h2" class="text-primary">
@@ -136,31 +136,31 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <Image src={starGif} alt="gif of stars" class="w-[80px] pt-6 object-cover object-center" />
     </div>
     <div>
-      <div class="flex flex-row overflow-hidden">
+      <div class="flex flex-row overflow-hidden h-[200px]">
         {boards.map((board, i) => (
           <div class:list={[
-            "board flex flex-col px-[17px] items-center",
+            "board flex flex-col px-[17px] max-md:px-0 max-md:pr-[0px] items-center",
             i === 0 ? "pl-[0px]" : "",
             i === boards.length - 1 ? "pr-[0px]" : "",
           ]} data-happy-board>
-            <div class="w-[100px] relative left-[10px] h-[216px] flex justify-center items-end text-[56px] font-display font-bold" style={{ color: board.textColor }}>
+            <div class="w-[100px] max-md:w-full max-md:h-auto max-md:flex-1 relative left-[10px] h-[216px] flex justify-center items-end text-[56px] font-display font-bold" style={{ color: board.textColor }}>
               <div class="w-full h-full absolute top-0 left-0" set:html={boardSVG(board.primaryColor, board.secondaryColor)}></div>
-              <div class="text-center pointer-events-none bottom-[14px] left-[-5px] relative z-20">
+              <div class="text-center max-md:text-[28px] pointer-events-none bottom-[14px] max-md:bottom-[-2px] max-md:left-[0px] left-[-5px] relative z-20">
                 {board.text}
               </div>
             </div>
-            <div data-shadow class="w-[106px] h-[10px]  relative" set:html={shadow(board.textColor)}></div>
-            <div class="mt-[20px]" />
-            <Text data-title type="h4" class="font-[600] text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
+            <div data-shadow class="w-[106px] max-md:h-auto max-md:w-[80%] max-md:left-[10px] max-md:top-[-20px] max-md:flex-1 h-[10px]  relative" set:html={shadow(board.textColor)}></div>
+            <div class="mt-[20px] max-md:hidden" />
+            <Text data-title type="h4" class="font-[600] max-md:hidden text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
               {board.title}
             </Text>
           </div>
         ))}
       </div>
 
-      <div class="pt-[40px]" />
+      <div class="pt-[40px] max-md:hidden" />
     
-      <div class="relative">
+      <div class="relative max-md:mt-[-50px] max-md:mb-[50px]">
           <div class="opacity-0">
             <div 
               class:list={[
@@ -195,11 +195,24 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
                   background: board.primaryColor
                 }}>
               </div>
-              <div data-description>
+              <div data-description class="duration-700 transition-opacity [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto">
+                <Text
+                  type="lg" 
+                  class:list={[
+                    "mt-[10px] font-display font-[600] max-md:!text-[20px] !tracking-[1px] max-md:block hidden",
+                    i === 0 ? "active" : "none",
+                    board.class
+                  ]}
+                  style={{
+                    color: board.secondaryColor
+                  }}
+                  set:html={board.title}
+                >
+                </Text>
                 <Text
                   type="base" 
                   class:list={[
-                    "mt-[10px] duration-700 transition-opacity font-display font-[400] text-[#4C4C4C] [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto",
+                    "mt-[10px] font-display font-[400] text-[#4C4C4C]",
                     i === 0 ? "active" : "none",
                     board.class
                   ]}
@@ -226,6 +239,11 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: 0.5s;
     transition-property: transform;
+  }
+  @media (max-width: 767px) {
+    .board > div:first-child {
+      transform: translateY(-20px);
+    }
   }
   .board > div[data-shadow] {
     transform: scale(0);
@@ -268,6 +286,10 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   const descriptionLines = document.querySelectorAll('[data-description-line]')
   const descriptions = document.querySelectorAll('[data-description]')
 
+  const isTouchDevice = () => {
+    return 'ontouchstart' in window || navigator.maxTouchPoints
+  }
+
 
   const setIntervalImmediate = (fn, ms) => {
     fn()
@@ -275,11 +297,19 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   }
 
   let closeAutoPlay = () => {}
-
+  let startAutoPlayTimer = null 
   boards.forEach((board, i) => {
     board.addEventListener('mouseenter', () => {
       closeAutoPlay()
       setBoard(i)
+      console.log('isTouchDevice: ', isTouchDevice())
+      if (isTouchDevice()) {
+        startAutoPlayTimer = setTimeout(() => {
+          clearTimeout(startAutoPlayTimer)
+          currentBoard = 0
+          closeAutoPlay = startAutoPlay()
+        }, 2000) 
+      }
     })
     board.addEventListener('mouseleave', () => {
       // setTimeout(() => {
@@ -297,7 +327,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       line.classList.remove('active')
     })
     descriptions.forEach(description => {
-      description.children[0].classList && description.children[0]?.classList.remove('active')
+      description.classList.remove('active')
     })
   }
 
@@ -305,12 +335,13 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     clearBoard()
     boards[index].classList.add('active')
     descriptionLines[index].classList.add('active')
-    descriptions[index].children[0] && descriptions[index].children[0]?.classList.add('active')
+    descriptions[index].classList.add('active')
     currentBoard = (index + 1) % boards.length
   }
 
 
   const startAutoPlay = () => {
+    closeAutoPlay()
     timer = setIntervalImmediate(() => {
       setBoard(currentBoard)
     }, 3000)
