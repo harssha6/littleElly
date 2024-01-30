@@ -3,6 +3,7 @@ import Text from '../../components/system/Text.astro'
 import MultiStyleText from '../../components/system/MultiStyleText.astro'
 import bottomCloud from './bottomCloud.svg'
 import { Image } from 'astro:assets'
+import starGif from '../../image/decorations/gifs/gif2.webp'
 
 const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg width="88" height="197" viewBox="0 0 88 197" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17 0.95H16.95V1V99V99.05H17H18H18.05V99V1V0.95H18H17Z" fill="#A97837" stroke="#3C2415" stroke-width="0.1"/>
@@ -131,6 +132,8 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <Text type="base" class="text-[#1B2226] leading-[160%] !font-[400]">
         We often say <span class="text-[#EE7F82] font-[700]">A Happy Child means Happy Family</span> because a joyful child brings happiness to everyone around them. A child's happiness is like sunshine, spreading warmth and positivity. 
       </Text>
+      
+      <Image src={starGif} alt="gif of stars" class="w-[80px] pt-6 object-cover object-center" />
     </div>
     <div>
       <div class="flex flex-row overflow-hidden">

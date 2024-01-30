@@ -10,9 +10,9 @@ interface props {
 const {title,desc,img }  = Astro.props as props;
 ---
 
-<div class="flex flex-col gap-r bg-white py-[10px] px-[5px] rounded-[25px] w-fit max-w-[310px]">
-    <div class="flex flex-col gap-r p-r border-dashed border-[3px] border-[#FF7162] rounded-[25px]">
-        <Image class={"rounded-[23px]"} src={img} alt={title} />
+<div class="flex flex-col h-full gap-r bg-white py-[10px] px-[5px] rounded-[25px] w-fit max-w-[310px]">
+    <div class="flex flex-col gap-r p-r border-dashed border-[3px] h-full border-[#FF7162] rounded-[25px]">
+        <Image class={"h-[250px] rounded-[23px]"} src={img} alt={title} />
         <Text type="h3" class="text-[24px] font-bold text-[#253B70] mt-[6px] font-sans max-sm:text-[20px]">{title}</Text>
         <Text type="base" class="!text-[18px] text-[#425175] font-[400] max-sm:text-[14px]">{desc}</Text>
     </div>
