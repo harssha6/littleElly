@@ -25,7 +25,7 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<div class="p-[22px] px-[32px] max-md:px-[18px] bg-white border border-primary text-black rounded-xl items-center w-full max-w-[534px] relative z-20" id="register-form-container-desktop">
+<div class="p-[22px] px-[32px] max-md:px-[10px] bg-white border border-primary text-black rounded-xl items-center w-full max-w-[534px] relative z-20" id="register-form-container-desktop">
   <div class="w-full form">
     <Text type="h3" class='text-[28px] font-bold text-center text-red-200'>Register Now for <span class="!text-blue">AY</span>{" "}<MultiStyleText
       text="2024-25"
@@ -127,12 +127,13 @@ if (Astro.request.method === "POST") {
         <input type="checkbox" class="accent-primary cursor-pointer" name="Whatsapp Consent" id="whatsappConsent" />
         <div class="px-1" />
         <Text type="xs" class="text-sm cursor-pointer">
-          <label for="whatsappConsent" class="cursor-pointer flex flex-row items-center">
+          <label for="whatsappConsent" class="cursor-pointer flex flex-row">
             I agree to receive messages on
             <Image src={whatsappIcon} alt="whatsapp icon" class="inline-block ml-[2px] w-6" />
             <span>WhatsApp</span>
-          </label>
-        </Text>
+
+          </Text>
+        </label>
       </div>
       <Button type='submit' class='w-full [&>button]:w-full [&>button]:justify-center max-md:mt-0 apply-now-register-button'>Apply Now</Button>
     </form>

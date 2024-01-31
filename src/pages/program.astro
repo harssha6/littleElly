@@ -133,7 +133,6 @@ const programData = [
     <TopNavigationBar />
     <div
       class="h-[76svh] flex"
-      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
     >
     <Hero
     config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
@@ -161,8 +160,8 @@ const programData = [
       {
         programData.map((item, index )=> {
           return (
-            <div>
-              <div   class="flex gap-xl max-sm:flex-col items-center">
+            <div data-appear={index === 0 ? false : index}>
+              <div class="flex gap-xl max-sm:flex-col items-center">
                 <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} src={item.image} alt="pro"/>
                 <div class="flex flex-col">
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>

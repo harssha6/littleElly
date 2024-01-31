@@ -25,11 +25,6 @@ import HappyCurriculum from "../components/landingPage/HappyCurriculum.astro";
 import FindCenter from '../components/findCenter.astro'
 import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
 
-import "swiper/css";
-
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 ---
 
 <Layout title="Home | Best International K12 Primary Schools South bengalore Electronic City">
@@ -78,53 +73,3 @@ import "swiper/css/pagination";
     margin-top: 16px;
   }
 </style>
-
-<script>
-
-import Swiper from "swiper";
-import { Autoplay, Pagination } from "swiper/modules"
-
-Swiper.use([Autoplay, Pagination]);
-
-// const testimonialSwiper = document.querySelector('.testimonial-swiper')
-
-// const swiperWrapper = testimonialSwiper?.querySelector('.swiper-wrapper')
-
-// // clone all slides and append to swiper-wrapper
-
-// const slides = testimonialSwiper?.querySelectorAll('.swiper-slide')
-
-// slides.forEach((slide) => {
-//   const clone = slide.cloneNode(true)
-//   swiperWrapper?.appendChild(clone)
-// })
-
-const swiper = new Swiper(".testimonial-swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-  slidesPerView: 1.25,
-  centeredSlides: true,
-  spaceBetween: 10,
-  speed: 700,
-  // pagination: {
-  //   el: ".swiper-pagination-testimonial",
-  //   clickable: true,
-  // },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-});
-
-const prevBtn = document.querySelector("[data-prev-swiper='testimonial-swiper']");
-const nextBtn = document.querySelector("[data-next-swiper='testimonial-swiper']");
-
-prevBtn.addEventListener('click', () => {
-  swiper.slidePrev()
-})
-
-nextBtn.addEventListener('click', () => {
-  swiper.slideNext()
-})
-</script>
