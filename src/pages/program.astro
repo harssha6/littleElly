@@ -128,6 +128,7 @@ const programData = [
 <Layout
   title="Admissions | Best International K12 Primary Schools South bengalore Electronic City"
 >
+
 <div class="flex flex-col">
     <TopNavigationBar />
     <div
@@ -161,7 +162,7 @@ const programData = [
         programData.map((item, index )=> {
           return (
             <div>
-              <div class="flex gap-xl max-sm:flex-col items-center">
+              <div   class="flex gap-xl max-sm:flex-col items-center">
                 <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} src={item.image} alt="pro"/>
                 <div class="flex flex-col">
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>

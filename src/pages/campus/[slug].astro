@@ -2,6 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 
 import TopNavigationBar from "../../components/TopNavigationBar.astro";
+import MeetCharacters from "../../components/landingPage/MeetCharacters.astro";
+import HappyCurriculum from "../../components/landingPage/HappyCurriculum.astro";
 
 import Updates from "../../components/landingPage/Updates/index.astro";
 import LFL from "../../components/landingPage/LFL.astro";
@@ -72,7 +74,7 @@ import Marker from "../../components/system/Marker.astro";
 const toppers = campusConfig?.toppers;
 
 import slide1 from "../../images/slides/1.png";
-import slide2 from "../../images/slides/2.png";
+import slide2 from "../../images/slides/4.png";
 import slide3 from "../../images/slides/3.png";
 
 
@@ -179,43 +181,12 @@ const page = pages.find(page => page.name === slug)?.page
 
   <div class="max-md:block hidden pt-8" />
  <Why />
- <Section class="gap-l flex flex-col items-center">
-    <Text type="h2" class="text-center">
-      <MultiStyleText text="HAPPY" classes={["text-purple", "text-blue", "text-green-200", "text-orange-200", "text-primary"]} />
-      <br /><span class="text-primary">Curriculum</span>
-    </Text>
-    <div class="flex gap-l items-center max-sm:flex-col">
-      <Text type="base" class="flex-basis-[40%] order-2" >
-        We often say <span class="text-primary font-bold">A Happy Child means Happy Family</span> because a 
-        joyful child brings happiness to everyone around them. 
-        A child's happiness is like sunshine, spreading warmth and positivity. 
-        Their joy can positively affect the well-being of every family, and our goal is to create
-         a world filled with this kind of happiness.
-         <br />
-         <br />
-          <div class="flex items-center gap-r">
-            <Marker />
-            Building an atmosphere of excitement, celebration, and joy within the learning process
-          </div>
-          <div class="flex items-center gap-r mt-[18px]">
-            <Marker />
-            Play-based activities designed to nurture holistic development of a child
-          </div>
-          <div class="flex items-center gap-r mt-[18px]">
-            <Marker />
-            Impart practical life skills to cultivate abilities that go beyond academics        </div>
-          <div class="flex items-center gap-r mt-[18px]">
-            <Marker />
-            Promoting enquiry-based learning to develop curiosity in young learners
-          </div>
-        
-      </Text>
-      <Image src={student1} alt={"student"} class="object-contain max-h-[400px] flex-basis-[60%] max-sm:h-[300px]" />
-    </div>
- </Section>
-  <GoToCta />
+ <MeetCharacters />
+ <HappyCurriculum />
+ 
 
-  <div id="contact-us" style="scroll-margin: 60px;">
+
+  <div data-appear id="contact-us" style="scroll-margin: 60px;">
     <Connect
       details={{
         phoneNo: {

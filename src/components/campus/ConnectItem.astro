@@ -19,5 +19,5 @@ const {title,label,type, class,style}  = Astro.props
         <ConnectIcons type={type} />
         <Text type={'base'} class="font-bold text-[#052B4C]">{label}</Text>
     </div>
-    <Text type={'regular'} class:list={['mt-2 text-[#282828] font-semibold max-sm:ml-12', type === 'address' && 'w-[50%] max-md:w-[90%]']}>{title}</Text>
+    <Text type={'regular'} class:list={['mt-2 text-[#282828] text-right font-semibold max-sm:ml-12', type === 'address' && 'w-[50%] text-right max-md:w-[90%]']}>{title}</Text>
 </div>
