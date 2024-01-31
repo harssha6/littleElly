@@ -4,6 +4,7 @@ import Button from "../system/Button.astro";
 import Text from "../system/Text.astro";
 import student3 from "../../images/student3.png"
 import { Image } from "astro:assets";
+import { boolean } from "astro/zod";
 
 interface TestimonialProps {
   image: string;
@@ -14,13 +15,14 @@ interface TestimonialProps {
   imageFade?: boolean;
   className?: string;
   desc?: string;
+  swiper?: boolean
   authorSubtext?: string;
 }
 
-const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, desc, authorSubtext} = Astro.props as TestimonialProps
+const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, desc, authorSubtext, swiper} = Astro.props as TestimonialProps
 ---
 
-<div class=`overflow-hidden mt-l flex flex-row  max-md:flex-col max-md:h-auto ${className} flex-1 bg-white rounded-[35px] py-r px-r max-w-[410px]`>
+<div class=`overflow-hidden min-h-[96.4%]  mt-l flex flex-row  max-md:flex-col max-md:!h-auto ${className} ${swiper ? 'swiper-slide' : ''} bg-white rounded-[35px] py-r px-r max-md:py-[8px] max-md:px-[6px] max-w-[410px]`>
     <!-- <div class='min-w-[34vw] max-md:w-[100%] max-md:min-h-[136px] bg-cover bg-center rounded-lg' style={{
       backgroundImage: `${imageFade ? 'linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%),' : ''} url(${image})`
     }}> -->
@@ -30,16 +32,17 @@ const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, de
         class="object-contain max-h-[200px] rounded-[22px]"
       />
     </slot> -->
-    <div class='flex flex-col justify-around border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden'>
+    <div class='flex flex-col justify-around max-md:justify-start border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden h-[100%]'>
       <Image class={"rounded-[23px]"} src={image} alt={"image"} class="h-[300px] object-cover" />
       
       <div class="p-r">
         <div>
           <Text type="regular" class="text-[#121212] font-[700] italic">
             I am glad I chose Little Elly because
-          </Text>
-          <Text type="regular" class="text-[#EE7F82] font-[700]">
-            {quote}
+            <br class="max-md:hidden block" />
+            <span class="text-[#EE7F82] font-[700]">
+              {quote}
+            </span>
           </Text>
         </div>
         <Text
