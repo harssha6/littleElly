@@ -57,7 +57,7 @@ const characters = [
 <div>
   <div class="flex flex-row max-md:flex-col">
     <div class="w-[40%] px-[60px] max-md:px-[20px] max-md:w-full">
-      <div class="pt-[170px]" />
+      <div class="pt-[170px] max-md:pt-[40px]" />
       <Text type="h2" class="text-primary">
         <MultiStyleText
           text="ELLY"
@@ -114,7 +114,7 @@ const characters = [
 
         {characters.map((character) => (
           <div 
-            class="transition-opacity duration-700 transition-smooth absolute z-[99] top-0 left-0 font-display font-bold text-center opacity-0 pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto" 
+            class="transition-opacity duration-700 transition-smooth absolute z-[99] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-display font-bold text-center opacity-0 pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto" 
             data-character-title
           >
             <Text type="h2" class="text-primary" style={{
