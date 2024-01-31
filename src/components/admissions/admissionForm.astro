@@ -209,20 +209,39 @@ if (Astro.request.method === "POST") {
       }
     })
 
+    const waitUntilAVariableIsDefined = (variableName) => {
+      return new Promise((resolve) => {
+        const interval = setInterval(() => {
+          if (window[variableName]) {
+            clearInterval(interval);
+            resolve();
+          }
+        }, 100);
+      });
+    };
 
-    const center = { lat: 50.064192, lng: -130.605469 };
-    // Create a bounding box with sides ~10km away from the center point
-    const defaultBounds = {
-      north: center.lat + 0.1,
-      south: center.lat - 0.1,
-      east: center.lng + 0.1,
-      west: center.lng - 0.1,
+    const loadGoogleMaps = async () => {
+      await waitUntilAVariableIsDefined("google");
+      console.log('google maps loaded')
+      const center = { lat: 50.064192, lng: -130.605469 };
+      // Create a bounding box with sides ~10km away from the center point
+      const defaultBounds = {
+        north: center.lat + 0.1,
+        south: center.lat - 0.1,
+        east: center.lng + 0.1,
+        west: center.lng - 0.1,
+      };
+      const input = document.getElementById("address-gmap");
+      const options = {
+        fields: ["address_components", "geometry", "icon", "name"],
+        strictBounds: false,
+      };
+      console.log('whatt??')
+      const autocomplete = new google.maps.places.Autocomplete(input, options);
     };
-    const input = document.getElementById("address-gmap");
-    const options = {
-      fields: ["address_components", "geometry", "icon", "name"],
-      strictBounds: false,
-    };
-    const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+    loadGoogleMaps()
+
+
 
 </script>
