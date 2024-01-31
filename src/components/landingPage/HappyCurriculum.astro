@@ -26,7 +26,7 @@ const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg
 <path d="M8.78623 135.081C6.4561 135.081 4.22142 136.007 2.57377 137.655C0.926128 139.302 0.000489914 141.537 0.000489433 143.867C0.000488952 146.197 0.926126 148.432 2.57377 150.079C4.22142 151.727 6.4561 152.653 8.78622 152.653L8.78623 143.867L8.78623 135.081Z" fill="${primaryColor}"/>
 <path d="M8.78623 152.653C6.4561 152.653 4.22142 153.578 2.57377 155.226C0.926128 156.874 0.000489914 159.108 0.000489433 161.439C0.000488952 163.769 0.926126 166.003 2.57377 167.651C4.22142 169.299 6.4561 170.224 8.78622 170.224L8.78623 161.439L8.78623 152.653Z" fill="${primaryColor}"/>
 <path d="M8.78623 170.224C6.4561 170.224 4.22142 171.15 2.57377 172.797C0.926128 174.445 0.000489914 176.68 0.000489433 179.01C0.000488952 181.34 0.926126 183.575 2.57377 185.222C4.22142 186.87 6.4561 187.796 8.78622 187.796L8.78623 179.01L8.78623 170.224Z" fill="${primaryColor}"/>
-<rect x="8.5" y="117.51" width="71" height="71" fill="${primaryColor}"/>
+<rect x="8.5" y="117" width="71" height="71.5" fill="${primaryColor}"/>
 </svg>
 `
 
@@ -136,22 +136,22 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <Image src={starGif} alt="gif of stars" class="w-[80px] pt-6 object-cover object-center" />
     </div>
     <div>
-      <div class="flex flex-row overflow-hidden h-[200px]">
+      <div class="flex flex-row overflow-hidden max-md:h-[200px] h-auto">
         {boards.map((board, i) => (
           <div class:list={[
             "board flex flex-col px-[17px] max-md:px-0 max-md:pr-[0px] items-center",
             i === 0 ? "pl-[0px]" : "",
-            i === boards.length - 1 ? "pr-[0px]" : "",
+            i === boards.length - 1 ? "pr-[10px]" : "",
           ]} data-happy-board>
-            <div class="w-[100px] max-md:w-full max-md:h-auto max-md:flex-1 relative left-[10px] h-[216px] flex justify-center items-end text-[56px] font-display font-bold" style={{ color: board.textColor }}>
+            <div class="w-[100px] max-md:w-full max-md:h-auto max-md:flex-1 flex-[unset] relative left-[10px] h-[216px] flex justify-center items-end text-[56px] font-display font-bold" style={{ color: board.textColor }}>
               <div class="w-full h-full absolute top-0 left-0" set:html={boardSVG(board.primaryColor, board.secondaryColor)}></div>
-              <div class="text-center max-md:text-[28px] pointer-events-none bottom-[14px] max-md:bottom-[-2px] max-md:left-[0px] left-[-5px] relative z-20">
+              <div class="text-center max-md:text-[28px] pointer-events-none bottom-[4px] max-md:bottom-[-2px] max-md:left-[0px] left-[0px] relative z-20">
                 {board.text}
               </div>
             </div>
-            <div data-shadow class="w-[106px] max-md:h-auto max-md:w-[80%] max-md:left-[10px] max-md:top-[-20px] max-md:flex-1 h-[10px]  relative" set:html={shadow(board.textColor)}></div>
-            <div class="mt-[20px] max-md:hidden" />
-            <Text data-title type="h4" class="font-[600] max-md:hidden text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
+            <div data-shadow class="w-[106px] max-md:h-auto max-md:w-[80%] mt-[20px] max-md:mt-0 max-md:left-[10px] max-md:top-[-20px] left-[11px] max-md:flex-1 h-[10px] relative" set:html={shadow(board.textColor)}></div>
+            <div class="mt-[20px] block max-md:hidden" />
+            <Text data-title type="h4" class="font-[600] max-md:hidden relative max-md:left-0 left-[8px] text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
               {board.title}
             </Text>
           </div>
@@ -160,7 +160,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
       <div class="pt-[40px] max-md:hidden" />
     
-      <div class="relative max-md:mt-[-50px] max-md:mb-[50px]">
+      <div class="relative max-md:mt-[-50px] mt-0 mb-0 max-md:mb-[50px]">
           <div class="opacity-0">
             <div 
               class:list={[

@@ -55,8 +55,8 @@ const characters = [
 
 ---
 <div>
-  <div class="flex flex-row">
-    <div class="w-[40%] px-[60px]">
+  <div class="flex flex-row max-md:flex-col">
+    <div class="w-[40%] px-[60px] max-md:px-[20px] max-md:w-full">
       <div class="pt-[170px]" />
       <Text type="h2" class="text-primary">
         <MultiStyleText
@@ -68,7 +68,7 @@ const characters = [
           Universe
         </span>
       </Text>
-      <div class="pt-[40px]" />
+      <div class="pt-[40px] max-md:pt-[10px]" />
       <Text type="base" class="text-[#1B2226] leading-[160%] !font-[400]">
         <span class="text-[#460103]/70 font-bold text-[22px]">A whole new world created for your child.</span>
         <br/><br/>
@@ -78,24 +78,24 @@ const characters = [
         At Little Elly your child is not just taking their first step towards school but is becoming a part of this joyful world. As they explore the captivating journeys of the <span class="font-bold">'Elly World'</span> and the enchanting <span class="font-bold">'Natterjack Forest'</span>, they are encouraged to engage in activities that involve <span class="text-primary font-bold">“LOOK, READ, MAKE and DO” with Olly & Elly.</span>
       </Text>
     </div>
-    <div data-character-trigger class="flex-1 w-[60%] h-[913px] flex flex-col relative items-center" style={{
+    <div data-character-trigger class="flex-1 w-[60%] max-md:w-full max-md:min-h-[800px] h-[913px] flex flex-col relative items-center" style={{
       background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 17.01%, #F8D6A0 63.56%)'
     }}>
 
       <div class="absolute top-0 left-0 h-[100%] w-[100%] overflow-hidden">
-        <div class="h-[55%] w-full absolute bottom-0 left-0 z-[40]">
-          <Image width={1000} src={bg1} class="w-full h-[100%] top-[16%] absolute object-contain" alt="" data-character-bg-1 />
+        <div class="h-[55%] w-full absolute bottom-[-10%] left-0 z-[40]">
+          <Image width={1000} src={bg1} class="w-full h-[100%] top-[16%] absolute object-cover object-top" alt="" data-character-bg-1 />
         </div>
       </div>
 
       <div class="h-[27%] w-full absolute bottom-[4%] left-0 z-[30]">
-        <Image width={1000} src={bg2} class="w-full h-[100%] object-contain" alt="" data-character-bg-2 />
+        <Image width={1000} src={bg2} class="w-full h-[100%] object-cover object-top" alt="" data-character-bg-2 />
       </div>
       <div class="h-[37.6%] w-full absolute bottom-[8%] left-0 z-[20]">
-        <Image width={1000} src={bg3} class="w-full h-[100%] object-contain" alt="" data-character-bg-3 />
+        <Image width={1000} src={bg3} class="w-full h-[100%] object-cover object-top" alt="" data-character-bg-3 />
       </div> 
       <div class="h-[37%] w-full absolute bottom-[6.8%] left-0 z-[10]" >
-        <Image width={1000} src={bg4} class="w-full h-[100%] object-cover" alt="" data-character-bg-4 />
+        <Image width={1000} src={bg4} class="w-full h-[100%] object-cover object-top" alt="" data-character-bg-4 />
       </div>
 
       <div class="text-xl text-uppercase font-[700] tracking-[3.68px] text-center mt-[145px] opacity-50" style={{
