@@ -10,6 +10,9 @@ import Text from './system/Text.astro'
 import MultiStyleText from './system/MultiStyleText.astro'
 import Button from './system/Button.astro'
 
+import rabbit from '../image/decorations/gifs/rabbit.gif'
+import deer from '../image/decorations/gifs/deer.gif'
+
 export const programData = [
     {
         title: 'Toddler',
@@ -53,8 +56,9 @@ export const programData = [
 
 ---
 <Section class="flex flex-col gap-l max-md:pt-10 items-center" style="background: linear-gradient(0deg, #FEF7F9 0%, #FEF7F9 100%);">
-    <div>
-        <Text type="h2" class="text-center">Our
+    <div class="flex flex-row gap-[40px]">
+        <Image height={100} src={rabbit} alt="rabbit" class={'relative max-sm:w-[50px] max-sm:object-contain'} />
+        <Text type="h2" class="relative text-center">Our
             <br />
             <MultiStyleText
                 classes={["text-purple", "text-red-200", "text-green-200", "text-orange-200", "text-purple", "text-primary", "text-green-200", "text-orange-200"]}
@@ -63,7 +67,10 @@ export const programData = [
 
             </MultiStyleText>
         </Text>
+        
+        <Image height={100} src={deer} alt="rabbit" class={'relative max-sm:w-[50px] max-sm:object-contain'} />
     </div>
+    
     <div class="flex flex-wrap item-center justify-center gap-[100px] max-sm:gap-l">
         {
             programData.map((item, index) => (
