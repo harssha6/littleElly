@@ -236,7 +236,6 @@ if (Astro.request.method === "POST") {
         fields: ["address_components", "geometry", "icon", "name"],
         strictBounds: false,
       };
-      console.log('whatt??')
       const autocomplete = new google.maps.places.Autocomplete(input, options);
     };
 

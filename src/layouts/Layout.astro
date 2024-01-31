@@ -81,28 +81,6 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 </style>
 
 <script>
-  import sal from 'sal.js'
-
-  sal();
-	// const observer = new IntersectionObserver((entries) => {
-	// 	entries.forEach(entry => {
-	// 		const isIntersecting = (
-	// 			entry.isIntersecting
-	// 		) || entry.target.classList.contains('daisy-fixed')
-	// 		if (isIntersecting) {
-	// 			entry.target.classList.add('daisy-show')
-	// 		}
-	// 	})
-	// }, {
-	// 	root: document.querySelector("#scroll-area")
-	// })
-
-	// const hiddenElements = document.querySelectorAll('.daisy')
-	// hiddenElements.forEach(element => {
-	// 	observer.observe(element)
-	// })
-</script>
-<script>
   
 
 	import { gsap } from "gsap";
@@ -163,10 +141,6 @@ nextBtn.addEventListener('click', () => {
 	const lenis = new Lenis({
 		duration: 0.6,
     // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-	})
-
-	lenis.on('scroll', (e) => {
-		console.log(e)
 	})
 
 	lenis.on('scroll', ScrollTrigger.update)
@@ -351,7 +325,6 @@ nextBtn.addEventListener('click', () => {
 	
 	document.addEventListener("DOMContentLoaded", function() {
 		initSwiper()
-		console.log('initSwiper')
 		initTicker()
   
 	});
