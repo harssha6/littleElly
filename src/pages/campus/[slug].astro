@@ -170,9 +170,11 @@ const page = pages.find(page => page.name === slug)?.page
            <Text type="h3" class="text-primary">{page?.centreHead.name}</Text>
            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>{page?.centreHead.description}</Text>
          </div>
-         <div class="max-sm:order-0 flex-shrink-0">
-           <Image src={page.centreHead.img} alt="principle" class="h-[500px] sm:h-[300px] object-cover object-top" width={400} height={500} />
-         </div>
+         {page.centreHead.img && (
+           <div class="max-sm:order-0 flex-shrink-0">
+             <Image src={page.centreHead.img} alt="principle" class="h-[500px] sm:h-[300px] object-cover object-top" width={400} height={500} />
+           </div>
+         )}
          <div></div>
    
        </div>

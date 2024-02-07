@@ -128,13 +128,17 @@ const swiper = new Swiper(".testimonial-swiper", {
 const prevBtn = document.querySelector("[data-prev-swiper='testimonial-swiper']");
 const nextBtn = document.querySelector("[data-next-swiper='testimonial-swiper']");
 
-prevBtn.addEventListener('click', () => {
-  swiper.slidePrev()
-})
+if (prevBtn) {
+	prevBtn.addEventListener('click', () => {
+		swiper.slidePrev()
+	})
+}
 
-nextBtn.addEventListener('click', () => {
-  swiper.slideNext()
-})
+if (nextBtn) {
+	nextBtn.addEventListener('click', () => {
+		swiper.slideNext()
+	})
+}
 
 
 
@@ -338,6 +342,8 @@ nextBtn.addEventListener('click', () => {
 	  const prevBtn = document.querySelectorAll('[data-prev="hero-swiper"]')
 	  const nextBtn = document.querySelectorAll('[data-next="hero-swiper"]')
 	  const swipers = document.querySelectorAll('.hero-swiper')
+		if (!swipers || !prevBtn || !nextBtn) return
+	  
 	  swipers.forEach(item => {
 		const swiper = new Swiper(item, {
 		// Optional parameters
