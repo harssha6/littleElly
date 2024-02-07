@@ -6,7 +6,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   data.append("Date_Time", new Date().toLocaleString('en-GB', { timeZone: 'IST' }));
 
-  const response = await fetch('https://script.google.com/macros/s/AKfycbyeVQICuGEjG12jfDPZkFC4g4xvQWZbo_0wRYdqPyN6nbKBmqKZvZFeImWp-41flECnqA/exec', {
+  const response = await fetch('https://script.google.com/macros/s/AKfycbx94hM57YXSyM1kbPu9Sxp-fsI32868E1PEHbCi9Kkg_lmDc4kWlo0JNXJN8H_1A3kL/exec', {
     method: 'POST',
     body: data
   });
