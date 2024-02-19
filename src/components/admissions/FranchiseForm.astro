@@ -190,6 +190,8 @@ if (Astro.request.method === "POST") {
         formData.append(key, value)
       }
 
+      formData.append('sheetName', value)
+
 
       document.querySelector('.apply-now-register-button').classList.add('loading')
 
