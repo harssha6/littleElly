@@ -32,9 +32,9 @@ import preview2 from './src/images/campus/gaw/preview.png';
 import campus2 from './src/images/campus/gas/gallery/2.jpeg';
 import campus3 from './src/images/campus/gas/gallery/3.jpeg';
 
-import testimonial1 from './src/images/testimonial/1.png';
-import testimonial2 from './src/images/testimonial/2.png';
-import testimonial3 from './src/images/testimonial/3.png';
+import testimonial1 from './src/images/campus/gas/gallery/2.jpeg';
+import testimonial2 from './src/images/campus/gas/gallery/2.jpeg';
+import testimonial3 from './src/images/campus/gas/gallery/2.jpeg';
 
 import leadership1 from "./src/images/leadership/1.png"
 import topper1 from "./src/images/campus/toppers/topper.png"
