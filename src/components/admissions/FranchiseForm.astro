@@ -69,7 +69,7 @@ if (Astro.request.method === "POST") {
         <input
           placeholder="Preferred City"
           type="text"
-          name="address"
+          name="Address"
           id="address-gmap"
           required
           class="
@@ -88,6 +88,7 @@ if (Astro.request.method === "POST") {
            
            placeholder="Select Program"
            id="selectGrade"
+           required={false}
            title="Please select a program"
            options={[
              "Toddler",
@@ -106,7 +107,7 @@ if (Astro.request.method === "POST") {
         <input
           placeholder="Budget to Invest (INR)"
           type="text"
-          name="Budget to Invest (INR)"
+          name="Budget"
           required
           class="
             w-full border border-[#C6C6C6] rounded-md box-border text-black focus:ring-2 active:ring-2
@@ -125,7 +126,7 @@ if (Astro.request.method === "POST") {
           "Friends",
           "Other"
         ]}
-        name="Admission Year"
+        name="Source"
       />
   
       <div class="flex flex-row">
@@ -189,8 +190,7 @@ if (Astro.request.method === "POST") {
       for (const [key, value] of urlSearchParams) {
         formData.append(key, value)
       }
-
-      formData.append('sheetName', value)
+      formData.append('sheetName', 'Franchise')
 
 
       document.querySelector('.apply-now-register-button').classList.add('loading')
