@@ -7,7 +7,6 @@ const branch =
   process.env.HEAD ||
   "main";
 
-
 const centerPage = {
   type: "object",
   label: "Add Page",
@@ -127,14 +126,13 @@ const centerPage = {
   ],
 };
 
+
+
 export default defineConfig({
   branch,
-
   // Get this from tina.io
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  // Get this from tina.io
-  clientId: "8b588526-21ee-4f45-b047-bac58fdad52f", // Get this from tina.io
-  token: "517ca57aaa53235b5783e0aae9e2ed6ab9f2d38a", // Get this from tina.io
+  clientId: "ff3fc3c1-9a61-4add-99b3-21daac12f6c5", // Get this from tina.io
+  token: "1081257f565400924c7b54cc51ae00f47142eb39", // Get this from tina.io
 
   build: {
     outputFolder: "admin",
