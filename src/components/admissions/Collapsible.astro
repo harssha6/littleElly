@@ -14,7 +14,7 @@ const { title, class: className, collapseGroup = 'collapsible' } = Astro.props
 <div class:list={[collapseGroup, 'max-w-[1156px] w-[90%] bg-gray-200 rounded-2xl px-[18px] text-black cursor-pointer', className]} style={{ boxShadow: '0px 10px 20px 10px rgba(0, 0, 0, 0.1)' }}>
   <div class='flex justify-between items-center w-full py-6'>
     <Text type={'h4'} class='font-sans font-bold max-md:text-lg'>{title}</Text>
-    <div class='w-[42px] h-[42px] bg-black rounded-lg text-white flex items-center justify-center text-3xl'>
+    <div class='w-[42px] h-[42px] bg-primary rounded-lg text-white flex items-center justify-center text-3xl'>
       <span class='-top-[2px] relative collapse-icon'>+</span>
     </div>
   </div>

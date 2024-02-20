@@ -60,6 +60,7 @@ import Rope from "../image/decorations/rope.png";
 import testimonial1 from '../images/testimonial/1.jpeg';
 import testimonial2 from '../images/testimonial/2.jpeg';
 import testimonial3 from '../images/testimonial/3.jpeg';
+import Faq from "../components/faq.astro";
 
 
 const requirements = [
@@ -510,6 +511,17 @@ const partners = [
           <YoutubeEmbed embedId={partner.embedId} videoId={partner.embedId} />
         ))}
       </Section>
+
+      <div class="w-full items-center flex flex-col bg-white">
+        <div class="p-4" />
+        <Text type={'base'} class='!text-black font-bold tracking-wide'>THINGS TO NOTE</Text>
+        <Text type={'h2'} class='mt-2 text-primary'>FAQs</Text>
+        <div class="p-4" />
+        <Faq />
+        <div class="p-3" />
+      </div>
+
+
     <Footer />
 
     <!-- <a href="tel:7676310000">
