@@ -173,7 +173,7 @@ const FindCentre = () => {
                           setCurrentState('')
                           setCurrentDistrict('')
                         }}
-                        className={"block cursor-pointer " + (isStateView ? activeBreadCrumbClass : '')}
+                        className={"block cursor-pointer " + activeBreadCrumbClass}
                       >Locations</div>
                       {currentState && (
                           <>
@@ -211,8 +211,7 @@ const FindCentre = () => {
                         onClick={() => {
                           setCurrentDistrict('')
                         }}
-                        className={"cursor-pointer " + (isDistrictView ? activeBreadCrumbClass : '')}
-                      >{currentState}</div>
+                      >Search Results</div>
 
                   </div>
               </Text>
