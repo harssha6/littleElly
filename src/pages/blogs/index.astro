@@ -10,6 +10,7 @@ import "../../global.css";
 import DownArrow from '../../icons/DownArrow.svg'
 import { getEntries, getCollection, type CollectionEntry } from 'astro:content';
 
+import MultiStyleText from '../../components/system/MultiStyleText.astro'
 export function getStaticPaths() {
   return [
     { params: { school: "whitefield" } },
@@ -69,7 +70,12 @@ const categoryB = allBlogs.slice(6, 9)
 
         <div class="pt-[6px] flex flex-row w-full justify-between">
 
-          <Text type="h3">Most Recent Blogs</Text>
+          <Text type="h3">
+            <MultiStyleText
+                text="Most Recent Blogs" 
+                classes={["text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-blue-100", "text-primary", "text-primary", "text-primary", "text-primary", "text-primary"]}
+            > </MultiStyleText>
+          </Text>
 
 
           <a href="/blogs/category/All" class="flex flex-row items-center gap-2 group flex-shrink-0">
@@ -87,7 +93,7 @@ const categoryB = allBlogs.slice(6, 9)
           
 
           <div class="h-full w-[65%] max-md:w-full">
-            <BlogCard 
+            <BlogCard category={first3Blogs[0].data.category} 
               title={first3Blogs[0].data.title}
               slug={first3Blogs[0].slug}
               image={first3Blogs[0].data.thumbnail}
@@ -96,10 +102,10 @@ const categoryB = allBlogs.slice(6, 9)
           </div>
           <div class="h-full flex-1 flex flex-col gap-[30px]">
             <div class="flex-1 h-[50%]">
-              <BlogCard title={first3Blogs[1].data.title} slug={first3Blogs[1].slug} date={first3Blogs[1].data.dateString} image={first3Blogs[1].data.thumbnail} />
+              <BlogCard category={first3Blogs[1].data.category} title={first3Blogs[1].data.title} slug={first3Blogs[1].slug} date={first3Blogs[1].data.dateString} image={first3Blogs[1].data.thumbnail} />
             </div>
             <div class="flex-1 h-[50%]">
-              <BlogCard title={first3Blogs[2].data.title} slug={first3Blogs[2].slug} date={first3Blogs[2].data.dateString} image={first3Blogs[2].data.thumbnail} />
+              <BlogCard category={first3Blogs[2].data.category} title={first3Blogs[2].data.title} slug={first3Blogs[2].slug} date={first3Blogs[2].data.dateString} image={first3Blogs[2].data.thumbnail} />
             </div>
           </div>
 
