@@ -128,7 +128,7 @@ const headerColors = [
         <div class="grid grid-cols-[repeat(3,1fr)] max-md:grid-cols-[repeat(1,1fr)] gap-[30px] w-full" data-blog-container>
             {allBlogs.map(blog => (
               <div class="h-[380px]">
-                <BlogCard  slug={blog.slug} imageClass="max-h-[250px]" title={blog.data.title} date={blog.data.dateString} image={blog.data.thumbnail} />
+                <BlogCard  slug={blog.slug} imageClass="max-h-[250px]" title={blog.data.title} date={blog.data.dateString} image={blog.data.thumbnail} category={categories.includes(category) ? null : blog.data.category} />
               </div>
             ))}
 
