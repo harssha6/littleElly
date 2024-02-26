@@ -45,7 +45,7 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
       }}
     >
       <div class='flex flex-col bg-white'>
-        <div class='h-[100.44px] w-full bg-white'>
+        <div class='h-[100.44px] max-md:h-[70px] w-full bg-white'>
         </div>
         <TopNavigationBar />
         <div class='w-full flex flex-col items-center py-12 pb-2 max-md:py-6 max-md:px-6'>
@@ -56,13 +56,13 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
           >{data.title}</Text>
           <div class="p-3"></div>
           
-          <div class="flex flex-row items-center gap-4">
+          <div class="flex flex-row max-md:flex-col items-center gap-4">
             <div class="bg-primary p-[2px] px-2 uppercase rounded">
               <Text type="xs" class='font-bold text-white'>
                 {data.category}
               </Text>
             </div>
-            <div class="text-slate-400">
+            <div class="text-slate-400 max-md:hidden block">
               •
             </div>
 
@@ -76,7 +76,7 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
           </div>
 
 
-          <div class="p-4"></div>
+          <div class="p-4 max-md:p-1"></div>
     
           <div class="max-md:hidden block">
             <div class="max-w-[800px] w-full">
@@ -95,7 +95,7 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
               <Image 
                 src={data.thumbnail}
                 alt="education-1"
-                class="border-slate-500/60 h-[250px] border-4 p-2 object-cover"
+                class="h-[250px] object-cover"
                 width={800}
                 height={200}
               />
@@ -103,10 +103,10 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
           </div>
         </div>
 
-        <div class="p-5"></div>
+        <div class="p-5 max-md:p-0"></div>
         <div class='
           content text-black mt-12 max-w-[800px] m-auto
-          text-lg max-md:text-base
+          text-lg max-md:text-lg
           max-md:px-5 max-md:mt-8
           [&>h3]:text-2xl [&>h3]:tracking-tight [&>h3]:font-display [&>h3]:max-md:text-2xl
           [&>ol]:list-decimal [&>ol]:list-inside
