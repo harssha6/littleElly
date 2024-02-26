@@ -3,6 +3,7 @@ import { Image } from "astro:assets"
 import Text from "./system/Text.astro"
 
 const {
+  date = '',
   title,
   description,
   image,
@@ -18,7 +19,7 @@ const {
   }}>
   </div>
   <div class="pt-[20px]">
-    <Text type="xs" class="text-left uppercase tracking-widest font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">Parenting</Text>
+    <Text type="xs" class="text-left uppercase tracking-widest font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{date}</Text>
     <div class="pt-[4px]"></div>
     <Text type="h4" class="!text-[24px] font-bold transition-smooth transition-colors duration-300 group-hover:text-primary">{title}</Text>
     <!-- <Text type="base">Hello</Text> -->
