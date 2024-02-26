@@ -23,13 +23,15 @@ const {
   <div class="pt-[20px]">
     <div class= "flex flex-row">
       <Text type="xs" class="text-left text-slate-600  font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{date}</Text>
-      <div class="p-1"> </div>
-      <Text type="xs" class="text-left text-slate-600 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">• </Text>  
-      <div class="p-1"> </div>
-      <Text type="xs" class="text-left text-slate-600 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{category}</Text>  
+      {category && (
+        <div class="p-1"> </div>
+        <Text type="xs" class="text-left text-slate-600 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">• </Text>  
+        <div class="p-1"> </div>
+        <Text type="xs" class="text-left text-slate-600 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{category}</Text>  
+      )}
     </div>
     <div class="pt-[4px]"></div>
-    <Text type="h4" class="!text-[24px] font-bold transition-smooth transition-colors duration-300 group-hover:text-primary">{title}</Text>
+    <Text type="h4" class="!text-[24px] font-bold !font-sans transition-smooth transition-colors  duration-300 group-hover:text-primary">{title}</Text>
     <!-- <Text type="base">Hello</Text> -->
   </div>
 </a>

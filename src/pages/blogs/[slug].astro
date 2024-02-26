@@ -37,15 +37,17 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
 
 <Layout title={data.titleTag || data.title} description={data.metaDescription || undefined}>
   <main class="flex flex-col h-screen w-screen relative bg-white">
+
     <div 
-      class="flex-1 main-container h-screen w-screen"
-      style={{
-        overflowY: 'overlay',
-        overflowX: 'hidden',
-      }}
+      class="flex-1"
     >
-      <div class='flex flex-col bg-white'>
-        <div class='h-[100.44px] max-md:h-[70px] w-full bg-white'>
+    <div class="w-full top-0 left-0 z-[0] h-[400px] max-md:h-[400px] absolute" style={{
+      background: "linear-gradient(0deg, rgba(217, 233, 255, 0.00) 0%, rgba(251, 222, 206, 0.00) 0.01%, #fbdece50 47.82%)"
+    }}>
+
+    </div>
+      <div class='flex flex-col relative z-[10]'>
+        <div class='h-[100.44px] max-md:h-[70px] w-full'>
         </div>
         <TopNavigationBar />
         <div class='w-full flex flex-col items-center py-12 pb-2 max-md:py-6 max-md:px-6'>
@@ -57,19 +59,19 @@ const publishedDate = new Date(data.publishedDate).toLocaleDateString('en-US', {
           <div class="p-3"></div>
           
           <div class="flex flex-row max-md:flex-col items-center gap-4">
-            <div class="bg-primary p-[2px] px-2 uppercase rounded">
-              <Text type="xs" class='font-bold text-white'>
-                {data.category}
-              </Text>
-            </div>
-            <div class="text-slate-400 max-md:hidden block">
-              •
-            </div>
-
             <Text type="xs" class="text-gray-400 font-[600]">
               {publishedDate}
             </Text>
-
+            <div class="text-slate-400 max-md:hidden block">
+              •
+            </div>
+            <a href={`/blogs/category/${data.category}`}>
+              <div class="bg-primary p-[2px] px-2 uppercase rounded">
+                <Text type="xs" class='font-bold text-white'>
+                  {data.category}
+                </Text>
+              </div>
+            </a>
             <div>
 
             </div>
