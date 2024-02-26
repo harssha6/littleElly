@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets"
+import Text from "./system/Text.astro"
+
+const {
+  title,
+  description,
+  image,
+  imageClass,
+  slug
+} = Astro.props
+---
+<a href={"/blogs/" + slug} class="w-full h-full flex flex-col group cursor-pointer">
+  <div class:list={["w-full flex-1 bg-red-100", imageClass]} style={{
+    backgroundImage: `url("${image}")`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}>
+  </div>
+  <div class="pt-[20px]">
+    <Text type="xs" class="text-left uppercase tracking-widest font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">Parenting</Text>
+    <div class="pt-[4px]"></div>
+    <Text type="h4" class="!text-[24px] font-bold transition-smooth transition-colors duration-300 group-hover:text-primary">{title}</Text>
+    <!-- <Text type="base">Hello</Text> -->
+  </div>
+</a>

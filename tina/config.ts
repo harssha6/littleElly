@@ -214,6 +214,21 @@ export default defineConfig({
           },
         ]
       },
+      {
+        name: "blogs",
+        label: "Blogs",
+        path: "src/content/blogs",
+        fields: [
+          { type: "string", name: "category", label: "Category" },
+          { type: "string", name: "title", label: "Title" },
+          { type: "string", name: "titleTag", label: "Title tag" },
+          { type: "rich-text", name: "caption", label: "Caption" },
+          { type: "string", name: "metaDescription", label: "Meta Description" },
+          { type: "datetime", name: "publishedDate", label: "Published Date" },
+          { type: 'image', name: 'thumbnail', label: 'Thumbnail' },
+          { type: "rich-text", name: "blog", label: "Blog" },
+        ]
+      },
     ],
   },
 });

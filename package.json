@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^3.0.10",
     "@astrojs/tailwind": "^5.0.0",
     "@astrojs/vercel": "^5.0.1",
     "@fontsource/nunito-sans": "^4.5.10",
@@ -23,6 +24,7 @@
     "googleapis": "^128.0.0",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
+    "marked": "^12.0.0",
     "sal.js": "^0.8.5",
     "siema": "^1.5.1",
     "swiper": "^10.3.0",
