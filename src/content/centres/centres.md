@@ -1114,7 +1114,7 @@ centers:
                 desi organic storeTurahalli road, Gubbalala, Banaglore - 560061
               telephone: +91 9663312397
               email: gubbalala@littleelly.com
-          - centre: Harlur
+          - centre: Haralur
             page:
               subtitle: Little Elly Harlur
               centreHead:
@@ -1150,12 +1150,13 @@ centers:
                   children by providing them After school care, Post School
                   Activities such as Abacus, Drawing, Karate, Dance,
                   Instrumental and Handwriting classes.
-              addressTitle: 'Little Elly, Harlur, Bangalore'
+              addressTitle: 'Little Elly, Haralur, Bangalore'
               address: >-
-                CA#2, Reliable Lake Dew Residency, Phase - 1, 2nd main, Harlur
-                Road, HSR Extension, Bengaluru - 560102
+                Reliable Lakedew Residency, No 73, 19th Main St, opposite
+                Orchids School, Lakedew Residency, Haralur, Bengaluru, Karnataka
+                560102
               telephone: +91 9945807870
-              email: hsr@littleelly.com
+              email: haralur.blr@littleelly.com
           - centre: HBR Layout
             page:
               subtitle: Little Elly HBR Layout
