@@ -4446,49 +4446,6 @@ centers:
     districts:
       - district: Pune
         centres:
-          - centre: Balewadi
-            page:
-              subtitle: Little Elly Balewadi
-              centreHead:
-                title: Center Head
-                name: Ms. Pooja
-                img: /images/Centers/subcenter/balewadi_CenterHead.jpeg
-                experience: ''
-                description: >
-                  I have been involved with early childcare and education for
-                  more than 10 years, a bulk of which has been with this lovely
-                  organization, Little Elly. Have always liked little children
-                  around me apart from being curious observers of various
-                  interesting stages through which they grow. Have realized that
-                  to be a good teacher, one has to be a keen observer.
-                  Association with this field has taught me things like
-                  patience, listening skills and human relations.
-              centreCoordinator:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              aboutUs:
-                text: Welcome
-                description: >
-                  “Little Elly” Balewadi offers a rich and diverse environment
-                  that helps your child grow in a developmentally appropriate
-                  way. We provide children with a safe, engaging, collaborative,
-                  and creative place to learn. At “Little Elly”, we foster an
-                  atmosphere of caring, respect, and understanding of one
-                  another and our world. We are committed to working together:
-                  parents, teachers, and children to ensure a high-quality and
-                  world-class preschool experience for all of our students. Our
-                  goal at “Little Elly” is to help foster your child’s growth
-                  during the first five crucial years with a child-centered &
-                  child-directed approach to learning.
-              addressTitle: 'Little Elly, Balewadi, Pune'
-              address: >-
-                S.No.122/1+2, Behind Hotel Chinar Garden, Next To Datacare Lab,
-                Off Ganraj Chowk, Balewadi, Pune 411045
-              telephone: +91 8308331700
-              email: balewadi.pune@littleelly.com
           - centre: Wagholi
             page:
               subtitle: Little Elly Wagholi
