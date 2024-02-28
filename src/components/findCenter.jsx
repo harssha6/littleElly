@@ -11,6 +11,20 @@ const { data } = await getEntry('centres', 'centres')
 
 let { centers: centersData } = data
 
+const CenterPill = (props) => {
+  const { onClick, label } = props
+  return (
+    <div onClick={onClick} className="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] max-md:w-[47%] h-[90px] flex flex-row items-center justify-center">
+      <Text type="base" className="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{label}</Text>
+      <div className="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <path d="M4.00049 12.9265L20.0005 12.9265M20.0005 12.9265L14.0005 6.92648M20.0005 12.9265L14.0005 18.9265" stroke="#EE7F82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  )
+}
+
 
 const FindCentre = () => {
   const [centers, setCenters] = React.useState(centersData)
@@ -18,10 +32,13 @@ const FindCentre = () => {
   const [currentState, setCurrentState] = React.useState('')
   const [currentDistrict, setCurrentDistrict] = React.useState('')
 
-  const searchResults = React.useMemo(() => {
-    if (!searchQuery) return []
-    return searchCentres()
-  } , [searchQuery])
+  let baseURL = ''
+
+  if (typeof window !== 'undefined') {
+    baseURL = window.location.origin
+  }
+
+
 
   const searchCentres = () => {
     const states = centers.map(center => center?.state).filter(state => state).map(item => ({ name: item, type: 'state' }))
@@ -46,16 +63,25 @@ const FindCentre = () => {
 
   }
 
+  const searchResults = React.useMemo(() => {
+    if (!searchQuery) return []
+    return searchCentres()
+  } , [searchQuery])
+
   
 
   const onPillClick = (type, name) => {
-    console.log('onPill Click...', type, name)
+    const pillData = getPillData(type, name)
+    if (pillData.page) {
+      if (typeof window !== 'undefined') {
+        window.location.href = `${baseURL}/campus/${name}`
+      }
+    }
+
     if (type === 'state') {
         setCurrentState(name)
     } else if (type === 'district') {
         setCurrentDistrict(name)
-    } else if (type === 'center') {
-        console.log('center', name)
     }
   }
 
@@ -64,11 +90,25 @@ const FindCentre = () => {
 
   const getPillData = (type, label) => {
     if (type === 'state') {
-      return centers.find(center => center.state === label)
+      const thisState = centers.find(center => center.state === label)
+      return thisState
     } else if (type === 'district') {
-      return centers.find(center => center.state === currentState)?.districts.find(district => district.district === label)
-    } else if (type === 'center') {
-      return centers.find(center => center.state === currentState)?.districts.find(district => district.district === currentDistrict)
+      const thisDistrict = centers
+        .map(center => center.districts)
+        .flat()
+        .find(district => district?.district === label)
+
+      return thisDistrict
+    } else if (type === 'center' || type === 'centre') {
+      const thisCentre = centers
+        .map(center => center.districts)
+        .flat()
+        .map(district => district?.centres)
+        .flat()
+        .find(centre => centre?.centre === label)
+      
+        return thisCentre
+
     }
     return {}
   }
@@ -82,7 +122,7 @@ const FindCentre = () => {
 
 
       
-  const renderPill = pills => {
+  const renderPill = (pills) => {
     const pillsData = getPillsData(pills).map(pill => ({
       ...pill,
       label: pill?.centre || pill?.district || pill?.state,
@@ -102,22 +142,25 @@ const FindCentre = () => {
       return acc
     }, {})
 
+    if (searchQuery !== "") {
+      return (
+        <div className="flex flex-row flex-wrap gap-4 w-full items-center">
+          {pills.map(pill => (
+            <CenterPill onClick={() => { onPillClick(pill.type, pill.label) }} label={pill.label} />
+          ))}
+        </div>
+      )
+    }
+
     return (
-      <div>
+      <div class="w-full">
       {(pillsDataGroupByPoweredByBoolean['notPoweredBy'] && (pillsDataGroupByPoweredByBoolean['notPoweredBy'].length > 0)) ? (
         <div>
           <h3 className="my-2 text-2xl font-bold capitalize py-2">Elly Centres</h3>
           <div className="flex flex-row flex-wrap gap-4 w-full items-center">
             {pillsDataGroupByPoweredByBoolean['notPoweredBy'].map((pill, i) => {
               return (
-                <div onClick={() => onPillClick(pill.type, pill.label)} className="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] max-md:w-[47%] h-[90px] flex flex-row items-center justify-center">
-                  <Text type="base" className="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{pill.label}</Text>
-                  <div className="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M4.00049 12.9265L20.0005 12.9265M20.0005 12.9265L14.0005 6.92648M20.0005 12.9265L14.0005 18.9265" stroke="#EE7F82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
+                <CenterPill onClick={() => { onPillClick(pill.type, pill.label) }} label={pill.label} />
               )
             })}
           </div>
@@ -132,14 +175,7 @@ const FindCentre = () => {
             {console.log('pillsDataGroupByPoweredByBoolean', pillsDataGroupByPoweredByBoolean['poweredBy'])}
             {pillsDataGroupByPoweredByBoolean['poweredBy'].map((pill, i) => {
               return (
-                <div className="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] max-md:w-[47%] h-[90px] flex flex-row items-center justify-center">
-                  <Text type="base" className="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{pill.label}</Text>
-                  <div className="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M4.00049 12.9265L20.0005 12.9265M20.0005 12.9265L14.0005 6.92648M20.0005 12.9265L14.0005 18.9265" stroke="#EE7F82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
+                <CenterPill onClick={() => { onPillClick(pill.type, pill.label) }} label={pill.label} />
               )
             })}
           </div>
@@ -224,6 +260,18 @@ const FindCentre = () => {
               </div>
           </button>
       </div>
+      <div data-appear={2} class="self-start  border-[#B6B6B6] border-l-[3px] pl-6">
+        <div class='p-[3px]' />
+        <Text type="base"><span class="font-bold">Elly Centres - </span>Schools carry Little Elly brand and are managed by our family of franchisees.</Text>
+        <div class='p-2' />
+        <div class="flex flex-row items-center">
+          <img src={poweredBy.src} class="h-[40px]" />
+          <Text type="base"><span class="font-bold">{' '} - </span>Schools supported by Little Elly’s curriculum and resources.</Text>
+        </div>
+        <div class='p-[3px]' />
+      </div>
+
+
       <div data-appear={2} className="w-full  px-[30px] py-6 bg-white border rounded-[12px] border-black/10">
             {!isSearching && 
               <Text type="base">

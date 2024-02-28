@@ -79,7 +79,7 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-    class="h-[76svh] flex"
+    class="h-[76svh] max-md:h-[50svh] flex"
   >
   <Hero
   config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
@@ -108,11 +108,11 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
     class="flex flex-col w-full items-center text-left !p-0 text-black"
   >
     <div
-      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] text-left max-md:text-center !p-0"
+      class="w-full flex max-md:items-center max-md:gap-[10px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] text-left max-md:text-center !p-0"
       id="mission"
 
     >
-      <div class="max-md:flex block flex-col items-center md:p-xl py-xl px-5 text-left ">
+      <div class="max-md:flex block flex-col items-center md:p-xl py-l px-5 text-left ">
         <Text type="h2" class="text-[#282828]"><span class="text-primary">Vision</span> and <span class="text-[#78ADF9]">Mission</span></Text>
 
         <div class="pt-4 max-md:pt-2"></div>
@@ -121,21 +121,42 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
           At Little Elly, we aim to provide each child with a nurturing and stimulating environment that promotes their overall growth and development. Through our network of preschools, our mission is to establish a world that is safe, full of love and cultivates a lifelong passion for learning. By employing a child-centric approach and harnessing the expertise of our dedicated team of trained educators, we aim to empower children in academic, social, and emotional aspects, as well as lay a solid foundation for their future academic and personal success.
         </Text>
       </div>
-       <div class="max-h-[676px] relative overflow-hidden">
+      
+      <div class="overflow-hidden">
+        <div class="hmove hidden px-4 max-md:flex py-2 gap-4 w-screen mb-4">
+          {[ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+            <div class="w-[200px] h-[150px] flex-shrink-0 rounded-md">
+              <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+            </div>
+          ))}
+          {[ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+            <div class="w-[200px] h-[150px] flex-shrink-0 rounded-md">
+              <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+            </div>
+          ))}
+          <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
+          <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
+          <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
+          <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
+          <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
+          <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
+        </div>
+      </div>
+       <div class="max-h-[676px] max-md:h-[400px] relative overflow-hidden max-md:hidden block">
         <div class="flex gap-m">
           <div class="h-[600px] overflow-hidden">
             <div class="relative vmove">
-              <div class="flex flex-col gap-4 justify-center items-center text-center">
+              <div class="flex flex-col max-md:flex-row gap-4 justify-center items-center text-center">
                 {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
-                  <div class="w-[252px] h-[305px] rounded-md">
+                  <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
                     <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
               <div class="pt-4"></div>
-              <div class="flex flex-col gap-4 justify-center items-center text-center">
+              <div class="flex flex-col max-md:flex-row gap-4 justify-center items-center text-center">
                 {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
-                  <div class="w-[252px] h-[305px] rounded-md">
+                  <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
                     <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -147,7 +168,7 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
             <div class="relative vmove-reverse">
               <div class="flex flex-col gap-4 justify-center items-center text-center">
                 {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
-                  <div class="w-[252px] h-[305px] rounded-md">
+                  <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
                     <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -155,7 +176,7 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
               <div class="pt-4"></div>
               <div class="flex flex-col gap-4 justify-center items-center text-center">
                 {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
-                  <div class="w-[252px] h-[305px] rounded-md">
+                  <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
                     <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -337,9 +358,18 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
     100% { bottom: 213%; }
   }
 
+  @keyframes tickerh {
+    0% { transform: translatex(0%); }
+    100% { transform: translatex(-420%); }
+  }
+
   .vmove {
     animation: tickerv linear 25s infinite;
   }
+
+  .hmove { animation: tickerh linear 16s infinite; }
+
+  .hmove:hover { animation-play-state: paused; }
   .vmove-reverse {
     animation: tickerv linear 25s infinite;
     animation-direction: reverse;
