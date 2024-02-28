@@ -27,16 +27,19 @@ const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, de
       backgroundImage: `${imageFade ? 'linear-gradient(90deg, rgba(255, 255, 255, 0) 40.82%, #FFFFFF 95.62%),' : ''} url(${image})`
     }}> -->
     <!-- <slot>
-      <img  
+      <img
         src=`${image.src}`
         class="object-contain max-h-[200px] rounded-[22px]"
       />
     </slot> -->
+    <!-- <div class='flex flex-col justify-around max-md:justify-start border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden h-[100%]'> -->
     <div class='flex flex-col justify-around max-md:justify-start border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden h-[100%]'>
+
       <Image class={"rounded-[23px]"} src={image} alt={"image"} class="h-[300px] object-cover" />
-      
+
       <div class="p-r">
-        <div>
+        <div class="md:h-[600px]">
+        <div class="md:h-auto">
           <Text type="regular" class="text-[#121212] font-[700] italic">
             I am glad I chose Little Elly because
             <br class="max-md:hidden block" />
@@ -56,13 +59,14 @@ const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, de
            <Text type="base" class="text-[#C25668] font-[700] !text-[20px]">
             {author}
           </Text>
-        
+
            <Text type="base" class="text-[#C25668] font-[700] !text-[15px]">
             {authorSubtext}
           </Text>
-        
+
         </div>
        </div>
-      
+      </div>
+
     </div>
   </div>

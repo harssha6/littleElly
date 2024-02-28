@@ -10,7 +10,7 @@ import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
 
 import testimonial1 from '../../images/testimonial/test1.png'
 import testimonial2 from '../../images/testimonial/test2.png'
-import testimonial3 from '../../images/testimonial/test3.png'
+import testimonial3 from '../../images/testimonial/testimonial3.1.png'
 import testimonial4 from '../../images/testimonial/test4.png'
 import testimonial5 from '../../images/testimonial/test5.png'
 import student3 from "../../images/student3.png"
@@ -47,13 +47,22 @@ const testimonials = {
       },
       {
         image: testimonial3,
-        quote: " I feel that a spark was ignited in Pragathi and I couldn’t be happier. ",
+        quote: " I am glad I chose Little Elly because Priyanshi thrived academically, benefiting from tailored lessons and a balanced curriculum that ignited her curiosity... ",
         ctaText: 'Watch Video',
         ctaLink: '',
-        authorSubtext: 'Mother of Pragathi, Nursery',
-        author: 'Shilpa,',
-        desc: 'We moved to Bangalore last year and were very sceptical about finding the right school for our daughter because this was a new place for us. Although Pragathi was in school in Cochin, she was only really able to speak our mother tongue. After some research from my end, she joined Little Elly for Playgroup. The Centre head and the teachers were all very welcoming. I felt safe. Pragathi has now made a lot of progress, especially with her language and vocabulary which I can see has improved tremendously.'
-      },
+        authorSubtext: 'Mother of Priyanshi, Nursery',
+        author: 'Sunita,',
+        desc: 'We extend profound gratitude to Little Elly School for nurturing our daughter, Priyanshi, and fostering a supportive environment from her first day. Engaging in extracurricular activities, she learned the significance of teamwork and leadership. The safe, inclusive atmosphere empowered her to express herself freely, creating a second home where she felt valued. We wholeheartedly recommend Little Elly School for its enriching educational experience.'
+       },
+      //    {
+      //   image: testimonial3,
+      //   quote: " I feel that a spark was ignited in Pragathi and I couldn’t be happier. ",
+      //   ctaText: 'Watch Video',
+      //   ctaLink: '',
+      //   authorSubtext: 'Mother of Pragathi, Nursery',
+      //   author: 'Shilpa,',
+      //   desc: 'We moved to Bangalore last year and were very sceptical about finding the right school for our daughter because this was a new place for us. Although Pragathi was in school in Cochin, she was only really able to speak our mother tongue. After some research from my end, she joined Little Elly for Playgroup. The Centre head and the teachers were all very welcoming. I felt safe. Pragathi has now made a lot of progress, especially with her language and vocabulary which I can see has improved tremendously.'
+      // },
       {
         image: testimonial4,
         quote: " this is Aileen’s first step to schooling and we didn’t want to make a mistake.",
@@ -71,7 +80,7 @@ const testimonials = {
         desc: 'Agastya moved to Little Elly in the middle of the academic year. To our surprise, he had fully settled in two days. He loves his Raaji Ma’am and we really like the preschool program and the activities. Since both of us work long days he is in school for most of the day as he stays back for daycare. We were skeptical about leaving him here for long hours but he seems to be happier here than at home.'
 
       },
-    
+
     ],
 }
 
@@ -108,7 +117,7 @@ const subtitle = testimonials.subtitle;
     {data.slice(1).map(item => {
       return (
         <CarouselCard>
-          <TestimonicalCard 
+          <TestimonicalCard
               quote={item.quote}
               author={item?.author}
               image={item.image}
@@ -122,15 +131,15 @@ const subtitle = testimonials.subtitle;
       )
     })}
     </Carousel>
-  
 
-    
+
+
   </div>
   <div class="testimonial-swiper max-w-[100vw] hidden max-md:flex flex-col items-center">
    <div class="swiper-wrapper">
      {data.slice(1).map(item => {
        return (
-         <TestimonicalCard 
+         <TestimonicalCard
              quote={item.quote}
              author={item?.author}
              image={item.image}
@@ -151,7 +160,7 @@ const subtitle = testimonials.subtitle;
           svgClass={"w-full h-full bg-white rounded-full rotate-180"}
           color={"#FF7162"}
       />
-          
+
       </div>
     </div>
     <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-next-swiper='testimonial-swiper'>
@@ -165,7 +174,7 @@ const subtitle = testimonials.subtitle;
       </div>
   </div>
   </div>
- 
+
   <!-- <div class="flex w-[160px] justify-between">
     <FilledArrowCircle
         svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}
@@ -188,5 +197,5 @@ const subtitle = testimonials.subtitle;
 </svg></div>
     ))
   }
-  
+
 </div>
