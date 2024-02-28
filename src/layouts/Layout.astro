@@ -617,6 +617,73 @@ if (nextBtn) {
 				scrub: true,
 			}
 		})
+
+
+		document.addEventListener("DOMContentLoaded", function() {
+			// select all the links that ends with #, 
+			// if it starts with #, then prevent default and smooth scroll to the target - 100px
+			// if it starts with /, then prevent default, 
+			//     --> if current url is not the same as the target
+			//     		--> navigate to the target 
+			//     --> if current url is same as the target
+			//     		--> prevent default and smooth scroll to the target - 100px
+
+
+			const removeHash = (url) => {
+				return url.replace(/#.*$/, '');
+			}
+
+			const getHash = (url) => {
+				return url.replace(/.*#/, '');
+			}
+
+			const links = document.querySelectorAll('a[href*="#"]');
+
+			console.log('links', links)
+
+			links.forEach(link => {
+				link.addEventListener('click', (e) => {
+
+					console.log('link', link)
+						e.preventDefault();
+
+					const href = link.getAttribute('href');
+					if (href.startsWith('#')) {
+						// e.preventDefault();
+							const target = document.getElementById(getHash(href));
+							if (target) {
+								const top = target.getBoundingClientRect().top + window.pageYOffset;
+								window.scrollTo({
+									top: top,
+									behavior: 'smooth'
+								});
+							}
+					} else if (href.startsWith('/')) {
+						// e.preventDefault();
+						const target = href;
+						if (removeHash(window.location.pathname) !== removeHash(target)) {
+							window.location.href = target;
+						} else {
+							const target = document.getElementById(getHash(href));
+							if (target) {
+								const top = target.getBoundingClientRect().top + window.pageYOffset;
+
+								console.log('target Hitt...', target, top)
+								window.scrollTo({
+									top: top,
+									behavior: 'smooth'
+								});
+							}
+						}
+					}
+				});
+			});
+
+
+
+		});
+
+
   
   
   </script>

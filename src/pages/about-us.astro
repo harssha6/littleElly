@@ -51,13 +51,22 @@ import slide2 from "../images/slides/3.png";
 const toppers = campusConfig?.toppers;
 import Philosophy from "../images/academic/philosophy.png"
 import team1 from "../images/aboutUs/vittal.jpeg.webp"
-import Zonal from "../images/Zonal.png"
+import Zonal from "../images/ZONAL.png"
 import Student1 from "../images/aboutUs/student.png";
 import Student2 from "../images/aboutUs/student2.png";
 import Student3 from "../images/aboutUs/student3.png";
 
 import Gallery from "../components/Gallery.astro";
 import Ticker from "../components/Ticker.astro";
+
+import ticker1 from '../images/aboutUs/ticker/1.png'
+import ticker2 from '../images/aboutUs/ticker/2.png'
+import ticker3 from '../images/aboutUs/ticker/3.png'
+import ticker4 from '../images/aboutUs/ticker/4.png'
+import ticker5 from '../images/aboutUs/ticker/5.png'
+import ticker6 from '../images/aboutUs/ticker/6.png'
+import ticker7 from '../images/aboutUs/ticker/7.png'
+import ticker8 from '../images/aboutUs/ticker/8.png'
 ---
 
 <Layout
@@ -90,6 +99,7 @@ import Ticker from "../components/Ticker.astro";
   </div>
   </div>
 
+
   <Section
     class="flex flex-col w-full items-center text-left !p-0 text-black"
   >
@@ -109,15 +119,44 @@ import Ticker from "../components/Ticker.astro";
       </div>
        <div class="max-h-[676px] relative overflow-hidden">
         <div class="flex gap-m">
-          <div class="flex flex-col gap-r">
-            <Image class="rounded-[10px] w-[252px] h-[302px] object-cover" src={Student1} alt="student"/>
-            <Image class="rounded-[10px] w-[252px] h-[302px] object-cover" src={Student2} alt="student"/>
-            <Image class="rounded-[10px] w-[252px] h-[302px] object-cover" src={Student3} alt="student"/>
-          </div> 
-          <div class="flex flex-col gap-r translate-y-[-10%]">
-            <Image class="rounded-[10px] w-[252px] h-[302px] object-cover" src={Student2} alt="student"/>
-            <Image class="rounded-[10px] w-[252px] h-[302px] object-cover" src={Student1} alt="student"/>
-            <Image class="rounded-[10px] w-[252px] h-[302px] object-cover" src={Student3} alt="student"/>
+          <div class="h-[600px] overflow-hidden">
+            <div class="relative vmove">
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div class="pt-4"></div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div class="h-[600px] overflow-hidden">
+            <div class="relative vmove-reverse">
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div class="pt-4"></div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         
@@ -284,6 +323,21 @@ import Ticker from "../components/Ticker.astro";
   .float a:hover ~ div {
     opacity: 1;
   }
+
+  @keyframes tickerv {
+    0% { bottom: 0%; }
+    100% { bottom: 213%; }
+  }
+
+  .vmove { 
+    animation: tickerv linear 25s infinite; 
+  }
+  .vmove-reverse { 
+    animation: tickerv linear 25s infinite; 
+    animation-direction: reverse;
+  }
+
+
 
   .my-float {
     margin-top: 16px;

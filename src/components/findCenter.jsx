@@ -3,26 +3,13 @@ import Fuse from 'fuse.js'
 import { getEntry } from 'astro:content';
 import Text from './system/Text.jsx'
 import MultiStyleText from './system/MultiStyleText.jsx'
-
+import SearchIcon from '../icons/SearchIcon.svg'
+import poweredBy from '../images/poweredBy.png'
 
 const { data } = await getEntry('centres', 'centres')
 
 
 let { centers: centersData } = data
-
-centersData = centersData?.map(center => ({
-    state: center?.state,
-    districts: center?.districts?.map(district => ({
-        district: district?.district,
-        centres: district?.centres?.map(centre => ({
-            centre: centre?.centre,
-        }))
-    }))
-}))
-
-
-
-import SearchIcon from '../icons/SearchIcon.svg'
 
 
 const FindCentre = () => {
@@ -30,6 +17,11 @@ const FindCentre = () => {
   const [searchQuery, setSearchQuery] = React.useState('')
   const [currentState, setCurrentState] = React.useState('')
   const [currentDistrict, setCurrentDistrict] = React.useState('')
+
+  const searchResults = React.useMemo(() => {
+    if (!searchQuery) return []
+    return searchCentres()
+  } , [searchQuery])
 
   const searchCentres = () => {
     const states = centers.map(center => center?.state).filter(state => state).map(item => ({ name: item, type: 'state' }))
@@ -54,11 +46,7 @@ const FindCentre = () => {
 
   }
 
-
-  const searchResults = React.useMemo(() => {
-    if (!searchQuery) return []
-    return searchCentres()
-  } , [searchQuery])
+  
 
   const onPillClick = (type, name) => {
     console.log('onPill Click...', type, name)
@@ -74,19 +62,91 @@ const FindCentre = () => {
 
   const isSearching = searchQuery !== ''
 
-  const renderPill = (pills) => {
+  const getPillData = (type, label) => {
+    if (type === 'state') {
+      return centers.find(center => center.state === label)
+    } else if (type === 'district') {
+      return centers.find(center => center.state === currentState)?.districts.find(district => district.district === label)
+    } else if (type === 'center') {
+      return centers.find(center => center.state === currentState)?.districts.find(district => district.district === currentDistrict)
+    }
+    return {}
+  }
+
+  const getPillsData = (pills) => {
+    return pills.map(pill => {
+      const { type, label } = pill
+      return getPillData(type, label)
+    })
+  }
+
+
+      
+  const renderPill = pills => {
+    const pillsData = getPillsData(pills).map(pill => ({
+      ...pill,
+      label: pill?.centre || pill?.district || pill?.state,
+      type: pill?.state
+        ? 'state'
+        : pill?.district
+          ? 'district'
+          : 'centre'
+    }))
+
+    const pillsDataGroupByPoweredByBoolean = pillsData.reduce((acc, pill) => {
+      const key = pill.poweredBy ? 'poweredBy' : 'notPoweredBy'
+      if (!acc[key]) {
+        acc[key] = []
+      }
+      acc[key].push(pill)
+      return acc
+    }, {})
+
     return (
-      <div className="w-full flex flex-row flex-wrap gap-4 items-center">
-        {pills.map(pill => (
-          <div onClick={() => onPillClick(pill.type, pill.label)} className="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] max-md:w-[47%] h-[90px] flex flex-row items-center justify-center">
-            <Text type="base" className="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{pill.label}</Text>
-            <div className="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                <path d="M4.00049 12.9265L20.0005 12.9265M20.0005 12.9265L14.0005 6.92648M20.0005 12.9265L14.0005 18.9265" stroke="#EE7F82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+      <div>
+      {(pillsDataGroupByPoweredByBoolean['notPoweredBy'] && (pillsDataGroupByPoweredByBoolean['notPoweredBy'].length > 0)) ? (
+        <div>
+          <h3 className="my-2 text-2xl font-bold capitalize py-2">Elly Centres</h3>
+          <div className="flex flex-row flex-wrap gap-4 w-full items-center">
+            {pillsDataGroupByPoweredByBoolean['notPoweredBy'].map((pill, i) => {
+              return (
+                <div onClick={() => onPillClick(pill.type, pill.label)} className="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] max-md:w-[47%] h-[90px] flex flex-row items-center justify-center">
+                  <Text type="base" className="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{pill.label}</Text>
+                  <div className="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <path d="M4.00049 12.9265L20.0005 12.9265M20.0005 12.9265L14.0005 6.92648M20.0005 12.9265L14.0005 18.9265" stroke="#EE7F82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              )
+            })}
           </div>
-        ))}
+        </div>
+      ) : <div />}
+
+
+      {(pillsDataGroupByPoweredByBoolean['poweredBy'] && (pillsDataGroupByPoweredByBoolean['poweredBy'].length > 0)) ? (
+        <div>
+          <img src={poweredBy.src} alt="Powered By" class="w-[145px] py-6" />
+          <div className="flex flex-row flex-wrap gap-4 w-full items-center">
+            {console.log('pillsDataGroupByPoweredByBoolean', pillsDataGroupByPoweredByBoolean['poweredBy'])}
+            {pillsDataGroupByPoweredByBoolean['poweredBy'].map((pill, i) => {
+              return (
+                <div className="relative cursor-pointer border group hover:bg-[linear-gradient(180deg,_#FFF_0%,_#FFF3F3_100%)] hover:border-red-200 border-[rgba(113,101,101,0.21)] px-7 py-[18px] rounded-[10px] w-[180px] max-md:w-[47%] h-[90px] flex flex-row items-center justify-center">
+                  <Text type="base" className="font-[400] text-[#1c1c1c] group-hover:text-primary text-center">{pill.label}</Text>
+                  <div className="w-[24px] h-[24px] transition-all duration-500 opacity-0 right-[20%] pointer-events-none absolute group-hover:right-[4%] group-hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <path d="M4.00049 12.9265L20.0005 12.9265M20.0005 12.9265L14.0005 6.92648M20.0005 12.9265L14.0005 18.9265" stroke="#EE7F82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      ) : <div />}
+
+       
       </div>
     )
   }
@@ -107,9 +167,9 @@ const FindCentre = () => {
       return (
         <div className="w-full" data-centres-container>
           {groupKeys.map(type => (
-            <div class="py-2">
-              <h3 class="my-2 text-2xl font-bold capitalize">{type}</h3>
-              <div class="w-full flex flex-row flex-wrap gap-4 items-center">
+            <div className="py-2">
+              <h3 className="my-2 text-2xl font-bold capitalize">{type}</h3>
+              <div className="w-full flex flex-row flex-wrap gap-4 items-center">
                 {renderPill(groupByType[type].map((name, index) => ({ label: name, type })))}
               </div>
             </div>
@@ -136,7 +196,7 @@ const FindCentre = () => {
   
   return (
     <div className="flex flex-col gap-l items-center p-[60px] px-[90px] max-md:px-[20px] max-md:py-[40px]">
-      <div data-appear id="findcentre">
+      <div data-appear>
           <Text type="h2" className="text-center">
                  Our
               <br />
