@@ -55,6 +55,10 @@ import Zonal from "../images/ZONAL.png"
 import Student1 from "../images/aboutUs/student.png";
 import Student2 from "../images/aboutUs/student2.png";
 import Student3 from "../images/aboutUs/student3.png";
+import preeti from "../images/aboutUs/preeti.jpeg.webp";
+import amitTiwari from "../images/aboutUs/Amit-Tiwari.png";
+import PreetiAlva from "../images/aboutUs/Preeti-Alva.png";
+import curriculamTeam from "../images/aboutUs/CURRICULUM-TEAM.png";
 
 import Gallery from "../components/Gallery.astro";
 import Ticker from "../components/Ticker.astro";
@@ -92,10 +96,10 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
       <!-- <div class="p-20"></div> -->
       <Text type="h2">
         About  <span class="text-yellow">Us</span>
-       </Text> 
+       </Text>
 
     </div>
-</Hero>  
+</Hero>
   </div>
   </div>
 
@@ -108,7 +112,7 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
       id="mission"
 
     >
-      <div class="max-md:flex block flex-col items-center p-xl ">
+      <div class="max-md:flex block flex-col items-center md:p-xl py-xl px-5 text-left ">
         <Text type="h2" class="text-[#282828]"><span class="text-primary">Vision</span> and <span class="text-[#78ADF9]">Mission</span></Text>
 
         <div class="pt-4 max-md:pt-2"></div>
@@ -138,7 +142,7 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
               </div>
             </div>
           </div>
-          
+
           <div class="h-[600px] overflow-hidden">
             <div class="relative vmove-reverse">
               <div class="flex flex-col gap-4 justify-center items-center text-center">
@@ -159,13 +163,13 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
             </div>
           </div>
         </div>
-        
+
         <div class="w-full h-[100px] absolute inset-0 z-9" style="background: linear-gradient(#f2dbb6 0%, #fff0 100%)"></div>
         <div class="w-full h-[100px] absolute bottom-0 z-9 rotate-180" style="background: linear-gradient(#f2dbb6 0%, #fff0 100%)"></div>
-        
+
        </div>
     </div>
-     
+
   </Section>
   <Section class="w-full flex flex-col items-center bg-[#FDF2E5] gap-l pb-0 relative">
     <div class="flex justify-between items-center">
@@ -174,12 +178,12 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
             <div>
               Our <br />
               <span class="text-6xl font-semibold text-center text-[#F6BD60]" style="text-shadow: 1.1px 2.19px #6F322E;">Philosophy</span>
-              
+
               <!-- <span class="relative">
                 <span class="text-primary">Rich </span> <MultiStyleText type="h2"text="History" classes={[
                   "text-purple","text-blue","text-green-200", "text-orange-200", "text-purple","text-blue","text-green-200"
                 ]} />
-                  
+
               </span> -->
             </div>
           </Text>
@@ -194,9 +198,9 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
       </Text>
       <Image src={Philosophy} alt={"Philosophy"} class={"max-w-[448px] max-h-[445px] basis-[40%] max-md:max-w-[340px] max-md:max-h-[360px]"} />
     </div>
-    
+
   </Section>
-  
+
   <div class=" w-full h-[150px] max-md:h-[40px] flex bg-transparent relative">
     {
       Array(6).fill("").map((_, i) => (
@@ -206,26 +210,27 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
   </svg></div>
       ))
     }
-    
+
   </div>
-  
+
   <Section class="flex relative items-center justify-center flex-col">
-    
+
     <Text type="h2" class="text-purple text-center pt-0">Our <span class="text-primary">Team</span></Text>
-   
-    <div class="flex flex-col justify-center items-center">
-      <div class="absolute left-0 w-fit">
+
+    <!-- <div class="flex flex-col justify-center items-center"> -->
+      <div class="absolute hidden md:block left-0 w-fit">
         <svg width="76" height="748" viewBox="0 0 76 748" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M-1.5 1.99939C113.407 181.682 80.4301 601.966 -1.49999 746.499" stroke="#B892F9" stroke-width="5" stroke-dasharray="20 20"/>
          </svg>
       </div>
-      <div class="absolute right-0 w-fit">
+      <div class="absolute hidden md:block right-0 w-fit">
         <svg width="73" height="748" viewBox="0 0 73 748" fill="none">
           <path d="M77 1.99951C-37.9067 181.683 -4.93011 601.966 77 746.5" stroke="#EE7F82" stroke-width="5" stroke-dasharray="20 20"/>
           </svg>
       </div>
       <div class="min-w-[756px] flex flex-col gap-xl m-xl">
-        <div class="flex justify-between">
+        <!-- <div class="flex justify-between"> -->
+        <div class="grid grid-cols-1 gap-20 md:grid-cols-2 md:gap-[200px]">
           <div class="flex items-center justify-center flex-col">
             <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
             <div class="mt-r flex flex-col items-center">
@@ -234,44 +239,47 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
             </div>
           </div>
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={preeti} alt={'vittal'} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary center">Vittal Bhandary</Text>
+              <Text type="h3" class="text-primary center">Preeti Bhandary</Text>
               <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
             </div>
           </div>
         </div>
-        <div class="flex justify-between"> 
+        <!-- <div class="flex justify-between"> -->
+          <div class="grid grid-cols-1 gap-20 md:grid-cols-2 md:gap-[200px]">
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={amitTiwari} alt={'vittal'} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary center ">Vittal Bhandary</Text>
+              <Text type="h3" class="text-primary center ">Amit Tiwari</Text>
               <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
             </div>
           </div>
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={PreetiAlva} alt={'vittal'} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary center">Vittal Bhandary</Text>
+              <Text type="h3" class="text-primary center">Preeti Alva</Text>
               <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
             </div>
           </div>
         </div>
-        <div class="flex justify-between gap-xl">
+        <!-- <div class="flex justify-between gap-xl"> -->
+        <div class="grid md:grid-cols-2 grid-col-1 gap-20  md:gap-[106px]">
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-[32px] w-auto aspect-video h-[204px] object-cover border-primary border-[5px]"} src={Zonal} alt={'team'} />
+            <!-- <Image class={"rounded-[32px] w-auto aspect-video h-[204px] object-cover border-primary border-[5px]"} src={Zonal} alt={'team'} /> -->
+            <Image class={"rounded-[32px] w-auto aspect-video h-[170px] md:h-[204px] object-cover border-primary border-[5px]"} src={Zonal} alt={'team'} />
             <div class="mt-r flex flex-col items-center">
               <Text type="h4" class="text-[#111] font-semibold center font-sans">Zonal Operations Team</Text>
             </div>
           </div>
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-[32px] w-auto aspect-video h-[204px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <Image class={"rounded-[32px] w-auto aspect-video h-[170px] md:h-[204px] object-cover border-primary border-[5px]"} src={curriculamTeam} alt={'vittal'} />
             <div class="mt-r flex flex-col items-center">
               <Text type="h4" class="text-[#111] font-semibold center font-sans">Curriculum Team</Text>
             </div>
           </div>
         </div>
-     
+
     </div>
 
   </div>
@@ -329,11 +337,11 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
     100% { bottom: 213%; }
   }
 
-  .vmove { 
-    animation: tickerv linear 25s infinite; 
+  .vmove {
+    animation: tickerv linear 25s infinite;
   }
-  .vmove-reverse { 
-    animation: tickerv linear 25s infinite; 
+  .vmove-reverse {
+    animation: tickerv linear 25s infinite;
     animation-direction: reverse;
   }
 
