@@ -169,6 +169,11 @@ export default defineConfig({
                 label: 'State (Name)',
                 name: 'state'
               },
+              {
+                type: 'boolean',
+                name: 'poweredBy',
+                label: 'Powered By Little Elly',
+              },
               centerPage,
               {
                 type: 'object',
@@ -187,6 +192,11 @@ export default defineConfig({
                     label: 'District (Name)',
                     name: 'district'
                   },
+                  {
+                    type: 'boolean',
+                    name: 'poweredBy',
+                    label: 'Powered By Little Elly',
+                  },
                   centerPage,
                   {
                     type: 'object',
@@ -204,6 +214,11 @@ export default defineConfig({
                         type: 'string',
                         label: 'Centre (Name)',
                         name: 'centre'
+                      },
+                      {
+                        type: 'boolean',
+                        name: 'poweredBy',
+                        label: 'Powered By Little Elly',
                       },
                       centerPage,
                     ]

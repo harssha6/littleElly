@@ -14,8 +14,8 @@ import GoToCta from "../components/GoToCta.astro";
 import campus1 from "../images/campus/gas/gallery/1.jpeg";
 import config from "../../config";
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
-import slide1 from "../images/slides/01.webp";
-import slide3 from "../images/slides/03.webp";
+import slide1 from "../images/slides/1.png";
+import slide3 from "../images/slides/4.png";
 import aboutUsBG from "../image/about-us/bg.webp";
 import aboutUsBGMb from "../image/about-us/bgMb.webp";
 import slide5 from "../images/slides/05.webp";
@@ -43,13 +43,30 @@ import president from "../image/about-us/president2.jpg";
 import principal from "../image/about-us/principal.png";
 
 import AdvisoryBoard from "../components/AdvisoryBoard.astro";
-
+import Awards from "../components/Awards.astro";
 import qualityPolicy from "../image/about-us/qualityPolicy.png";
 import FilledArrowCircle from "../components/icons/FilledArrowCircle.astro";
 import InquiryBasedLearning from "../components/InquiryBasedLearning.astro";
-
+import slide2 from "../images/slides/3.png";
 const toppers = campusConfig?.toppers;
+import Philosophy from "../images/academic/philosophy.png"
+import team1 from "../images/aboutUs/vittal.jpeg.webp"
+import Zonal from "../images/ZONAL.png"
+import Student1 from "../images/aboutUs/student.png";
+import Student2 from "../images/aboutUs/student2.png";
+import Student3 from "../images/aboutUs/student3.png";
 
+import Gallery from "../components/Gallery.astro";
+import Ticker from "../components/Ticker.astro";
+
+import ticker1 from '../images/aboutUs/ticker/1.png'
+import ticker2 from '../images/aboutUs/ticker/2.png'
+import ticker3 from '../images/aboutUs/ticker/3.png'
+import ticker4 from '../images/aboutUs/ticker/4.png'
+import ticker5 from '../images/aboutUs/ticker/5.png'
+import ticker6 from '../images/aboutUs/ticker/6.png'
+import ticker7 from '../images/aboutUs/ticker/7.png'
+import ticker8 from '../images/aboutUs/ticker/8.png'
 ---
 
 <Layout
@@ -58,345 +75,209 @@ const toppers = campusConfig?.toppers;
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-      class="h-[76svh] flex"
-      style="background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);"
-    >
-      <Hero
-        showSlide={true}
-        slideImages={[
-          {
-            slide: [
-              { src: aboutUsBG.src, media: "(min-width: 768px)", position: "top" },
-              { src: aboutUsBGMb.src, media: "(max-width: 768px)", position: "top" },
-            ],
-            picture: true,
-            type: "image",
-            position: "top",
-          },
-        ]}
-        contentDirection="items-end"
-        className="overflow-hidden font-roundo pb-0"
-      >
-      <div slot="title">
-          <!-- <div class="p-20"></div> -->
-          <Text type="h2">
-            Welcome to <span class="text-primary">Little Elly</span>
-          </Text>
-          <div class="p-1"></div>
-          <Text type="base" class="text-white w-[80%] max-md:w-full">
-            We're deeply committed to holistic child development. Situated on an 8-acre campus, we feature advanced digital classrooms, specialized labs, and multifaceted facilities for arts and sports.
-          </Text>
-          <div class="p-2"></div>
-        </div>
-      </Hero>
+    class="h-[76svh] flex"
+  >
+  <Hero
+  config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
+  showSlide={true}
+  slideImages={[
+    { slide: slide1.src, position: "center 64%", type: "image" },
+    { slide: slide2.src, position: "top 20%", type: "image" },
+    { slide: slide3.src, position: "top 64%", type: "image" },
+  ]}
+  contentDirection="items-end"
+  className="overflow-hidden font-roundo"
+>
+    <div slot="title">
+      <!-- <div class="p-20"></div> -->
+      <Text type="h2">
+        About  <span class="text-yellow">Us</span>
+       </Text> 
+
     </div>
+</Hero>  
+  </div>
   </div>
 
+
   <Section
-    class="flex flex-col w-full items-center text-left px-[56px] pt-[0] text-black"
-    style={{
-      background:
-        "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
-    }}
+    class="flex flex-col w-full items-center text-left !p-0 text-black"
   >
     <div
-      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
+      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] max-md:py-6 gap-[125px] text-left max-md:text-center !p-0"
       id="mission"
 
     >
-      <div class="max-md:flex block flex-col items-center">
-        <Text type="h2">Our <span>Mission</span> & <span>Vision</span></Text>
+      <div class="max-md:flex block flex-col items-center p-xl ">
+        <Text type="h2" class="text-[#282828]"><span class="text-primary">Vision</span> and <span class="text-[#78ADF9]">Mission</span></Text>
 
         <div class="pt-4 max-md:pt-2"></div>
-        <Text type="lg" class="[&>span]:text-primary text-[24px]">
-          Empower young minds for global citizenship through <span>progressive education</span>
-        </Text>
         <div class="pt-6 max-md:pt-2"></div>
-        <Text type="base" class="max-w-[900px]">
-          At Little Elly School, a strong belief in innovative pedagogy fuels our
-          passion to cultivate habits of the mind in our students. As a highly
-          collaborative learning community, we are driven by the power of
-          inquiry, curiosity and progressive learning. We are defined by our
-          commitment to developing a global outlook in our students, and
-          encouraging them to be confident, internationally-minded thinkers who
-          are at home anywhere in the world.
+        <Text type="base" class="max-w-[600px] font-sans text-[#1B2226]">
+          At Little Elly, we aim to provide each child with a nurturing and stimulating environment that promotes their overall growth and development. Through our network of preschools, our mission is to establish a world that is safe, full of love and cultivates a lifelong passion for learning. By employing a child-centric approach and harnessing the expertise of our dedicated team of trained educators, we aim to empower children in academic, social, and emotional aspects, as well as lay a solid foundation for their future academic and personal success.
         </Text>
-        <div class="pt-12 max-md:pt-6"></div>
-        <Image
-          src={blobBig}
-          class="w-[268px] max-md:w-[50%]"
-          alt="Decorative Element"
-        />
       </div>
-      <Image
-        class="w-[324px] max-md:w-[90%] flex-shrink-0"
-        src={vision}
-        alt="Quality Policy Thumbnail"
-      />
+       <div class="max-h-[676px] relative overflow-hidden">
+        <div class="flex gap-m">
+          <div class="h-[600px] overflow-hidden">
+            <div class="relative vmove">
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div class="pt-4"></div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div class="h-[600px] overflow-hidden">
+            <div class="relative vmove-reverse">
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+              <div class="pt-4"></div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center">
+                {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+                  <div class="w-[252px] h-[305px] rounded-md">
+                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="w-full h-[100px] absolute inset-0 z-9" style="background: linear-gradient(#f2dbb6 0%, #fff0 100%)"></div>
+        <div class="w-full h-[100px] absolute bottom-0 z-9 rotate-180" style="background: linear-gradient(#f2dbb6 0%, #fff0 100%)"></div>
+        
+       </div>
     </div>
-    <div class="pt-[54px] max-md:pt-[20px]"></div>
-      <div class="w-full flex flex-col items-center text-left max-md:text-center" id="philosophy">
-      <Text type="h2">Our <span>Philosophy</span></Text>
-      <div class="pt-4 max-md:pt-2"></div>
-      <Text type="lg" class="[&>span]:text-primary text-[28px]">
-        Empathy, Excellence, Empowerment: <span>The Little Elly Journey</span>
-        <!-- To create an environment <span>conducive to success.</span> -->
+     
+  </Section>
+  <Section class="w-full flex flex-col items-center bg-[#FDF2E5] gap-l pb-0 relative">
+    <div class="flex justify-between items-center">
+        <!-- <Image src={Rope} alt={"rope"} class={'w-30 object-contain absolute -top-8 left-0 block max-md:hidden'} data-y={0}></Image> -->
+          <Text type="h2" class="text-center">
+            <div>
+              Our <br />
+              <span class="text-6xl font-semibold text-center text-[#F6BD60]" style="text-shadow: 1.1px 2.19px #6F322E;">Philosophy</span>
+              
+              <!-- <span class="relative">
+                <span class="text-primary">Rich </span> <MultiStyleText type="h2"text="History" classes={[
+                  "text-purple","text-blue","text-green-200", "text-orange-200", "text-purple","text-blue","text-green-200"
+                ]} />
+                  
+              </span> -->
+            </div>
+          </Text>
+        <div  data-y={0}>
+          <!-- <Image src={Birds} alt={"birds"} class={'relative max-sm:w-20  z-10 object-contain opacity-0 pointer-events-none'}> </Image> -->
+          <!-- <Image src={clouds} height={50} alt={"clouds"} class={'absolute right-[20%] top-[-80%] max-sm:w-10  object-contain'}> </Image> -->
+        </div>
+    </div>
+    <div class="flex gap-6 w-full justify-between items-center max-md:flex-col max-md:items-center max-md:mt-0">
+      <Text type="base" class="!text-[22px] max-md:!text-[18px]  !text-[#1B2226] !leading-[160%] max-w-[50ch] mt-r max-md:mt-0">
+        Our Philosophy is simple. There is a huge emphasis on introducing children to a world of endless possibilities. As we continue to expand our presence and welcome more children into the Elly family, we remain dedicated to continual innovation in order to deliver the finest educational experience. We also uphold our core values, while nurturing strong relationships with parents and the community, all with the aim of making a positive impact on the lives of children worldwide        <br class="mb-r">
       </Text>
-      <div class="pt-9 max-md:pt-5"></div>
-      <div
-        class="w-full flex flex-row justify-between gap-4 max-md:flex-col max-md:gap-4"
-      >
-        <div
-          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
-        >
-          <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
-            <Image src={mission1} alt="" class="object-cover w-full h-full" />
-          </div>
-          <div class="pt-6"></div>
-          <Text type="regular" class="[&>span]:font-bold text-start">
-            <span>To create an environment conducive to success:</span> The school respects the individual needs of young minds and their desire to succeed. We foster an empathetic, creative and student-centric learning environment. The atmosphere we nurture is one of cooperation, respectful of individual differences and community values.
-          </Text>
-        </div>
-        <div
-          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
-        >
-          <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
-            <Image src={mission2} alt="" class="object-cover w-full h-full" />
-          </div>
-          <div class="pt-6"></div>
-          <Text type="regular" class="[&>span]:font-bold text-start">
-            <span>To provide education that fosters a world-view and a life-long desire for learning:</span> We work within the framework of an integrated curriculum, one that is inquiry-based and experiential with trans disciplinary units. The school hones students in intellectual, artistic and athletic expression. Our delivery strategies are development-appropriate and reach out to different learning styles.
-          </Text>
-        </div>
-        <div
-          class="p-5 rounded-md border border-black/20 w-[390px] max-md:w-full"
-        >
-          <div class="bg-red-200 rounded-md h-[271px] overflow-hidden">
-            <Image src={mission3} alt="" class="object-cover w-full h-full" />
-          </div>
-          <div class="pt-6"></div>
-          <Text type="regular" class="[&>span]:font-bold text-start">
-            <span>To groom students to be confident, creative builders of their future:</span> The school community is committed to nurturing students who are resilient and adaptable, equipped with the knowledge, skills, and disposition to continue their education and become personally fulfilled, interdependent, socially responsible adults.
-          </Text>
-        </div>
-      </div>
+      <Image src={Philosophy} alt={"Philosophy"} class={"max-w-[448px] max-h-[445px] basis-[40%] max-md:max-w-[340px] max-md:max-h-[360px]"} />
     </div>
-  </Section>
-
-  <InquiryBasedLearning />
-
-  <Section
-    class="flex flex-col w-full items-center text-left px-[56px] pt-[0] pb-[0] text-black"
-    style={{
-      background:
-        "linear-gradient(180deg, rgba(255, 227, 193, 0.35) 0%, rgba(244, 179, 62, 0.10) 100%)",
-    }}
-  >
-    <div
-      id="policy"
-      class="w-full flex max-md:items-center max-md:gap-[30px] flex-row max-md:flex-col py-[82px] pt-[60px] max-md:py-6 gap-[125px] justify-between text-left max-md:text-center"
-    >
-      <div class="max-md:flex block flex-col items-center">
-        <Text type="h2">Our Quality Policy</Text>
-
-        <div class="pt-4 max-md:pt-2"></div>
-        <Text type="lg" class="[&>span]:text-primary text-[24px]">
-          <span>Commitment to Excellence:</span> Shaping Global Citizens Through Holistic Education
-        </Text>
-        <div class="pt-6 max-md:pt-2"></div>
-
-        <Text type="regular">
-          The school emphasises academic distinction while cherishing a community that values compassion and diversity. Our approach is designed to nurture well-rounded individuals who are globally aware and locally rooted.
-        </Text>
-        <div class="pt-4" />
-        <div class="flex w-full flex-col gap-4">
-          <div class="flex flex-row items-start">
-            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
-              </svg>
-            </div>
-            <div class="px-2"></div>
-            <Text type="regular" class="[&>span]:font-bold text-start">
-              <span>Inclusive Ethos:</span> Practicing tolerance, peaceful coexistence, and ethical leadership.
-            </Text>
-          </div>
-          <div class="flex flex-row items-start">
-            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
-              </svg>
-            </div>
-            <div class="px-2"></div>
-            <Text type="regular" class="[&>span]:font-bold text-start">
-              <span>Comprehensive Awareness:</span> Merging historic insights with contemporary global understanding.
-            </Text>
-          </div>
-          <div class="flex flex-row items-start">
-            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
-              </svg>
-            </div>
-            <div class="px-2"></div>
-            <Text type="regular" class="[&>span]:font-bold">
-              <span>Diverse Engagement:</span> Enhancing international perspectives through exchanges and our unique school community.
-            </Text>
-          </div>
-          <div class="flex flex-row items-start">
-            <div class="w-[14px] h-[17px] flex-shrink-0 top-[6px] relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fill="none">
-                <path d="M14 8.5L0.499999 16.7272L0.5 0.272758L14 8.5Z" fill="#1B2226"/>
-              </svg>
-            </div>
-            <div class="px-2"></div>
-            <Text type="regular" class="[&>span]:font-bold">
-              <span>Continuous Advancement:</span> Prioritising quality in teaching, resources, multilingualism, and curriculum development.
-            </Text>
-          </div>
-        </div>
-
-      </div>
-      <Image
-        class="w-[344px] object-contain max-md:w-[90%]"
-        src={qualityPolicy}
-        alt="Why choose Little Elly??"
-      />
-    </div>
-    <!-- <div class="pt-[54px] max-md:pt-[20px]"></div> -->
-  </Section>
-
-  <div 
-    id="management"
-  />
-  <Section class="flex flex-col w-full items-center text-left !px-0">
-    <Image
-      src={blobBig}
-      class="w-[268px] max-md:w-[140px]"
-      alt="Decorative Element"
-    />
-    <div class="pt-8"></div>
-    <Text type="h2">Our <span>Management</span></Text>
-    <!-- <div class="pt-8"></div> -->
-
-    <div class="pt-16 max-md:pt-8"></div>
-
-    <div
-      class="w-full flex gap-[73px] max-md:gap-[24px] items-start max-md:flex-col pl-[90px] max-md:px-[20px] flex-row-reverse"
-    >
-      <div
-        class="w-[460px] max-md:h-[280px] mt-16 max-md:mt-0 max-md:w-[280px] max-md:rounded-none overflow-hidden h-[451px] flex-shrink-0 bg-red-100 rounded-tl-[150px] rounded-bl-[16px]"
-      >
-        <Image
-          src={president}
-          class="w-full h-full object-cover object-top"
-          alt="President"
-        />
-      </div>
-      <div class="max-md:text-center text-left">
-        <div>
-          <div class="pt-1"></div>
-          <Text type="h2">Message from our Director</Text>
-          <div class="pt-2"></div>
-          <Text type="lg" class="text-primary">Mr. Ashok KM Gowda</Text>
-          <div class="p-1" />
-          <Text type="sm" class="text-black">Chairman KMET, Little Elly International School, Electronic City</Text>
-          <div class="pt-8"></div>
-
-          <Text type="base" class="[&>span]:text-primary">
-            <span class="italic !text-slate-900">“Excellence is driven by hard work, Success is strengthened by constant Efforts”.</span>
-            <br/><br/>
-            Best part of education as we all have found in the past years is that we have a great opportunity to make a real difference in the lives of our students, their families, and the world. Every day in Little Elly International School Ecity, students discover who they are and who they can become.<br/><br/>
-            Our mission has always been to provide a positive catalytic impulse to every child, to stretch their inherent learnin competencies through a self discovery process. In this process, the uniqueness of each child is recognized, nurtured an treasured. Emphasis is focused on learning and not on teaching, like we always quote “we teach them how to learn tha what to learn”.<br/><br/>
-            <div data-read-more="director-note" class="hidden">
-              Every year our focus to develop our students as global citizens, with tolerance, respect and appreciation of divers cultures and religions for a life-time learning experience has yielded fruit and we see a self-motivated, independent confident decision makers taking up a leadership roles and this gives us immense satisfaction of reaching new horizon every year towards our goal.<br/><br/>
-              We at Little Elly have a clear goal to provide holistic education where children evolve as individuals who are self motivated and creative, who can think, question and reason out logically; also individuals who are independent confident and leaders capable of taking decisions.<br/><br/>
-              As previously proved this academic year also the school’s strategic plan, excellent teaching and support staff, parents, and Board are aligned in achieving Excellence in all aspects and to identify critical focus on the development of the skills, knowledge, values and attributes needed for Lifelong learning, Being responsible to Community
-              and environment and a march towards Global citizenship.<br/><br/>
-              I am inspired by the possibilities that exist for our school this year and in the years to come. We sincerely want to work together to make Little Elly a happy place where children love to learn, a place in which parents believe their children are receiving an education second to none, and a place in which teachers express their joy of working with pride.
-            </div>
-          </Text>
-          <div class='flex flex-row items-center cursor-pointer mt-2' data-read-more-btn="director-note">
-            <Text type="base" class="text-primary uppercase font-medium read-more-text">Read More</Text>
-            <div class="w-[23px] h-[23px] text-primary rotate-90 ml-2 arrow [&.hide]:-rotate-90 transition-all">
-              <FilledArrowCircle />
-            </div>
-          </div>
-        </div>
-      </div>
-
     
-    </div>
-    <div class="pt-[118px] max-md:pt-[30px]"></div>
-
-    <div
-      class="w-full flex flex-row gap-[73px] max-md:gap-[24px] items-center max-md:flex-col max-md:px-[20px] pr-[90px]"
-    >
-      <div
-        class="w-[460px]  max-md:h-[280px] max-md:w-[280px] max-md:rounded-none overflow-hidden max-md:rounded-tr-[0px] max-md:rounded-br-[0px] h-[451px] flex-shrink-0 bg-red-100 rounded-tr-[150px] rounded-br-[16px]"
-      >
-        <Image
-          src={principal}
-          class="w-full h-full object-cover"
-          alt="President"
-        />
-      </div>
-      <div class="max-md:text-center text-left">
-        <div>
-          <div class="pt-1"></div>
-          <Text type="h2">Message from our Principal</Text>
-          <div class="pt-2"></div>
-          <Text type="lg" class="text-primary">Dr. Manmitta Das Raina</Text>
-          <div class="pt-8"></div>
-
-          <Text type="base" class="[&>span]:text-primary">
-            Greetings!<br/>
-            We are passionate about creating a dynamic learning institution that strives for excellence to meet current and future needs.
-            <br />
-            <br />
-
-            At Little Elly International, we uncover the hidden potential, diligently mentoring to transform uncut diamonds into Little Elly gems. Little Elly is an academically focused, globally minded institution. We inspire every student to reach their full potential, blending universal and Indian values. Every child entrusted to us is treasured and nurtured.
-            <br />
-            <br />
-            We aim to create a trajectory beyond the classroom, offering students diverse opportunities through a balanced curriculum. We ensure a safe, happy and intellectually stimulating environment with an enquiry-based curriculum that empowers them to be innovative thinkers and lifelong learners. Our journey is geared towards providing an exceptional learning experience, aiming for unmatched heights.
-            
-          </Text>
-        </div>
-      </div>
-    </div>
-    <div 
-    id="board"
-  />
   </Section>
-
-  <AdvisoryBoard />
-  <div 
-    id="connect"
-  />
-
-  <div id="contact-us" style="scroll-margin: 60px;">
-    <Connect
-      details={{
-        phoneNo: {
-          label: "Call us On",
-          value: "+91 80 26667333, +91 80 26667444",
-          type: "contact",
-        },
-        workingHours: {
-          label: "Mail us at",
-          value: "info@insightacademy.in",
-          type: "mail",
-        },
-        address: {
-          label: "We are here",
-          value:
-            "#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062",
-          type: "address",
-        },
-      }}
-      mapEmbedLink="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248939.1866465653!2d77.41886883961928!3d12.864269098588453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159019e03bd5%3A0x701981105f182a0b!2sEdify%20School%20Kanakapura%20Main%20Road!5e0!3m2!1sen!2sin!4v1695475136575!5m2!1sen!2sin"
-    />
+  
+  <div class=" w-full h-[150px] max-md:h-[40px] flex bg-transparent relative">
+    {
+      Array(6).fill("").map((_, i) => (
+        <div class="basis-[100%] rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 117" fill="none">
+  <path d="M0.468471 -3.86623C0.468468 27.939 13.1031 58.4416 35.5928 80.9313C58.0825 103.421 88.5851 116.056 120.39 116.056C152.196 116.056 182.698 103.421 205.188 80.9314C227.678 58.4417 240.312 27.9391 240.312 -3.8662L120.39 -3.86622L0.468471 -3.86623Z" fill="#FDF2E5"/>
+  </svg></div>
+      ))
+    }
+    
   </div>
+  
+  <Section class="flex relative items-center justify-center flex-col">
+    
+    <Text type="h2" class="text-purple text-center pt-0">Our <span class="text-primary">Team</span></Text>
+   
+    <div class="flex flex-col justify-center items-center">
+      <div class="absolute left-0 w-fit">
+        <svg width="76" height="748" viewBox="0 0 76 748" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-1.5 1.99939C113.407 181.682 80.4301 601.966 -1.49999 746.499" stroke="#B892F9" stroke-width="5" stroke-dasharray="20 20"/>
+         </svg>
+      </div>
+      <div class="absolute right-0 w-fit">
+        <svg width="73" height="748" viewBox="0 0 73 748" fill="none">
+          <path d="M77 1.99951C-37.9067 181.683 -4.93011 601.966 77 746.5" stroke="#EE7F82" stroke-width="5" stroke-dasharray="20 20"/>
+          </svg>
+      </div>
+      <div class="min-w-[756px] flex flex-col gap-xl m-xl">
+        <div class="flex justify-between">
+          <div class="flex items-center justify-center flex-col">
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <div class="mt-r flex flex-col items-center">
+              <Text type="h3" class="text-primary center">Vittal Bhandary</Text>
+              <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
+            </div>
+          </div>
+          <div class="flex items-center justify-center flex-col">
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <div class="mt-r flex flex-col items-center">
+              <Text type="h3" class="text-primary center">Vittal Bhandary</Text>
+              <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between"> 
+          <div class="flex items-center justify-center flex-col">
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <div class="mt-r flex flex-col items-center">
+              <Text type="h3" class="text-primary center ">Vittal Bhandary</Text>
+              <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
+            </div>
+          </div>
+          <div class="flex items-center justify-center flex-col">
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <div class="mt-r flex flex-col items-center">
+              <Text type="h3" class="text-primary center">Vittal Bhandary</Text>
+              <Text type="h4" class="text-[#111] font-semibold center font-sans">Founder Director</Text>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between gap-xl">
+          <div class="flex items-center justify-center flex-col">
+            <Image class={"rounded-[32px] w-auto aspect-video h-[204px] object-cover border-primary border-[5px]"} src={Zonal} alt={'team'} />
+            <div class="mt-r flex flex-col items-center">
+              <Text type="h4" class="text-[#111] font-semibold center font-sans">Zonal Operations Team</Text>
+            </div>
+          </div>
+          <div class="flex items-center justify-center flex-col">
+            <Image class={"rounded-[32px] w-auto aspect-video h-[204px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <div class="mt-r flex flex-col items-center">
+              <Text type="h4" class="text-[#111] font-semibold center font-sans">Curriculum Team</Text>
+            </div>
+          </div>
+        </div>
+     
+    </div>
+
+  </div>
+
+  </Section>
+  <Awards />
   <GoToCta />
   <Footer />
 </Layout>
@@ -442,6 +323,21 @@ const toppers = campusConfig?.toppers;
   .float a:hover ~ div {
     opacity: 1;
   }
+
+  @keyframes tickerv {
+    0% { bottom: 0%; }
+    100% { bottom: 213%; }
+  }
+
+  .vmove { 
+    animation: tickerv linear 25s infinite; 
+  }
+  .vmove-reverse { 
+    animation: tickerv linear 25s infinite; 
+    animation-direction: reverse;
+  }
+
+
 
   .my-float {
     margin-top: 16px;

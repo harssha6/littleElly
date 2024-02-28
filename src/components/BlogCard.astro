@@ -14,7 +14,7 @@ const {
 } = Astro.props
 ---
 <a href={"/blogs/" + slug} class="w-full h-full flex flex-col group cursor-pointer">
-  <div class:list={["w-full flex-1 bg-red-100 h-auto max-md:min-h-[250px]", imageClass]} style={{
+  <div class:list={["w-full flex-1 bg-red-100 h-auto max-md:min-h-[250px] min-h-[unset]", imageClass]} style={{
     backgroundImage: `url("${image}")`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -22,12 +22,12 @@ const {
   </div>
   <div class="pt-[20px]">
     <div class= "flex flex-row">
-      <Text type="xs" class="text-left text-slate-600  font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{date}</Text>
+      <Text type="xs" class="text-left text-slate-500/80  font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{date}</Text>
       {category && (
         <div class="p-1"> </div>
-        <Text type="xs" class="text-left text-slate-600 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">• </Text>  
+        <Text type="xs" class="text-left text-slate-500/80 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">• </Text>  
         <div class="p-1"> </div>
-        <Text type="xs" class="text-left text-slate-600 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{category}</Text>  
+        <Text type="xs" class="text-left text-slate-500/80 uppercase font-[600] transition-smooth transition-colors duration-300 group-hover:text-primary">{category}</Text>  
       )}
     </div>
     <div class="pt-[4px]"></div>

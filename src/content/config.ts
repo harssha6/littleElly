@@ -41,13 +41,16 @@ const centresCollection = defineCollection({
       z.object({
         state: z.string().optional(),
         page: centerPageSchema,
+        poweredBy: z.boolean().optional(),
         districts: z.array(
           z.object({
             district: z.string().optional(),
             page: centerPageSchema,
+            poweredBy: z.boolean().optional(),
             centres: z.array(
               z.object({
                 centre: z.string().optional(),
+                poweredBy: z.boolean().optional(),
                 page: centerPageSchema,
               }).optional()
             ).optional(),

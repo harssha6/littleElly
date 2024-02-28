@@ -4673,6 +4673,7 @@ centers:
               telephone: +91 9346024676
               email: kphb.hyderabad@littleelly.com
   - state: Assam
+    poweredBy: true
     districts:
       - district: Guwahati
         centres:
