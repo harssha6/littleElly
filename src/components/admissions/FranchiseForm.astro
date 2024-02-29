@@ -195,6 +195,10 @@ if (Astro.request.method === "POST") {
 
       document.querySelector('.apply-now-register-button').classList.add('loading')
 
+      window.gtag("event", "conversion", {
+        send_to: "AW-600364619/ZmxiCN66iukYEMuso54C",
+      });
+      
       const response = await fetch("/api/register", {
         method: "POST",
         body: formData,
