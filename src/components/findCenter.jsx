@@ -262,11 +262,11 @@ const FindCentre = () => {
       </div>
       <div data-appear={2} class="self-start  border-[#B6B6B6] border-l-[3px] pl-6">
         <div class='p-[3px]' />
-        <Text type="base"><span class="font-bold">Elly Centres <span class="max-md:hidden block">-</span> </span><br class="hidden max-md:block" />Schools carry Little Elly brand and are managed by our family of franchisees.</Text>
+        <Text type="base" className="flex flex-row max-md:flex-col items-center max-md:items-start gap-1 max-md:gap-0"><span class="font-bold flex-shrink-0 flex flex-row max-md:flex-col gap-1">Elly Centres <span class="max-md:hidden block">-</span> </span><br class="hidden max-md:block" />Schools carry Little Elly brand and are managed by our family of franchisees.</Text>
         <div class='p-2' />
-        <div class="flex flex-row items-center max-md:gap-4 max-md:flex-col max-md:items-start">
+        <div class="flex flex-row items-center max-md:gap-4 max-md:flex-col max-md:items-start gap-1">
           <img src={poweredBy.src} class="h-[40px] max-md:h-[25px]" />
-          <Text type="base"><span class="font-bold">{' '} <span class="max-md:hidden block">-</span> </span>Schools supported by Little Elly’s curriculum and resources.</Text>
+          <Text type="base" className="flex flex-row max-md:flex-col items-center max-md:items-start gap-1"><span class="font-bold">{' '} <span class="max-md:hidden block">-</span> </span>Schools supported by Little Elly’s curriculum and resources.</Text>
         </div>
         <div class='p-[3px]' />
       </div>
