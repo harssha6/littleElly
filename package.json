@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.10",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^5.0.1",
     "@fontsource/nunito-sans": "^4.5.10",
     "@fontsource/twinkle-star": "^4.5.9",
@@ -39,3 +39,4 @@
     "@types/node": "^20.11.5"
   }
 }
+
