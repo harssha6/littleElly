@@ -128,7 +128,7 @@ const description = config?.description;
           </slot>
         </div>
         <slot name="ctaButton">
-          {showCta ? <Button>Enquire Now!</Button> : null}
+          {showCta ? <a href="/admissions"><Button>Enquire Now!</Button></a> : null}
         </slot>
       </div>
       <slot name="description">

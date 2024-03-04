@@ -10,6 +10,8 @@ import testimonial3 from '../../images/testimonial/3.png'
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
 import Carousel from "../system/Carousel.astro"
 import CarouselCard from "../system/CarouselCard.astro"
+import instagramIcon from '../../icons/instagramIcon.svg'
+
 const data = {
     title: 'Little Elly Voices',
     subtitle: 'Stories of Transformation and Growth',
@@ -41,7 +43,7 @@ const data = {
             News & <span class="text-red-600">Events</span>
         </Text>
         <Text type="base">
-            Stay updated with the latest happenings from our centres
+            Stay updated with the latest happenings, follow us at <img src={instagramIcon.src} alt="instagram" class="w-[20px] h-[20px] inline-block" /> <a class="text-red-600 underline" href=" https://www.instagram.com/littleelly_preschool/" target="_blank">Instagram</a>
         </Text>
     </div>
     <Carousel

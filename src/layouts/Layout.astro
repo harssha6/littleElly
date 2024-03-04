@@ -160,8 +160,10 @@ if (nextBtn) {
 	let lenis = null
 
 	const isPhone = window.innerWidth < 768
+
+	const shouldLenis = !window.location.href.includes('/blogs') && !isPhone
 	// if url contains blog
-	if (!window.location.href.includes('/blogs') && !isPhone) {
+	if (shouldLenis) {
 		lenis = new Lenis({
 			duration: 0.6,
 			// easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
@@ -172,7 +174,7 @@ if (nextBtn) {
 	}
 
 	gsap.registerPlugin(ScrollTrigger);
-	if (!window.location.href.includes('/blogs')) {
+	if (shouldLenis && lenis) {
 		gsap.ticker.add((time)=>{
 			lenis.raf(time * 1000)
 		})

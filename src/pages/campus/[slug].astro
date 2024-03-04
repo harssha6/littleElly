@@ -134,36 +134,35 @@ const page = pages.find(page => page.name === slug)?.page
     </Section>
   )}
 
+<div data-appear id="contact-us" style="scroll-margin: 60px;">
+  <Connect
+    details={{
+      phoneNo: {
+        label: "Call us On",
+        value: page?.telephone,
+        type: "contact",
+      },
+      workingHours: {
+        label: "Mail us at",
+        value: page?.email,
+        type: "mail",
+      },
+      address: {
+        label: "We are here",
+        value:
+          page?.address,
+        type: "address",
+      },
+    }}
+    mapEmbedLink={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&q=${page?.addressTitle + ','+ page?.address}`}
+  />
+</div>
+
   <div class="max-md:block hidden pt-8" />
  <Why />
  <MeetCharacters />
  <HappyCurriculum />
  
-
-
-  <div data-appear id="contact-us" style="scroll-margin: 60px;">
-    <Connect
-      details={{
-        phoneNo: {
-          label: "Call us On",
-          value: page?.telephone,
-          type: "contact",
-        },
-        workingHours: {
-          label: "Mail us at",
-          value: page?.email,
-          type: "mail",
-        },
-        address: {
-          label: "We are here",
-          value:
-            page?.address,
-          type: "address",
-        },
-      }}
-      mapEmbedLink={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&q=${page?.addressTitle + ','+ page?.address}`}
-    />
-  </div>
   <!-- <Gallery
     id="classroom-facilities"
     gallery={[
