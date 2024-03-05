@@ -3805,6 +3805,13 @@ centers:
       - district: Chennai
         centres:
           - centre: Thoriapakkam
+            page:
+              subtitle: Thoriapakkam
+              address: >-
+                Villa No. 102, Green Homes, Devaraj Nagar, Thoraipakkam, Chennai
+                - 600096
+              telephone: '8925519034'
+              email: thoraipakkam.che@littleelly.com
           - centre: Adambakkam
             page:
               subtitle: Little Elly Adambakkam
