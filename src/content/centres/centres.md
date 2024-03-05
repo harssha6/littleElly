@@ -3805,6 +3805,7 @@ centers:
     districts:
       - district: Chennai
         centres:
+          - centre: Thoriapakkam
           - centre: Adambakkam
             page:
               subtitle: Little Elly Adambakkam
