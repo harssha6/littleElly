@@ -4360,7 +4360,8 @@ centers:
             description: ''
           aboutUs:
             description: ''
-        centres: []
+        centres:
+          - centre: P & T Nagar
   - state: Andhra Pradesh
     districts:
       - district: Tirupati
