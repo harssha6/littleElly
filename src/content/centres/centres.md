@@ -3806,7 +3806,8 @@ centers:
         centres:
           - centre: Thoriapakkam
             page:
-              subtitle: Thoriapakkam
+              subtitle: Little Elly Thoriapakkam
+              addressTitle: 'Little Elly, Thoriapakkam, Chennai'
               address: >-
                 Villa No. 102, Green Homes, Devaraj Nagar, Thoraipakkam, Chennai
                 - 600096
