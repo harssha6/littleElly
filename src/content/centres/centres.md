@@ -4364,6 +4364,8 @@ centers:
           address: ''
           telephone: ''
           email: ''
+        centres:
+          - centre: P&T Nagar
   - state: Andhra Pradesh
     districts:
       - district: Tirupati
