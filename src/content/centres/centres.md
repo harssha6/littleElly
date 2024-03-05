@@ -6,6 +6,12 @@ centers:
       - district: Bangalore
         centres:
           - centre: Medimallasandra
+            page:
+              subtitle: Little Elly Medimallasandra
+              addressTitle: 'Little Elly, Medimallasandra, Bangalore'
+              address: 'Site number 43, ansar pasha layout, Medimallasandra 562114'
+              telephone: '9901684945'
+              email: medimallasandra.blr@littleelly.com
           - centre: AECS Layout
             page:
               subtitle: Little Elly AECS Layout
