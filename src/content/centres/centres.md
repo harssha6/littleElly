@@ -3238,7 +3238,7 @@ centers:
               address: >-
                 39, NRI Layout, 1st Phase, 8th Main Road, 3rd ’A’ Cross,
                 Kalkere, Ramamurthy Nagar, Bangalore 560016
-              telephone: +91 8123416594
+              telephone: '+91 8123416594, 8123417972'
               email: nrilayout.blr@littleelly.com
           - centre: Balagere
             page:
