@@ -4374,7 +4374,8 @@ centers:
         centres:
           - centre: P&T Nagar
             page:
-              subtitle: P&T Nagar
+              subtitle: Little Elly P&T Nagar
+              addressTitle: 'Little Elly, P&T Nagar, Madurai'
               address: >-
                 Plot no 2, Natchathira Nagar  5th Street, P&T Nagar Main Road,
                 Near Meenakshi Nagar busstop, Madurai 625017.
