@@ -4365,6 +4365,13 @@ centers:
           email: ''
         centres:
           - centre: P&T Nagar
+            page:
+              subtitle: P&T Nagar
+              address: >-
+                Plot no 2, Natchathira Nagar  5th Street, P&T Nagar Main Road,
+                Near Meenakshi Nagar busstop, Madurai 625017.
+              telephone: '9363612730, 9363012730'
+              email: ptnagar.mdu@littleelly.com
   - state: Andhra Pradesh
     districts:
       - district: Tirupati
