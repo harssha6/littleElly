@@ -72,7 +72,7 @@ const FindCentre = () => {
 
   const onPillClick = (type, name) => {
     const pillData = getPillData(type, name)
-    if (pillData.page) {
+    if (pillData.page && pillData.page.address) {
       if (typeof window !== 'undefined') {
         window.location.href = `${baseURL}/campus/${name}`
       }
