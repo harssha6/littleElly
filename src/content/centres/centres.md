@@ -5,7 +5,6 @@ centers:
     districts:
       - district: Bangalore
         centres:
-          - centre: ABC
           - centre: AECS Layout
             page:
               subtitle: Little Elly AECS Layout
