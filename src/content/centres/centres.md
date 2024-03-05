@@ -5,6 +5,7 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Medimallasandra
           - centre: AECS Layout
             page:
               subtitle: Little Elly AECS Layout
