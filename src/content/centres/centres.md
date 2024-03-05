@@ -3240,7 +3240,7 @@ centers:
                 Kalkere, Ramamurthy Nagar, Bangalore 560016
               telephone: +91 8123416594
               email: nrilayout.blr@littleelly.com
-          - centre: Belagere
+          - centre: Balagere
             page:
               subtitle: Little Elly Belagere
               centreHead:
