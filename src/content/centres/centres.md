@@ -7,7 +7,7 @@ centers:
         centres:
           - centre: Naganathpura - Hosa Road
             page:
-              subtitle: Naganathpura - Hosa Road
+              subtitle: Little Elly Naganathpura - Hosa Road
               addressTitle: Little Elly Naganathpura (Hosa Road) Bangalore
               address: '9, Rajiv Nagar, Choodasandra, Bengaluru, Karnataka 560035'
               telephone: '9972887310'
