@@ -4395,6 +4395,13 @@ centers:
           telephone: ''
           email: ''
         centres:
+          - centre: Nagamalaipudukottai
+            page:
+              subtitle: Little Elly Nagamalaipudukottai
+              addressTitle: 'Little Elly, Nagamalaipudukottai, Madurai'
+              address: '3/282, 2nd street,Bharathiyar Nagar, Aalampatti,Madurai-625019'
+              telephone: '9345668345'
+              email: nagamalai.mdu@littleelly.com
           - centre: P&T Nagar
             page:
               subtitle: Little Elly P&T Nagar
