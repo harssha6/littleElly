@@ -4330,7 +4330,16 @@ centers:
             and KCT, Coimbatore – 641 035
           telephone: +91 9578395000
           email: coimbatore@littleelly.com
-        centres: []
+        centres:
+          - centre: Little Elly GN Mills
+            page:
+              subtitle: Little Elly GN Mills
+              addressTitle: 'Little Elly, GN Mills, Coimbatore'
+              address: >-
+                No 9, Sri suriyalakshmi gardens,GN mills, Coimbatore, Tamil
+                Nadu-641029
+              telephone: '9342700155'
+              email: gnmills.cbe@littleelly.com
       - district: Hosur
         page:
           centreHead:
