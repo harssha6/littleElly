@@ -5,6 +5,13 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Nallurhalli
+            page:
+              subtitle: Little Elly Nallurhalli
+              addressTitle: 'Little Elly, Nallurhalli, Bangalore'
+              address: '156, Victorian Layout, Borewell Road, Whitefield, Bangalore'
+              telephone: '6364380033, 6364070003'
+              email: nallurhalli.blr@littleelly.com
           - centre: Naganathpura - Hosa Road
             page:
               subtitle: Little Elly Naganathpura - Hosa Road
