@@ -5,6 +5,15 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Masthenahalli
+            page:
+              subtitle: 'Little Elly, Masthenahalli'
+              addressTitle: 'Little Elly, Masthenahalli, Bangalore'
+              address: >-
+                No 69/3, Near DLF Apartments, Masthenahalli, Hennagara Post,
+                Anekal Taluk, Jigani ,Bangalore-560105
+              telephone: '7975616662'
+              email: masthenahalli.blr@littleelly.com
           - centre: Nallurhalli
             page:
               subtitle: Little Elly Nallurhalli
