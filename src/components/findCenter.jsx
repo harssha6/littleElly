@@ -1,15 +1,11 @@
 import React from 'react'
 import Fuse from 'fuse.js'
-import { getEntry } from 'astro:content';
 import Text from './system/Text.jsx'
 import MultiStyleText from './system/MultiStyleText.jsx'
 import SearchIcon from '../icons/SearchIcon.svg'
 import poweredBy from '../images/poweredBy.png'
 
-const { data } = await getEntry('centres', 'centres')
 
-
-let { centers: centersData } = data
 
 const CenterPill = (props) => {
   const { onClick, label } = props
@@ -26,13 +22,18 @@ const CenterPill = (props) => {
 }
 
 
-const FindCentre = () => {
+const FindCentre = (props) => {
+  let { data } = props
+  let { centers: centersData } = data
+
   const [centers, setCenters] = React.useState(centersData)
   const [searchQuery, setSearchQuery] = React.useState('')
   const [currentState, setCurrentState] = React.useState('')
   const [currentDistrict, setCurrentDistrict] = React.useState('')
 
   let baseURL = ''
+  
+
 
   if (typeof window !== 'undefined') {
     baseURL = window.location.origin

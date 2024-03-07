@@ -11,6 +11,7 @@ import DaycareFacilities from "./daycare-facilities.astro";
 import "../global.css";
 
 
+
 import config from "../../config";
 
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
@@ -25,6 +26,10 @@ import HappyCurriculum from "../components/landingPage/HappyCurriculum.astro";
 import FindCenter from '../components/findCenter.astro'
 import FindCenterReact from '../components/findCenter.jsx'
 import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
+
+import { getEntry } from 'astro:content';
+
+const { data } = await getEntry('centres', 'centres')
 
 ---
 
@@ -43,7 +48,7 @@ import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
     <Program  />
     <DaycareFacilities />
     <!-- <FindCenter/> -->
-    <FindCenterReact client:load />
+    <FindCenterReact client:load data={data} />
     <Events />
     <Testimonial />
     <GoToCta />

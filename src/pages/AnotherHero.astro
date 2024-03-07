@@ -12,7 +12,9 @@ import heroStudent from "../image/heroStudent/student.png"
 import heroBg from "../image/heroStudent/bg.png"
 
 import Person from "../image/person.png"
-import CloudLeft from "../image/decorationCloud.png"
+// import CloudLeft from "../image/decorationCloud.png"
+import CloudLeft from "../images/cloudLeft.svg"
+import CloudRight from "../images/cloudRight.svg"
 import Elephant from "../image/decorations/elephant.png"
 import Olly from "../image/decorations/olly.png"
 import arya from "../image/decorations/studentLeft.png"
@@ -70,9 +72,10 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
   </div> -->
   <div class="w-full absolute top-[12vh] left-0 h-[60%] z-[0]" data-hero-section-parallax>
     <!-- <Image src={heroSectionLayer1} class="w-full h-full object-cover object-top" alt={"decoration"} width={1920} /> -->
-    <Image src={heroSectionLayer1} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
-    <Image src={heroSectionLayer2} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
-    <Image src={heroSectionLayer3} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
+    <!-- <Image src={Sun} class="absolute right-[-40%] object-contain w-[192px] h-[192px] z-[0]" alt={"decoration"} /> -->
+    <Image src={heroSectionLayer1} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1440} />
+    <Image src={heroSectionLayer2} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1440} />
+    <Image src={heroSectionLayer3} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1440} />
     <div class="w-full h-full  absolute top-0 left-0">
       <Image src={heroSectionLayer4} class="w-full h-full object-cover object-top" alt={"decoration"} width={1920}>
       </Image>
@@ -88,11 +91,10 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
   </div>
   <!-- <Background  /> -->
 
-  <!-- <div class="absolute top-0 left-0 max-w-[100vw] w-screen h-[100vh] overflow-x-hidden">
-    <Image src={CloudImage} class="absolute top-0 left-0 max-w-[300px] max-h-[300px] w-[40.5vw] h-[40.5vw] max-sm:hidden" alt={"decoration"} data-appear data-delay={0.1} data-y={0} data-x={-150} data-t={0.4} data-trigger="hero-container" data-cloud={1} />
-    <Image src={CloudLeft} class="absolute top-0 right-0 max-h-[700px] max-sm:h-[74vw] max-sm:w-[34vw] max-sm:hidden" alt={"decoration"} data-appear data-delay={0.1} data-y={0} data-x={150} data-t={0.4} data-trigger="hero-container" data-cloud={2} />
+  <div class="absolute top-0 left-0 max-w-[100vw] w-screen h-[100vh] overflow-x-hidden">
+    <Image src={CloudLeft} class="absolute top-0 left-0 h-[150px] w-[420px] max-sm:hidden" alt={"decoration"} data-appear data-delay={0.1} data-y={0} data-x={-150} data-t={0.4} data-trigger="hero-container" data-cloud={1} />
+    <Image src={CloudRight} class="absolute top-0 right-0 h-[272px] w-[205px]  max-sm:hidden" alt={"decoration"} data-appear data-delay={0.1} data-y={0} data-x={150} data-t={0.4} data-trigger="hero-container" data-cloud={2} />
   </div>
-   -->
 
   <div data-parent="hero-container" class="absolute top-[18%] left-[15%] max-md:top-[12%] max-md:left-[2%]" data-hero-top-animal data-appear data-delay={0.8} data-y={0} data-x={-20}>
     <Image src={music} class="absolute top-[-10%] left-[30%] max-md:top-[2%] object-contain h-[50px] max-sm:h-[30px] max-sm:right-[-5%] max-sm:top-[-6%]" alt={"decoration"} />
