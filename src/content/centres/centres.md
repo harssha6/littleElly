@@ -2141,7 +2141,7 @@ centers:
               address: >-
                 No.673, ‘Sumukha’, 17th main road, 1st block, Opp BDA Park,
                 Narayananagar, Bangalore – 560 062
-              telephone: +91 7899738131
+              telephone: '+91 7899738131, 9696569021'
               email: narayananagar@littleelly.com
           - centre: NEO Town (E City)
             page:
