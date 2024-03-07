@@ -34,6 +34,8 @@ import heroSectionLayer1 from '../images/heroSection/z-1.png'
 import heroSectionLayer2 from '../images/heroSection/z-2.png'
 import heroSectionLayer3 from '../images/heroSection/z-3.png'
 import heroSectionLayer4 from '../images/heroSection/z-4.png'
+import happyCurriculum from '../images/heroSection/happyCurriculum.svg'
+import elephantShadow from '../images/heroSection/elephantShadow.svg'
 
 const leftCloudSVG = `<svg width="100%" height="100%" viewBox="0 0 1239 1152" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M183.158 808.96C203.914 816.467 225.31 815.003 241.306 802.912C245.571 799.687 249.14 795.858 252.3 791.489C268.078 801.91 286.548 803.225 299.496 793.436C308.941 786.296 313.526 774.627 312.919 761.79C328.451 768.72 345.255 768.464 357.442 759.252C359.27 757.87 360.809 756.423 362.213 754.796C365.213 761.298 369.094 767.7 373.721 773.82C401.482 810.545 447.38 822.809 476.02 801.16C490.949 789.874 498.247 771.344 497.894 751.243C520.127 766.403 546.857 768.828 565.29 754.894C580.981 743.033 586.951 722.113 583.049 700.167C596.682 707.118 611.859 707.244 622.675 699.068C625.722 696.765 628.208 694.037 630.133 690.884C649.508 702.264 671.792 703.241 687.331 691.495C702.564 679.979 707.789 659.339 702.957 638.38C703.567 637.919 704.16 637.754 704.769 637.293C715.89 628.886 719.788 613.775 716.41 598.224C734.565 602.605 752.652 600.248 766.667 589.653C782.053 578.023 789.384 558.902 788.639 537.966C811.435 540.253 833.619 535.082 851.443 521.608C875.969 503.068 887.58 472.509 885.907 439.26C894.433 438.19 902.345 435.038 909.2 429.856C935.555 409.934 936.197 366.448 910.749 332.784C909.797 331.524 908.692 330.379 907.739 329.119C910.857 328.177 913.719 326.579 916.461 324.506C928.191 315.639 932.002 299.462 927.503 283.061C936.743 282.3 945.52 279.343 952.832 273.815C972.484 258.96 977.129 230.271 966.653 203.111C968.008 202.37 969.515 201.514 970.734 200.592C982.007 192.071 984.8 175.815 979.235 160.219L901.939 57.9669C901.787 58.082 901.618 58.4924 901.466 58.6075C887.768 52.8375 873.288 53.3164 862.624 61.3775C857.292 65.408 853.49 70.8284 851.233 77.3435C842.02 74.9727 832.747 76.324 825.587 81.7364C818.275 87.264 814.582 95.9962 814.351 105.507C795.902 98.5189 776.573 99.5511 762.101 110.491C750.219 119.473 743.757 133.41 742.896 149.055C731.195 141.492 717.389 140.33 707.792 147.585C699.261 154.034 695.998 165.552 698.553 177.483C687.616 177.264 677.228 180.307 668.545 186.871C657.881 194.932 651.67 206.983 649.752 220.597C640.708 217.816 631.468 218.577 624.46 223.874C617.605 229.056 614.369 237.443 614.442 246.723C597.957 238.533 579.712 238.464 566.61 248.368C556.251 256.198 551.041 268.624 550.854 282.627C529.125 279.533 505.009 285.316 484.748 300.632C459.917 319.403 447.114 347.752 448.72 374.261C430.129 364.551 409.424 364.079 394.494 375.364C389.62 379.049 385.85 383.879 382.929 389.199C368.735 381.823 353.27 381.632 341.997 390.154C330.876 398.561 326.842 413.492 329.931 428.979C308.882 426.785 288.766 431.525 272.466 443.847C246.873 463.193 236.999 496.683 242.645 532.02C226.117 527.258 209.521 529.054 196.724 538.727C183.471 548.745 177.152 565.404 177.923 583.209C173.94 583.956 170.197 585.655 166.845 588.188C163.037 591.067 160.197 594.911 158.359 599.13C146.938 602.388 135.37 608.304 124.402 616.595C99.8752 635.135 86.0488 660.863 86.7776 682.095L182.853 809.19L183.158 808.96Z" fill="#FF989C"/>
@@ -71,7 +73,18 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
     <Image src={heroSectionLayer1} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
     <Image src={heroSectionLayer2} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
     <Image src={heroSectionLayer3} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
-    <Image src={heroSectionLayer4} class="w-full h-full object-cover absolute top-0 left-0 object-top" alt={"decoration"} width={1920} />
+    <div class="w-full h-full  absolute top-0 left-0">
+      <Image src={heroSectionLayer4} class="w-full h-full object-cover object-top" alt={"decoration"} width={1920}>
+      </Image>
+      <Image src={happyCurriculum} class="w-[290px] h-[140px] object-contain absolute bottom-[24%] right-[10%]" alt={"decoration"} width={290} />
+      <div data-hero-elephant class="w-full h-full absolute top-0 left-0">
+        <div class="absolute right-[-1%] bottom-[43%] -scale-x-100" data-appear data-delay={0.8}  data-trigger="hero-container">
+          <Image data-hero-elephant-heart src={heartgif} class=" z-[42]  absolute top-[-10%] left-[42%] object-contain h-[50px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%]" alt={"decoration"} />  
+          <Image src={Elephant} class=" z-10  object-contain h-[150px]  max-sm:hidden" alt={"decoration"} />
+        </div>
+      </div>
+      <Image data-hero-elephant-shadow src={elephantShadow} class="w-[150px] h-[24px] object-contain absolute bottom-[39%] right-[3%]" alt={"decoration"} width={150} />
+    </div>
   </div>
   <!-- <Background  /> -->
 
@@ -85,10 +98,10 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
     <Image src={music} class="absolute top-[-10%] left-[30%] max-md:top-[2%] object-contain h-[50px] max-sm:h-[30px] max-sm:right-[-5%] max-sm:top-[-6%]" alt={"decoration"} />
     <Image src={Olly} class=" z-[100] relative object-contain h-[200px] max-sm:h-[26vw] max-sm:left-[0%] max-sm:top-[1%] w-auto" alt={"decoration"}  />
   </div>
-  <div class="absolute right-[15%] top-[20%] max-md:top-[10%] max-md:right-[10%]" data-hero-top-animal data-appear data-delay={0.8} data-y={0} data-x={20}>
+  <!-- <div class="absolute right-[15%] top-[20%] max-md:top-[10%] max-md:right-[10%]" data-hero-top-animal data-appear data-delay={0.8} data-y={0} data-x={20}>
     <Image src={Sun} class=" absolute right-[-40%] object-contain h-[80px] z-[0]  max-sm:h-[50px] max-sm:top-[6px] max-sm:right-[-40%]" alt={"decoration"} />
     <Image src={Monkey} class="object-contain h-[200px] max-sm:h-[24vw] relative z-[2] w-auto max-sm:top-[20px] top-0" alt={"decoration"} />
-  </div>
+  </div> -->
 
 
   <div class="flex items-center flex-col">
@@ -156,12 +169,6 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
       <Image src={heroStudent} class="absolute top-0 left-[0%] w-full h-full object-contain z-[2]" alt={"student holds"} data-appear data-delay={1.2} data-opacity={1} data-y={380} data-trigger="hero-container"   />
     </div>
     <!-- <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[50vw] max-sm:mt-[40%] z-[-1]" alt={"student holds"} data-appear data-delay={1.2} data-trigger="hero-container" /> -->
-
-
-    <div class="absolute left-[10%] bottom-[38%] z-[50]" data-hero-elephant data-appear data-delay={0.8}  data-trigger="hero-container">
-      <Image data-hero-elephant-heart src={heartgif} class=" z-[42]  absolute top-[-10%] left-[42%] object-contain h-[50px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%]" alt={"decoration"} />  
-      <Image src={Elephant} class=" z-10  object-contain h-[150px]  max-sm:hidden" alt={"decoration"} />
-    </div>
     
     <div class="flex-col relative flex justify-center items-center w-screen bottom-[100px]" data-bottom-cloud>
     
