@@ -2986,8 +2986,9 @@ centers:
                   child in their care.
               addressTitle: 'Little Elly, JP Nagar 7th Phase, Bangalore'
               address: >-
-                #40, 6th F Main, 3rd A Cross, Gaurav Nagar, J.P. Nagar 7th
-                Phase, Bangalore- 560078
+                44, 6th Main Road , Dr. Vivekananda Layout, Santrupthi Nagar,
+                Sankranthi Layout , J.P. Nagar 7th Phase , Bengaluru, Karnataka
+                560078
               telephone: +91 9845414573
               email: rbilayout@littleelly.com
           - centre: Cheemasandra
