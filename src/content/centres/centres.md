@@ -999,7 +999,7 @@ centers:
               address: >-
                 #19, Orchids Park, Opposite Genesis Ecosphere, Neeladri Road,
                 Electronic City Phase 1, Electronic City, Bangalore – 560 100
-              telephone: +91 9663727426
+              telephone: +91 9972887310
               email: ecity@littleelly.com
           - centre: Frazer Town
             page:
