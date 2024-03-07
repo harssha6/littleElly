@@ -1745,7 +1745,7 @@ centers:
               address: >-
                 #12/A Tulsi Layout, Kasavanahalli Village, Near La Casa Hotel,
                 Bangalore – 560 035
-              telephone: t+91 7760682266
+              telephone: +91 7760682266
               email: kasavanahalli@littleelly.com
           - centre: Kadugodi
             page:
