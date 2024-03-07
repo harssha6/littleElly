@@ -1886,7 +1886,7 @@ centers:
                 No.3, 13th D cross, Near Scion Glade Apartments Kaggadasapura CV
                 Raman Nagar Bangalore - 560093.
               telephone: +91 6364522241
-              email: kaggadaspura@littleelly.com
+              email: kaggadasapura@littleelly.com
           - centre: Marathahalli Karthiknagar
             page:
               subtitle: Little Elly Marathahalli Karthiknagar
