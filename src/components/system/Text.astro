@@ -11,6 +11,7 @@ interface Props {
     | "lg"
     | "regular"
     | "sm"
+    | 'h1Sm'
     | "xs"
     | "subtitle"
     | "p"
@@ -27,6 +28,22 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
     <h1
       class:list={[
         "font-display font-semibold text-[56px] max-md:text-[2rem] leading-[120%]",
+        className,
+      ]}
+      style={style}
+      {...props}
+    >
+      <slot />
+    </h1>
+  )
+}
+{
+  type === "h1Sm" && (
+    <h1
+      class:list={[
+        `font-display font-semibold text-5xl max-md:text-[2rem] 
+         leading-[120%]
+        `,
         className,
       ]}
       style={style}
