@@ -3181,34 +3181,6 @@ centers:
               address: '35/1, 10th D main road 1st block, Jayanagar, Bengaluru - 560011'
               telephone: +91 9980100666
               email: jayanagar@littleelly.com
-          - centre: CK Palaya
-            page:
-              subtitle: ' Little Elly CK Palaya'
-              centreHead:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              centreCoordinator:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              aboutUs:
-                text: Welcome
-                description: >
-                  “Little Elly” centre in CK Palaya is equipped with an indoor &
-                  Outdoor play area, classrooms are well ventilated huge space
-                  with a safe and secure environment.
-              addressTitle: 'Little Elly, CK Palaya, Bangalore'
-              address: >-
-                No. 26, Forest Layout, Next to JSP Ford Service center, CK
-                Palaya road, Koli Farm Gate, Bannerghatta Road, Bangalore -
-                560084.
-              telephone: ''
-              email: ckpalaya@littleelly.com
           - centre: Basavanapura
             page:
               subtitle: Little Elly Basavanapura
