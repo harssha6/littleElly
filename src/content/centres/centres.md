@@ -2084,7 +2084,7 @@ centers:
                 No 131, 1st cross, Someshwara Layout Opposite Sambhram College,
                 Vidyaranyapura Post, Bangalore-560097
               telephone: +91 9741233113
-              email: mspalya@littleelly.
+              email: mspalya@littleelly.com
           - centre: Narayana Nagar
             page:
               subtitle: Little Elly Narayana Nagar
