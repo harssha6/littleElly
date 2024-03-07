@@ -287,7 +287,6 @@ if (nextBtn) {
 				trigger, 
 				start: "10% 80%",
 				end: "100% 70%",
-				// markers: true
 			}
 		});
 	})
@@ -350,6 +349,50 @@ if (nextBtn) {
 			scrub: true,
 		}
 	});
+
+
+	const heroSectionParallax = document.querySelector('[data-hero-section-parallax]').children
+
+	gsap.to(heroSectionParallax[0], {
+		y: 90,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-hero-section-parallax]', 
+			start: "70% 90%",
+			end: "70% 0%",
+			scrub: true,
+		}
+	})
+	gsap.to(heroSectionParallax[1], {
+		y: 80,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-hero-section-parallax]', 
+			start: "70% 90%",
+			end: "70% 0%",
+			scrub: true,
+		}
+	})
+	gsap.to(heroSectionParallax[2], {
+		y: -70,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-hero-section-parallax]', 
+			start: "70% 90%",
+			end: "70% 0%",
+			scrub: true,
+		}
+	})
+	gsap.to(heroSectionParallax[3], {
+		y: -80 * 2.8,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-hero-section-parallax]', 
+			start: "70% 90%",
+			end: "70% 0%",
+			scrub: true,
+		}
+	})
 	
 	
 	
@@ -528,34 +571,31 @@ if (nextBtn) {
 		const heroSectionBg = document.querySelector('[data-hero-section-bg]')
 		const heroSectionStudent = document.querySelector('[data-hero-section-student]')
 
-		gsap.to(heroSectionBg, {
-			// y: (20 + i * 80) * -1,
-			scale: 1.1,
-			// opacity: 0,
-			// opacity: 0,
-			// y: 20,
-			duration: 3,
-			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
-				end: "180% 40%",
-				scrub: true
-			}
-		});
 		gsap.to(heroSectionStudent, {
-			// y: (20 + i * 80) * -1,
-			scale: 1.2,
-			// opacity: 0,
-			// opacity: 0,
+			y: -300,
+			scale: 1.1,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
-				end: "180% 40%",
+				trigger: '[data-hero-section-parallax]', 
+				start: "70% 90%",
+				end: "90% 0%",
+				// markers: true,
 				scrub: true
 			}
 		});
-
+		gsap.to(heroSectionBg, {
+			y: 190,
+			scale: 1.1,
+			duration: 3,
+			scrollTrigger: {
+				immediateRender: false,
+				trigger: '[data-hero-section-parallax]', 
+				start: "70% 90%",
+				end: "90% 0%",
+				// markers: true,
+				scrub: true
+			}
+		});
 
 		gsap.to('[data-hero-arya]', {
 			scale: 1.1,
@@ -626,12 +666,14 @@ if (nextBtn) {
   
 		gsap.to('[data-bottom-cloud]', {
 			scale: 1.1,
+			opacity: 1,
+			y: -250,
 			// opacity: 0,
 			// opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
+				trigger: heroSectionParallax, 
+				start: "100% 130%",
 				end: "180% 40%",
 				scrub: true,
 			}
