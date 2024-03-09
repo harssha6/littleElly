@@ -2370,8 +2370,8 @@ centers:
                   proper guidance to grow in his/her own way.
               addressTitle: 'Little Elly, Pai Layout, Bangalore'
               address: >-
-                #444, 14th, A Cross, 1st Main, Pai Layout, Old Madras Road, K.R.
-                Puram, Bangalore – 560 016
+                446, 1st Main Rd, Gangappa Layout, Dargah Mohalla, Pai Layout,
+                Mahadevapura, Bengaluru, Karnataka 560016
               telephone: +91 9740327207
               email: pjoshi@littleelly.com
           - centre: RMV
