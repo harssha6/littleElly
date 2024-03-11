@@ -17,7 +17,7 @@ import cloud4 from "../images/clouds/4.png"
 
 import fox from "../image/decorations/gifs/fox.webp"
 ---
-<Section class="flex flex-row  !pb-[0px] !pt-[80px]  max-md:flex-col justify-between items-start max-sm:gap-l">
+<Section class="flex flex-row mt-[-13vh] max-md:mt-[-280px]  max-md:flex-col justify-between items-start max-sm:gap-l">
 
     <div class="flex flex-col gap-9 max-md:items-center max-md:w-full w-[unset] max-md:gap-4">
         <div data-appear data-parent="overview-section">
@@ -27,7 +27,7 @@ import fox from "../image/decorations/gifs/fox.webp"
                 classes={["text-primary", "text-purple", "text-[#78ADF9]", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-[#78ADF9]"]}
              />
         </div>
-       <div data-appear={1} data-trigger="overview-section" data-y={50}>
+       <div data-appear={1} data-trigger="overview-section"  class="relative" data-y={50}>
 
            <Image height={300} width={300} src={Student1} alt="student" class={' relative max-sm:w-[150px]'}  />
            <Image height={80} src={fox} alt="fox" class={'absolute bottom-[4%] right-[-30%] max-sm:w-[40px]'} />

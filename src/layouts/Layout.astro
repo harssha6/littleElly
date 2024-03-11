@@ -288,38 +288,42 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 
 
 
-	// const appearElements = document.querySelectorAll('[data-appear]')
+	const appearElements = document.querySelectorAll('[data-appear]')
 	
 
-	// appearElements.forEach(element => {
-	// 	if (element.dataset.appear === "false") return
-	// 	const order = element.dataset.appear || 0
-	// 	const trigger = element.dataset.trigger
-	// 		? document.querySelector(`[data-parent="${element.dataset.trigger}"]`) 
-	// 		: element
+	appearElements.forEach(element => {
+		if (element.dataset.appear === "false") return
+		const order = element.dataset.appear || 0
+		const appearMb = element.dataset.appearMb ? element.dataset.appearMb : true
 
-	// 	let delay = element.dataset.delay || 0 + (0.1 * order)
-	// 	let y = element.dataset.y || 30 + (5 * order)
-	// 	let x = element.dataset.x || 0
-	// 	let opacity = element.dataset.opacity || 0
-	// 	const duration = element.dataset.t || 1
-	// 	gsap.fromTo(element, {
-	// 		opacity,
-	// 		y,
-	// 		x,
-	// 	}, {
-	// 		opacity: 1,
-	// 		y: 0,
-	// 		x: 0,
-	// 		delay,
-	// 		duration,
-	// 		scrollTrigger: {
-	// 			trigger, 
-	// 			start: "10% 80%",
-	// 			end: "100% 70%",
-	// 		}
-	// 	});
-	// })
+		console.log('appearMb --> ', appearMb)
+		if (appearMb === "false" && isPhone) return
+		const trigger = element.dataset.trigger
+			? document.querySelector(`[data-parent="${element.dataset.trigger}"]`) 
+			: element
+
+		let delay = element.dataset.delay || 0 + (0.1 * order)
+		let y = element.dataset.y || 30 + (5 * order)
+		let x = element.dataset.x || 0
+		let opacity = element.dataset.opacity || 0
+		const duration = element.dataset.t || 1
+		gsap.fromTo(element, {
+			opacity,
+			y,
+			x,
+		}, {
+			opacity: 1,
+			y: 0,
+			x: 0,
+			delay,
+			duration,
+			scrollTrigger: {
+				trigger, 
+				start: "10% 80%",
+				end: "100% 70%",
+			}
+		});
+	})
 
 	const characterBG1  =  document.querySelector('[data-character-bg-1]')
 	const characterBG2  =  document.querySelector('[data-character-bg-2]')
