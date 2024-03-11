@@ -1,6 +1,8 @@
 ---
 export interface Props {
 	title: string;
+	description: string;
+	keywords: string;
 }
 import "../global.css"
 // import '../../node_modules/sal.js/dist/sal.css';
@@ -9,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.props;
+const { title = 'Best CBSE School in Bangalore | Little Elly School', description = '', keywords = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,8 +24,9 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<!-- <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"> -->
 		<meta name="generator" content={Astro.generator} />
-		<title>Little Elly Preschool, Playschool, Kindergarten & Daycare</title>
-		<!-- <meta name="description" content="Little Elly is affiliated to CBSE. It is ranked amongst the top CBSE schools in Bangalore. Enquire Now for AY 2024-25." /> -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords}>
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
