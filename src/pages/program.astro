@@ -162,7 +162,7 @@ const programData = [
           return (
             <div data-appear={index === 0 ? false : index}>
               <div class="flex gap-xl max-sm:flex-col items-center">
-                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} src={item.image} alt="pro"/>
+                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} src={item.image} alt={'Program: ' + item.title}/>
                 <div class="flex flex-col">
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
                   <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] max-md:text-[20px] font-display`}>{item.subtitle}</Text>

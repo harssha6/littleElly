@@ -105,7 +105,7 @@ const page = pages.find(page => page.name === slug)?.page
        <Text type="h2" class="text-[#253b70] text-center">About <span class="text-red-200">Centre</span></Text>
        <div class="text-[#FFF7F0] rounded-[30px] flex gap-l bg-[#FFF7F0] p-l justify-center items-center  max-sm:flex-col">
         <div class="max-sm:order-0 flex-shrink-0">
-          <Image src={aboutLittleEllyPlaceholder} alt="principle" class="h-[400px] sm:h-[300px] object-cover object-center" width={400} height={300} />
+          <Image src={aboutLittleEllyPlaceholder} alt="Prinipal" class="h-[400px] sm:h-[300px] object-cover object-center" width={400} height={300} />
         </div>
          <div class="max-sm:order-1">
            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>{page?.aboutUs?.description}</Text>
@@ -125,7 +125,7 @@ const page = pages.find(page => page.name === slug)?.page
          </div>
          {page.centreHead.img && (
            <div class="max-sm:order-0 flex-shrink-0">
-             <Image src={page.centreHead.img} alt="principle" class="h-[500px] sm:h-[300px] object-cover object-top" width={400} height={500} />
+             <Image alt="Centre Head" src={page.centreHead.img} alt="principle" class="h-[500px] sm:h-[300px] object-cover object-top" width={400} height={500} />
            </div>
          )}
          <div></div>
