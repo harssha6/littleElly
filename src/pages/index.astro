@@ -11,6 +11,7 @@ import DaycareFacilities from "./daycare-facilities.astro";
 import "../global.css";
 
 
+
 import config from "../../config";
 
 const campusConfig = config.campus.find((c) => c.internalName === "kanakapura");
@@ -26,13 +27,17 @@ import FindCenter from '../components/findCenter.astro'
 import FindCenterReact from '../components/findCenter.jsx'
 import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
 
+import { getEntry } from 'astro:content';
+
+const { data } = await getEntry('centres', 'centres')
+
 ---
 
 <Layout title="Home | Best International K12 Primary Schools South bengalore Electronic City">
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-      class="hero flex"
+      class="hero flex !min-h-[calc(100vh+500px)] bg-red"
     >
       <AnotherHero />
     </div>
@@ -43,7 +48,7 @@ import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
     <Program  />
     <DaycareFacilities />
     <!-- <FindCenter/> -->
-    <FindCenterReact client:load />
+    <FindCenterReact client:load data={data} />
     <Events />
     <Testimonial />
     <GoToCta />

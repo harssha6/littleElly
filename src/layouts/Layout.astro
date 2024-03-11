@@ -106,55 +106,41 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School' } = Astro.p
 	import Lenis from '@studio-freight/lenis'
 
 	import Swiper from "swiper";
-import { Autoplay, Pagination } from "swiper/modules"
+	import { Autoplay, Pagination } from "swiper/modules"
 
-Swiper.use([Autoplay, Pagination]);
+	Swiper.use([Autoplay, Pagination]);
 
-// const testimonialSwiper = document.querySelector('.testimonial-swiper')
+	const swiper = new Swiper(".testimonial-swiper", {
+		direction: "horizontal",
+		loop: true,
+		slidesPerView: 1.25,
+		centeredSlides: true,
+		spaceBetween: 10,
+		speed: 700,
+		// pagination: {
+		//   el: ".swiper-pagination-testimonial",
+		//   clickable: true,
+		// },
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+	});
 
-// const swiperWrapper = testimonialSwiper?.querySelector('.swiper-wrapper')
+	const prevBtn = document.querySelector("[data-prev-swiper='testimonial-swiper']");
+	const nextBtn = document.querySelector("[data-next-swiper='testimonial-swiper']");
 
-// // clone all slides and append to swiper-wrapper
+	if (prevBtn) {
+		prevBtn.addEventListener('click', () => {
+			swiper.slidePrev()
+		})
+	}
 
-// const slides = testimonialSwiper?.querySelectorAll('.swiper-slide')
-
-// slides.forEach((slide) => {
-//   const clone = slide.cloneNode(true)
-//   swiperWrapper?.appendChild(clone)
-// })
-
-const swiper = new Swiper(".testimonial-swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-  slidesPerView: 1.25,
-  centeredSlides: true,
-  spaceBetween: 10,
-  speed: 700,
-  // pagination: {
-  //   el: ".swiper-pagination-testimonial",
-  //   clickable: true,
-  // },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-});
-
-const prevBtn = document.querySelector("[data-prev-swiper='testimonial-swiper']");
-const nextBtn = document.querySelector("[data-next-swiper='testimonial-swiper']");
-
-if (prevBtn) {
-	prevBtn.addEventListener('click', () => {
-		swiper.slidePrev()
-	})
-}
-
-if (nextBtn) {
-	nextBtn.addEventListener('click', () => {
-		swiper.slideNext()
-	})
-}
+	if (nextBtn) {
+		nextBtn.addEventListener('click', () => {
+			swiper.slideNext()
+		})
+	}
 
 
 	let lenis = null
@@ -182,10 +168,15 @@ if (nextBtn) {
 		gsap.ticker.lagSmoothing(0)
 	}
 
-
+	// Hero Section Animations
 
 	const leftCloud = document.querySelector('[data-left-cloud]')
 	const rightCloud = document.querySelector('[data-right-cloud]')
+	const heroContainer = document.querySelector('[data-hero-container]')
+	const heroTopAnimal = document.querySelectorAll('[data-hero-top-animal]')
+	const dataClouds = document.querySelectorAll('[data-cloud]')
+
+
 
 	leftCloud?.querySelectorAll('path').forEach((path, i) => {
 		gsap.to(path, {
@@ -196,6 +187,7 @@ if (nextBtn) {
 			
 		});
 	})
+
 	rightCloud?.querySelectorAll('path').forEach((path, i) => {
 		gsap.to(path, {
 			x: 400,
@@ -205,11 +197,6 @@ if (nextBtn) {
 			
 		});
 	})
-
-	const heroContainer = document.querySelector('[data-hero-container]')
-
-	const heroTopAnimal = document.querySelectorAll('[data-hero-top-animal]')
-
 
 
 	gsap.to(heroContainer, {
@@ -240,7 +227,6 @@ if (nextBtn) {
 		});
 	})
 
-	const dataClouds = document.querySelectorAll('[data-cloud]')
 
 	dataClouds.forEach((cloud) => {
 		const cloudIndex = Number(cloud.dataset.cloud)
@@ -257,6 +243,50 @@ if (nextBtn) {
 		});
 	})
 
+	const heroSectionParallax = document.querySelector('[data-hero-section-parallax]').children
+
+	// gsap.to(heroSectionParallax[0], {
+	// 	y: 90,
+	// 	duration: 3,
+	// 	scrollTrigger: {
+	// 		trigger: '[data-hero-section-parallax]', 
+	// 		start: "70% 90%",
+	// 		end: "70% 0%",
+	// 		scrub: true,
+	// 	}
+	// })
+	// gsap.to(heroSectionParallax[1], {
+	// 	y: 80,
+	// 	duration: 3,
+	// 	scrollTrigger: {
+	// 		trigger: '[data-hero-section-parallax]', 
+	// 		start: "70% 90%",
+	// 		end: "70% 0%",
+	// 		scrub: true,
+	// 	}
+	// })
+	// gsap.to(heroSectionParallax[2], {
+	// 	y: -70,
+	// 	duration: 3,
+	// 	scrollTrigger: {
+	// 		trigger: '[data-hero-section-parallax]', 
+	// 		start: "70% 90%",
+	// 		end: "70% 0%",
+	// 		scrub: true,
+	// 	}
+	// })
+	gsap.to(heroSectionParallax[3], {
+		y: -80 * 2.8,
+		duration: 3,
+		scrollTrigger: {
+			trigger: '[data-hero-section-parallax]', 
+			start: "70% 90%",
+			end: "70% 0%",
+			scrub: true,
+		}
+	})
+
+
 
 	const appearElements = document.querySelectorAll('[data-appear]')
 	
@@ -264,6 +294,10 @@ if (nextBtn) {
 	appearElements.forEach(element => {
 		if (element.dataset.appear === "false") return
 		const order = element.dataset.appear || 0
+		const appearMb = element.dataset.appearMb ? element.dataset.appearMb : true
+
+		console.log('appearMb --> ', appearMb)
+		if (appearMb === "false" && isPhone) return
 		const trigger = element.dataset.trigger
 			? document.querySelector(`[data-parent="${element.dataset.trigger}"]`) 
 			: element
@@ -287,7 +321,6 @@ if (nextBtn) {
 				trigger, 
 				start: "10% 80%",
 				end: "100% 70%",
-				// markers: true
 			}
 		});
 	})
@@ -352,7 +385,6 @@ if (nextBtn) {
 	});
 	
 	
-	
 	document.addEventListener("DOMContentLoaded", function() {
 		initSwiper()
 		initTicker()
@@ -387,19 +419,18 @@ if (nextBtn) {
 		},
 	  });
 	  swiper.on('transitionStart', () => {
-		swiperLine.classList.add('hide-line')
-		swiperLabel.classList.add('hide-text')
+			swiperLine.classList.add('hide-line')
+			swiperLabel.classList.add('hide-text')
 	  })
   
 	  swiper.on('sliderMove', () => {
-		swiperLine.classList.add('hide-line')
-		swiperLabel.classList.add('hide-text')
+			swiperLine.classList.add('hide-line')
+			swiperLabel.classList.add('hide-text')
 	  })
 	  swiper.on('transitionEnd', (e) => {
-		// const labelText = swiperData[e.realIndex]?.text
-		swiperLabel.innerText = "s"
-		swiperLine.classList.remove('hide-line')
-		swiperLabel.classList.remove('hide-text')
+			swiperLabel.innerText = "s"
+			swiperLine.classList.remove('hide-line')
+			swiperLabel.classList.remove('hide-text')
 	  })
 	  prevBtn.forEach(btn => {
 		btn.addEventListener('click', () => {
@@ -528,34 +559,31 @@ if (nextBtn) {
 		const heroSectionBg = document.querySelector('[data-hero-section-bg]')
 		const heroSectionStudent = document.querySelector('[data-hero-section-student]')
 
-		gsap.to(heroSectionBg, {
-			// y: (20 + i * 80) * -1,
-			scale: 1.1,
-			// opacity: 0,
-			// opacity: 0,
-			// y: 20,
-			duration: 3,
-			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
-				end: "180% 40%",
-				scrub: true
-			}
-		});
 		gsap.to(heroSectionStudent, {
-			// y: (20 + i * 80) * -1,
-			scale: 1.2,
-			// opacity: 0,
-			// opacity: 0,
+			y: -300,
+			scale: 1.1,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
-				end: "180% 40%",
+				trigger: '[data-hero-section-parallax]', 
+				start: "70% 90%",
+				end: "90% 0%",
+				// markers: true,
 				scrub: true
 			}
 		});
-
+		gsap.to(heroSectionBg, {
+			y: 190,
+			scale: 1.1,
+			duration: 3,
+			scrollTrigger: {
+				immediateRender: false,
+				trigger: '[data-hero-section-parallax]', 
+				start: "70% 90%",
+				end: "90% 0%",
+				// markers: true,
+				scrub: true
+			}
+		});
 
 		gsap.to('[data-hero-arya]', {
 			scale: 1.1,
@@ -568,19 +596,6 @@ if (nextBtn) {
 				start: "100% 90%",
 				end: "180% 40%",
 				scrub: true
-			}
-		})
-		gsap.to('[data-hero-elephant]', {
-			scale: 1.1,
-			y: -20,
-			// opacity: 0,
-			// opacity: 0,
-			duration: 3,
-			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
-				end: "180% 40%",
-				scrub: true,
 			}
 		})
 		gsap.to('[data-baloon]', {
@@ -596,29 +611,24 @@ if (nextBtn) {
 				scrub: true,
 			}
 		})
-		gsap.to('[data-hero-elephant-heart]', {
-			scale: 1.1,
-			x: 20,
-			y: -20,
-			// opacity: 0,
-			// opacity: 0,
+
+		gsap.to('[data-hero-elephant]', {
+			y: -240,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
+				trigger: '[data-hero-section-parallax]', 
+				start: "75% 90%",
 				end: "180% 40%",
 				scrub: true,
 			}
 		})
-		gsap.to('[data-hero-elephant]', {
-			scale: 1.1,
-			y: -20,
-			// opacity: 0,
-			// opacity: 0,
+
+		gsap.to('[data-hero-elephant-shadow]', {
+			scale: 0.1,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
+				trigger: '[data-hero-section-parallax]', 
+				start: "75% 90%",
 				end: "180% 40%",
 				scrub: true,
 			}
@@ -626,12 +636,14 @@ if (nextBtn) {
   
 		gsap.to('[data-bottom-cloud]', {
 			scale: 1.1,
+			opacity: 1,
+			y: -250,
 			// opacity: 0,
 			// opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
-				start: "100% 90%",
+				trigger: heroSectionParallax, 
+				start: "100% 130%",
 				end: "180% 40%",
 				scrub: true,
 			}
