@@ -279,38 +279,8 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		});
 	})
 
-	const heroSectionParallax = document.querySelector('[data-hero-section-parallax]').children
+	const heroSectionParallax = document.querySelector('[data-hero-section-parallax]')?.children || []
 
-	// gsap.to(heroSectionParallax[0], {
-	// 	y: 90,
-	// 	duration: 3,
-	// 	scrollTrigger: {
-	// 		trigger: '[data-hero-section-parallax]', 
-	// 		start: "70% 90%",
-	// 		end: "70% 0%",
-	// 		scrub: true,
-	// 	}
-	// })
-	// gsap.to(heroSectionParallax[1], {
-	// 	y: 80,
-	// 	duration: 3,
-	// 	scrollTrigger: {
-	// 		trigger: '[data-hero-section-parallax]', 
-	// 		start: "70% 90%",
-	// 		end: "70% 0%",
-	// 		scrub: true,
-	// 	}
-	// })
-	// gsap.to(heroSectionParallax[2], {
-	// 	y: -70,
-	// 	duration: 3,
-	// 	scrollTrigger: {
-	// 		trigger: '[data-hero-section-parallax]', 
-	// 		start: "70% 90%",
-	// 		end: "70% 0%",
-	// 		scrub: true,
-	// 	}
-	// })
 	gsap.to(heroSectionParallax[3], {
 		y: -80 * 2.8,
 		duration: 3,
