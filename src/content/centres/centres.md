@@ -4393,7 +4393,7 @@ centers:
           telephone: ''
           email: ''
         centres:
-          - centre: Nagamalaipudukottai
+          - centre: Nagamalai pudukottai
             page:
               subtitle: Little Elly Nagamalaipudukottai
               addressTitle: 'Little Elly, Nagamalaipudukottai, Madurai'
