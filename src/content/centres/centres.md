@@ -4329,6 +4329,15 @@ centers:
           telephone: +91 9578395000
           email: coimbatore@littleelly.com
         centres:
+          - centre: Saravanampatti
+            page:
+              subtitle: Saravanampatti
+              addressTitle: Saravanampatti
+              address: >-
+                17, Sivasakthi Nagar, Thudiyalur Road, Saravanampatti, Between
+                KGISL and KCT, Coimbatore – 641 035
+              telephone: +91 9578395000
+              email: coimbatore@littleelly.com
           - centre: Little Elly GN Mills
             page:
               subtitle: Little Elly GN Mills
