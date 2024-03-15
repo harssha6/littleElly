@@ -4322,12 +4322,10 @@ centers:
               students. Our goal at “Little Elly” is to help foster your child’s
               growth during the first five crucial years with a child-centered &
               child directed approach to learning.
-          addressTitle: 'Little Elly, Saravanampatti, Coimbatore'
-          address: >-
-            17, Sivasakthi Nagar, Thudiyalur Road, Saravanampatti, Between KGISL
-            and KCT, Coimbatore – 641 035
-          telephone: +91 9578395000
-          email: coimbatore@littleelly.com
+          addressTitle: ''
+          address: ''
+          telephone: ''
+          email: ''
         centres:
           - centre: Saravanampatti
             page:
