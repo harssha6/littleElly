@@ -4292,7 +4292,7 @@ centers:
                 Tamil Nadu 600126
               telephone: +91 8110999080
               email: vengaivasal@littleelly.com
-      - district: Coimbatore (Saravanampatti)
+      - district: Coimbatore
         page:
           centreHead:
             title: Centre Head
