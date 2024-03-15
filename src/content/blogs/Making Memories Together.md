@@ -34,7 +34,7 @@ blog: >
   efforts are valued and encourages them to set and pursue new goals with
   enthusiasm.
 
-  3. **Creating Lasting Memories: **Family celebrations become cherished
+  3. **Creating Lasting Memories:** Family celebrations become cherished
   memories that will be treasured for years to come. They serve as anchors,
   reminding us of our shared experiences, triumphs, and the love that binds us
   together. Looking back on these memories can evoke feelings of nostalgia and
@@ -59,7 +59,7 @@ blog: >
   handcrafted scrapbooks. These tangible reminders serve as tokens of your
   family's journey and accomplishments.
 
-  4. **Family Dinner Celebration: **Host a special family dinner to mark
+  4. **Family Dinner Celebration:** Host a special family dinner to mark
   milestones like birthdays, graduations, or promotions. Cook a favorite meal
   together, set the table with festive decorations, and take turns sharing
   stories and reflections on the milestone being celebrated.
