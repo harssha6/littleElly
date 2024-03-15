@@ -44,7 +44,7 @@ blog: >
   **Creative Ideas for Commemorating Special Moments:**
 
 
-  1. **Family Achievement Wall: **Designate a wall or bulletin board in your
+  1. **Family Achievement Wall:** Designate a wall or bulletin board in your
   home to display photos, certificates, and mementos of family milestones and
   achievements. It's a visual reminder of your collective successes and the
   progress you've made together.
@@ -54,7 +54,7 @@ blog: >
   a visit to a museum, spending quality time together in a new setting creates
   lasting memories.
 
-  3. **Personalized Keepsakes: **Create personalized keepsakes to commemorate
+  3. **Personalized Keepsakes:** Create personalized keepsakes to commemorate
   special occasions, such as custom-made photo albums, engraved plaques, or
   handcrafted scrapbooks. These tangible reminders serve as tokens of your
   family's journey and accomplishments.
@@ -64,7 +64,7 @@ blog: >
   together, set the table with festive decorations, and take turns sharing
   stories and reflections on the milestone being celebrated.
 
-  5. **Virtual Celebrations: **For families separated by distance, consider
+  5. **Virtual Celebrations:** For families separated by distance, consider
   hosting a virtual celebration using video calls or online platforms. Share
   photos, videos, and messages of congratulations to make everyone feel included
   in the festivities.
