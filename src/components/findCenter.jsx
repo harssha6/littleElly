@@ -77,7 +77,7 @@ const FindCentre = (props) => {
     console.log('clickk...', type, name, pillData)
     if (pillData.page && pillData.page.address) {
       if (typeof window !== 'undefined') {
-        window.location.href = `${baseURL}/campus/${name}`
+        window.location.href = `${baseURL}/centre/${name}`
       }
     }
 
