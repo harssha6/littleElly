@@ -38,20 +38,22 @@ const {
             <div class="flex flex-col">
                 {
                     Object.keys(details).map((key,index) => {
-                        return <ConnectItem
-                                    label={
-                                        details[key]?.label
-                                    }
-                                    title={
-                                        details[key]?.value
-                                    }
-                                    type={
-                                        details[key]?.type
-                                    }
-                                    style={{
-                                        borderBottomWidth: index === Object.keys(details).length - 1 ? '0px' : 'initial',
-                                        }}
-                                />
+                        return (
+                          <ConnectItem
+                            label={
+                                details[key]?.label
+                            }
+                            title={
+                                details[key]?.value
+                            }
+                            type={
+                                details[key]?.type
+                            }
+                            style={{
+                                borderBottomWidth: index === Object.keys(details).length - 1 ? '0px' : 'initial',
+                            }}
+                          />
+                        )
                     })
                 }
 
