@@ -3275,7 +3275,7 @@ centers:
                 Pizza, Balagere Road, Varthur (H), Panathur Post, Bengaluru,
                 Karnataka 560087
               telephone: +91 7070709426
-              email: belagere.blr@littleelly.com
+              email: balagere.blr@littleelly.com
       - district: Mangalore
         centres:
           - centre: Ashok Nagar
