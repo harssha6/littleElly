@@ -3221,10 +3221,7 @@ centers:
                 description: ''
               aboutUs:
                 text: Welcome
-                description: >
-                  “Little Elly” centre in Basavanapura is equipped with an
-                  indoor & Outdoor play area, classrooms are well ventilated
-                  huge space with a safe and secure environment.
+                description: "Welcome to Little Elly Basavanapura – a nurturing haven for young minds to blossom! Our dedicated team at Little Elly is committed to providing a stimulating and caring environment for your child's early years. Explore our website to discover our engaging curriculum, passionate educators, and vibrant learning spaces. Join us on this exciting journey of fostering curiosity, creativity, and a love for learning in your little ones at Little Elly\_Basavanapura.\n"
               addressTitle: 'Little Elly, Basavanapura, Bangalore'
               address: >-
                 No. 26, Forest View Layout, Next to JSP Ford Service center, CK
