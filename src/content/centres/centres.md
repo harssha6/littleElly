@@ -3197,7 +3197,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Beena Robin
-                img: /images/Centers/subcenter/basavanpura-centrehead.jpeg
+                img: /images/WhatsApp Image 2024-03-11 at 19.33.06_a07fb7a0.jpg
                 experience: ''
                 description: >
                   Ms. Beena Robin is a mother, an academician, and a
