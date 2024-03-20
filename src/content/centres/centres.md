@@ -777,7 +777,7 @@ centers:
               address: >-
                 Ground floor, 76/121, Mohit, 2nd Cross, Behind Union Bank,
                 Bhuvaneswari Nagar, Dasarhalli Village Kempapura, Hebbal Post,
-                Bangalore – 560094
+                Bangalore – 560024
               telephone: +91 9108521854
               email: bhuvaneshwari@littleelly.com
           - centre: BTM Layout
