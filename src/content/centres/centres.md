@@ -1053,13 +1053,18 @@ centers:
               subtitle: Little Elly Gottigere
               centreHead:
                 title: Centre Head
-                name: Ms. Shilpa Kurian
-                img: /images/Centers/subcenter/gottigere-centerhead.jpg
+                name: Ms. Beena Robin
+                img: /images/WhatsApp Image 2024-03-11 at 19.33.06_a07fb7a0 (1).jpg
                 experience: ''
                 description: >
-                  Shilpa has done her Bachelors in business management and
-                  Masters in international business. She is running the centre
-                  since 2015.
+                  Ms. Beena Robin is a mother, an academician, and a
+                  storyteller. She is a scholar from the Regional Institution of
+                  Education, an ex Delhi Public School faculty member, and the
+                  franchise owner of Abacus ProLearn. She is actively working in
+                  developing young minds as Center Head for India’s favorite
+                  chain of preschools, Little Elly, Gottigere. She is passionate
+                  about cultivating a child’s potential through creative and
+                  lateral thinking
               centreCoordinator:
                 title: Centre Coordinator
                 name: Ms. Beena Robin
