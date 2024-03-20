@@ -3204,7 +3204,15 @@ centers:
                 name: Ms. Beena Robin
                 img: /images/WhatsApp Image 2024-03-11 at 19.33.06_a07fb7a0 (1).jpg
                 experience: ''
-                description: "Welcome to Little Elly Basavanapura – a nurturing haven for young minds to blossom! Our dedicated team at Little Elly is committed to providing a stimulating and caring environment for your child's early years. Explore our website to discover our engaging curriculum, passionate educators, and vibrant learning spaces. Join us on this exciting journey of fostering curiosity, creativity, and a love for learning in your little ones at Little Elly\_Basavanapura.\n"
+                description: >
+                  Ms. Beena Robin is a mother, an academician, and a
+                  storyteller. She is a scholar from the Regional Institution of
+                  Education, an ex Delhi Public School faculty member, and the
+                  franchise owner of Abacus ProLearn. She is actively working in
+                  developing young minds as Center Head for India’s favorite
+                  chain of preschools, Little Elly, Gottigere. She is passionate
+                  about cultivating a child’s potential through creative and
+                  lateral thinking.
               centreCoordinator:
                 title: ''
                 name: ''
