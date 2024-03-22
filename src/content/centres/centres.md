@@ -13,7 +13,7 @@ centers:
                 Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
                 Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
               telephone: '9591403531'
-              email: devanahalli_sn.blr@littleelly.com
+              email: sn_devanahalli.blr@littleelly.com
           - centre: Masthenahalli
             page:
               subtitle: 'Little Elly, Masthenahalli'
