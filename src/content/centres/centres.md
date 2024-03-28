@@ -3226,7 +3226,7 @@ centers:
               address: >-
                 No. 26, Forest View Layout, Next to JSP Ford Service center, CK
                 Palaya road, Koli Farm Gate, Bannerghatta Road, Bangalore -
-                560084.
+                560083.
               telephone: '9632851314'
               email: basavanapura@littleelly.com
           - centre: NRI Layout
