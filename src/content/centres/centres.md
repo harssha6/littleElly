@@ -3634,7 +3634,7 @@ centers:
               address: >-
                 965, 7th main, 3rd stage, Doctors Corner, Gokulam, Opp to Mysore
                 one Gokulam, Mysore – 570 002
-              telephone: +91 7676662677
+              telephone: +91 76766 62677
               email: gokulam@littleelly.com
           - centre: Hebbal
             page:
