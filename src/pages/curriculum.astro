@@ -72,22 +72,28 @@ for(let i=1 ; i<=9 ; i++){
 
 const areaOfLearingAndDevelopment =[
   {icon: communication,
-  title: 'Communication, Language & Literacy'  
+  title: 'Communication, Language & Literacy',
+  color : '#B892F9'  
   },
   {icon: physical,
-  title: 'Physical Development'  
+  title: 'Physical Development',
+  color : '#78ADF9'  
   },
   {icon: social,
-  title: 'Social and Emotional Development'  
+  title: 'Social and Emotional Development',
+  color : '#F6BD60'  
   },
   {icon: cognitive,
-  title: 'Cognitive Development'  
+  title: 'Cognitive Development',
+  color : '#EE7F82'   
   },
   {icon: understanding,
-  title: 'Understanding the World'  
+  title: 'Understanding the World',
+  color : '#A5D27C'   
   },
   {icon: expressiveArt,
-   title: 'Expressive Arts'  
+   title: 'Expressive Arts',
+   color : '#EE7F82'    
    },
 ]
 
@@ -302,7 +308,9 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 <div class="my-8 flex xl:flex-row flex-col justify-between">
   <Text type="base" class="md:pr-10 ">The H.A.P.P.Y curriculum takes a unique approach to nurturing these connections by creating a diverse and engaging environment that stimulates various aspects of a child's brain. It is a <strong>handpicked blend of renowned educational methodologies</strong> and incorporates diverse perspectives and methodologies. Caregivers and educators provide a <strong>multifaceted environment</strong> that encourages exploration, critical thinking, and curiosity, laying the groundwork for a child's holistic development.</Text>
   <div>
-    <div class=" xl:w-[800px] 2xl:w-[950px]">
+    <div class=" xl:w-[800px] max-xl:mt-5
+    
+    2xl:w-[950px]">
       <div class="flex flex-row overflow-hidden max-md:h-[200px] h-auto">
         {boards.map((board, i) => (
           <div class:list={[
@@ -393,16 +401,16 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     </div>
   </div>
 </div>
-<div class="xl:mt-[200px] sm:mt-[130px]  lg:mt-[150px] relative md:mx-[27px] p-5 sm:p-[60px] rounded-[100px] border border-[#B892F9] bg-[#FAFAFA] h- max-sm:mt-[270px] w-full  flex  justify-center">
+<div class="xl:mt-[200px] max-md:rounded-3xl  sm:mt-[130px]  lg:mt-[150px] relative md:mx-[27px] p-5 sm:p-[60px] rounded-[100px] border border-[#B892F9] bg-[#FAFAFA] h- max-sm:mt-[280px] w-full  flex  justify-center">
      <div class="w-full">
-      <p class="text-[40px] text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">Areas of Learning & Development</p>
+      <p class="text-[40px] max-sm:my-5 text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">Areas of Learning & Development</p>
 
       <div class='grid grid-cols-2 max-sm:grid-cols-1  md:grid-cols-3 pt-4 sm:py-8 justify-between mr-[70px] gap-10 2xl:mx-[188px]'>
 
       {areaOfLearingAndDevelopment.map(items=> 
       <div class="flex flex-col  pl-20 items-center ">
           <Image src={items.icon} alt="icons" class="w-[75px] h-[75px]"  />
-          <p class="text-[25.6px] max-md:text-lg text-[#B892F9] sm:w-[219px] text-center font-extrabold uppercase ">{items.title}</p>
+          <p class={`text-[25.6px] [text-shadow:_0_1.5px_0_rgb(246_189_96_/_80%)] max-md:text-lg text-[${items.color}] sm:w-[219px] text-center  font-extrabold uppercase `}>{items.title}</p>
           </div>
           )}
 
@@ -445,43 +453,43 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <div class="box-1  hoverEffect" id="1" >
     <Image src={unionBlue} alt={'shapeblue'} class=' w-[273px] absolute top-[0px] left-[113px]'  />
     <span class=" text-center left-[192px] top-[30px] absolute" >
-      <Text type="semiLarge" class="text-[#FFF7F0] max-md:text-[25px] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Gardner<br>
-        Approach</Text>
+      <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Gardner<br>
+        Approach</p>
     </span>
   </div>
 
     <div class="box-2  hoverEffect absolute bottom-[186px] right-[6px]" id="2">
       <Image src={unionGreen} alt={'shapegreen'} class=' w-[171px]  ' />
-      <span class=" text-center right-[26px] lg:right-[10px] top-[107px] absolute" >
-        <Text type="semiLarge" class="text-[#FFF7F0] max-md:text-[25px] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Montessori<br>
-          Approach</Text>
+      <span  class=" text-center max-md:rotate-[75deg] right-[5px] lg:right-[10px] max-sm:left-[30px] top-[107px] absolute" >
+        <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0] max-md:text-[1.6rem]  [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Montessori<br>
+          Approach</p>
       </span>
     </div>
 
     <div class="box-3  hoverEffect absolute right-[23px] bottom-[10px]" id="3">
       <Image src={unionPurple} alt={'shapepurple'} class=' w-[225px] ' />
-      <span class=" text-center right-[95px] lg:right-[83px] lg:bottom-[54px] bottom-[70px] absolute" >
-        <Text type="semiLarge" class="text-[#FFF7F0] max-md:text-[25px] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Waldorf<br>
-          Approach</Text>
+      <span class=" text-center max-md:right-[64px] max-md:-rotate-[37deg] right-[95px] lg:right-[83px] lg:bottom-[54px] bottom-[70px] absolute" >
+        <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Waldorf<br>
+          Approach</p>
       </span>
      </div>
 
     <div class="box-4  hoverEffect absolute  left-[20px] bottom-[9px]" id="4">
       <div>
     <Image src={unionRed} alt={'shapered'} class=' w-[222px] ' />
-    <span class=" text-center left-[86px] lg:bottom-[65px] lg:left-[73px] bottom-[74px] absolute" >
-      <Text type="semiLarge" class="text-[#FFF7F0] max-md:text-[25px] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Bloom<br>
-        Approach</Text>
+    <span class=" text-center max-md:rotate-[39deg] max-md:left-[50px] left-[86px] lg:bottom-[65px] lg:left-[73px] bottom-[74px] absolute" >
+      <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem]  [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Bloom<br>
+        Approach</p>
     </span>
   </div>
 </div>
 
- <div class="box-5  hoverEffect absolute bottom-[180px]" id="5">
+ <div class="box-5  hoverEffect  absolute bottom-[180px]" id="5">
   <Image src={unionOrange} alt={'shapeorange'} class=' w-[181px] ' />
-  <span class=" text-center left-[30px] top-[100px] absolute" >
-    <Text type="semiLarge" class="text-[#FFF7F0] max-md:text-[25px] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Learning  <br>
+  <span class=" text-center max-md:rotate-[102deg] left-[20px] top-[88px]  absolute" >
+    <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Learning  <br>
       Style <br> Theory
-    </Text>
+    </p>
   </span>
  </div>
 
@@ -522,7 +530,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
  <div class="flex flex-col montessori items-center bg-[#FDFFF9] relative sm:px-[35px] ">
 
-<div class="flex relative  items-center pb-8 mb-2 md:mb-10 flex-col">
+<div class="flex relative  items-center pb-8 max-sm:pb-4 mb-2 md:mb-10 flex-col">
   <Text type="h2" class="text-[#F6BD60] max-sm:text-[1.7rem]" >Montessori Approach</Text>
   <Image src={redUnderline} alt='underline' class="sm:w-[321px] w-[274px] md:w-[488px]"/>
 <Image src={yellowRainbow} alt='rainbow' class='absolute sm:right-[-148px] md:right-[-200px] lg:right-[-273px] hidden sm:block bottom-[22px]' />
@@ -802,12 +810,12 @@ for(let i=0; i<hoverCircle.length; i++){
           },3000)
         }
   
-         function start() {
+         function start(a=0) {
          clearInterval(mainInter)
          clearInterval(firstInter)
          clearInterval(secondInter)
          coloredDiv.classList.remove('smooth')
-          let a= 0;
+          // let a= 0;
           mainInter =  setInterval(()=>{
           a+=1
        
@@ -871,8 +879,11 @@ for(let i=0; i<hoverCircle.length; i++){
       }))
 
       boxes.forEach((el,i)=> el.addEventListener('mouseleave', ()=> {
-        setTimeout(()=>start(),3000)
-        setTimeout(()=>startdivAnimation(),3000)
+        // setTimeout(()=>start(),3000)
+        // setTimeout(()=>startdivAnimation(),3000)
+        let current = +el.id
+        start(current)
+        startdivAnimation()
         setTimeout(()=> hoverhandler(false),5000)  
          coloredDiv.style.background = 'none'
         
