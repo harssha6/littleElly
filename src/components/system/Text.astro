@@ -14,6 +14,7 @@ interface Props {
     | "xs"
     | "subtitle"
     | "p"
+    | "semiLarge"
     | "span";
   class?: string;
   style?: {};
@@ -113,6 +114,20 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
     </div>
   )
 }
+
+{
+  type === "semiLarge" && (
+    <div
+      class:list={["text-[26px] font-bold tracking-tight", className]}
+      class="max-md:text-lg"
+      style={style}
+      {...props}
+    >
+      <slot />
+    </div>
+  )
+}
+
 {
   type === "base" && (
     <div
