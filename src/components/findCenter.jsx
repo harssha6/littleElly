@@ -72,18 +72,28 @@ const FindCentre = (props) => {
   
 
   const onPillClick = (type, name) => {
+
     const pillData = getPillData(type, name)
+    console.log('clickk...', type, name, pillData)
     if (pillData.page && pillData.page.address) {
       if (typeof window !== 'undefined') {
-        window.location.href = `${baseURL}/campus/${name}`
+        window.location.href = `${baseURL}/centre/${name}`
       }
     }
 
     if (type === 'state') {
+        setSearchQuery('')
         setCurrentState(name)
+        setCurrentDistrict('')
     } else if (type === 'district') {
+        setSearchQuery('')
+        setCurrentState(getState(name))
         setCurrentDistrict(name)
     }
+  }
+
+  const getState = (district) => {
+    return centers.find(center => center.districts?.find(d => d.district === district))?.state
   }
 
 

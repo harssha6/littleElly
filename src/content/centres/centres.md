@@ -5,6 +5,31 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Shanthi Nagar - Devanahalli
+            page:
+              subtitle: Little Elly Shanthi Nagar - Devanahalli
+              addressTitle: 'Little Elly,Shanthi Nagar, Devanahalli, Bangalore'
+              address: >-
+                Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
+                Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
+              telephone: '9591403531'
+              email: devanahalli_sn.blr@littleelly.com
+          - centre: Masthenahalli
+            page:
+              subtitle: 'Little Elly, Masthenahalli'
+              addressTitle: 'Little Elly, Masthenahalli, Bangalore'
+              address: >-
+                No 69/3, Near DLF Apartments, Masthenahalli, Hennagara Post,
+                Anekal Taluk, Jigani ,Bangalore-560105
+              telephone: '7975616662'
+              email: masthenahalli.blr@littleelly.com
+          - centre: Nallurhalli
+            page:
+              subtitle: Little Elly Nallurhalli
+              addressTitle: 'Little Elly, Nallurhalli, Bangalore'
+              address: '156, Victorian Layout, Borewell Road, Whitefield, Bangalore'
+              telephone: '6364380033, 6364070003'
+              email: nallurhalli.blr@littleelly.com
           - centre: Naganathpura - Hosa Road
             page:
               subtitle: Little Elly Naganathpura - Hosa Road
@@ -983,7 +1008,7 @@ centers:
               address: >-
                 #19, Orchids Park, Opposite Genesis Ecosphere, Neeladri Road,
                 Electronic City Phase 1, Electronic City, Bangalore – 560 100
-              telephone: +91 9663727426
+              telephone: +91 9972887310
               email: ecity@littleelly.com
           - centre: Frazer Town
             page:
@@ -1729,7 +1754,7 @@ centers:
               address: >-
                 #12/A Tulsi Layout, Kasavanahalli Village, Near La Casa Hotel,
                 Bangalore – 560 035
-              telephone: t+91 7760682266
+              telephone: +91 7760682266
               email: kasavanahalli@littleelly.com
           - centre: Kadugodi
             page:
@@ -1870,7 +1895,7 @@ centers:
                 No.3, 13th D cross, Near Scion Glade Apartments Kaggadasapura CV
                 Raman Nagar Bangalore - 560093.
               telephone: +91 6364522241
-              email: kaggadaspura@littleelly.com
+              email: kaggadasapura@littleelly.com
           - centre: Marathahalli Karthiknagar
             page:
               subtitle: Little Elly Marathahalli Karthiknagar
@@ -2068,7 +2093,7 @@ centers:
                 No 131, 1st cross, Someshwara Layout Opposite Sambhram College,
                 Vidyaranyapura Post, Bangalore-560097
               telephone: +91 9741233113
-              email: mspalya@littleelly.
+              email: mspalya@littleelly.com
           - centre: Narayana Nagar
             page:
               subtitle: Little Elly Narayana Nagar
@@ -2125,7 +2150,7 @@ centers:
               address: >-
                 No.673, ‘Sumukha’, 17th main road, 1st block, Opp BDA Park,
                 Narayananagar, Bangalore – 560 062
-              telephone: +91 7899738131
+              telephone: '+91 7899738131, 9696569021'
               email: narayananagar@littleelly.com
           - centre: NEO Town (E City)
             page:
@@ -2345,8 +2370,8 @@ centers:
                   proper guidance to grow in his/her own way.
               addressTitle: 'Little Elly, Pai Layout, Bangalore'
               address: >-
-                #444, 14th, A Cross, 1st Main, Pai Layout, Old Madras Road, K.R.
-                Puram, Bangalore – 560 016
+                446, 1st Main Rd, Gangappa Layout, Dargah Mohalla, Pai Layout,
+                Mahadevapura, Bengaluru, Karnataka 560016
               telephone: +91 9740327207
               email: pjoshi@littleelly.com
           - centre: RMV
@@ -2970,8 +2995,9 @@ centers:
                   child in their care.
               addressTitle: 'Little Elly, JP Nagar 7th Phase, Bangalore'
               address: >-
-                #40, 6th F Main, 3rd A Cross, Gaurav Nagar, J.P. Nagar 7th
-                Phase, Bangalore- 560078
+                44, 6th Main Road , Dr. Vivekananda Layout, Santrupthi Nagar,
+                Sankranthi Layout , J.P. Nagar 7th Phase , Bengaluru, Karnataka
+                560078
               telephone: +91 9845414573
               email: rbilayout@littleelly.com
           - centre: Cheemasandra
@@ -3165,34 +3191,6 @@ centers:
               address: '35/1, 10th D main road 1st block, Jayanagar, Bengaluru - 560011'
               telephone: +91 9980100666
               email: jayanagar@littleelly.com
-          - centre: CK Palaya
-            page:
-              subtitle: ' Little Elly CK Palaya'
-              centreHead:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              centreCoordinator:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              aboutUs:
-                text: Welcome
-                description: >
-                  “Little Elly” centre in CK Palaya is equipped with an indoor &
-                  Outdoor play area, classrooms are well ventilated huge space
-                  with a safe and secure environment.
-              addressTitle: 'Little Elly, CK Palaya, Bangalore'
-              address: >-
-                No. 26, Forest Layout, Next to JSP Ford Service center, CK
-                Palaya road, Koli Farm Gate, Bannerghatta Road, Bangalore -
-                560084.
-              telephone: ''
-              email: ckpalaya@littleelly.com
           - centre: Basavanapura
             page:
               subtitle: Little Elly Basavanapura
@@ -3277,7 +3275,7 @@ centers:
                 Pizza, Balagere Road, Varthur (H), Panathur Post, Bengaluru,
                 Karnataka 560087
               telephone: +91 7070709426
-              email: belagere.blr@littleelly.com
+              email: balagere.blr@littleelly.com
       - district: Mangalore
         centres:
           - centre: Ashok Nagar
@@ -4294,7 +4292,7 @@ centers:
                 Tamil Nadu 600126
               telephone: +91 8110999080
               email: vengaivasal@littleelly.com
-      - district: Coimbatore (Saravanampatti)
+      - district: Coimbatore
         page:
           centreHead:
             title: Centre Head
@@ -4324,13 +4322,20 @@ centers:
               students. Our goal at “Little Elly” is to help foster your child’s
               growth during the first five crucial years with a child-centered &
               child directed approach to learning.
-          addressTitle: 'Little Elly, Saravanampatti, Coimbatore'
-          address: >-
-            17, Sivasakthi Nagar, Thudiyalur Road, Saravanampatti, Between KGISL
-            and KCT, Coimbatore – 641 035
-          telephone: +91 9578395000
-          email: coimbatore@littleelly.com
+          addressTitle: ''
+          address: ''
+          telephone: ''
+          email: ''
         centres:
+          - centre: Saravanampatti
+            page:
+              subtitle: Saravanampatti
+              addressTitle: Saravanampatti
+              address: >-
+                17, Sivasakthi Nagar, Thudiyalur Road, Saravanampatti, Between
+                KGISL and KCT, Coimbatore – 641 035
+              telephone: +91 9578395000
+              email: coimbatore@littleelly.com
           - centre: Little Elly GN Mills
             page:
               subtitle: Little Elly GN Mills
@@ -4395,12 +4400,13 @@ centers:
           telephone: ''
           email: ''
         centres:
-          - centre: Nagamalaipudukottai
+          - centre: Nagamalai pudukottai
             page:
               subtitle: Little Elly Nagamalaipudukottai
               addressTitle: 'Little Elly, Nagamalaipudukottai, Madurai'
-              address: '3/282, 2nd street,Bharathiyar Nagar, Aalampatti,Madurai-625019'
+              address: '3/282, 2nd street, Bharathiyar Nagar, Aalampatti,Madurai-625019'
               telephone: '9345668345'
+              telephone_1: '9345668345'
               email: nagamalai.mdu@littleelly.com
           - centre: P&T Nagar
             page:
@@ -4409,7 +4415,8 @@ centers:
               address: >-
                 Plot no 2, Natchathira Nagar  5th Street, P&T Nagar Main Road,
                 Near Meenakshi Nagar busstop, Madurai 625017.
-              telephone: '9363612730, 9363012730'
+              telephone: '9363612730'
+              telephone_1: '9363012730'
               email: ptnagar.mdu@littleelly.com
   - state: Andhra Pradesh
     districts:

@@ -78,9 +78,9 @@ const page = pages.find(page => page.name === slug)?.page
         config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
         showSlide={true}
         slideImages={[
-          { slide: slide1.src, position: "center 64%", type: "image" },
-          { slide: slide2.src, position: "center 64%", type: "image" },
-          { slide: slide3.src, position: "center 64%", type: "image" },
+          { slide: slide1.src, position: "top 64%", type: "image" },
+          { slide: slide2.src, position: "top 64%", type: "image" },
+          { slide: slide3.src, position: "top 64%", type: "image" },
         ]}
         contentDirection="items-end"
         className="overflow-hidden font-roundo"
@@ -154,7 +154,7 @@ const page = pages.find(page => page.name === slug)?.page
         type: "address",
       },
     }}
-    mapEmbedLink={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&q=${page?.addressTitle + ','+ page?.address}`}
+    mapEmbedLink={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&q=${encodeURIComponent(page?.addressTitle + ','+ page?.address)}`}
   />
 </div>
 
@@ -203,4 +203,5 @@ const page = pages.find(page => page.name === slug)?.page
 
 <script define:vars={{ page }}>
   console.log('states -->', page)
+  
 </script>
