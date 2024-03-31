@@ -13,7 +13,7 @@ centers:
                 Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
                 Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
               telephone: '9591403531'
-              email: devanahalli_sn.blr@littleelly.com
+              email: sn_devanahalli.blr@littleelly.com
           - centre: Masthenahalli
             page:
               subtitle: 'Little Elly, Masthenahalli'
@@ -777,7 +777,7 @@ centers:
               address: >-
                 Ground floor, 76/121, Mohit, 2nd Cross, Behind Union Bank,
                 Bhuvaneswari Nagar, Dasarhalli Village Kempapura, Hebbal Post,
-                Bangalore – 560094
+                Bangalore – 560024
               telephone: +91 9108521854
               email: bhuvaneshwari@littleelly.com
           - centre: BTM Layout
@@ -1053,13 +1053,18 @@ centers:
               subtitle: Little Elly Gottigere
               centreHead:
                 title: Centre Head
-                name: Ms. Shilpa Kurian
-                img: /images/Centers/subcenter/gottigere-centerhead.jpg
+                name: Ms. Beena Robin
+                img: /images/WhatsApp Image 2024-03-11 at 19.33.06_a07fb7a0 (1).jpg
                 experience: ''
                 description: >
-                  Shilpa has done her Bachelors in business management and
-                  Masters in international business. She is running the centre
-                  since 2015.
+                  Ms. Beena Robin is a mother, an academician, and a
+                  storyteller. She is a scholar from the Regional Institution of
+                  Education, an ex Delhi Public School faculty member, and the
+                  franchise owner of Abacus ProLearn. She is actively working in
+                  developing young minds as Center Head for India’s favorite
+                  chain of preschools, Little Elly, Gottigere. She is passionate
+                  about cultivating a child’s potential through creative and
+                  lateral thinking
               centreCoordinator:
                 title: Centre Coordinator
                 name: Ms. Beena Robin
@@ -3197,7 +3202,7 @@ centers:
               centreHead:
                 title: Centre Head
                 name: Ms. Beena Robin
-                img: /images/Centers/subcenter/basavanpura-centrehead.jpeg
+                img: /images/WhatsApp Image 2024-03-11 at 19.33.06_a07fb7a0 (1).jpg
                 experience: ''
                 description: >
                   Ms. Beena Robin is a mother, an academician, and a
@@ -3216,15 +3221,12 @@ centers:
                 description: ''
               aboutUs:
                 text: Welcome
-                description: >
-                  “Little Elly” centre in Basavanapura is equipped with an
-                  indoor & Outdoor play area, classrooms are well ventilated
-                  huge space with a safe and secure environment.
+                description: "Welcome to Little Elly Basavanapura – a nurturing haven for young minds to blossom! Our dedicated team at Little Elly is committed to providing a stimulating and caring environment for your child's early years. Explore our website to discover our engaging curriculum, passionate educators, and vibrant learning spaces. Join us on this exciting journey of fostering curiosity, creativity, and a love for learning in your little ones at Little Elly\_Basavanapura.\n"
               addressTitle: 'Little Elly, Basavanapura, Bangalore'
               address: >-
                 No. 26, Forest View Layout, Next to JSP Ford Service center, CK
                 Palaya road, Koli Farm Gate, Bannerghatta Road, Bangalore -
-                560084.
+                560083.
               telephone: '9632851314'
               email: basavanapura@littleelly.com
           - centre: NRI Layout
@@ -3632,7 +3634,7 @@ centers:
               address: >-
                 965, 7th main, 3rd stage, Doctors Corner, Gokulam, Opp to Mysore
                 one Gokulam, Mysore – 570 002
-              telephone: +91 7676662677
+              telephone: +91 76766 62677
               email: gokulam@littleelly.com
           - centre: Hebbal
             page:
