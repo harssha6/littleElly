@@ -2,8 +2,10 @@
 import Text from '../../components/system/Text.astro'
 import MultiStyleText from '../../components/system/MultiStyleText.astro'
 import bottomCloud from './bottomCloud.svg'
+import wavvyLine from '../../images/curriculum/wavvy-line.svg';
 import { Image } from 'astro:assets'
 import starGif from '../../image/decorations/gifs/gif2.webp'
+
 
 const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg width="100%" height="100%" viewBox="0 0 88 197" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17 0.95H16.95V1V99V99.05H17H18H18.05V99V1V0.95H18H17Z" fill="#A97837" stroke="#3C2415" stroke-width="0.1"/>
@@ -51,9 +53,9 @@ const boards = [
     primaryColor: '#B892F9',
     secondaryColor: '#8D4CFC',
     textColor: '#823AFD',
-    title: 'Holistic Approach',
+    title: 'Health',
     class: '[&>span]:text-[#8D4CFC] [&>span]:font-[500]',
-    description: 'An approach that recognises the interconnectedness of various <span>developmental domains</span> and aims to address the <span>overall well-being</span> of the child.',
+    description: 'The primary focus of the curriculum is to stimulate your child\'s mental development. We place significant emphasis on addressing the crucial issue of proper nutrition for children through regularly updated booklets and other resources.',
     lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[140px]'
   },
   {
@@ -61,9 +63,9 @@ const boards = [
     primaryColor: '#A5D27C',
     secondaryColor: '#5C8735',
     textColor: '#5C8F2E',
-    title: 'Appreciative Enquiry',
+    title: 'Acute Senses',
     class: '[&>span]:text-[#5C8735] [&>span]:font-[500]',
-    description: 'An optimistic and <span>strengths-based approach</span> to teaching that focuses on recognizing the positive aspects of each child’s <span>learning journey and inspiring</span> them to further develop their strengths.',
+    description: 'A child learns through his five acute senses. So, it is vital to build strong senses to enable him to learn successfully. The H.A.P.P.Y curriculum includes eye–tracking skills, early musical skills, listening skills, and physical “motor skills” such as finger and thumb control.',
     lines: 3,
     lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[160px]'
   },
@@ -72,9 +74,9 @@ const boards = [
     primaryColor: '#F6BD60',
     secondaryColor: '#A97B33',
     textColor: '#AA7A2B',
-    title: 'Purposeful Play',
+    title: 'Purposeful Fun',
     class: '[&>span]:text-[#A97B33] [&>span]:font-[500]',
-    description: 'Ensuring that <span>play-based activities</span> are intentionally designed to promote <span>specific learning outcomes</span> and support overall development.',
+    description: 'The H.A.P.P.Y Curriculum is centred around engaging games and activities, each designed with a specific purpose. While these activities are enjoyable, they play a crucial role in fostering a child\'s physical, emotional, or intellectual development.',
     lines: 2,
     lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[140px]'
   },
@@ -85,7 +87,7 @@ const boards = [
     textColor: '#6DA2EE',
     title: 'Practical Life Skills',
     class: '[&>span]:text-[#4B84D5] [&>span]:font-[500]',
-    description: 'Thoughtful and beneficial incorporation of <span>practical life skills</span> to empower children with essential abilities that go beyond <span>traditional academic knowledge</span>.',
+    description: 'Teaching practical life skills to children is crucial for their holistic development and the cultivation of independence. These skills equip children with essential abilities for daily living and create the groundwork for lifelong learning and success.',
     lines: 3,
     lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[140px]'
   },
@@ -94,9 +96,9 @@ const boards = [
     primaryColor: '#FBD1D2',
     secondaryColor: '#C76668',
     textColor: '#EE7F82',
-    title: 'Yay Pedagogy',
+    title: 'Yay! Approach',
     class: '[&>span]:text-[#C76668] [&>span]:font-[500]',
-    description: 'A <span>dynamic and engaging</span> educational approach designed to create an atmosphere of <span>excitement, celebration, and joy</span> within the learning process.',
+    description: 'The H.A.P.P.Y curriculum embraces the infectious enthusiasm of young learners who approach each day with excitement and eagerness to explore and achieve. We aim to ignite and nurture this natural curiosity by creating a vibrant atmosphere of enthusiasm that fuels their learning and development during these crucial early years of childhood.',
     lines: 4,
     lineClass: '[&.active]:h-[90px] max-md:[&.active]:h-[120px]'
   },
@@ -115,7 +117,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   }}
 >
   
-  <div class="flex flex-row max-md:flex-col gap-[80px] px-[70px] max-md:px-[20px] max-md:gap-[40px]">
+  <!-- <div class="flex flex-row max-md:flex-col gap-[80px] px-[70px] max-md:px-[20px] max-md:gap-[40px]">
     <div>
       <div class="pt-[66px] max-md:pt-[30px]" />
       <Text type="h2" class="text-primary">
@@ -228,7 +230,119 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
   <div class="w-full h-[100px] mt-[140px]">
     <Image src={bottomCloud} alt="bottom cloud" class="w-full h-full object-cover object-center" />
+  </div> -->
+  <div class="p-5 md:p-[60px] w-full" style={{background: 'linear-gradient(279deg, #E5F0FF -1.4%, rgba(255, 255, 255, 0.00) 99.99%)'}}>
+
+    <span class="flex flex-col justify-center relative items-center ">
+      <div>
+        <Text type="h2" class="text-center">
+          <MultiStyleText
+            classes={["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]}
+             text="Happy"/>
+          </Text>
+        <Text type="h2" class="text-primary">Curriculum</Text>
+       </div>
+    <Image src={wavvyLine} alt='wavvy line' class='lg:w-[250px] w-[178px] sm:w-[175px]'/>
+  </span>
+
+<Text type="base" class="mt-6">A child's inherent intelligence isn't determined by the number of brain cells they're born with, but rather by the connections formed between those cells. These connections, <strong>crucial for cognitive development</strong>, are cultivated through the experiences and stimuli provided in the early years.</Text>
+
+<div class="my-8 flex xl:flex-row flex-col justify-between">
+  <Text type="base" class="md:pr-10 ">The H.A.P.P.Y curriculum takes a unique approach to nurturing these connections by creating a diverse and engaging environment that stimulates various aspects of a child's brain. It is a <strong>handpicked blend of renowned educational methodologies</strong> and incorporates diverse perspectives and methodologies. Caregivers and educators provide a <strong>multifaceted environment</strong> that encourages exploration, critical thinking, and curiosity, laying the groundwork for a child's holistic development.</Text>
+  <div>
+    <div class=" xl:w-[800px] max-xl:mt-5
+    
+    2xl:w-[950px]">
+      <div class="flex flex-row overflow-hidden max-md:h-[200px] h-auto">
+        {boards.map((board, i) => (
+          <div class:list={[
+            "board flex flex-col px-[17px] max-md:px-0 max-md:pr-[0px] items-center",
+            i === 0 ? "pl-[0px]" : "",
+            i === boards.length - 1 ? "pr-[10px]" : "",
+          ]} data-happy-board>
+            <div class="w-[100px] max-md:w-full max-md:h-auto max-md:flex-1 flex-[unset] relative left-[10px] h-[216px] flex justify-center items-end text-[56px] font-display font-bold" style={{ color: board.textColor }}>
+              <div class="w-full h-full absolute top-0 left-0" set:html={boardSVG(board.primaryColor, board.secondaryColor)}></div>
+              <div class="text-center max-md:text-[28px] pointer-events-none bottom-[4px] max-md:bottom-[-2px] max-md:left-[0px] left-[0px] relative z-20">
+                {board.text}
+              </div>
+            </div>
+            <div data-shadow class="w-[106px] max-md:h-auto max-md:w-[80%] mt-[20px] max-md:mt-0 max-md:left-[10px] max-md:top-[-20px] left-[11px] max-md:flex-1 h-[10px] relative" set:html={shadow(board.textColor)}></div>
+            <div class="mt-[20px] block max-md:hidden" />
+            <Text data-title type="h4" class="font-[600] max-md:hidden relative max-md:left-0 left-[8px] text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
+              {board.title}
+            </Text>
+          </div>
+        ))}
+      </div>
+
+      <div class="pt-[40px] max-md:hidden" />
+    
+      <div class="relative max-md:mt-[-50px] mt-0 mb-0 max-md:mb-[50px]">
+          <div class="opacity-0">
+            <div 
+              class:list={[
+                "[&.active]:h-full [&.active]:opacity-100 opacity-0 h-[none] w-[4px] absolute top-0 left-0",
+              ]} 
+              style={{
+                background: boardWithLongestDescription.primaryColor
+              }}>
+            </div>
+            <div>
+              <Text
+                type="base" 
+                class:list={[
+                  "mt-[10px] transition-opacity font-display font-[400] text-[#4C4C4C] [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto",
+                  boardWithLongestDescription.class
+                ]}
+                set:html={boardWithLongestDescription.title}
+              >
+              </Text>
+            </div>
+          </div>
+          {boards.map((board, i) =>  (
+            <div class="absolute top-0 left-0 flex flex-row items-center gap-6">
+              <div 
+                data-description-line
+                class:list={[
+                  "h-[0px] w-[4px] flex-shrink-0 duration-700 transition-[height]",
+                  i === 0 ? "active" : "none",
+                  board.lineClass
+                ]} 
+                style={{
+                  background: board.primaryColor
+                }}>
+              </div>
+              <div data-description class="duration-700 transition-opacity [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto">
+                <Text
+                  type="lg" 
+                  class:list={[
+                    "mt-[10px] font-display font-[600] max-md:!text-[20px] !tracking-[1px] max-md:block hidden",
+                    i === 0 ? "active" : "none",
+                    board.class
+                  ]}
+                  style={{
+                    color: board.secondaryColor
+                  }}
+                  set:html={board.title}
+                >
+                </Text>
+                <Text
+                  type="base" 
+                  class:list={[
+                    "mt-[10px] font-display font-[400] text-[#4C4C4C]",
+                    i === 0 ? "active" : "none",
+                    board.class
+                  ]}
+                  set:html={board.description}
+                >
+                </Text>
+              </div>
+            </div>
+          ))}
+        </div>
+    </div>
   </div>
+</div>
 
 </div>
 
