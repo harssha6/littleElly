@@ -1,4 +1,6 @@
 ---
+// @ts-nocheck
+import { Image } from "astro:assets";
 import Button from "../components/system/Button.astro";
 import Text from "../components/system/Text.astro";
 
@@ -10,6 +12,7 @@ const {
   style,
   contentDirection = "item-center",
   imageClassName = "",
+  mobileSlideImages
 } = Astro.props;
 
 const bgImage = showSlide ? slideImages : config.bgImage;
@@ -37,11 +40,6 @@ const bgImage = showSlide ? slideImages : config.bgImage;
               picture,
               mobileOnly,
               desktopOnly,
-            }: {
-              slide: string;
-              position: string;
-              type: string;
-              picture: boolean;
             },
             i: number
           ) =>
@@ -76,8 +74,35 @@ const bgImage = showSlide ? slideImages : config.bgImage;
                     }}
                   />
                 </picture>
+              ) : (slide && slide.src ? (
+                <Image class:list={[
+                    " w-full h-full absolute top-0 left-0 object-no-repeat object-top object-cover",
+                    
+                    
+                    imageClassName,
+                    mobileSlideImages.length > 0 ? "hidden md:block" : ""
+                  ]}
+                  src={slide}
+                  alt="slide-img"
+                  width={1920}
+                  style={{
+                    transition: "1s all ease-in-out",
+                  }}>
+                </Image>
+                <Image class:list={[
+                    " w-full h-full absolute top-0 left-0 object-no-repeat object-top object-cover",
+                    imageClassName,
+                    mobileSlideImages.length > 0 ? "block md:hidden" : "hidden"
+                  ]}
+                  src={mobileSlideImages.length > 0 ? mobileSlideImages[i].slide : slide}
+                  alt="slide-img"
+                  width={1920}
+                  style={{
+                    transition: "1s all ease-in-out",
+                  }}>
+                </Image>
               ) : (
-                <div
+              <div
                   class:list={[
                     "slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover",
                     i === 0 ? "opacity-1" : "opacity-0",
@@ -90,6 +115,7 @@ const bgImage = showSlide ? slideImages : config.bgImage;
                     backgroundPosition: position,
                   }}
                 />
+              )
               )
             ) : (
               <div class="absolute top-0 left-0 w-full h-full">
@@ -116,15 +142,16 @@ const bgImage = showSlide ? slideImages : config.bgImage;
             )
         )
       ) : (
-        <div
-          class="w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover"
-          style={{
-            backgroundImage: `linear-gradient(0deg, #1B2226 0%, #052B4C 63.40%, #1370A7 100%), url(${bgImage})`,
-            transition: "1s all  ease-in-out",
-            backgroundPosition: "center",
-            // filter: 'invert'
-          }}
-        />
+        <div></div>
+        // <div
+        //   class="w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover"
+        //   style={{
+        //     backgroundImage: `linear-gradient(0deg, #1B2226 0%, #052B4C 63.40%, #1370A7 100%), url(${bgImage})`,
+        //     transition: "1s all  ease-in-out",
+        //     backgroundPosition: "center",
+        //     // filter: 'invert'
+        //   }}
+        // />
       )
     }
     <div

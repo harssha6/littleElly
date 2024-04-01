@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import "../global.css";
 import { Image } from "astro:assets";
 
@@ -261,19 +262,22 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
 ---
 
-<Layout title="Curriculum | Best International K12 Primary Schools South bengalore Electronic City" description ='' keywords='  '>
+<Layout title="Curriculum at Little Elly | Committed to Excellence in Preschool." description ='' keywords='  '>
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-    class="h-[76svh] max-md:h-[50svh] flex"
+    class="h-[76svh] max-md:h-[70svh] flex"
   >
   <Hero
   config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
   showSlide={true}
   slideImages={[
-    { slide: slide1.src, position: "center 10%", type: "image" },
+    { slide: slide1, position: "center 10%", type: "image" },
     // { slide: slide2.src, position: "top 20%", type: "image" },
     // { slide: slide3.src, position: "top 64%", type: "image" },
+  ]}
+  mobileSlideImages={[
+    { slide: slide1MB, position: "top 10%", type: "image" },
   ]}
   contentDirection="items-end"
   className="overflow-hidden font-roundo"
