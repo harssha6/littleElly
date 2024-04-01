@@ -10,7 +10,8 @@ import Text from "../components/system/Text.astro";
 import MultiStyleText from "../components/system/MultiStyleText.astro";
 import HappyCurriculum from "../components/landingPage/HappyCurriculum.astro";
 
-import slide1 from "../images/slides/1.png";
+import slide1 from "../images/curriculum/slides/curriculum-desktop.png";
+import slide1MB from "../images/curriculum/slides/mb/curriculum-mobile.png";
 import slide3 from "../images/slides/4.png";
 import slide2 from "../images/slides/3.png";
 import theory from '../images/curriculum/learning/theory.png';
@@ -45,6 +46,7 @@ import movement from '../images/curriculum/montessori/movement.svg';
 import twoChildrens from '../images/curriculum/montessori/twoChildrens.svg';
 import purpleThreads from '../images/curriculum/waldrof/purpleThreads.svg';
 import graphLines from '../images/curriculum/gardner/graphLines.svg';
+import galleryImg from '../images/curriculum/gardner/gallery.svg';
 import human from '../images/curriculum/gardner/human.svg';
 import people from '../images/curriculum/gardner/people.svg';
 import music from '../images/curriculum/gardner/music.svg';
@@ -85,7 +87,7 @@ const areaOfLearingAndDevelopment =[
   color : '#F6BD60'  
   },
   {icon: cognitive,
-  title: 'Cognitive Development',
+  title: 'Mathematics Development',
   color : '#EE7F82'   
   },
   {icon: understanding,
@@ -131,7 +133,7 @@ const montessoriBoxes = [
 
 const gardnerCircle = [
   {
-    icon : human,
+    icon : galleryImg,
     text : 'Picture'
   },
   {
@@ -259,9 +261,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
 ---
 
-<Layout
-  title="Curriculum | Best International K12 Primary Schools South bengalore Electronic City"
->
+<Layout title="Curriculum | Best International K12 Primary Schools South bengalore Electronic City" description ='' keywords='  '>
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
@@ -272,8 +272,8 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   showSlide={true}
   slideImages={[
     { slide: slide1.src, position: "center 10%", type: "image" },
-    { slide: slide2.src, position: "top 20%", type: "image" },
-    { slide: slide3.src, position: "top 64%", type: "image" },
+    // { slide: slide2.src, position: "top 20%", type: "image" },
+    // { slide: slide3.src, position: "top 64%", type: "image" },
   ]}
   contentDirection="items-end"
   className="overflow-hidden font-roundo"
@@ -500,13 +500,13 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <Image src={unionShadow} alt={'shadow'} class=' w-[422px]  absolute bottom-[-60px] right-[8%]' />
     <Image src={unionCircle} alt={'shadow'} class=' w-[217px]  absolute bottom-[140px] right-[143px]' />
 
-    <div class="absolute top-[195px] max-md:top-[210px] max-md:left-[172px] left-[146px] scale-90">
+    <div class="absolute top-[197px] max-md:top-[210px] max-md:left-[179px] left-[162px] scale-90">
       <Text type="h3" class="text-center ">
         <MultiStyleText
           classes={["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]}
-           text="Happy"/>
+           text="Our"/>
         </Text>
-      <Text type="h3" class="text-primary">Curriculum</Text>
+      <Text type="h3" class="text-primary">Approach</Text>
      </div>
 
     
@@ -520,7 +520,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   <div class="w-[3.8px]  h-[0px] coloredDiv hidden md:block self-center bg-[#F6BD60]  "/>
    <div class="flex flex-col max-sm:mt-[-5rem] px-5 md:w-[565px] justify-center  text-4xl max-md:text-lg">
     <astro-heart>
-    <p class="text-4xl max-md:text-lg font-bold heading text-[#E2AA4F] mb-3">Learning style theory</p>
+    <p class="text-4xl font-display max-md:text-lg font-bold heading text-[#E2AA4F] mb-3">Learning style theory</p>
   </astro-heart>
     <Text type="base" class="description">Individuals have distinct, preferred methods for absorbing and <span class="text-[#B6883E] font-bold">processing information</span>, impacting their educational experiences and results.</Text>
     <Text type="base" class="text-[#AF7F30] explore mt-3 flex gap-[10px] items-center font-bold">EXPLORE <Fragment class="bg-red-500" set:html={bottomArrow} /></Text>
