@@ -29,6 +29,10 @@ const menu: Array<Menu> = [
     
   },
   {
+    title: "Curriculum",
+    link: "/curriculum",
+  },
+  {
     title: "Our Programs",
     link: "/program",
     
@@ -45,10 +49,7 @@ const menu: Array<Menu> = [
     title: "Admissions",
     link: "/admissions",
   },
-  {
-    title: "Curriculum",
-    link: "/curriculum",
-  }
+  
   
 ];
 
@@ -153,7 +154,7 @@ const maxsm = (stringOfClasses) => {
                     <a
                       href={item.link}
                       class:list={[
-                        "text-black font-semibold hover:underline font-display uppercase",
+                        "text-black font-semibold title-section hover:underline font-display uppercase",
                         shouldBeActive(item, activePath) && "!text-primary",
                       ]}
                     >
@@ -161,7 +162,7 @@ const maxsm = (stringOfClasses) => {
                     </a>
                   ) : (
                     <span 
-                      class:list={["text-black font-semibold hover:underline font-display uppercase",
+                      class:list={["text-black font-semibold title-section hover:underline font-display uppercase",
                       shouldBeActive(item, activePath) && "!text-primary",
                     ]}
                     >
@@ -449,6 +450,7 @@ const maxsm = (stringOfClasses) => {
 </style>
 
 <script>
+  const title = document.querySelectorAll('title-section') as HTMLDivElement
   const menuParent = document.querySelectorAll(
     ".menu-parent"
   ) as NodeListOf<HTMLDivElement>;
@@ -490,12 +492,21 @@ const maxsm = (stringOfClasses) => {
   // mobile menu
   const menuToggle = document.querySelector("#menuToggle") as HTMLInputElement;
   const mobileMenu = document.querySelector(".mobileMenu") as HTMLDivElement;
+  const mobileMenuItems = mobileMenu.querySelectorAll('[data-menu-mobile-item]');
+  const mobileMenuButton = document.querySelector('input.menu-checkbox')
+
+    mobileMenuItems.forEach(menuItem => {
+      menuItem.addEventListener('click', ()=>{
+        mobileMenu.classList.remove('visible')
+        mobileMenuButton.checked = false;
+      })
+    });
 
   menuToggle.addEventListener("click", () => {
 
     mobileMenu.classList.toggle("visible");
 
-    document.querySelector('.menu-bar').classList.toggle('active')
+  
   });
   const mobileMenuParents = document.querySelectorAll(
     ".mobileMenuParent"
@@ -504,12 +515,13 @@ const maxsm = (stringOfClasses) => {
   mobileMenuParents.forEach((el) => {
     const subMenu = el.querySelector(".subMenu") as HTMLDivElement;
     el.addEventListener("click", () => {
+      if(subMenu){
       subMenu.classList.toggle("visible");
       if (subMenu.classList.contains("visible")) {
         subMenu.style.maxHeight = "100vh";
       } else {
         subMenu.style.maxHeight = "0px";
-      }
+      }}
     });
   });
   // document.addEventListener('astro:beforeload', () => {
