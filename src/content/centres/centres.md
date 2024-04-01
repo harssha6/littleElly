@@ -4736,6 +4736,10 @@ centers:
     poweredBy: true
     districts:
       - district: Dhemaji
+        page:
+          subtitle: Dhemaji
+          centreHead:
+            name: Mrs Niva Das Sonowal
       - district: Guwahati
         centres:
           - centre: Beltola
