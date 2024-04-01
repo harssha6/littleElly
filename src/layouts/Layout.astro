@@ -204,8 +204,8 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 	let lenis = null
 
 	const isPhone = window.innerWidth < 768
-
-	const shouldLenis = !window.location.href.includes('/blogs') && !isPhone
+	const shouldLenis = false
+	// const shouldLenis = !window.location.href.includes('/blogs') && !isPhone
 	// if url contains blog
 	if (shouldLenis) {
 		lenis = new Lenis({

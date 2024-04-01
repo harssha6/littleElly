@@ -92,7 +92,7 @@ const areaOfLearingAndDevelopment =[
   color : '#A5D27C'   
   },
   {icon: expressiveArt,
-   title: 'Expressive Arts',
+   title: 'Expressive<br class="max-md:hidden block" /> Arts',
    color : '#EE7F82'    
    },
 ]
@@ -124,7 +124,7 @@ const montessoriBoxes = [
   },
   {
     icon : twoChildrens,
-    text : 'Learning from peers'
+    text : 'Learning<br/> from peers'
   },
 ]
 
@@ -264,13 +264,13 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   <div class="flex flex-col">
     <TopNavigationBar />
     <div
-    class="h-[76svh] flex"
+    class="h-[76svh] max-md:h-[50svh] flex"
   >
   <Hero
   config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
   showSlide={true}
   slideImages={[
-    { slide: slide1.src, position: "center 64%", type: "image" },
+    { slide: slide1.src, position: "center 10%", type: "image" },
     { slide: slide2.src, position: "top 20%", type: "image" },
     { slide: slide3.src, position: "top 64%", type: "image" },
   ]}
@@ -401,16 +401,16 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     </div>
   </div>
 </div>
-<div class="xl:mt-[200px] max-md:rounded-3xl  sm:mt-[130px]  lg:mt-[150px] relative md:mx-[27px] p-5 sm:p-[60px] rounded-[100px] border border-[#B892F9] bg-[#FAFAFA] h- max-sm:mt-[280px] w-full  flex  justify-center">
+<div class="xl:mt-[200px] max-md:rounded-3xl  sm:mt-[130px]  lg:mt-[150px] relative md:mx-[27px] p-5 sm:p-[60px] rounded-[100px] border border-[#B892F9] bg-[#FAFAFA] h- max-sm:mt-[240px] w-full  flex  justify-center">
      <div class="w-full">
-      <p class="text-[40px] max-sm:my-5 text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">Areas of Learning & Development</p>
+      <p class="text-[40px] font-display max-sm:my-5 text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">Areas of Learning & Development</p>
 
-      <div class='grid grid-cols-2 max-sm:grid-cols-1  md:grid-cols-3 pt-4 sm:py-8 justify-between mr-[70px] gap-10 2xl:mx-[188px]'>
+      <div class='grid grid-cols-2 max-sm:grid-cols-1  md:grid-cols-3 pt-4 sm:py-8 justify-between max-md:mx-0 max-md:mr-0 mr-[70px] gap-10 2xl:mx-[188px]'>
 
       {areaOfLearingAndDevelopment.map(items=> 
-      <div class="flex flex-col  pl-20 items-center ">
+      <div class="flex flex-col  pl-20 max-md:pl-0 items-center ">
           <Image src={items.icon} alt="icons" class="w-[75px] h-[75px]"  />
-          <p class={`text-[25.6px] [text-shadow:_0_1.5px_0_rgb(246_189_96_/_80%)] max-md:text-lg text-[${items.color}] sm:w-[219px] text-center  font-extrabold uppercase `}>{items.title}</p>
+          <p class={`text-[26px] leading-[120%] [text-shadow:_0_1.5px_0_rgb(246_189_96_/_80%)] font-display max-md:text-lg text-[${items.color}] sm:w-[219px] text-center  font-extrabold uppercase mt-4`} set:html={items.title} />
           </div>
           )}
 
@@ -433,7 +433,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <Image src={rainbow} alt='rainbow' class='max-sm:scale-50'/>
     <span class="flex flex-col justify-center relative items-center ">
       <div>
-        <Text type="h2" class="text-center">
+        <Text type="h2" class="text-center relative">
           <MultiStyleText
             classes={["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]}
              text="Happy"/>
@@ -448,20 +448,20 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <Text type="base" class="text-center ">At Little Elly we firmly believe in tailoring the educational experience to suit each child's individual needs. We adopt a combination of philosophies and take a unique approach that aligns with the values and goals of our parents and the needs of our children. </Text>
    </div>
    <div class="2xl:px-[103px] xl:px-[80px] lg:gap-[30px] items-center lg:px-[20px] gap-[86px] max-sm:gap-[0] max-sm:mt-[-7rem]  mt-8 flex flex-col lg:flex-row" >
-   <div class="relative flex-shrink-0 scale-50 sm:scale-90 xl:scale-100 w-[500px] h-[500px]">
+   <div class="relative flex-shrink-0 scale-50 sm:scale-90 xl:scale-100 w-[500px] h-[500px] mt-0 max-md:mt-4">
 
     <div class="box-1  hoverEffect" id="1" >
     <Image src={unionBlue} alt={'shapeblue'} class=' w-[273px] absolute top-[0px] left-[113px]'  />
     <span class=" text-center left-[192px] top-[30px] absolute" >
-      <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Gardner<br>
+      <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Gardner<br>
         Approach</p>
     </span>
   </div>
 
     <div class="box-2  hoverEffect absolute bottom-[186px] right-[6px]" id="2">
       <Image src={unionGreen} alt={'shapegreen'} class=' w-[171px]  ' />
-      <span  class=" text-center max-md:rotate-[75deg] right-[5px] lg:right-[10px] max-sm:left-[30px] top-[107px] absolute" >
-        <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0] max-md:text-[1.6rem]  [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Montessori<br>
+      <span  class=" text-center max-md:rotate-[75deg] right-[18px] max-sm:left-[30px] top-[107px] absolute" >
+        <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0] max-md:text-[1.6rem]  [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Montessori<br>
           Approach</p>
       </span>
     </div>
@@ -469,7 +469,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <div class="box-3  hoverEffect absolute right-[23px] bottom-[10px]" id="3">
       <Image src={unionPurple} alt={'shapepurple'} class=' w-[225px] ' />
       <span class=" text-center max-md:right-[64px] max-md:-rotate-[37deg] right-[95px] lg:right-[83px] lg:bottom-[54px] bottom-[70px] absolute" >
-        <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Waldorf<br>
+        <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Waldorf<br>
           Approach</p>
       </span>
      </div>
@@ -477,8 +477,8 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <div class="box-4  hoverEffect absolute  left-[20px] bottom-[9px]" id="4">
       <div>
     <Image src={unionRed} alt={'shapered'} class=' w-[222px] ' />
-    <span class=" text-center max-md:rotate-[39deg] max-md:left-[50px] left-[86px] lg:bottom-[65px] lg:left-[73px] bottom-[74px] absolute" >
-      <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem]  [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Bloom<br>
+    <span class=" text-center max-md:rotate-[39deg] max-md:left-[70px] lg:bottom-[65px] lg:left-[73px] bottom-[70px] absolute" >
+      <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem]  [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Bloom<br>
         Approach</p>
     </span>
   </div>
@@ -486,8 +486,8 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
  <div class="box-5  hoverEffect  absolute bottom-[180px]" id="5">
   <Image src={unionOrange} alt={'shapeorange'} class=' w-[181px] ' />
-  <span class=" text-center max-md:rotate-[102deg] left-[20px] top-[88px]  absolute" >
-    <p class="font-bold tracking-tight text-[26px] text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_1.5px_0_rgb(0_0_0_/_80%)]" >Learning  <br>
+  <span class=" text-center max-md:-rotate-[80deg] left-[30px] max-md:top-[90px] top-[110px]  absolute" >
+    <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Learning  <br>
       Style <br> Theory
     </p>
   </span>
@@ -499,7 +499,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <Image src={unionShadow} alt={'shadow'} class=' w-[422px]  absolute bottom-[-25px] right-[8%]' />
     <Image src={unionCircle} alt={'shadow'} class=' w-[217px]  absolute bottom-[140px] right-[143px]' />
 
-    <div class="absolute top-[195px] max-md:left-[172px] left-[146px] scale-90">
+    <div class="absolute top-[195px] max-md:top-[210px] max-md:left-[172px] left-[146px] scale-90">
       <Text type="h3" class="text-center ">
         <MultiStyleText
           classes={["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]}
@@ -548,15 +548,15 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 <div class="2xl:px-[250px] xl:px-[140px] lg:px-[130px] justify-center py-[45px] sm:flex sm:flex-wrap  sm:gap-[50px] md:px-[100px] sm:px-[50px] grid grid-cols-2">
 
   {montessoriBoxes.map((boxContent,i)=> 
-  <div class="relative">
+  <div class="relative group">
    <div class={`relative yellow-boxes scale-75 sm:scale-100`}>
     <Image src={squareYellowBox} alt='icon' class='w-[196px]' />
-    <div class='sm:top-[45px] top-[22px] flex flex-col items-center left-[-13px] sm:left-[2px]  w-[194px] absolute'>
-    <Image src={boxContent.icon} alt='icon' class='mb-2 scale-75' />
-    <p class="sm:text-[31px] text-[20px]   font-semibold text-center w-[74px] sm:w-auto text-white leading-[1] ">{boxContent.text}</p> 
+    <div class='sm:top-[45px] top-[40px] flex flex-col items-center left-[0px] sm:left-[2px]  w-[194px] absolute'>
+      <Image src={boxContent.icon} alt='icon' class='mb-2 scale-90' />
+      <p class="sm:text-[26px] max-md:mt-2 mt-0 font-display text-[20px] font-semibold text-center w-[74px] sm:w-auto text-white leading-[1] " set:html={boxContent.text} />
+    </div>
   </div>
-  </div>
-  <Image src={boxShadow} alt='boxshadow'  class='absolute yellowBoxShadow left-7 sm:bottom-[-20px] hidden sm:left-[41px]' />
+  <Image src={boxShadow} alt='boxshadow'  class='group-hover:scale-100 scale-0 transition-transform duration-500 transition-smooth absolute yellowBoxShadow left-7 sm:bottom-[-20px] sm:left-[41px]' />
 </div>
  
   )}
@@ -566,7 +566,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
  <div class=" relative w-full flex waldorf flex-col py-[20px] md:py-[80px] items-center px-[20px]  bg-[#FCF9FF]">
   <Text type="h2" class="text-[#B892F9]" >Waldorf Approach</Text>
-  <Image src={redUnderline} alt='underline' class="md:w-[407px] w-[276px] "/>
+  <Image src={redUnderline} alt='underline' class="md:w-[407px] w-[276px]"/>
 
   <div class="flex items-center flex-col-reverse md:flex-row mt-2 md:mt-[24px] gap-2 md:gap-10 lg:px-[70px]">
     <div class="px-0 md:px-10">
@@ -579,7 +579,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     </Text>
   </div>
     <div class="flex items-center justify-center ">
-    <Image src={group} alt='tree' class='md:w-[2000px] w-[300px] ' />
+    <Image src={group} alt='tree' class='md:w-[2000px] w-[300px] my-6 max-md:' />
   </div>
   </div>
   <Image src={purpleThreads} alt="threads" class='absolute hidden md:block max-sm:scale-50 max-sm:top-[67px] max-sm:left-[-75px] left-0 top-0' />
@@ -598,18 +598,18 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
         All the age-appropriate activities designed at Little Elly are created keeping the 8 unique intelligences in mind ranging from musical to interpersonal. The child is then observed to understand how they process the information provided to them and how they <span class="text-[#618C39] font-bold">interact with the world around them.</span>
         </Text>
     </div>
-    <div class="flex w-full justify-center mt-[10px] md:mt-[39px] gap-[30px] md:gap-[46px] pt-[35px] xl:px-[349px] flex-wrap">
+    <div class="flex w-full justify-center mt-[10px] md:mt-[39px] gap-[30px] md:gap-[46px] pt-[35px] xl:px-[319px] flex-wrap">
 
     {gardnerCircle.map(items=>
-    <div class="relative">
-    <div class="w-[131px] max-md:scale-90 h-[131px] circle rounded-full border-[4px] flex flex-col items-center justify-center border-[#A5D27C]" style={{background: 'linear-gradient(180deg, #A5D27C 0%, #679F35 100%)'}} >
-      <Image src={items.icon} alt='icon'  />
-      <Text type="lg" class="text-[#fff]">{items.text}</Text>
-      </div> 
-      <Image src={circleShadow} alt='shadow' class='absolute hidden circleShadow bottom-0 right-[17px]' />
-    </div>
-      )}
-      <Image src={rightFly} alt='butterflyIcon' class="absolute hidden md:block bottom-[60px] right-[380px]"/>
+      <div class="relative group">
+        <div class="w-[131px] group max-md:scale-90 h-[131px] circle rounded-full border-[4px] flex flex-col items-center justify-center border-[#A5D27C]" style={{background: 'linear-gradient(180deg, #A5D27C 0%, #679F35 100%)'}} >
+          <Image src={items.icon} alt='icon'  />
+          <Text type="lg" class="text-[#fff]">{items.text}</Text>
+        </div> 
+        <Image src={circleShadow} alt='shadow' class='absolute group-hover:scale-100 scale-0 transition-smooth transition-transform duration-500  bottom-0 right-[17px]' />
+      </div>
+    )}
+      <Image src={rightFly} alt='butterflyIcon' class="absolute hidden md:block bottom-[60px] right-[290px]"/>
       <Image src={leftFly} alt='butterflyIcon' class="absolute hidden md:block left-[270px] top-[400px]"/>
       
       </div>
@@ -655,7 +655,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
         At Little Elly, our main focus is on identifying how each child prefers to absorb information. Our teachers accommodate a flexible approach to their instruction to accommodate all the different kinds of learners thus creating a more inclusive and effective learning environment where children of diverse learning styles can thrive.
         
        </Text>
-      <Image src={theory} alt='learning style theory image' class='rounded-full'/>
+      <Image src={theory} alt='learning style theory image' class='rounded-full max-md:w-[85%] my-6'/>
      </div>
  
   <Footer />
@@ -729,32 +729,32 @@ const curriculumData = [
 
   // adding shadow functionality to yellow boxes at Montessori Approach
 
-  const yellowBoxContainer = document.querySelectorAll('.yellow-boxes')
-  const yellowBoxShadow = document.querySelectorAll('.yellowBoxShadow');
+//   const yellowBoxContainer = document.querySelectorAll('.yellow-boxes')
+//   const yellowBoxShadow = document.querySelectorAll('.yellowBoxShadow');
 
-for(let i=0; i<yellowBoxContainer.length ; i++){
-  yellowBoxContainer[i].addEventListener('mouseenter',function(){
-  yellowBoxShadow[i]?.classList.remove('hidden')
-})
+// for(let i=0; i<yellowBoxContainer.length ; i++){
+//   yellowBoxContainer[i].addEventListener('mouseenter',function(){
+//   yellowBoxShadow[i]?.classList.remove('hidden')
+// })
 
-yellowBoxContainer[i].addEventListener('mouseleave',function(){
-  yellowBoxShadow[i]?.classList.add('hidden')
-})
-}
+// yellowBoxContainer[i].addEventListener('mouseleave',function(){
+//   yellowBoxShadow[i]?.classList.add('hidden')
+// })
+// }
 
 // adding shadow functionality to yellow boxes at Gardner Approach
 
-const circleContainer = document.querySelectorAll('.circle');
-const circleShadow = document.querySelectorAll('.circleShadow');
+// const circleContainer = document.querySelectorAll('.circle');
+// const circleShadow = document.querySelectorAll('.circleShadow');
 
-for(let i=0; i<circleContainer.length; i++){
-  circleContainer[i].addEventListener('mouseenter',function(){
-    circleShadow[i].classList.remove('hidden')
-  })
-  circleContainer[i].addEventListener('mouseleave', function(){
-    circleShadow[i].classList.add('hidden')
-  })
-}
+// for(let i=0; i<circleContainer.length; i++){
+//   circleContainer[i].addEventListener('mouseenter',function(){
+//     circleShadow[i].classList.remove('hidden')
+//   })
+//   circleContainer[i].addEventListener('mouseleave', function(){
+//     circleShadow[i].classList.add('hidden')
+//   })
+// }
 
 const hoverCircle = document.querySelectorAll('.hoverEffect');
 
