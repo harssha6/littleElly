@@ -8,6 +8,7 @@ import Hero from "./LandingPageHero.astro";
 import Footer from "../components/landingPage/Footer.astro";
 import Text from "../components/system/Text.astro";
 import MultiStyleText from "../components/system/MultiStyleText.astro";
+import HappyCurriculum from "../components/landingPage/HappyCurriculum.astro";
 
 import slide1 from "../images/slides/1.png";
 import slide3 from "../images/slides/4.png";
@@ -281,7 +282,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <!-- <div class="p-20"></div> -->
       <Text type="h2" class="flex flex-col  max-md:gap-2 ">
         H.A.P.P.Y Curriculum
-        <p class='text-orange-200'> <span class='text-[#fff]'> & </span> Elly’s Approach<p>
+        <p class='text-orange-200'> <span class='text-[#fff]'> & </span> Elly’s Approach</p>
        </Text>
 
     </div>
@@ -289,7 +290,8 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   </div>
   </div>
 
-  <div class="p-5 md:p-[60px] w-full" style={{background: 'linear-gradient(279deg, #E5F0FF -1.4%, rgba(255, 255, 255, 0.00) 99.99%)'}}>
+
+    <div class="p-5 md:p-[60px] w-full" style={{background: 'linear-gradient(279deg, #E5F0FF -1.4%, rgba(255, 255, 255, 0.00) 99.99%)'}}>
 
     <span class="flex flex-col justify-center relative items-center ">
       <div>
@@ -401,6 +403,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     </div>
   </div>
 </div>
+
 <div class="xl:mt-[200px] max-md:rounded-3xl  sm:mt-[130px]  lg:mt-[150px] relative md:mx-[27px] p-5 sm:p-[60px] rounded-[100px] border border-[#B892F9] bg-[#FAFAFA] h- max-sm:mt-[240px] w-full  flex  justify-center">
      <div class="w-full">
       <p class="text-[40px] font-display max-sm:my-5 text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">Areas of Learning & Development</p>
