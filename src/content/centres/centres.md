@@ -4735,6 +4735,15 @@ centers:
   - state: Assam
     poweredBy: true
     districts:
+      - district: Dhemaji
+        page:
+          subtitle: Dhemaji
+          centreHead:
+            title: Dhemaji
+            name: Mrs Niva Das Sonowal
+            description: ''
+          address: 'Nalanipam, Ward no.5 District: Dhemaji P.S. : Dhemaji '
+          telephone: '8638081507'
       - district: Guwahati
         centres:
           - centre: Beltola
