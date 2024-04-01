@@ -4739,6 +4739,7 @@ centers:
         page:
           subtitle: Dhemaji
           centreHead:
+            title: Dhemaji
             name: Mrs Niva Das Sonowal
       - district: Guwahati
         centres:
