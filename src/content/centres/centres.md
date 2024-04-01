@@ -4735,6 +4735,7 @@ centers:
   - state: Assam
     poweredBy: true
     districts:
+      - district: Dhemaji
       - district: Guwahati
         centres:
           - centre: Beltola
