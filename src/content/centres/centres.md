@@ -1849,58 +1849,6 @@ centers:
                 Raman Nagar Bangalore - 560093.
               telephone: +91 6364522241
               email: kaggadasapura@littleelly.com
-          - centre: Marathahalli Karthiknagar
-            page:
-              subtitle: Little Elly Marathahalli Karthiknagar
-              centreHead:
-                title: Centre Head
-                name: Sri Divya P
-                img: >-
-                  /images/Centers/subcenter/karthiknagarmarathahalli-centerhead.jpg
-                experience: ''
-                description: >
-                  The Centre is led by Ms. Sri Divya who is an Engineering
-                  Graduate, her love and affection towards children got her to
-                  take up a career in “Early childhood education”. She is
-                  dedicated, and hardworking and implements the curriculum
-                  effectively
-              centreCoordinator:
-                title: Centre Coordinator
-                name: Soni Thomas
-                img: ''
-                experience: ''
-                description: >
-                  The Coordinator, Ms.Soni Thomas is graduate from Calicut
-                  University and holds a professional course degree in NTT. Soni
-                  is associated with Little Elly Karthik Nagar since April
-                  2022.She believes children are the future of tomorrow and they
-                  need to be nurtured with love and care. She is well organized,
-                  resilient, and carries a positive attitude, and has excellent
-                  communication skills. She has over 10 years of experience as
-                  Preschool, Preprimary, High school teacher and 2 years as
-                  Centre Coordinator/Manager. She very well understands the
-                  child psychology and has empathy towards parent’s concern. She
-                  always interacts with a smile and resolves any concerns with
-                  ease. She is hardworking and dedicated towards her work. She
-                  has achieved her diploma in HTT & TCH from Calicut University
-                  and also holds a professional course degree in NTT (AIECCE).
-              aboutUs:
-                text: Welcome
-                description: >
-                  “Little Elly” Marathahalli-Karthik Nagar centre was opened in
-                  2010, with a vision to provide relaxed and fun filled
-                  environment for the children to learn at their own pace. We
-                  believe learning is a continuous and life long process. Our
-                  strength is a strong child centric curriculum which balances
-                  education and overall development. Our mission is to see our
-                  children as self-confident, smart individuals to face the
-                  challenges of the world.
-              addressTitle: 'Little Elly, Marathahalli - Karthik Nagar, Bangalore'
-              address: >-
-                #48, LRDE Layout, Karthik Nagar, Outer Ring Road, Opposite HDFC
-                Bank, Behind Bawarchi, Marathahalli, Bangalore – 560 037
-              telephone: +91 9908683739
-              email: karthiknagar@littleelly.com
           - centre: Mahadevapura
             page:
               subtitle: Little Elly Mahadevapura
