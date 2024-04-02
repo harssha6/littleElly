@@ -593,58 +593,6 @@ centers:
                 Station, Banaswadi, Bangalore – 560 043
               telephone: +91 9900251351
               email: banaswadi@littleelly.com
-          - centre: Basaveshwarnagar
-            page:
-              subtitle: Little Elly Basaveshwarnagar
-              centreHead:
-                title: Centre Head
-                name: Antony Mala
-                img: >-
-                  /images/Centers/subcenter/AntonyMala-Basaveshwarnagar-CenterHead.jpg
-                experience: ''
-                description: >
-                  Active person likes to create an environment where the kids
-                  can experience what reality is.
-
-
-                  She holds Masters in History and Archaeology, and MPhil degree
-                  alongside B.Ed in English and Social Science. She has wide
-                  experience as a Lecturer. She loves exploring different
-                  fields, 5 years of experience as News Anchor in ETV Kannada,
-                  worked as freelance News Reader in FM Rainbow and AIR and also
-                  worked as Medical Transcriptionist.
-
-
-                  She is dedicated in enabling growing young minds to achieve
-                  their goals; she looks forward in shaping young minds and make
-                  a difference in the lives of the kids.
-              centreCoordinator:
-                title: Centre Coordinator
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              aboutUs:
-                text: Welcome
-                description: >
-                  At our Little Elly Basaveshwarnagar, our primary focus is the
-                  regular practice of the fundamental Montessori principles of
-                  respect, freedom and consistency. Self-esteem is connected to
-                  the confidence and motivation that children need to achieve
-                  their academic goals.
-
-
-                  Our aim is to preserve these traits in our children as they
-                  continue to move through all cycles of development. We have,
-                  and we will continue to provide a safe and supportive
-                  environment as well as teaching and learning programs that
-                  meet the needs of all our children.
-              addressTitle: 'Little Elly, Basaveshwarnagar, Bangalore'
-              address: >-
-                #949, 8th C Main, 3rd Stage, 3rd Block, Basaveshwaranagar,
-                Bangalore – 560 079
-              telephone: +91 9731098877
-              email: basava@littleelly.com
           - centre: Noble Residency
             page:
               subtitle: Little Elly Noble Residency
