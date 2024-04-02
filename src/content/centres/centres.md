@@ -4134,41 +4134,6 @@ centers:
                 Phase-1, Thirumalai nagar, Perungudi, Chennai, Tamil Nadu 600096
               telephone: +91 9150202590
               email: perungudi@littleelly.com
-          - centre: Sholinganallur
-            page:
-              subtitle: Little Elly Sholinganallur
-              centreHead:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              centreCoordinator:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              aboutUs:
-                text: Welcome
-                description: >
-                  “Little Elly” Sholinganallur, offers a rich and diverse
-                  environment that helps your child grow in a developmentally
-                  appropriate way. We provide children with a safe, engaging,
-                  collaborative, and creative place to learn. At “Little Elly”,
-                  we foster an atmosphere of caring, respect, and understanding
-                  of one another and our world. We are committed to working
-                  together; parents, teachers, and child to ensure a high
-                  quality and world class preschool experience for all of our
-                  students. Our goal at “Little Elly” is to help foster your
-                  child’s growth during the first five crucial years with a
-                  child-centered & child directed approach to learning.
-              addressTitle: 'Little Elly, Sholinganallur, Chennai'
-              address: >-
-                Plot no. 222, Kirupa illam, Alamelumangapuram, Sholinganallur,
-                Chennai – 600 119
-              telephone: +91 9080920007
-              email: sholinganallur@littleelly.com
           - centre: Velachery
             page:
               subtitle: Little Elly Velachery
