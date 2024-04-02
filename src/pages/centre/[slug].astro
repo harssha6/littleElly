@@ -63,6 +63,8 @@ const pages = [
 
 const page = pages.find(page => page.name === slug)?.page
 
+console.log('page',page
+)
 ---
 
 <Layout
@@ -90,11 +92,13 @@ const page = pages.find(page => page.name === slug)?.page
             <Text type="h2">
               Little Elly -  <span class="text-yellow">{slug}</span>
              </Text> 
+             <a href="/admissions">
              <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60] mt-r">
               <Text type="base" class="text-[#AF7F30] !tracking-[2px] uppercase font-[700] font-sans text-[20px] max-md:text-[16px]">
                 Apply Now
               </Text>
             </Button>
+          </a>
           </div>
       </Hero>
     </div>
