@@ -3733,13 +3733,6 @@ centers:
           - centre: Guduvancheri
             page:
               subtitle: Guduvancheri
-              addressTitle: '6 Mahalakshmi Street, Srinivasapuram, Guduvancheri 603202'
-              address: '6 Mahalakshmi Street, Srinivasapuram, Guduvancheri 603202'
-              telephone: +91 99522 24033
-              email: guduvancheri.che@littleelly.com
-          - centre: Guduvancheri
-            page:
-              subtitle: Guduvancheri
               address: '6 Mahalakshmi Street, Srinivasapuram, Guduvancheri 603202'
               telephone: +91 99522 24033
               email: guduvancheri.che@littleelly.com
