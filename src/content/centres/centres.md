@@ -6,6 +6,12 @@ centers:
       - district: Bangalore
         centres:
           - centre: Attibele
+            page:
+              addressTitle: >-
+                #58/10, Shamayya Reddy Building,Sarjapur Road,Behind Mayura
+                bakery,Attibele,Bangalore -562107
+              telephone: +91 83100 57230
+              email: attibele.blr@littleelly.com
           - centre: Shanthi Nagar - Devanahalli
             page:
               subtitle: Little Elly Shanthi Nagar - Devanahalli
