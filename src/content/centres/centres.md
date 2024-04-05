@@ -5,6 +5,7 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Attibele
           - centre: Shanthi Nagar - Devanahalli
             page:
               subtitle: Little Elly Shanthi Nagar - Devanahalli
