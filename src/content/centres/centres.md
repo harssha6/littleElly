@@ -5,6 +5,14 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Kannamangala
+            page:
+              subtitle: Kannamangala
+              address: >-
+                Near Seegehalli - Kannamangala Rd, Dinnur, Kannamangala,
+                Bangalore, 560067
+              telephone: '+91 90084 49815, +91 99005 56095'
+              email: kannamanagala.blr@littleelly.com
           - centre: Attibele
             page:
               subtitle: Attibele
