@@ -3722,11 +3722,6 @@ centers:
     districts:
       - district: Chennai
         centres:
-          - centre: Guduvancheri
-            page:
-              addressTitle: '6 Mahalakshmi Street, Srinivasapuram, Guduvancheri 603202'
-              telephone: +91 99522 24033
-              email: guduvancheri.che@littleelly.com
           - centre: Thoriapakkam
             page:
               subtitle: Little Elly Thoriapakkam
