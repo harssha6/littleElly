@@ -3721,6 +3721,7 @@ centers:
     districts:
       - district: Chennai
         centres:
+          - centre: Guduvancheri
           - centre: Thoriapakkam
             page:
               subtitle: Little Elly Thoriapakkam
