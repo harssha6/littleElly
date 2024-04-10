@@ -3736,7 +3736,7 @@ centers:
               address: '6 Mahalakshmi Street, Srinivasapuram, Guduvancheri 603202'
               telephone: +91 99522 24033
               email: guduvancheri.che@littleelly.com
-          - centre: Thoriapakkam
+          - centre: Thoraipakkam
             page:
               subtitle: Little Elly Thoraipakkam
               addressTitle: 'Little Elly, Thoraipakkam, Chennai'
