@@ -3738,8 +3738,8 @@ centers:
               email: guduvancheri.che@littleelly.com
           - centre: Thoriapakkam
             page:
-              subtitle: Little Elly Thoriapakkam
-              addressTitle: 'Little Elly, Thoriapakkam, Chennai'
+              subtitle: Little Elly Thoraipakkam
+              addressTitle: 'Little Elly, Thoraipakkam, Chennai'
               address: >-
                 Villa No. 102, Green Homes, Devaraj Nagar, Thoraipakkam, Chennai
                 - 600096
