@@ -22,6 +22,32 @@ import cloud from "../../image/decorations/gifs/clouds.gif"
 import gift from "../../image/decorations/gifs/gift.gif"
 import clouds from "../../image/decorations/gifs/clouds.gif"
 
+const {data} =Astro.props;
+const{ title ,subtitle, whyChooseLittileElly} = data[0];
+const titleLength = title.split(' ').length;
+const subtitleLength = subtitle.split(' ').length;
+const colors = ["text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200","text-purple","text-green-200","text-[#F6BD60]","text-purple","text-primary",];
+const colorForSubTitle = ["text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple" ];
+const finalColorHeading = [...colors,...colors]
+const finalcolorForSubTitle = [...colorForSubTitle,...colorForSubTitle]
+const startingLineOfHeading = title.split(' ').slice(0,titleLength-2).join(' ')
+const coloredHeading = title.split(' ').slice(-1)[0];
+const primaryHeading = title.split(' ').slice(-2)[0];
+const startingLineOfSubTitle = subtitle.split(' ').slice(0,subtitleLength-2).join(' ')
+const coloredSubTitle = subtitle.split(' ').slice(-1)[0];
+const primarySubTitle = subtitle.split(' ').slice(-2)[0];
+// const quote = data.quote.replaceAll('<span>','<span class=\'text-[#EE7F82] font-[700] \'>')
+
+// for content 1
+const contentOneImage = whyChooseLittileElly[0].image;
+const contentOneimageAlt = whyChooseLittileElly[0].imageAlt;
+const contentOnedescription = whyChooseLittileElly[0].description.replaceAll('<span>','<span class=\'text-primary font-bold\'>');
+
+// for content 2
+const contentTwoImage = whyChooseLittileElly[1].image;
+const contentTwoimageAlt = whyChooseLittileElly[1].imageAlt;
+const contentTwodescription = whyChooseLittileElly[1].description.replaceAll('<span>','<span class=\'text-primary font-bold\'>');
+
 ---
 
 <Section class="flex flex-col pr-[40px] ] !p-0 max-md:!px-[20px] px-0">
@@ -31,23 +57,19 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
 
         <Text type="h2" class="text-center">
           <div data-appear>
-            Why Choose <br />
+            {startingLineOfHeading} <br />
             <span class="relative">
-              <span class="text-primary">Little </span> <MultiStyleText type="h2"text="Elly?" classes={[
-                "text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"
-              ]} />
-                
+              <span class="text-primary">{primaryHeading} </span> <MultiStyleText type="h2"text={coloredHeading} classes={finalColorHeading} />
+
             </span>
           </div>
         </Text>
         <Text type="regular" class="mt-[10px] !font-[700] !text-3xl max-md:!text-[20px] max-md:leading-[100%]  text-[#1C1C1C] text-center" data-appear={1}>
           <div  class="max-md:leading-[1.5rem]" data-appear={1}>
-            A world of <span class="text-primary">Endless</span> {" "}
-            <MultiStyleText 
-            classes={[
-              "text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple"
-            ]}
-            text="Possibilities" />
+            {startingLineOfSubTitle} <span class="text-primary">{primarySubTitle}</span>
+            <MultiStyleText
+            classes={finalcolorForSubTitle}
+            text={coloredSubTitle} />
           </div>
         </Text>
       </div>
@@ -58,16 +80,17 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
   </div>
   <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
     <div class="max-md:order-2 basis-[50%]" data-appear>
-      <Text type="base">
-        The significance of providing stimulation during the early years of a child's life is sometimes significantly undervalued. This is when your child is most receptive and malleable, with their brain developing over 90%. This period is marked by a continuous evolution of intellectual curiosity, rendering it the most influential and <span class="text-primary font-bold">defining phase in your child's life.</span> 
+      <Text type="base" set:html={contentOnedescription}>
+
       </Text>
     </div>
     <div class="relative w-[384px] max-md:w-[95%]" data-appear>
       <Image
         class="w-full h-full"
-        src={Why1}
-        alt="Why choose Little Elly??"
+        src={contentOneImage}
+        alt={contentOneimageAlt}
         width={700}
+        height={700}
       />
     </div>
     </div>
@@ -75,31 +98,31 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
         <div class="relative w-[384px] max-md:w-[95%]">
           <Image
             class="w-full h-full"
-            src={Why2}
-            alt="Why choose Little Elly??"
+            src={contentTwoImage}
+            alt={contentTwoimageAlt}
             width={300}
+            height={300}
           />
           <Image
-            src={gift} 
+            src={gift}
             alt="gift"
-            class= "absolute z-[10] w-[70px] max-md:right-[-5%] right-0 bottom-[10%] max-md:bottom-[2%]" 
-          /> 
+            class= "absolute z-[10] w-[70px] max-md:right-[-5%] right-0 bottom-[10%] max-md:bottom-[2%]"
+          />
         </div>
-        
+
       <div class="max-md:order-2 basis-[50%]">
         <div data-appear>
-          <Text type="base">
-            At Little Elly, we are committed to equipping each child with a safe and engaging preschool environment to explore and thrive during these crucial years. Our preschool curriculum is designed to address the specific needs of each child given the substantial mental and cognitive growth at this stage. Little Elly’s well-structured Toddler, Pre-nursery, Nursery and Kindergarten programs enhance children's emotional, intellectual, and aesthetic capabilities that <span class="text-primary font-bold">cater to their specific needs.</span>
+          <Text type="base" set:html={contentTwodescription}>
 
           </Text>
         </div>
           <!-- <Sal preset="slide-up" d="300" t="400">
-            
+
           </Sal> -->
       </div>
-    
+
     </div>
-  
+
   </div>
 </Section>
 
@@ -114,10 +137,10 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
             <span class="text-primary">Elly </span> <MultiStyleText type="h2"text="Universe" classes={[
               "text-purple","text-blue","text-green-200", "text-orange-200", "text-purple", "text-green-200","text-blue", "text-green-200"
             ]} />
-              
+
           </span>
         </Text>
-       
+
       </div>
     <Image src={Birds} alt={"birds"} class={'w-20'} ></Image>
 
@@ -126,7 +149,7 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
     <div class="flex gap-[72px]  max-md:gap-[30px] max-md:flex-col items-center relative w-fit justify-center">
       <div class="max-md:order-2 basis-[50%]">
             <Text type="base">
-              Elly is not your ordinary preschool mascot. She is lovable, friendly, and embodies all the qualities we want our children to embrace; kindness, curiosity, and a warm heart. Elly is more than just a character; she’s a teacher, a friend and a source of endless wonder for our children. <br>  <br> At Little Elly your child is not just taking their first step towards school but is becoming a part of this joyful world. As they explore the captivating journeys of the 'Elly World' and the enchanting 'Natterjack Forest' They are encouraged to engage in activities that involve <span class="text-primary font-bold">“LOOK, READ, MAKE and DO” with Olly & Elly</span> 
+              Elly is not your ordinary preschool mascot. She is lovable, friendly, and embodies all the qualities we want our children to embrace; kindness, curiosity, and a warm heart. Elly is more than just a character; she’s a teacher, a friend and a source of endless wonder for our children. <br>  <br> At Little Elly your child is not just taking their first step towards school but is becoming a part of this joyful world. As they explore the captivating journeys of the 'Elly World' and the enchanting 'Natterjack Forest' They are encouraged to engage in activities that involve <span class="text-primary font-bold">“LOOK, READ, MAKE and DO” with Olly & Elly</span>
             </Text>
       </div>
         <Image
@@ -154,9 +177,9 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
         <div class="gap-5 flex max-md:flex-col max-md:gap-0 max-sm:flex-col">
          <div>
            <Text type="base" >
-             We often say <span class="text-primary font-bold">A Happy Child means Happy Family</span> because a 
-             joyful child brings happiness to everyone around them. 
-             A child's happiness is like sunshine, spreading warmth and positivity. 
+             We often say <span class="text-primary font-bold">A Happy Child means Happy Family</span> because a
+             joyful child brings happiness to everyone around them.
+             A child's happiness is like sunshine, spreading warmth and positivity.
              Their joy can positively affect the well-being of every family, and our goal is to create
               a world filled with this kind of happiness.
               <br />
@@ -176,10 +199,10 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
                  <Marker />
                  Promoting enquiry-based learning to develop curiosity in young learners
                </div>
-             
+
            </Text>
          </div>
-         
+
 
             <!-- <div class="flex flex-col ml-5 max-md:w-full max-md:ml-0">
               <div class="bg-violet-50 rounded-[61.485px] w-fit">
@@ -206,13 +229,13 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
                 <span class="text-3xl text-primary">Y</span>ay Pedagogy
               </Text>
             </div> -->
-          
+
 
         </div>
       </div>
-  
-  
-</Section> 
+
+
+</Section>
 <!-- <div class="pt-8" /> -->
 <style>
   .pill{
@@ -222,5 +245,5 @@ import clouds from "../../image/decorations/gifs/clouds.gif"
     height: 30px;
     margin-inline: auto;
   }
-  
+
 </style>

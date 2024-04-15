@@ -84,9 +84,14 @@ const testimonials = {
     ],
 }
 
-const title = testimonials.title;
+// const title = testimonials.title;
 const data = testimonials.data
-const subtitle = testimonials.subtitle;
+// const subtitle = testimonials.subtitle;
+
+const {data: testimonialsData} = Astro.props;
+// const {title,subtitle,testimonialsCardDetail } = testimonialsData;
+// console.log(testimonialsData.subTitle)
+
 ---
 
 <Section class="flex flex-col items-center bg-[#FBDECE] gap-4 pt-10 px-0">
@@ -96,9 +101,9 @@ const subtitle = testimonials.subtitle;
         <Image src={SparkleIllustration} alt={"heart"} class={'object-contain max-sm:w-[40px]'}></Image>
       </div>
       <div>
-       <Text type={'h2'} class='text-[#1E2F67] text-center'>Testimonials</Text>
+       <Text type={'h2'} class='text-[#1E2F67] text-center'>{testimonialsData?.title}</Text>
 
-        <Text type={'base'} class='font-bold text-center'>Hear from our Parents!</Text>
+        <Text type={'base'} class='font-bold text-center'>{testimonialsData?.subTitle}</Text>
       </div>
        <div class="flex max-h-[80px] gap-l max-sm:gap-r max-sm:flex-col">
          <Image src={HeartIllustration} alt={"heart"} class={'object-contain max-sm:w-[40px]'} ></Image>
@@ -114,7 +119,7 @@ const subtitle = testimonials.subtitle;
       id="testimonial-carousel"
       stackOnMobile
     >
-    {data.slice(1).map(item => {
+    <!-- {data.map(item => {
       return (
         <CarouselCard>
           <TestimonicalCard
@@ -129,6 +134,22 @@ const subtitle = testimonials.subtitle;
           />
           </CarouselCard>
       )
+    })} -->
+    {testimonialsData?.testimonialsCardDetail.map(item => {
+      return (
+        <CarouselCard>
+          <TestimonicalCard
+              title={item.title}
+              quote={item.quote}
+              author={item?.personName}
+              image={item.image}
+              desc={item.description}
+              authorSubtext={item.personTitle}
+              group={item.group}
+              className="bg-transparent"
+          />
+          </CarouselCard>
+      )
     })}
     </Carousel>
 
@@ -137,21 +158,35 @@ const subtitle = testimonials.subtitle;
   </div>
   <div class="testimonial-swiper max-w-[100vw] hidden max-md:flex flex-col items-center">
    <div class="swiper-wrapper">
-     {data.slice(1).map(item => {
+     {testimonialsData?.testimonialsCardDetail.map(item => {
        return (
          <TestimonicalCard
+         title={item.title}
              quote={item.quote}
-             author={item?.author}
+             author={item?.personName}
              image={item.image}
-             ctaText={item.ctaText}
-             ctaLink={item.ctaLink}
-             desc={item.desc}
+             desc={item.description}
              swiper
-             authorSubtext={item.authorSubtext}
+             authorSubtext={item.personTitle}
+             group={item.group}
              className="bg-transparent"
          />
        )
      })}
+      <!-- {testimonialsData?.testimonialsCardDetail.map(item => {
+        return (
+          <TestimonicalCard
+              title={item.title}
+              quote={item.quote}
+              author={item?.personName}
+              image={item.image}
+              desc={item.description}
+              authorSubtext={item.personTitle}
+              group={item.group}
+              className="bg-transparent"
+          />
+        )
+      })} -->
    </div>
    <div class="mt-[40px] flex justify-between w-[100px]">
     <div class="w-10 h-10 pointer-events-auto cursor-pointer" data-prev-swiper='testimonial-swiper'>

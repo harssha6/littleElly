@@ -63,14 +63,49 @@ import curriculamTeam from "../images/aboutUs/CURRICULUM-TEAM.png";
 import Gallery from "../components/Gallery.astro";
 import Ticker from "../components/Ticker.astro";
 
-import ticker1 from '../images/aboutUs/ticker/1.png'
-import ticker2 from '../images/aboutUs/ticker/2.png'
-import ticker3 from '../images/aboutUs/ticker/3.png'
-import ticker4 from '../images/aboutUs/ticker/4.png'
-import ticker5 from '../images/aboutUs/ticker/5.png'
-import ticker6 from '../images/aboutUs/ticker/6.png'
-import ticker7 from '../images/aboutUs/ticker/7.png'
-import ticker8 from '../images/aboutUs/ticker/8.png'
+// import ticker1 from '../images/aboutUs/ticker/1.png'
+// import ticker2 from '../images/aboutUs/ticker/2.png'
+// import ticker3 from '../images/aboutUs/ticker/3.png'
+// import ticker4 from '../images/aboutUs/ticker/4.png'
+// import ticker5 from '../images/aboutUs/ticker/5.png'
+// import ticker6 from '../images/aboutUs/ticker/6.png'
+// import ticker7 from '../images/aboutUs/ticker/7.png'
+// import ticker8 from '../images/aboutUs/ticker/8.png'
+
+import { getEntry } from 'astro:content';
+import HeroTitle from "../components/HeroTitle.astro";
+
+const { data } = await getEntry('aboutUs', 'aboutus')
+const {heroImages,herotitle,visionAndMissionSection,ourPhilosophySection,awardsSection,ctaCardTitleAbout} = data;
+const titlelength = herotitle.split(' ').length;
+const titleSimple = herotitle.split(' ').slice(0,titlelength-1).join(' ');
+const titleColoredWord = herotitle.split(' ').slice(-1).join(' ');
+const visionSectionlength = visionAndMissionSection[0].title.split(' ').length;
+const visionSectionFirstWord = visionAndMissionSection[0].title.split(' ')[0];
+const visionSectionMiddleWord = visionAndMissionSection[0].title.split(' ').slice(1,visionSectionlength-1);
+const visionSectionLasttWord = visionAndMissionSection[0].title.split(' ').slice(-1).join(' ');
+const visionSectionDescription = visionAndMissionSection[0].description;
+const tickerArr = visionAndMissionSection[0].slideImages
+const tickerArrfromOneToFour = tickerArr.slice(0,4)
+const tickerArrfromFiveToEight = tickerArr.slice(4,8)
+const {title:ourPhilosophyTitle,description:ourPhilosophyDescription,image:ourPhilosophyImage,imageAlt:ourPhilosophyImageAlt} =ourPhilosophySection[0];
+const ourPhilosophyTitleLength = ourPhilosophyTitle.split(' ').length;
+const ourPhilosophyTitleSimple = ourPhilosophyTitle.split(' ').slice(0,ourPhilosophyTitleLength-1).join(' ')
+const ourPhilosophyTitleColored = ourPhilosophyTitle.split(' ').slice(-1).join(' ');
+const ourTeamSection= data.ourTeamSection[0];
+const {heading,teamMembers} = ourTeamSection;
+const ourTeamSectionHeadingLength = heading.split(' ').length;
+const ourTeamSectionHeadingStarting = heading.split(' ').slice(0,ourTeamSectionHeadingLength-1).join(' ')
+const ourTeamSectionHeadingprimary = heading.split(' ').slice(-1).join(' ');
+const vittalObject = teamMembers[0];
+const preetiObject = teamMembers[1];
+const amitObject = teamMembers[2];
+const preetiAlvaObject = teamMembers[3];
+const zonalObject = teamMembers[4];
+const curriculumObject = teamMembers[5];
+const heroImage = [{...data.heroImages,type : 'image'}]
+console.log(heroImage)
+
 ---
 
 <Layout
@@ -86,18 +121,14 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
   <Hero
     config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
     showSlide={true}
-    slideImages={[
-      { slide: slide1.src, position: "center 64%", type: "image" },
-      { slide: slide2.src, position: "top 20%", type: "image" },
-      { slide: slide3.src, position: "top 64%", type: "image" },
-    ]}
+    slideImages={data.heroImages}
     contentDirection="items-end"
     className="overflow-hidden font-roundo"
   >
     <div slot="title">
       <!-- <div class="p-20"></div> -->
       <Text type="h1Sm">
-        About  <span class="text-yellow">Us</span>
+        {titleSimple}{' '}  <span class="text-yellow">{titleColoredWord}</span>
        </Text>
 
     </div>
@@ -115,25 +146,25 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
 
     >
       <div class="max-md:flex block flex-col items-center md:p-xl py-l px-5 text-left ">
-        <Text type="h2" class="text-[#282828]"><span class="text-primary">Vision</span> and <span class="text-[#78ADF9]">Mission</span></Text>
+        <Text type="h2" class="text-[#282828]"><span class="text-primary">{visionSectionFirstWord}</span> {visionSectionMiddleWord}{' '} <span class="text-[#78ADF9]">{visionSectionLasttWord}</span></Text>
 
         <div class="pt-4 max-md:pt-2"></div>
         <div class="pt-6 max-md:pt-2"></div>
         <Text type="base" class="max-w-[600px] font-sans text-[#1B2226]">
-          At Little Elly, we aim to provide each child with a nurturing and stimulating environment that promotes their overall growth and development. Through our network of preschools, our mission is to establish a world that is full of love, safety,  and cultivates a lifelong passion for learning. Our Toddler, Pre-nursery, Nursery and Kindergarten programs prioritize each child's individual needs through a child-centric approach. Our dedicated team of trained educators aim to empower children in academic, social, and emotional aspects, as well as lay a solid foundation for their future academic and personal success.
+          {visionSectionDescription}
         </Text>
       </div>
-      
+
       <div class="overflow-hidden">
         <div class="hmove hidden px-4 max-md:flex py-2 gap-4 w-screen mb-4">
-          {[ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+          {tickerArr.map((item, i) => (
             <div class="w-[200px] h-[150px] flex-shrink-0 rounded-md">
-              <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+              <Image width={252} height={305} src={item.image} alt={item.imageAlt} class="w-full h-full object-cover" />
             </div>
           ))}
-          {[ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+          {tickerArr.map((item, i) => (
             <div class="w-[200px] h-[150px] flex-shrink-0 rounded-md">
-              <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+              <Image width={252} height={305} src={item.image} alt={item.imageAlt} class="w-full h-full object-cover" />
             </div>
           ))}
           <div class="w-[200px] h-[150px] bg-red-100 flex-shrink-0"></div>
@@ -149,17 +180,17 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
           <div class="h-[600px] overflow-hidden">
             <div class="relative vmove">
               <div class="flex flex-col max-md:flex-row gap-4 justify-center items-center text-center">
-                {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
+                {tickerArrfromOneToFour.map((item, i) => (
                   <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
-                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                    <Image width={252} height={305} src={item.image} alt={item.imageAlt} width={252} height={305} class="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
               <div class="pt-4"></div>
               <div class="flex flex-col max-md:flex-row gap-4 justify-center items-center text-center">
-                {[ticker1, ticker2, ticker3, ticker4].map((img, i) => (
+                {tickerArrfromOneToFour.map((item, i) => (
                   <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
-                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                    <Image width={252} height={305} src={item.image} alt={item.imageAlt} width={252} height={305} class="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -169,17 +200,17 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
           <div class="h-[600px] overflow-hidden">
             <div class="relative vmove-reverse">
               <div class="flex flex-col gap-4 justify-center items-center text-center">
-                {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+                {tickerArrfromFiveToEight.map((item, i) => (
                   <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
-                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                    <Image width={252} height={305} src={item.image} alt={item.imageAlt} width={252} height={305} class="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
               <div class="pt-4"></div>
               <div class="flex flex-col gap-4 justify-center items-center text-center">
-                {[ticker5, ticker6, ticker7, ticker8].map((img, i) => (
+                {tickerArrfromFiveToEight.map((item, i) => (
                   <div class="w-[252px] max-md:w-[200px] max-md:h-[140px] h-[305px] rounded-md">
-                    <Image src={img} alt={`ticker-${i}`} class="w-full h-full object-cover" />
+                    <Image width={252} height={305} src={item.image} alt={item.imageAlt} width={252} height={305} class="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -199,8 +230,8 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
         <!-- <Image src={Rope} alt={"rope"} class={'w-30 object-contain absolute -top-8 left-0 block max-md:hidden'} data-y={0}></Image> -->
           <Text type="h2" class="text-center">
             <div>
-              Our <br />
-              <span class="text-6xl font-semibold text-center text-[#F6BD60]" style="text-shadow: 1.1px 2.19px #6F322E;">Philosophy</span>
+              {ourPhilosophyTitleSimple} <br />
+              <span class="text-6xl font-semibold text-center text-[#F6BD60]" style="text-shadow: 1.1px 2.19px #6F322E;">{ourPhilosophyTitleColored}</span>
 
               <!-- <span class="relative">
                 <span class="text-primary">Rich </span> <MultiStyleText type="h2"text="History" classes={[
@@ -217,9 +248,9 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
     </div>
     <div class="flex gap-6 w-full justify-between items-center max-md:flex-col max-md:items-center max-md:mt-0">
       <Text type="base" class="!text-[22px] max-md:!text-[18px]  !text-[#1B2226] !leading-[160%] max-w-[50ch] mt-r max-md:mt-0">
-        Our Philosophy is simple. There is a huge emphasis on introducing children to a world of endless possibilities. As we continue to expand our presence and welcome more children into the Elly family, including preschool and early childhood education, we remain dedicated to continual innovation to deliver the finest educational experience. We also uphold our core values while nurturing strong relationships with parents and the community, all to make a positive impact on the lives of children worldwide.<br class="mb-r">
+         {ourPhilosophyDescription}
       </Text>
-      <Image src={Philosophy} alt={"Philosophy"} class={"max-w-[448px] max-h-[445px] basis-[40%] max-md:max-w-[340px] max-md:max-h-[360px]"} />
+      <Image src={ourPhilosophyImage} alt={ourPhilosophyImageAlt} width={448} height={446} class={"max-w-[448px] max-h-[445px] basis-[40%] max-md:max-w-[340px] max-md:max-h-[360px]"} />
     </div>
 
   </Section>
@@ -238,7 +269,7 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
 
   <Section class="flex relative items-center justify-center flex-col">
 
-    <Text type="h2" class="text-purple text-center pt-0">Our <span class="text-primary">Team</span></Text>
+    <Text type="h2" class="text-purple text-center pt-0">{ourTeamSectionHeadingStarting}{' '} <span class="text-primary">{ourTeamSectionHeadingprimary}</span></Text>
 
     <!-- <div class="flex flex-col justify-center items-center"> -->
       <div class="absolute hidden md:block left-0 w-fit">
@@ -255,34 +286,34 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
         <!-- <div class="flex justify-between"> -->
         <div class="grid grid-cols-1 gap-20 max-md:flex max-md:flex-col md:grid-cols-2 md:gap-[200px]">
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={team1} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} height={264} width={264} src={vittalObject.image} alt={vittalObject.imageAlt} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary text-center">Vittal Bhandary</Text>
-              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">Founder Director</Text>
+              <Text type="h3" class="text-primary text-center">{vittalObject.personName}</Text>
+              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">{vittalObject.personRole}</Text>
             </div>
           </div>
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={preeti} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} height={264} width={264} src={preetiObject.image} alt={preetiObject.imageAlt} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary text-center">Preeti Bhandary</Text>
-              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">Head of Curriculum Innovation and Founder</Text>
+              <Text type="h3" class="text-primary text-center">{preetiObject.personName}</Text>
+              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">{preetiObject.personRole}</Text>
             </div>
           </div>
         </div>
         <!-- <div class="flex justify-between"> -->
           <div class="grid grid-cols-1 gap-20 max-md:flex max-md:flex-col md:grid-cols-2 md:gap-[200px]">
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={amitTiwari} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"}  height={264} width={264} src={amitObject.image} alt={amitObject.imageAlt} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary text-center ">Amit Tiwari</Text>
-              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">Chief Operating Officer</Text>
+              <Text type="h3" class="text-primary text-center ">{amitObject.personName}</Text>
+              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">{amitObject.personRole}</Text>
             </div>
           </div>
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} src={PreetiAlva} alt={'vittal'} />
+            <Image class={"rounded-full w-[264px] h-[264px] object-cover border-primary border-[5px]"} height={264} width={264} src={preetiAlvaObject.image} alt={preetiAlvaObject.imageAlt} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h3" class="text-primary text-center">Preeti Alva</Text>
-              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">Head of Operations</Text>
+              <Text type="h3" class="text-primary text-center">{preetiAlvaObject.personName}</Text>
+              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">{preetiAlvaObject.personRole}</Text>
             </div>
           </div>
         </div>
@@ -290,15 +321,15 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
         <div class="grid md:grid-cols-2 grid-col-1 gap-20  md:gap-[106px]">
           <div class="flex items-center justify-center flex-col">
             <!-- <Image class={"rounded-[32px] w-auto aspect-video h-[204px] object-cover border-primary border-[5px]"} src={Zonal} alt={'team'} /> -->
-            <Image class={"rounded-[32px] w-auto aspect-video h-[170px] md:h-[204px] object-cover border-primary border-[5px]"} src={Zonal} alt={'team'} />
+            <Image class={"rounded-[32px] w-auto aspect-video h-[170px] md:h-[204px] object-cover border-primary border-[5px]"} height={204} width={204} src={zonalObject.image} alt={zonalObject.imageAlt} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">Zonal Operations Team</Text>
+              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">{zonalObject.personRole}</Text>
             </div>
           </div>
           <div class="flex items-center justify-center flex-col">
-            <Image class={"rounded-[32px] w-auto aspect-video h-[170px] md:h-[204px] object-cover border-primary border-[5px]"} src={curriculamTeam} alt={'vittal'} />
+            <Image class={"rounded-[32px] w-auto aspect-video h-[170px] md:h-[204px] object-cover border-primary border-[5px]"}  height={204} width={204} src={curriculumObject.image} alt={curriculumObject.imageAlt} />
             <div class="mt-r flex flex-col items-center">
-              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">Curriculum Team</Text>
+              <Text type="h4" class="text-[#111] font-semibold text-center font-sans">{curriculumObject.personRole}</Text>
             </div>
           </div>
         </div>
@@ -308,8 +339,8 @@ import ticker8 from '../images/aboutUs/ticker/8.png'
   </div>
 
   </Section>
-  <Awards />
-  <GoToCta />
+  <Awards data={awardsSection[0]} />
+  <GoToCta data={ctaCardTitleAbout} />
   <Footer />
 </Layout>
 

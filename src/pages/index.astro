@@ -30,11 +30,13 @@ import MeetCharacters from "../components/landingPage/MeetCharacters.astro";
 import { getEntry } from 'astro:content';
 
 const { data } = await getEntry('centres', 'centres')
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
+
 
 ---
 
-<Layout 
-  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare" 
+<Layout
+  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare"
   description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
   keywords="Best preschool near me"
 >
@@ -43,20 +45,20 @@ const { data } = await getEntry('centres', 'centres')
     <div
       class="hero flex !min-h-[calc(100vh+500px)] bg-red"
     >
-      <AnotherHero />
+      <AnotherHero data={homePageCmsData} />
     </div>
-    <Overview />
-    <Why/>
-    <MeetCharacters />
-    <HappyCurriculum />
-    <Program  />
-    <DaycareFacilities />
+    <Overview data={homePageCmsData.cloudData}/>
+    <Why data={homePageCmsData.whyChooseLittileElly}/>
+    <MeetCharacters data={homePageCmsData.ellyUniverseSection}/>
+    <HappyCurriculum data={homePageCmsData.happyCurriculumSection} />
+    <Program data={homePageCmsData.ourPrograms} />
+    <DaycareFacilities data={homePageCmsData.dayCaresSection[0]} />
     <!-- <FindCenter/> -->
     <FindCenterReact client:load data={data} />
-    <Events />
-    <Testimonial />
-    <GoToCta />
-    <Footer /> 
+    <Events data={homePageCmsData.newsAndEvent[0]} />
+    <Testimonial data={homePageCmsData.testimonials[0]}/>
+    <GoToCta data={homePageCmsData.ctaCardTitle} />
+    <Footer />
 
   </div>
 </Layout>

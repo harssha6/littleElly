@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import { boolean } from "astro/zod";
 
 interface TestimonialProps {
+  title: string;
   image: string;
   quote: string;
   author: string;
@@ -17,9 +18,10 @@ interface TestimonialProps {
   desc?: string;
   swiper?: boolean
   authorSubtext?: string;
+  group?: string;
 }
 
-const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, desc, authorSubtext, swiper} = Astro.props as TestimonialProps
+const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, desc, authorSubtext, swiper , title, group} = Astro.props as TestimonialProps
 ---
 
 <div class=`overflow-hidden min-h-[96.4%]  mt-l flex flex-row  max-md:flex-col max-md:!h-auto ${className} ${swiper ? 'swiper-slide' : ''} bg-white rounded-[35px] py-r px-r max-md:py-[8px] max-md:px-[6px] max-w-[410px]`>
@@ -35,13 +37,13 @@ const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, de
     <!-- <div class='flex flex-col justify-around max-md:justify-start border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden h-[100%]'> -->
     <div class='flex flex-col justify-around max-md:justify-start border-dashed border-[2px] border-[#FF7162] rounded-[25px] overflow-hidden h-[100%]'>
 
-      <Image class={"rounded-[23px]"} src={image} alt={"image"} class="h-[300px] object-cover" />
+      <Image class={"rounded-[23px]"} src={image} height={300} width={300} alt={"image"} class="h-[300px] object-cover" />
 
       <div class="p-r">
         <div class="md:h-[600px]">
         <div class="md:h-auto">
           <Text type="regular" class="text-[#121212] font-[700] italic">
-            I am glad I chose Little Elly because
+           {title}
             <br class="max-md:hidden block" />
             <span class="text-[#EE7F82] font-[700]">
               {quote}
@@ -61,7 +63,7 @@ const {image=student3,quote,author,ctaText,ctaLink,imageFade=false,className, de
           </Text>
 
            <Text type="base" class="text-[#C25668] font-[700] !text-[15px]">
-            {authorSubtext}
+            {authorSubtext},{' '}{group}
           </Text>
 
         </div>

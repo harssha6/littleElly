@@ -11,28 +11,38 @@ import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
 import Carousel from "../system/Carousel.astro"
 import CarouselCard from "../system/CarouselCard.astro"
 import instagramIcon from '../../icons/instagramIcon.svg'
+import { getEntry } from "astro:content"
 
-const data = {
-    title: 'Little Elly Voices',
-    subtitle: 'Stories of Transformation and Growth',
-    data: [
-      {
-        img: event1,
-        title: "Sports Day - Where tiny feet chase big dreams",
-        desc: 'Our preschoolers are set to display their athletic skills in fun races and relays. From adorable races to playful relays, every moment promises laughter and learning.',
-      },
-      {
-        img: event2,
-        title: "Little Ones preparing for annual day",
-        desc: "Preschoolers are rehearsing dances and lines, creating a colorful, enthusiastic show. With each twirl and every heartfelt expression, their joy becomes the center stage of this magical celebration.",
-      },
-      {
-        img: event3,
-        title: "Creating memories during Pongal",
-        desc: 'Little Elly buzzes with unity as children explore harvest festivals. They share stories and festive experiences, embracing diverse cultures.',
-      },
-    ],
-}
+const { data } = Astro.props;
+const { description, instagramUrl } = data;
+const cardData = data.newsAndEventCardDetail
+const totalLengthOftitle = data.title.split(' ').length;
+const getLastWordOfTitle = data.title.split(' ').slice(-1).join(' ');
+const gettingPrimaryWordsOfTitle = data.title.split(' ').slice(0,totalLengthOftitle-1).join(' ')
+const instagramHyperlinkText = data.instagramText
+
+
+// const data = {
+//     title: 'Little Elly Voices',
+//     subtitle: 'Stories of Transformation and Growth',
+//     data: [
+//       {
+//         img: event1,
+//         title: "Sports Day - Where tiny feet chase big dreams",
+//         desc: 'Our preschoolers are set to display their athletic skills in fun races and relays. From adorable races to playful relays, every moment promises laughter and learning.',
+//       },
+//       {
+//         img: event2,
+//         title: "Little Ones preparing for annual day",
+//         desc: "Preschoolers are rehearsing dances and lines, creating a colorful, enthusiastic show. With each twirl and every heartfelt expression, their joy becomes the center stage of this magical celebration.",
+//       },
+//       {
+//         img: event3,
+//         title: "Creating memories during Pongal",
+//         desc: 'Little Elly buzzes with unity as children explore harvest festivals. They share stories and festive experiences, embracing diverse cultures.',
+//       },
+//     ],
+// }
 ---
 
 <Section class="flex flex-col gap-l overflow-hidden" style={{
@@ -40,10 +50,10 @@ const data = {
 }}>
     <div data-appear class="text-center">
         <Text type="h2" class="text-[#253B70]">
-            News & <span class="text-red-600">Events</span>
+            {gettingPrimaryWordsOfTitle} {' '} <span class="text-red-600">{getLastWordOfTitle}</span>
         </Text>
         <Text type="base">
-            Stay updated with the latest happenings, follow us at <img src={instagramIcon.src} alt="instagram" class="w-[20px] h-[20px] inline-block" /><a class="text-red-600 underline" href="https://www.instagram.com/littleelly_preschool/" target="_blank">@littleelly_preschool</a>
+            {description} {' '} <img src={instagramIcon.src} alt="instagram" class="w-[20px] h-[20px] inline-block" /><a class="text-red-600 underline" href={instagramUrl} target="_blank">{instagramHyperlinkText}</a>
         </Text>
     </div>
     <Carousel
@@ -51,15 +61,15 @@ const data = {
     class="gap-m overflow-scroll w-fit max-md:w-[unset] mx-auto"
     id="news-events-carousel"
   >
-    
-      {data.data.map((item, index) => (
+
+      {cardData.map((item, index) => (
           <CarouselCard>
             <EventCard {...item} />
             </CarouselCard>
         ))}
   </Carousel>
 
-<!--   
+<!--
     <div class="flex w-[160px] justify-between">
         <FilledArrowCircle
             svgClass={"w-[58px] h-[58px] max-md:w-[80px] max-md:h-[80px] rotate-180"}

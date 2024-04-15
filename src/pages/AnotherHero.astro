@@ -39,6 +39,7 @@ import heroSectionLayer4 from '../images/heroSection/z-4.png'
 import happyCurriculum from '../images/heroSection/happyCurriculum.svg'
 import elephantShadow from '../images/heroSection/elephantShadow.svg'
 import heroMb from '../images/heroMb.png'
+import { programData } from "../components/Program.astro"
 
 const leftCloudSVG = `<svg width="100%" height="100%" viewBox="0 0 1239 1152" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M183.158 808.96C203.914 816.467 225.31 815.003 241.306 802.912C245.571 799.687 249.14 795.858 252.3 791.489C268.078 801.91 286.548 803.225 299.496 793.436C308.941 786.296 313.526 774.627 312.919 761.79C328.451 768.72 345.255 768.464 357.442 759.252C359.27 757.87 360.809 756.423 362.213 754.796C365.213 761.298 369.094 767.7 373.721 773.82C401.482 810.545 447.38 822.809 476.02 801.16C490.949 789.874 498.247 771.344 497.894 751.243C520.127 766.403 546.857 768.828 565.29 754.894C580.981 743.033 586.951 722.113 583.049 700.167C596.682 707.118 611.859 707.244 622.675 699.068C625.722 696.765 628.208 694.037 630.133 690.884C649.508 702.264 671.792 703.241 687.331 691.495C702.564 679.979 707.789 659.339 702.957 638.38C703.567 637.919 704.16 637.754 704.769 637.293C715.89 628.886 719.788 613.775 716.41 598.224C734.565 602.605 752.652 600.248 766.667 589.653C782.053 578.023 789.384 558.902 788.639 537.966C811.435 540.253 833.619 535.082 851.443 521.608C875.969 503.068 887.58 472.509 885.907 439.26C894.433 438.19 902.345 435.038 909.2 429.856C935.555 409.934 936.197 366.448 910.749 332.784C909.797 331.524 908.692 330.379 907.739 329.119C910.857 328.177 913.719 326.579 916.461 324.506C928.191 315.639 932.002 299.462 927.503 283.061C936.743 282.3 945.52 279.343 952.832 273.815C972.484 258.96 977.129 230.271 966.653 203.111C968.008 202.37 969.515 201.514 970.734 200.592C982.007 192.071 984.8 175.815 979.235 160.219L901.939 57.9669C901.787 58.082 901.618 58.4924 901.466 58.6075C887.768 52.8375 873.288 53.3164 862.624 61.3775C857.292 65.408 853.49 70.8284 851.233 77.3435C842.02 74.9727 832.747 76.324 825.587 81.7364C818.275 87.264 814.582 95.9962 814.351 105.507C795.902 98.5189 776.573 99.5511 762.101 110.491C750.219 119.473 743.757 133.41 742.896 149.055C731.195 141.492 717.389 140.33 707.792 147.585C699.261 154.034 695.998 165.552 698.553 177.483C687.616 177.264 677.228 180.307 668.545 186.871C657.881 194.932 651.67 206.983 649.752 220.597C640.708 217.816 631.468 218.577 624.46 223.874C617.605 229.056 614.369 237.443 614.442 246.723C597.957 238.533 579.712 238.464 566.61 248.368C556.251 256.198 551.041 268.624 550.854 282.627C529.125 279.533 505.009 285.316 484.748 300.632C459.917 319.403 447.114 347.752 448.72 374.261C430.129 364.551 409.424 364.079 394.494 375.364C389.62 379.049 385.85 383.879 382.929 389.199C368.735 381.823 353.27 381.632 341.997 390.154C330.876 398.561 326.842 413.492 329.931 428.979C308.882 426.785 288.766 431.525 272.466 443.847C246.873 463.193 236.999 496.683 242.645 532.02C226.117 527.258 209.521 529.054 196.724 538.727C183.471 548.745 177.152 565.404 177.923 583.209C173.94 583.956 170.197 585.655 166.845 588.188C163.037 591.067 160.197 594.911 158.359 599.13C146.938 602.388 135.37 608.304 124.402 616.595C99.8752 635.135 86.0488 660.863 86.7776 682.095L182.853 809.19L183.158 808.96Z" fill="#FF989C"/>
@@ -64,6 +65,23 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
 </linearGradient>
 </defs>
 </svg>`
+
+const {data} = Astro.props;
+const heading = data.heading;
+const headingLength = heading.split(' ').length;
+const primaryHeading = heading.split(' ').slice(0,headingLength-1).join(' ');
+const headingMulticoloredText =  heading.split(' ').slice(-1)[0];
+const colors = ["text-purple","text-primary","text-green-200","text-[#F6BD60]","text-primary","text-purple","text-green-200","text-[#F6BD60]","text-purple","text-primary",];
+const finalColor = [...colors,...colors]
+const heroDescription = data.description;
+const heroButtonText = data.buttonText;
+const heroButtonLink = data.buttonLink;
+const quote = data.quote.replaceAll('<span>','<span class=\'text-[#EE7F82] font-[700] \'>')
+const quotePersonName = data.quotePersonName;
+const quoteImage = data.quoteImage;
+const quoteImageAlt = data.quoteImageAlt;
+
+
 ---
 
 <!-- Pre-school -->
@@ -85,7 +103,7 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
       <!-- <Image src={happyCurriculum} class="opacity-0 w-[290px] h-[140px] object-contain absolute bottom-[24%] right-[10%]" alt={"decoration"} width={290} /> -->
       <!-- <div data-hero-elephant class="opacity-0 w-full h-full absolute top-0 left-0">
         <div class="absolute right-[-1%] bottom-[43%] -scale-x-100" data-appear data-delay={0.8}  data-trigger="hero-container">
-          <Image data-hero-elephant-heart src={heartgif} class=" z-[42]  absolute top-[-10%] left-[42%] object-contain h-[50px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%]" alt={"decoration"} />  
+          <Image data-hero-elephant-heart src={heartgif} class=" z-[42]  absolute top-[-10%] left-[42%] object-contain h-[50px] max-sm:h-[90px] max-sm:left-[1%] max-sm:top-[17%]" alt={"decoration"} />
           <Image src={Elephant} class=" z-10  object-contain h-[150px]  max-sm:hidden" alt={"decoration"} />
         </div>
       </div> -->
@@ -97,7 +115,7 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
     <Image src={CloudLeft} class="absolute top-0 left-0 h-[150px] w-[420px] max-sm:hidden" alt={"decoration"} data-appear data-delay={0.1} data-y={0} data-x={-150} data-t={0.4} data-trigger="hero-container" data-cloud={1} />
     <Image src={CloudRight} class="absolute top-0 right-0 h-[272px] w-[205px]  max-sm:hidden" alt={"decoration"} data-appear data-delay={0.1} data-y={0} data-x={150} data-t={0.4} data-trigger="hero-container" data-cloud={2} />
   </div>
-<!-- 
+<!--
   <div  class="opacity-0 absolute top-[18%] left-[15%] max-md:top-[12%] max-md:left-[2%]" data-hero-top-animal data-appear data-delay={0.8} data-y={0} data-x={-20}>
     <Image src={music} class="opacity-0 absolute top-[-10%] left-[30%] max-md:top-[2%] object-contain h-[50px] max-sm:h-[30px] max-sm:right-[-5%] max-sm:top-[-6%]" alt={"decoration"} />
     <Image src={Olly} class="opacity-0 z-[100] relative object-contain h-[200px] max-sm:h-[26vw] max-sm:left-[0%] max-sm:top-[1%] w-auto" alt={"decoration"}  />
@@ -113,42 +131,34 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
     <div class="flex flex-col items-center gap-s relative" data-parent="hero-container">
       <div class="flex flex-col items-center gap-s max-md:min-h-[110vh]" data-hero-container>
         <Text type="h2" class="text-center text-primary text-[4.5rem] max-md:!text-[48px] !leading-11">
-            <div data-delay={0.1} data-appear>A Happy</div>
+            <div data-delay={0.1} data-appear>{primaryHeading}</div>
             <div data-delay={0.1} data-appear={1} style={{textShadow: "0px 4.016px 2.008px rgba(21, 2, 55, 0.10);"}}>
-              <MultiStyleText  text="Pre-school" class="text-primary"
-                  classes={[
-                      "text-purple",
-                      "text-primary",
-                      "text-green-200",
-                      "text-[#F6BD60]",
-                      "text-primary",
-                      "text-purple",
-                      "text-green-200",
-                      "text-[#F6BD60]",
-                      "text-purple",
-                      "text-primary",
-                  ]}
+              <MultiStyleText  text={headingMulticoloredText} class="text-primary"
+                  classes={finalColor}
               />
               </div>
         </Text>
         <div data-delay={0.1} data-appear={2}>
-          <Text type="regular" class="text-red-800 font-[600] tracking-[0.8px] leading-[120%] font-sans text-center !text-[26px] max-md:!text-[22px] max-md:px-[16px] px-0">
+          <!-- <Text type="regular" class="text-red-800 font-[600] tracking-[0.8px] leading-[120%] font-sans text-center !text-[26px] max-md:!text-[22px] max-md:px-[16px] px-0">
           Where every day is an <br class="hidden max-md:block" />unforgettable <br class="block max-md:hidden" />
             adventure of learning
-          </Text>
+          </Text> -->
+          <Text type="regular" class="text-red-800 md:w-[480px] font-[600] tracking-[0.8px] leading-[120%] font-sans text-center !text-[26px] max-md:!text-[22px] max-md:px-[16px] px-0">
+            {heroDescription}
+            </Text>
         </div>
         <div  data-delay={0.4} data-appear={3}>
           <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60]" class="mt-m max-md:mt-[20px]" >
-            <a href="/admissions">
-  
+            <a href={heroButtonLink}>
+
               <Text type="base" class="text-[#AF7F30] !tracking-[2px] uppercase font-[700] font-sans text-[20px] max-md:text-[16px]">
-                Apply Now
+                {heroButtonText}
               </Text>
             </a>
           </Button>
         </div>
       </div>
-        
+
     </div>
 
     <div
@@ -161,9 +171,9 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
       <Image src={heroStudent} class="absolute top-0 left-[0%] w-full h-full object-contain z-[2]" alt={"student holds"} data-appear data-delay={1.2} data-opacity={1} data-y={530} data-trigger="hero-container"   />
     </div>
     <!-- <Image src={Student} class="max-w-[400px] object-contain mt-[30px] max-sm:w-[50vw] max-sm:mt-[40%] z-[-1]" alt={"student holds"} data-appear data-delay={1.2} data-trigger="hero-container" /> -->
-    
+
     <div class="flex-col relative flex justify-center items-center w-screen bottom-[100px]" data-bottom-cloud>
-    
+
 
       <!-- <div data-hero-arya data-appear data-delay={0.8}  data-trigger="hero-container" class="w-[200px] h-[400px] absolute right-[5%] top-[-20%] z-[50]">
         <Image src={arya} class="absolute right-[5%] top-[-30%] object-contain h-[400px] z-[100] max-sm:hidden" alt={"Arya Little Characters"} />
@@ -177,39 +187,44 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
           <img src={MbCloudBannerImage.src} alt="cloud" class="w-full object-contain object-center inset-0" />
         </picture>
       </div>
-      
+
 
         <div class="relative flex  max-w-full flex-col mb-16 items-start py-24 pb-[40px] px-16 max-md:px-5"  data-appear data-appear-mb="false" data-delay={0.1} data-trigger="hero-student">
             <svg class="ml-[-77px] block max-md:hidden" xmlns="http://www.w3.org/2000/svg" width="66" height="47" viewBox="0 0 66 47" fill="none">
                 <path opacity="0.1" d="M28.1062 33.1331C28.1062 40.6739 22.8505 46.3867 14.8526 46.3867C6.85469 46.3867 -0.000648499 39.9884 -0.000648499 28.5629C-0.000648499 14.3952 10.7394 2.28409 24.6785 -0.00102234V8.45388C16.6807 10.0535 10.7394 15.7662 10.7394 22.3931C12.1104 21.479 13.9385 20.7935 16.9092 20.7935C22.8505 20.7935 28.1062 25.1352 28.1062 33.1331ZM65.125 33.1331C65.125 40.6739 59.6407 46.3867 51.6428 46.3867C43.8735 46.3867 36.7896 39.9884 36.7896 28.5629C36.7896 14.3952 47.5297 2.28409 61.6973 -0.00102234V8.45388C53.6994 10.0535 47.7582 15.7662 47.7582 22.1645C49.1292 21.2505 51.1858 20.7935 53.928 20.7935C59.8692 20.7935 65.125 25.1352 65.125 33.1331Z" fill="#2D2D2D"/>
             </svg>
-            <Text type="h2" class="text-[#111] !font-[400] !text-[3vw] max-md:!text-[18px] text-center max-md:mt-3 mt-0">
-              This is a place where  our <br class="max-md:hidden block"> child feels 
+            <!-- <Text type="h2" class="text-[#111] !font-[400] !text-[3vw] max-md:!text-[18px] text-center max-md:mt-3 mt-0">
+              This is a place where  our <br class="max-md:hidden block"> child feels
                <span class="text-[#EE7F82] font-[700]">loved, valued, <br class="max-md:hidden block"> and excited to learn</span>
                 <br />
+            </Text> -->
+               <Text type="h2" class="text-[#111] md:w-[590px] !font-[400] !text-[3vw] max-md:!text-[18px] text-center max-md:mt-3 mt-0" set:html={quote}>
             </Text>
-            <Image 
+
+            <Image
               src={plane}
               alt="Plane"
               width={100}
               class="absolute bottom-[80px] right-[-10px] w-[100px] max-md:hidden block"
             />
-            <!-- <Image 
+            <!-- <Image
               src={gif5}
               alt="plane"
               width={100}
               class="absolute bottom-[80px] right-[-10px] w-[100px]"
             /> -->
-            
+
           <span class="items-stretch self-center flex gap-3.5 mt-5 max-md:mt-2">
             <Image
               loading="lazy"
-              src={Person}
-              alt={"Person"}
+              src={quoteImage}
+              alt={quoteImageAlt}
+              width={68}
+              height={68}
               class="aspect-square object-contain object-center w-[68px] max-md:w-[40px] overflow-hidden shrink-0 max-w-full"
             />
             <Text type="h4" class="font-sans text-[#1B2226] font-[600] !text-2xl max-md:!text-[18px] leading-9 my-auto">
-              Dr Alina, Mother of Viaani
+            {quotePersonName}
             </Text>
           </span>
         </div>
