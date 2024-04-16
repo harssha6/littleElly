@@ -5,6 +5,14 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Thalaghattapura
+            page:
+              subtitle: Thalaghattapura
+              address: >-
+                SARANG, # 410, 8th Main road, Judicial layout, Talaghattapura,
+                Bengaluru 560109
+              telephone: '8197802616'
+              email: talaghattapura.blr@littleelly.com
           - centre: Manyata Tech Park
             page:
               subtitle: Manyata Tech Park
