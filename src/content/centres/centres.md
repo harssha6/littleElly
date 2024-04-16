@@ -4626,6 +4626,9 @@ centers:
   - state: Assam
     poweredBy: true
     districts:
+      - district: 'Hojai '
+        page:
+          subtitle: 'Hojai '
       - district: Sualkuchi
         page:
           subtitle: Sualkuchi
