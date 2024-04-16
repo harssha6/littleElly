@@ -5,6 +5,7 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Manyata Tech Park
           - centre: Kannamangala
             page:
               subtitle: Kannamangala
