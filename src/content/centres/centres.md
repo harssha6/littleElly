@@ -4717,30 +4717,6 @@ centers:
               address: 'AEC Road, Sudarbari, Jalukbari, Assam - 781014'
               telephone: +91 9678460755
               email: ''
-          - centre: Jonali
-            page:
-              centreHead:
-                description: ''
-              centreCoordinator:
-                description: ''
-              aboutUs:
-                text: Powered by Little Elly
-                description: >
-                  With “Powered by Little Elly”, we foster an atmosphere of
-                  caring, respect, and understanding of one another and our
-                  world.  We are committed to working together with parents,
-                  teachers, and children to ensure a high quality and world
-                  class preschool experience for all of our students.
-
-
-                  Our goal at centres “Powered by Little Elly” is to help foster
-                  and focus on your child’s growth during the first five crucial
-                  years with a child-centered & child directed approach to
-                  learning.
-              addressTitle: 'Little Elly Preschool, Jonali'
-              address: 'House no. 3, Senduri Ali, Jonali, Zoo Road, Guwahati - 32'
-              telephone: +91 9678460755
-              email: ''
           - centre: Silpukhuri
             page:
               centreHead:
@@ -4818,5 +4794,32 @@ centers:
               telephone: +91- 9678460755
               email: ''
       - district: Kamrup
+        centres:
+          - centre: Bhetapara
+            page:
+              centreHead:
+                description: ''
+              centreCoordinator:
+                description: ''
+              aboutUs:
+                text: Powered by Little Elly
+                description: >
+                  With “Powered by Little Elly”, we foster an atmosphere of
+                  caring, respect, and understanding of one another and our
+                  world.  We are committed to working together with parents,
+                  teachers, and children to ensure a high quality and world
+                  class preschool experience for all of our students.
+
+
+                  Our goal at centres “Powered by Little Elly” is to help foster
+                  and focus on your child’s growth during the first five crucial
+                  years with a child-centered & child directed approach to
+                  learning.
+              addressTitle: 'Little Elly Preschool, Bhetapara'
+              address: >-
+                By lane no. 4, Rohit Bala Path, Bhetapara road, Near Maa
+                Medicos, Bhetapara - 781028
+              telephone: +91 9678460755
+              email: ''
 ---
 
