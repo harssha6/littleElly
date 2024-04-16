@@ -4797,32 +4797,6 @@ centers:
               address: 'Ananda Nagar, House No. 42, Sixmile, Guwahati - 781022'
               telephone: +91- 9678460755
               email: sixmile@littleelly.com
-          - centre: Sualkuchi
-            page:
-              centreHead:
-                description: ''
-              centreCoordinator:
-                description: ''
-              aboutUs:
-                text: Powered by Little Elly
-                description: >
-                  With “Powered by Little Elly”, we foster an atmosphere of
-                  caring, respect, and understanding of one another and our
-                  world.  We are committed to working together with parents,
-                  teachers, and children to ensure a high quality and world
-                  class preschool experience for all of our students.
-
-
-                  Our goal at centres “Powered by Little Elly” is to help foster
-                  and focus on your child’s growth during the first five crucial
-                  years with a child-centered & child directed approach to
-                  learning.
-              addressTitle: 'Little Elly Preschool, Sualkuchi'
-              address: >-
-                PK road, near Fire Service Station, Sualkuchi, Kamrup, PIN -
-                781103
-              telephone: +91- 9678460755
-              email: ''
       - district: Kamrup
 ---
 
