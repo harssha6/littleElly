@@ -4637,6 +4637,12 @@ centers:
           telephone: '8638081507'
       - district: Guwahati
         centres:
+          - centre: Bhetapara
+            page:
+              addressTitle: >-
+                By lane no. 4, Rohit Bala Path, Bhetapara road, Near Maa
+                Medicos, Bhetapara - 781028
+              telephone: +91 9678460755
           - centre: Beltola
             page:
               centreHead:
