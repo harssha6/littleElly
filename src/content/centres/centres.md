@@ -5,6 +5,14 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: 'Udayagiri, Devanahalli'
+            page:
+              subtitle: 'Udayagiri, Devanahalli'
+              address: >-
+                #105,UDAYAGIRI ,OPP. SATTVA AEROPOLIS. DEVANAHALLI  ROAD,
+                BANGALORE RURAL 562110
+              telephone: '9916659966'
+              email: ug_devanahalli.blr@littleelly.com
           - centre: Thalaghattapura
             page:
               subtitle: Thalaghattapura
