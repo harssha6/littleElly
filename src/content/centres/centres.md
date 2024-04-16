@@ -6,6 +6,13 @@ centers:
       - district: Bangalore
         centres:
           - centre: Manyata Tech Park
+            page:
+              subtitle: Manyata Tech Park
+              address: >-
+                No. 16, 2nd Cross, P&T Layout, Rachenahalli Main Road, Bangalore
+                - 560077
+              telephone: '7619674772, 7619644772'
+              email: manyata.blr@littleelly.com
           - centre: Kannamangala
             page:
               subtitle: Kannamangala
