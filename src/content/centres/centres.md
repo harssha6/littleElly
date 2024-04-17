@@ -5,6 +5,14 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Koramangala
+            page:
+              subtitle: Koramangala
+              address: >-
+                No 525, 17th d main, 6th block, 6th cross, Koramangala,
+                bangalore 560095
+              telephone: '8618228487'
+              email: koramangala.blr@littleelly.com
           - centre: 'Udayagiri, Devanahalli'
             page:
               subtitle: 'Udayagiri, Devanahalli'
