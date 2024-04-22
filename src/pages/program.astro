@@ -71,7 +71,7 @@ const programData = [
         subtitle: 'age 3 Years +',
         image: program3,
         titleClass: 'text-[#78ADF9]',
-        
+
         subTitleClass: 'text-[#78ADF9]',
         desc: "The Nursery Program at Little Elly is well-equipped with concepts that mould our little tots as inquisitive learners. The education journey of a child is fostered through the love for learning. The focus is to strike a balance between play based learning blending it with structured learning. ",
         skills: [
@@ -151,13 +151,13 @@ const programData = [
         <!-- <div class="p-20"></div> -->
         <Text type="h1Sm">
           Our  <span class="text-yellow">Programs</span>
-         </Text> 
+         </Text>
 
       </div>
-  </Hero>  
+  </Hero>
     </div>
     <Section class="bg-[#FDF2E5]">
-    
+
     <div class="flex flex-col gap-[60px] items-center">
       {
         programData.map((item, index )=> {
@@ -169,25 +169,25 @@ const programData = [
                   <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
                   <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] max-md:text-[20px] font-display`}>{item.subtitle}</Text>
                   <Text type="base" class={`text-xl text-black/70 font-[700] font-display`}>{item.subText}</Text>
-  
+
                   <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-[160%] max-w-[62ch]`}>{item.desc}</Text>
                   <br />
                   <Text type="base">The curriculum focuses to develop basic skills such as:</Text>
                   <br />
-                 
+
                   {
                     item.skills && item.skills.map((skill) => {
                       return (
                       <div class="flex items-center gap-r">
                       <Marker color={item.subTitleClass.replace('text-', '').replace('[', '').replace(']', '')} />
                         <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-[0]`}>{skill}</Text>
-  
+
                         </div>
                       )
                     })
                   }
-                  
-  
+
+
                 </div>
                 </div>
                {/*  <div class={`${index % 2 == 0 ? 'ml-auto' : '' } w-fit p-r`}>
@@ -198,12 +198,12 @@ const programData = [
           )
         })
       }
-      
+
     </div>
-   
+
 <DaycareFacilities/>
     </Section>
-    <GoToCta className="!bg-[#FDF2E5]" />
+    <GoToCta className="!bg-[#FDF2E5]" data="Admissions Open for <span>2024-25!!</span>" />
 
     <Footer />
 </div>

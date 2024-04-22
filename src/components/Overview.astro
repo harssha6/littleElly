@@ -16,6 +16,11 @@ import cloud3 from "../images/clouds/3.png"
 import cloud4 from "../images/clouds/4.png"
 
 import fox from "../image/decorations/gifs/fox.webp"
+
+const {data} = Astro.props;
+
+
+
 ---
 <Section class="flex flex-row mt-[-17vh]  max-md:mt-[-25vh]  max-md:flex-col justify-between items-start max-sm:gap-l">
 
@@ -36,12 +41,12 @@ import fox from "../image/decorations/gifs/fox.webp"
     </div>
     <div class="flex flex-col max-md:w-full gap-l max-md:gap-l">
       <div class="flex gap-l justify-around items-center max-md:flex-row max-md:gap-0">
-          <CloudText i={2} img={OrangeCloud} title={"CENTRES"} subtitle={'130 +'} className="text-orange-200" />
-          <CloudText i={3} img={BlueCloud} title={"CHILDREN"} subtitle={'8000 +'} className="text-[#78ADF9] !pt-11 max-md:!pt-2" />
+          <CloudText i={2} img={OrangeCloud} title={data[3].title} subtitle={data[3].description} className="text-orange-200" />
+          <CloudText i={3} img={BlueCloud} title={data[2].title} subtitle={data[2].description} className="text-[#78ADF9] !pt-11 max-md:!pt-2" />
       </div>
       <div class="flex gap-l justify-around items-center max-md:flex-row max-md:gap-0">
-          <CloudText i={4} img={PurpleCloud} title="DECADES" subtitle={'2'} className="text-purple !pt-8 max-md:!pt-2" />
-          <CloudText i={5} img={RedCloud} title={"FACULTY"} subtitle={'650 +'} className="text-primary !pt-11 max-md:!pt-2" />
+          <CloudText i={4} img={PurpleCloud} title={data[1].title} subtitle={data[1].description} className="text-purple !pt-8 max-md:!pt-2" />
+          <CloudText i={5} img={RedCloud} title={data[0].title} subtitle={data[0].description} className="text-primary !pt-11 max-md:!pt-2" />
       </div>
 
 

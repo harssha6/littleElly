@@ -63,8 +63,7 @@ const pages = [
 
 const page = pages.find(page => page.name === slug)?.page
 
-console.log('page',page
-)
+
 ---
 
 <Layout
@@ -91,7 +90,7 @@ console.log('page',page
             <!-- <div class="p-20"></div> -->
             <Text type="h2">
               Little Elly -  <span class="text-yellow">{slug}</span>
-             </Text> 
+             </Text>
              <a href="/admissions">
              <Button buttonType="secondary" slot="ctaButton" buttonClass="border-[#F6BD60] mt-r">
               <Text type="base" class="text-[#AF7F30] !tracking-[2px] uppercase font-[700] font-sans text-[20px] max-md:text-[16px]">
@@ -115,7 +114,7 @@ console.log('page',page
            <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-8`}>{page?.aboutUs?.description}</Text>
          </div>
          <div></div>
-   
+
        </div>
     </Section>
   )}
@@ -133,7 +132,7 @@ console.log('page',page
            </div>
          )}
          <div></div>
-   
+
        </div>
     </Section>
   )}
@@ -166,7 +165,7 @@ console.log('page',page
  <Why />
  <MeetCharacters />
  <HappyCurriculum />
- 
+
   <!-- <Gallery
     id="classroom-facilities"
     gallery={[
@@ -207,5 +206,5 @@ console.log('page',page
 
 <script define:vars={{ page }}>
   console.log('states -->', page)
-  
+
 </script>

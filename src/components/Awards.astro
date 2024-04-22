@@ -2,22 +2,24 @@
 import { Image } from "astro:assets";
 import Section from "../components/system/Section.astro";
 import Text from "../components/system/Text.astro";
-import award1 from "../images/awards/award1.png";
-import award2 from "../images/awards/award2.png";
-import award3 from "../images/awards/award3.png";
-import award4 from "../images/awards/award4.png";
-import award5 from "../images/awards/award5.png";
+// import award1 from "../images/awards/award1.png";
+// import award2 from "../images/awards/award2.png";
+// import award3 from "../images/awards/award3.png";
+// import award4 from "../images/awards/award4.png";
+// import award5 from "../images/awards/award5.png";
+
+const {data} = Astro.props;
+const {heading,descrption,awardImages} = data;
+
 ---
 <Section>
         <div class="rounded-[100px] w-full bg-[#FFF7F0] p-xl flex items-center flex-col gap-r overflow-auto max-md:rounded-[3rem] max-md:p-l">
-          <Text type="h3" class="text-primary text-center">Awards & Recognition</Text>
-          <Text type="base" class="text-[#1c232a] max-w-[55ch] text-center">The innumerable awards we’ve won over the years reinforce our faith in carving a niche and a brighter tomorrow through joyful education.</Text>
+          <Text type="h3" class="text-primary text-center">{heading}</Text>
+          <Text type="base" class="text-[#1c232a] max-w-[55ch] text-center">{descrption}</Text>
           <div class="flex gap-l flex-wrap justify-center items-center mt-m">
-              <Image src={award1} alt="award" class="max-w-[200px] max-h-[200px] object-contain max-md:max-w-[100px] max-md:max-h-[100px]" />
-              <Image src={award2} alt="award" class="max-w-[200px] max-h-[200px] object-contain max-md:max-w-[100px] max-md:max-h-[100px]" />
-              <Image src={award3} alt="award" class="max-w-[200px] max-h-[200px] object-contain max-md:max-w-[100px] max-md:max-h-[100px]" />
-              <Image src={award4} alt="award" class="max-w-[200px] max-h-[200px] object-contain max-md:max-w-[100px] max-md:max-h-[100px]" />
-              <Image src={award5} alt="award" class="max-w-[200px] max-h-[200px] object-contain max-md:max-w-[100px] max-md:max-h-[100px]" />
+
+            {awardImages.map(item=> <Image src={item.image} alt={item.imageAlt} height={200} width={200} class="max-w-[200px] max-h-[200px] object-contain max-md:max-w-[100px] max-md:max-h-[100px]" />)}
+
           </div>
         </div>
       </Section>

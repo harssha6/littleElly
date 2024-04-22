@@ -148,6 +148,623 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "home",
+        label: "Home",
+        path: "src/content/home",
+        fields: [
+          {
+            type: 'string',
+            label: 'Heading',
+            name: 'heading'
+          },
+          {
+            type: 'string',
+            label: 'Description',
+            name: 'description'
+          },
+          {
+            type: 'string',
+            label: 'Button Text',
+            name: 'buttonText'
+          },
+          {
+            type: 'string',
+            label: 'Button Link',
+            name: 'buttonLink'
+          },
+          {
+            type: 'string',
+            label: 'Quote',
+            name: 'quote'
+          },
+          {
+            type: 'image',
+            label: 'Quote Profile Image',
+            name: 'quoteImage'
+          },
+          {
+            type: 'string',
+            label: 'Quote Profile Image Alt Description',
+            name: 'quoteImageAlt'
+          },
+          {
+            type: 'string',
+            label: 'Quote person Name',
+            name: 'quotePersonName'
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'Clouds Data',
+            name: 'cloudData',
+            ui: {
+              itemProps: (item) => ({
+                label: item?.title
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Description',
+                name: 'description'
+              },
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'Why Choose littleElly section',
+            name: 'whyChooseLittileElly',
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Subtitle',
+                name: 'subtitle'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'Why Choose littleElly section',
+                name: 'whyChooseLittileElly',
+                fields: [{
+                  type: 'image',
+                  label: 'Image',
+                  name: 'image'
+                },
+                {
+                  type: 'string',
+                  label: 'Image Alt Description',
+                  name: 'imageAlt'
+                },
+                {
+                  type: 'string',
+                  label: 'Description',
+                  name: 'description'
+                }]
+              },
+
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'Elly Universe Section',
+            name: 'ellyUniverseSection',
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Subtitle',
+                name: 'subtitle'
+              },
+              {
+                type: 'rich-text',
+                label: 'Description',
+                name: 'description'
+              }
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'Happy Curriculum Section',
+            name: 'happyCurriculumSection',
+
+            fields: [
+              {
+                type: 'string',
+                label: 'Heading',
+                name: 'heading'
+              },
+              {
+                type: 'rich-text',
+                label: 'Description Top',
+                name: 'descriptionTop'
+              },
+              {
+                type: 'rich-text',
+                label: 'Description Left',
+                name: 'descriptionLeft'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'Animation Area',
+                name: 'animationArea',
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.title
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'string',
+                    label: 'Title',
+                    name: 'title'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Description',
+                    name: 'description'
+                  },
+                ]
+              }
+
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'Our Programs Section',
+            name: 'ourPrograms',
+            fields: [
+              {
+                type: 'string',
+                label: 'Heading',
+                name: 'heading'
+              },
+              {
+                type: 'string',
+                label: 'Button Text',
+                name: 'buttonText'
+              },
+              {
+                type: 'string',
+                label: 'Button Link',
+                name: 'buttonLink'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'Our Programs Section',
+                name: 'ourPrograms',
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.title
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Image Alt Tag',
+                    name: 'imageAltTag'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Title',
+                    name: 'title'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Sub-Title',
+                    name: 'subTitle'
+                  },
+                ]
+              },
+
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'DayCares Facility Section',
+            name: 'dayCaresSection',
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Description',
+                name: 'description'
+              },
+              {
+                type: 'image',
+                label: 'Image',
+                name: 'image'
+              },
+              {
+                type: 'string',
+                label: 'Image Alt Tag',
+                name: 'imageAltTag'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'List',
+                name: 'list',
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.listText
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'string',
+                    label: 'list text',
+                    name: 'listText'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'News and Event Section',
+            name: 'newsAndEvent',
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Description',
+                name: 'description'
+              },
+              {
+                type: 'string',
+                label: 'Instagram Hyperlink UI text',
+                name: 'instagramText'
+              },
+              {
+                type: 'string',
+                label: 'Instagram Url',
+                name: 'instagramUrl'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'News and Event Section Card Details',
+                name: 'newsAndEventCardDetail',
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.title
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Image Alt Tag',
+                    name: 'imageAltTag'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Title',
+                    name: 'title'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Description',
+                    name: 'description'
+                  },
+                ]
+              },
+            ]
+          },
+          {
+            type: 'object',
+            list: true,
+            label: 'Testimonials Section',
+            name: 'testimonials',
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Sub-Title',
+                name: 'subTitle'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'Testimonials Section Card Details',
+                name: 'testimonialsCardDetail',
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Image Alt Tag',
+                    name: 'imageAltTag'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Title',
+                    name: 'title'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Quote',
+                    name: 'quote'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Description',
+                    name: 'description'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Person Name',
+                    name: 'personName'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Person Title',
+                    name: 'personTitle'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Group/Class',
+                    name: 'group'
+                  },
+                ]
+              },
+
+            ]
+          },
+          {
+            type: "string",
+            label: "CTA Card Title",
+            name: "ctaCardTitle",
+          },
+        ]
+      },
+      {
+        name: "aboutUs",
+        label: "About Us",
+        path: "src/content/aboutUs",
+        fields: [
+          {
+
+            type: 'object',
+            label: 'Hero Images',
+            name: 'heroImages',
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item?.imageAlt
+              }),
+            },
+            fields: [
+              {
+                type: 'image',
+                label: 'Image',
+                name: 'slide'
+              },
+              {
+                type: 'string',
+                label: 'Position',
+                name: 'position'
+              },
+            ]
+          },
+          {
+            type: 'string',
+            label: 'Hero Section Title',
+            name: 'herotitle'
+          },
+          {
+            type: 'object',
+            label: 'Vision And Mission Section',
+            name: 'visionAndMissionSection',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Description',
+                name: 'description'
+              },
+              {
+                type: 'object',
+                label: 'Slide Images',
+                name: 'slideImages',
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.imageAlt
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'ImageAlt',
+                    name: 'imageAlt'
+                  },
+                ]
+              },
+            ]
+          },
+          {
+            type: 'object',
+            label: 'Our Team Section',
+            name: 'ourPhilosophySection',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Description',
+                name: 'description'
+              },
+              {
+                type: 'image',
+                label: 'Image',
+                name: 'image'
+              },
+              {
+                type: 'string',
+                label: 'ImageAlt',
+                name: 'imageAlt'
+              },
+            ]
+          },
+          {
+            type: 'object',
+            label: 'Our Team Section',
+            name: 'ourTeamSection',
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item?.imageAlt
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                label: 'Heading',
+                name: 'heading'
+              },
+              {
+                type: 'object',
+                label: 'Team Members',
+                name: 'teamMembers',
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.personRole
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'ImageAlt',
+                    name: 'imageAlt'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Person Name',
+                    name: 'personName'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Person Role / Team Name',
+                    name: 'personRole'
+                  },
+
+                ]
+              },
+
+            ]
+          },
+          {
+            type: 'object',
+            label: 'Awards Section',
+            name: 'awardsSection',
+            list: true,
+            fields: [
+              {
+                type: 'string',
+                label: 'Heading',
+                name: 'heading'
+              },
+              {
+                type: 'string',
+                label: 'Description',
+                name: 'descrption'
+              },
+              {
+                type: 'object',
+                label: 'Award Images',
+                name: 'awardImages',
+                list: true,
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'ImageAlt',
+                    name: 'imageAlt'
+                  },
+                ]
+              }
+            ]
+          },
+          {
+            type: "string",
+            label: "CTA Card Title",
+            name: "ctaCardTitleAbout",
+          },
+        ]
+      },
+
+      {
         name: "centres",
         label: "Centres Management",
         path: "src/content/centres",

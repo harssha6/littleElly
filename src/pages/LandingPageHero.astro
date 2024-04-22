@@ -36,7 +36,7 @@ const bgImage = showSlide ? slideImages : config.bgImage;
             {
               slide,
               position,
-              type,
+              type = 'image',
               picture,
               mobileOnly,
               desktopOnly,
@@ -77,8 +77,8 @@ const bgImage = showSlide ? slideImages : config.bgImage;
               ) : (slide && slide.src ? (
                 <Image class:list={[
                     " w-full h-full absolute top-0 left-0 object-no-repeat object-top object-cover",
-                    
-                    
+
+
                     imageClassName,
                     mobileSlideImages.length > 0 ? "hidden md:block" : ""
                   ]}

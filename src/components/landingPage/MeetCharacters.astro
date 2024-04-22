@@ -17,6 +17,7 @@ import bg3 from '../../image/meetCharacter/bg/bg-3.png'
 import bg4 from '../../image/meetCharacter/bg/bg-4.png'
 
 import reference from '../../image/meetCharacter/bg/reference.png'
+import { marked } from 'marked'
 const characters = [
   {
     name: 'Elly',
@@ -63,6 +64,16 @@ const characters = [
   },
 ]
 
+const {data} = Astro.props;
+const {title , subtitle , description} = data[0];
+const titleColors = ["text-purple", "text-blue-100", "text-green-200", "text-primary"]
+const finalTitleColors = [...titleColors,...titleColors,...titleColors];
+const titleLength = title.split(' ').length;
+const coloredTitle = title.split(' ')[0];
+const primaryTitle = title.split(' ').slice(1,titleLength).join(' ');
+const descriptionHtml = marked.parse(description);
+
+
 ---
 <div>
   <div class="max-md:pt-8 hidden max-md:block"></div>
@@ -71,16 +82,16 @@ const characters = [
       <div class="pt-[170px] max-md:pt-[40px]" />
       <Text type="h2" class="text-primary">
         <MultiStyleText
-          text="ELLY"
-          classes={["text-purple", "text-blue-100", "text-green-200", "text-primary"]}
+          text={coloredTitle}
+          classes={finalTitleColors}
         ></MultiStyleText>
         <br />
         <span class="[text-decoration-line:wavy]">
-          Universe
+          {primaryTitle}
         </span>
       </Text>
       <div class="pt-[2px] max-md:pt-[10px]" />
-      <Text type="base" class="text-[#1B2226] leading-[160%] !font-[400]">
+      <!-- <Text type="base" class="text-[#1B2226] leading-[160%] !font-[400]">
         <span class="text-[#460103]/70 font-bold text-[22px]">A whole new world created for your child.</span>
         <br/><br/>
 
@@ -88,6 +99,11 @@ const characters = [
         <br/><br/>
 
         Little Elly’s nurturing environment creates a happy home away from home for your child where they are not just taking their first step towards school but are becoming a part of our magical world. As they explore the captivating journeys of the <span class="font-bold">'Elly World'</span> and the enchanting <span class="font-bold">'Natterjack Forest'</span>, they are encouraged to engage in <span class="font-bold">“LOOK, READ, MAKE, and DO”</span> activities with Olly & Elly. Our offerings further enhance this immersive experience, ensuring that your child's early years are filled with joy, learning, and meaningful connections.
+      </Text> -->
+          <Text type="base" class="text-[#1B2226] leading-[160%] !font-[400]">
+        <span class="text-[#460103]/70 font-bold text-[22px]">{subtitle}</span>
+        <br/><br/>
+<div set:html={descriptionHtml}></div>
       </Text>
     </div>
     <div data-character-trigger class="flex-1 w-[60%] max-md:w-full max-md:min-h-[800px] h-[913px] flex flex-col relative items-center" style={{
@@ -105,7 +121,7 @@ const characters = [
       </div>
       <div class="h-[37.6%] w-full absolute bottom-[8%] left-0 z-[20]">
         <Image width={1000} src={bg3} class="w-full h-[100%] object-cover object-top" alt="" data-character-bg-3 />
-      </div> 
+      </div>
       <div class="h-[37%] w-full absolute bottom-[6.8%] left-0 z-[10]" >
         <Image width={1000} src={bg4} class="w-full h-[100%] object-cover object-top" alt="" data-character-bg-4 />
       </div>
@@ -125,8 +141,8 @@ const characters = [
         </div>
 
         {characters.map((character) => (
-          <div 
-            class="transition-opacity duration-700 transition-smooth absolute z-[99] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-display font-bold text-center opacity-0 pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto" 
+          <div
+            class="transition-opacity duration-700 transition-smooth absolute z-[99] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-display font-bold text-center opacity-0 pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto"
             data-character-title
           >
             <Text type="h2" class="text-primary" style={{
@@ -150,8 +166,8 @@ const characters = [
             />
           </div>
           {characters.map((character) => (
-            <div 
-              data-character 
+            <div
+              data-character
               class="absolute opacity-0 transition-smooth duration-700 transition-opacity pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto"
               style={{
                 width: character.width,
@@ -170,7 +186,7 @@ const characters = [
         </div>
 
 
-        
+
       </div>
 
     </div>
