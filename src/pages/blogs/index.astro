@@ -49,7 +49,7 @@ const blogsByCategory = allBlogs.reduce((acc, blog) => {
 
 const first3Blogs = allBlogs.slice(0, 3)
 ---
-<Layout 
+<Layout
   title="Little Elly Blog | Nurturing Young Minds through Playful Learning"
   description="Explore the Little Elly blog for insights into playful learning, early childhood education, and parenting tips."
   keywords="Preschool Blogs"
@@ -71,14 +71,17 @@ const first3Blogs = allBlogs.slice(0, 3)
         <Text type="base" class="mt-5 max-w-[700px] text-center max-md:p-4 max-md:text-sm max-md:mt-2">Explore insightful articles and updates showcasing educational knowledge, student development, and engaging content on holistic learning.</Text> -->
         <div class="pt-[10px] max-md:pt-[0px]"></div>
 
+     <div class="w-full flex mb-5 justify-start">
+        <Text type="h1Sm">
+          <MultiStyleText
+              text="All Blogs"
+              classes={["text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-blue-100", "text-primary", "text-primary", "text-primary", "text-primary", "text-primary"]}
+          > </MultiStyleText>
+        </Text>
+      </div>
         <!-- <div class="pt-[6px] flex flex-row w-full justify-between">
 
-          <Text type="h3">
-            <MultiStyleText
-                text="Most Recent Blogs" 
-                classes={["text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-blue-100", "text-green-200", "text-orange-200", "text-primary", "text-purple", "text-blue-100", "text-primary", "text-primary", "text-primary", "text-primary", "text-primary"]}
-            > </MultiStyleText>
-          </Text>
+
 
 
           <a href="/blogs/category/All" class="flex flex-row items-center gap-2 group flex-shrink-0">
@@ -91,13 +94,13 @@ const first3Blogs = allBlogs.slice(0, 3)
         <!-- <div class="mt-[10px] mb-[20px] h-[1px] bg-black/10 w-full"></div> -->
 
 
-        
-<!--         
+
+<!--
         {(first3Blogs && first3Blogs.length > 0) && (
             <div class="w-full flex flex-row max-md:flex-col max-md:h-auto h-[600px] gap-[30px]">
             {first3Blogs[0].data && (
               <div class="h-full w-[65%] max-md:w-full">
-                <BlogCard category={first3Blogs[0].data.category} 
+                <BlogCard category={first3Blogs[0].data.category}
                   title={first3Blogs[0].data.title}
                   slug={first3Blogs[0].slug}
                   image={first3Blogs[0].data.thumbnail}
@@ -109,7 +112,7 @@ const first3Blogs = allBlogs.slice(0, 3)
               {first3Blogs[1] && first3Blogs[1].data && (
                 <div class="flex-1 h-[50%]">
                   <BlogCard category={first3Blogs[1].data.category} title={first3Blogs[1].data.title} slug={first3Blogs[1].slug} date={first3Blogs[1].data.dateString} image={first3Blogs[1].data.thumbnail} />
-                </div> 
+                </div>
               )}
               {first3Blogs[2] && first3Blogs[2].data && (
                 <div class="flex-1 h-[50%]">
@@ -117,7 +120,7 @@ const first3Blogs = allBlogs.slice(0, 3)
                 </div>
               )}
             </div>
-              
+
               </div>
             <div class="pt-[90px]"></div>
             )} -->
@@ -139,7 +142,7 @@ const first3Blogs = allBlogs.slice(0, 3)
 
               <Text type="h3">
                 <MultiStyleText
-                    text={category} 
+                    text={category}
                     classes={splicedColors}
                 >
                   {category}
@@ -164,7 +167,7 @@ const first3Blogs = allBlogs.slice(0, 3)
         }
 
 
-        
+
         )}
       </div>
     </div>

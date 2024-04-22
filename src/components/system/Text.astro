@@ -12,6 +12,7 @@ interface Props {
     | "regular"
     | "sm"
     | 'h1Sm'
+    | 'h3Sm'
     | "xs"
     | "subtitle"
     | "p"
@@ -42,7 +43,7 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
   type === "h1Sm" && (
     <h1
       class:list={[
-        `font-display font-semibold text-5xl max-md:text-[2rem] 
+        `font-display font-semibold text-5xl max-md:text-[2rem]
          leading-[120%]
         `,
         className,
@@ -58,7 +59,7 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
   type === "h2" && (
     <h2
       class:list={[
-        `font-display font-semibold text-5xl max-md:text-[2rem] 
+        `font-display font-semibold text-5xl max-md:text-[2rem]
          leading-[120%]
         `,
         className,
@@ -84,6 +85,22 @@ const { type = "base", class: className, style = {}, ...props } = Astro.props;
     </h3>
   )
 }
+
+{
+  type === "h3Sm" && (
+    <h1
+      class:list={[
+        "text-[2.5rem] tracking-tight font-display font-semibold max-md:text-3xl max-md:leading-[140%] md:leading-[120%]",
+        className,
+      ]}
+      style={style}
+      {...props}
+    >
+      <slot />
+    </h1>
+  )
+}
+
 {
   type === "h4" && (
     <h2
