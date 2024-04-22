@@ -1,5 +1,5 @@
 ---
-heading: A Happy Pre-schools
+heading: A Happy Pre-school
 description: 'Where every day is an unforgettable  adventure of learning '
 buttonText: ' Apply Now'
 buttonLink: /admissions
@@ -167,7 +167,7 @@ testimonials:
           with other children and adapted well. He is now very social and tries
           to make friends and interact with more people. I am very happy with
           Little Elly.
-        personName: Vishaali
+        personName: 'Vishaali,'
         personTitle: Mother of Riaan
         group: Nursery
       - image: /images/testimonial3.1.jpg
@@ -182,7 +182,7 @@ testimonials:
           atmosphere empowered her to express herself freely, creating a second
           home where she felt valued. We wholeheartedly recommend Little Elly
           School for its enriching educational experience.
-        personName: Sunita
+        personName: 'Sunita,'
         personTitle: Mother of Priyanshi
         group: Nursery
       - image: /images/test4.png
@@ -199,8 +199,8 @@ testimonials:
           mingle with other people very much. After coming to Little Elly there
           has been a great change. Our daily and friends have also pointed out
           to us that there is a visible change. 
-        personName: Mrs. Leanna
-        personTitle: 'Mother of Aileen, '
+        personName: 'Mrs. Leanna,'
+        personTitle: Mother of Aileen
         group: Playgroup
       - image: /images/test5.png
         imageAltTag: image
@@ -213,9 +213,9 @@ testimonials:
           Since both of us work long days he is in school for most of the day as
           he stays back for daycare. We were skeptical about leaving him here
           for long hours but he seems to be happier here than at home.
-        personName: Mrs. Asha and Mr. Gururaj
+        personName: 'Mrs. Asha and Mr. Gururaj,'
         personTitle: Parents of Agasthya
         group: Playgroup
-ctaCardTitle: Admissions Open for <span>2024-25!!</span>
+ctaCardTitle: Admissions Open for  <span>2024-25!!</span>
 ---
 

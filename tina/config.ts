@@ -195,7 +195,7 @@ export default defineConfig({
           {
             type: 'object',
             list: true,
-            label: 'Clouds Data',
+            label: 'Overview Section',
             name: 'cloudData',
             ui: {
               itemProps: (item) => ({
@@ -218,7 +218,7 @@ export default defineConfig({
           {
             type: 'object',
             list: true,
-            label: 'Why Choose littleElly section',
+            label: 'Why Choose Little Elly Section',
             name: 'whyChooseLittileElly',
             fields: [
               {
@@ -303,7 +303,7 @@ export default defineConfig({
               {
                 type: 'object',
                 list: true,
-                label: 'Animation Area',
+                label: 'Happy Curriculum Animation',
                 name: 'animationArea',
                 ui: {
                   itemProps: (item) => ({
@@ -386,7 +386,7 @@ export default defineConfig({
           {
             type: 'object',
             list: true,
-            label: 'DayCares Facility Section',
+            label: 'Day Care Facility Section',
             name: 'dayCaresSection',
             fields: [
               {
@@ -511,6 +511,11 @@ export default defineConfig({
                 list: true,
                 label: 'Testimonials Section Card Details',
                 name: 'testimonialsCardDetail',
+                ui: {
+                  itemProps: (item) => ({
+                    label: `Testimonial of ${item?.personName}`
+                  }),
+                },
                 fields: [
                   {
                     type: 'image',
@@ -641,7 +646,7 @@ export default defineConfig({
           },
           {
             type: 'object',
-            label: 'Our Team Section',
+            label: 'Our Philosophy Section',
             name: 'ourPhilosophySection',
             list: true,
             fields: [
