@@ -18,7 +18,7 @@ import Text from '../system/Text.astro'
 import Constrain from '../system/Constrain.astro'
 import theDotStudioLogo from '../../images/theDotStudioLogo.png'
 
-const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=footer&utm_content=www.littleelly.com`
+const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=footer&utm_content=`
 
 ---
 <div
@@ -102,7 +102,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
             </a>
           </div>
           <div class='flex flex-row items-center mb-3'>
-            <a  href="/#findcentre" class="hover:underline">
+            <a  href="/#find-a-center" class="hover:underline">
               <Text type={'regular'}>Find a Centre</Text>
             </a>
           </div>
@@ -262,10 +262,20 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
       </div>
       <div class="max-md:pt-3 pt-0"></div>
       <div>
-        <a href={url} target="_blank">
-          <Image src={theDotStudioLogo} class="w-[150px] max-md:w-[160px]" alt={"The Dot Studio Logo"} />
+        <a href={url} target="_blank" data-dot-studio-footer>
+          <Image src={theDotStudioLogo} class="w-[200px] max-md:w-[160px]" alt={"Website Designed by The Dot Studio"} />
         </a>
       </div>
     </Constrain>
   </div>
 </div>
+
+<script>
+  // get the current domain
+  
+  const currentDomainBase = window.location.origin;
+
+  const dotStudioLogo = document.querySelector('[data-dot-studio-footer]');
+
+  dotStudioLogo.href = dotStudioLogo.href + currentDomainBase
+</script>

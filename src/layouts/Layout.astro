@@ -732,7 +732,6 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 							if (target) {
 								const top = target.getBoundingClientRect().top + window.pageYOffset;
 
-								console.log('target Hitt...', target, top)
 								window.scrollTo({
 									top: top,
 									behavior: 'smooth'
@@ -747,9 +746,9 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 
 		});
 
-		const findCenter = document.querySelector("a[href^='/#findcentre']")
+		const findCenter = document.querySelector("a[href^='/#find-a-center']")
           findCenter?.addEventListener('click', ()=> {
-			window.location.href = '/#findcenter'
-		  })
+						window.location.href = '/#find-a-center'
+				})
 
   </script>
