@@ -5,6 +5,11 @@ import facebook from '../../icons/socials/Facebook.svg'
 import instagram from '../../icons/socials/Instagram.svg'
 import linkedin from '../../icons/socials/LinkedIn.svg'
 import twitter from '../../icons/socials/Twitter.svg'
+import youtubeAH from '../../icons/socials/youtubeAH.svg'
+import facebookAH from '../../icons/socials/facebookAH.svg'
+import instagramAH from '../../icons/socials/instagramAH.svg'
+import linkedinAH from '../../icons/socials/linkedinAH.svg'
+import twitterAH from '../../icons/socials/twitterAH.svg'
 import youtube from '../../icons/socials/YouTube.svg'
 import emailIcon from '../../icons/Email.svg'
 import phoneIcon from '../../icons/Phone.svg'
@@ -24,43 +29,53 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
         <Image src={logo} alt="Glentree's Logo" class="w-20 h-auto self-start" />
         <div class='flex flex-row mt-6'>
           <a target="_blank" href="https://m.facebook.com/littleellyconceptpreschool/" class='mr-5'>
-            <div class='h-[25px]'>
-              <img src={facebook.src} alt="Facebook Icon" class="w-full h-full">
+            <div class='h-[25px] group'>
+              <!-- <img src={facebook.src} alt="Facebook Icon" class="w-full group-hover:hidden filter grayscale transition-all duration-200 hover:grayscale-0 h-full"> -->
+              <img src={facebook.src} alt="Facebook Icon" class="w-full group-hover:hidden block  transition-all duration-200  h-full">
+              <img src={facebookAH.src} alt="Facebook Icon" class="w-full hidden group-hover:block  transition-all duration-200  h-full">
             </div>
           </a>
-  
+
           <a target="_blank" href="https://twitter.com/LE_littleelly" class='mr-5'>
-            <div class='h-[25px]'>
-              <img src={twitter.src} alt="Twitter Icon" class="w-full h-full">
+            <div class='h-[25px] group'>
+              <!-- <img src={twitter.src} alt="Twitter Icon" class="w-full  group-hover:hidden filter grayscale transition-all duration-200 hover:grayscale-0 h-full"> -->
+              <img src={twitter.src} alt="Twitter Icon" class="w-full group-hover:hidden transition-all duration-200  h-full">
+              <img src={twitterAH.src} alt="Twitter Icon" class="w-full hidden group-hover:block transition-all duration-200  h-full">
             </div>
           </a>
-  
+
           <a target="_blank" href="https://www.instagram.com/littleelly_preschool/" class='mr-5'>
-            <div class='h-[25px]'>
-              <img src={instagram.src} alt="Instagram Icon" class="w-full h-full">
+            <div class='h-[25px] group'>
+              <!-- <img src={instagram.src} alt="Instagram Icon" class="w-full group-hover:hidden filter transition-all duration-200 hover:grayscale-0 grayscale h-full"> -->
+              <img src={instagram.src} alt="Instagram Icon" class="w-full group-hover:hidden transition-all duration-200  h-full">
+              <img src={instagramAH.src} alt="Instagram Icon" class="w-full hidden group-hover:block transition-all duration-200  h-full">
             </div>
           </a>
-  
+
           <a target="_blank" href="https://www.linkedin.com/company/littleelly-concept-preschool/" class='mr-5'>
-            <div class='h-[25px]'>
-              <img src={linkedin.src} alt="Linkedin Icon" class="w-full h-full">
+            <div class='h-[25px] group'>
+              <!-- <img src={linkedin.src} alt="Linkedin Icon" class="w-full group-hover:hidden filter transition-all duration-200 hover:grayscale-0 grayscale h-full"> -->
+              <img src={linkedin.src} alt="Linkedin Icon" class="w-full group-hover:hidden transition-all duration-200 h-full">
+              <img src={linkedinAH.src} alt="Linkedin Icon" class="w-full hidden group-hover:block transition-all duration-200 h-full">
             </div>
           </a>
-  
+
           <a target="_blank" href="https://www.youtube.com/user/PreschoolLittleElly" class='mr-5'>
-            <div class='h-[25px]'>
-              <img src={youtube.src} alt="Youtube Icon" class="w-full h-full">
+            <div class='h-[25px] group'>
+              <!-- <img src={youtube.src} alt="Youtube Icon" class="w-full group-hover:hidden filter grayscale transition-all duration-200 hover:grayscale-0 h-full"> -->
+              <img src={youtube.src} alt="Youtube Icon" class="w-full group-hover:hidden transition-all duration-200 hover:grayscale-0 h-full">
+              <img src={youtubeAH.src} alt="Youtube Icon" class="w-full hidden group-hover:block transition-all duration-200 hover:grayscale-0 h-full">
             </div>
           </a>
-  
-  
+
+
         </div>
       </div>
-  
+
       <div class='flex flex-row gap-6 max-md:gap-0 max-md:flex-col'>
         <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
           <Text type={'base'} class='text-[#EE7F82] !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 font-semibold'>Explore</Text>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <a  href="/" class="hover:underline">
               <Text type={'regular'}>Home</Text>
@@ -86,7 +101,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
               <Text type={'regular'}>Find a Centre</Text>
             </a>
           </div>
-         
+
           <div class='flex flex-row items-center mb-3'>
             <a  href="/admissions" class="hover:underline">
               <Text type={'regular'}>Admissions</Text>
@@ -103,14 +118,14 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
             </a>
           </div>
 
-      
+
 
         </div>
-        
+
         <div class="bg-white/20 w-[5px] h-full max-md:h-[1px] max-md:w-full"></div>
         <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
           <Text type={'base'} class='text-[#EE7F82] !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 font-semibold'>Contact us</Text>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
@@ -119,7 +134,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
               <Text type={'regular'} class='ml-2'>enquiry@littleelly.com</Text>
             </a>
           </div>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
@@ -140,7 +155,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
         <div class="bg-white/20 w-[5px] h-full max-md:h-[1px] max-md:w-full"></div>
         <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
           <Text type={'base'} class='text-[#EE7F82] !text-[18px] max-md:!text-[16px] uppercase tracking-[2.4px] mb-7 max-md:mb-3 font-semibold'>Franchise Enquiry</Text>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
@@ -149,7 +164,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
               <Text type={'regular'} class='ml-2'>franchise@littleelly.com</Text>
             </a>
           </div>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
@@ -157,12 +172,12 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
             <Text type={'regular'} class='ml-2'><a target='_blank' href='tel:+919035065699' class="hover:underline">+91 90350 65699</a></Text></a>
           </div>
 
-        
+
 
         </div>
         <!-- <div class='max-md:mt-8 max-md:mb-5 max-w-[325px]'>
           <Text type={'base'} class='text-green-300 mb-7 max-md:mb-3 font-semibold'>Whitefield</Text>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5 flex-shrink-0'>
               <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
@@ -171,15 +186,15 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
               <Text type={'regular'} class='ml-2'>admission.gaw@glentreeacademy.com</Text>
             </a>
           </div>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
             <a target='_blank' href='tel:+917899738130' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 7899738130</Text></a>
-  
+
           </div>
-  
+
           <div class='flex flex-row items-start mb-3 '>
             <div class='w-[2.25rem]'>
               <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
@@ -191,7 +206,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
         </div>
         <div class='ml-16 max-md:ml-0 max-w-[325px]'>
           <Text type={'base'} class='text-green-300 mb-7 max-md:mb-3 font-semibold'>Sarjapur</Text>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={emailIcon} alt="Email Icon" class="w-full h-full">
@@ -200,14 +215,14 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
               <Text type={'regular'} class='ml-2'>admission.gas@glentreeacademy.com</Text>
             </a>
           </div>
-  
+
           <div class='flex flex-row items-center mb-3'>
             <div class='w-5'>
               <Image src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
             <a target='_blank' href='tel:+919632104368' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9632104368</Text></a>
           </div>
-  
+
           <div class='flex flex-row items-start mb-3 '>
             <div class='w-[2.25rem] mr-1'>
               <Image src={locationIcon} alt="Location Icon" class="w-full h-full">
@@ -217,7 +232,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
             </a>
           </div>
         </div> -->
-        
+
       </div>
     </Constrain>
   </div>
@@ -231,13 +246,13 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
           Copyright © 2024 Little Elly &nbsp;
         </Text>
         <!-- <Text type={'regular'}>
-          <span class="max-md:hidden">{' • '}</span> 
+          <span class="max-md:hidden">{' • '}</span>
           <br class="hidden max-md:block" />
-          <a 
-            href="/mandatory" 
+          <a
+            href="/mandatory"
             class="underline"
           >CBSE Mandatory Disclosure</a>
-          
+
         </Text> -->
       </div>
       <div class="max-md:pt-3 pt-0"></div>
