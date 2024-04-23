@@ -700,6 +700,22 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 				return url.replace(/.*#/, '');
 			}
 
+			// if the load page is / and hash is present, then scroll to the target
+
+			if (window.location.pathname === '/' && window.location.hash) {
+				const target = document.getElementById(getHash(window.location.hash));
+				if (target) {
+					const top = target.offsetTop - 80;
+					setTimeout(() => {
+						window.scrollTo({
+							top: top,
+							behavior: 'smooth'
+						});
+					}, 300)
+				}
+			}
+
+
 			const links = document.querySelectorAll('a[href*="#"]');
 
 			console.log('links', links)
@@ -716,7 +732,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 							const target = document.getElementById(getHash(href));
 
 							if (target) {
-								const top = target.getBoundingClientRect().top + window.pageYOffset;
+								const top = target.offsetTop;
 								window.scrollTo({
 									top: top,
 									behavior: 'smooth'
@@ -730,7 +746,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 						} else {
 							const target = document.getElementById(getHash(href));
 							if (target) {
-								const top = target.getBoundingClientRect().top + window.pageYOffset;
+								const top = target.offsetTop - 80;
 
 								window.scrollTo({
 									top: top,
@@ -747,8 +763,8 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		});
 
 		const findCenter = document.querySelector("a[href^='/#find-a-center']")
-          findCenter?.addEventListener('click', ()=> {
-						window.location.href = '/#find-a-center'
-				})
+			findCenter?.addEventListener('click', ()=> {
+				window.location.href = '/#find-a-center'
+		})
 
   </script>
