@@ -705,8 +705,9 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			if (window.location.pathname === '/' && window.location.hash) {
 				const target = document.getElementById(getHash(window.location.hash));
 				if (target) {
-					const top = target.offsetTop - 80;
 					setTimeout(() => {
+						const top = target.offsetTop - 100;
+						console.log('top load...', top)
 						window.scrollTo({
 							top: top,
 							behavior: 'smooth'
@@ -730,9 +731,10 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 					if (href.startsWith('#')) {
 						// e.preventDefault();
 							const target = document.getElementById(getHash(href));
+							console.log('top click...', top)
 
 							if (target) {
-								const top = target.offsetTop;
+								const top = target.offsetTop - 80;
 								window.scrollTo({
 									top: top,
 									behavior: 'smooth'
@@ -747,6 +749,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 							const target = document.getElementById(getHash(href));
 							if (target) {
 								const top = target.offsetTop - 80;
+								console.log('top click...', top)
 
 								window.scrollTo({
 									top: top,
