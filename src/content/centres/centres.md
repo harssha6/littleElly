@@ -21,14 +21,6 @@ centers:
                 bangalore 560095
               telephone: '8618228487'
               email: koramangala.blr@littleelly.com
-          - centre: 'Udayagiri, Devanahalli'
-            page:
-              subtitle: 'Udayagiri, Devanahalli'
-              address: >-
-                #105,UDAYAGIRI ,OPP. SATTVA AEROPOLIS. DEVANAHALLI  ROAD,
-                BANGALORE RURAL 562110
-              telephone: '9916659966'
-              email: ug_devanahalli.blr@littleelly.com
           - centre: Thalaghattapura
             page:
               subtitle: Thalaghattapura
