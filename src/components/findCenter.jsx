@@ -312,7 +312,7 @@ const FindCentre = (props) => {
   // console.log("isStateView" && isStateView);
 
   return (
-    <div className="flex flex-col gap-l items-center findcenter p-[60px] px-[90px] max-md:px-[20px] max-md:py-[40px]" id='find-a-center' >
+    <div className="flex flex-col gap-l items-center findcenter p-[60px] px-[90px] max-md:px-[20px] max-md:py-[40px]">
       <div data-appear>
         <Text type="h2" className="text-center">
           Our
