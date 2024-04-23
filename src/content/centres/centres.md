@@ -5,6 +5,14 @@ centers:
     districts:
       - district: Bangalore
         centres:
+          - centre: Kannamangala Gate
+            page:
+              subtitle: Kannamangala Gate
+              address: >-
+                #105, Udayagiri. Next to Hotel Krishna Garden Kannamangala Gate
+                Devanahalli Main Road , Bangalore Rural 562110
+              telephone: '9916659966'
+              email: ug_devanahalli.blr@littleelly.com
           - centre: Koramangala
             page:
               subtitle: Koramangala
