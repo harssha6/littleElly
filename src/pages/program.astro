@@ -123,6 +123,11 @@ const programData = [
         subText: '(Adult to child ratio- 2:20)',
     },
 ]
+
+import { getEntry } from 'astro:content';
+
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
+
 ---
 
 <Layout
@@ -201,7 +206,7 @@ const programData = [
 
     </div>
 
-<DaycareFacilities/>
+    <DaycareFacilities data={homePageCmsData.dayCaresSection[0]} />
     </Section>
     <GoToCta className="!bg-[#FDF2E5]" data="Admissions Open for <span>2024-25!!</span>" />
 
