@@ -62,6 +62,7 @@ const pages = [
 ]
 
 const page = pages.find(page => page.name === slug)?.page
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
 
 
 ---
@@ -162,9 +163,9 @@ const page = pages.find(page => page.name === slug)?.page
 </div>
 
   <div class="max-md:block hidden pt-8" />
- <Why />
- <MeetCharacters />
- <HappyCurriculum />
+  <Why data={homePageCmsData.whyChooseLittileElly}/>
+  <MeetCharacters data={homePageCmsData.ellyUniverseSection}/>
+  <HappyCurriculum data={homePageCmsData.happyCurriculumSection} />
 
   <!-- <Gallery
     id="classroom-facilities"
@@ -174,7 +175,9 @@ const page = pages.find(page => page.name === slug)?.page
       { src: campus3.src, caption: "Well-stocked Library" },
     ]}
 /> -->
-  <GoToCta className="!bg-[white]" />
+
+  <GoToCta data={homePageCmsData.ctaCardTitle}  className="!bg-[white]"  />
+
   <Footer />
 
 </Layout>

@@ -206,7 +206,7 @@ const FindCentre = (props) => {
         pillsDataGroupByPoweredByBoolean["notPoweredBy"].length > 0 ? (
           <div>
             <h3 className="my-2 text-2xl font-bold capitalize py-2">
-              Elly Centres
+              Elly Centers
             </h3>
             <div className="flex flex-row flex-wrap gap-4 w-full items-center">
               {pillsDataGroupByPoweredByBoolean["notPoweredBy"].map(
@@ -479,7 +479,7 @@ const FindCentre = (props) => {
           className="flex flex-row max-md:flex-col items-center max-md:items-start gap-1 max-md:gap-0"
         >
           <span class="font-bold flex-shrink-0 flex flex-row max-md:flex-col gap-1">
-            Elly Centres <span class="max-md:hidden block">-</span>
+            Elly Centers <span class="max-md:hidden block">-</span>
           </span>
           <br class="hidden max-md:block" />
           Schools carry Little Elly brand and are managed by our family of

@@ -159,3 +159,9 @@ html.lenis {
   /* transition-duration: .5s !important; */
   /* transition-delay: .1s !important; */
 }
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
