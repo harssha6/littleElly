@@ -3,6 +3,7 @@ centers:
   - state: Nepal
   - state: Karnataka
     districts:
+      - district: Hassan
       - district: Bangalore
         centres:
           - centre: Kannamangala Gate
