@@ -4,6 +4,15 @@ centers:
   - state: Karnataka
     districts:
       - district: Hassan
+        centres:
+          - centre: Channapatana
+            page:
+              subtitle: Channapatana
+              address: >-
+                Ikshu', #1620, 2nd cross road, Next to district court complex,
+                new housing board layout, Channapatana, Hassan 573201
+              telephone: '7411583273'
+              email: nhb.hassan@littleelly.com
       - district: Bangalore
         centres:
           - centre: Kannamangala Gate
