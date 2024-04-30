@@ -876,125 +876,23 @@ export default defineConfig({
                 name: "admissionProcessSteps",
                 label: "Admission Process Steps",
                 fields: [
-                 {
-                  type: "object",
-                  name: "item1",
-                  label: "Admission Process Step 1",
-                  fields: [
-                    { type: "string", name: "listHeadingNum1", label: "List Heading No." },
-                    { type: "string", name: "listHeading1", label: "List Heading 1" },
-                    { type: "rich-text", name: "listDescription1", label: "List Description 1" },
-                    {
-                      type: "object",
-                      list: true,
-                      name: "gradeAge",
-                      label: "Table",
-                      fields: [
-                        { type: "string", name: "grade", label: "Grade" },
-                        { type: "string", name: "age", label: "Age" },
-                      ]
-                    }
-                  ]
-                 },
-
-                 {
-                  type: "object",
-                  name: "item2",
-                  label: "Admission Process Step 2",
-                  fields: [
-                    { type: "string", name: "listHeadingNum2", label: "List Heading No." },
-                    { type: "string", name: "listHeading2", label: "List Heading 2" },
-                    { type: "rich-text", name: "listDescription2", label: "List Description 2" },
-                  ]
-                 },
-
-                 {
-                  type: "object",
-                  name: "item3",
-                  label: "Admission Process Step 3",
-                  fields: [
-                    { type: "string", name: "listHeadingNum3", label: "List Heading No." },
-                    { type: "string", name: "listHeading3", label: "List Heading 3" },
-                    { type: "rich-text", name: "listDescription3", label: "List Description 3" },
-                  ]
-                 },
+                  { type: "string", name: "title", label: "Title" },
+                  { type: "string", name: "color", label: "Color" },
+                  { type: "rich-text", name: "description", label: "Description" },
+                  {
+                    type: "object",
+                    list: true,
+                    name: "table",
+                    label: "Table",
+                    fields: [
+                      { type: "string", name: "leftValue", label: "Left Table Value" },
+                      { type: "string", name: "rightValue", label: "Right Table Value" },
+                    ]
+                  }
                 ]
               },
 
               
-            ]
-          },
-
-          {
-            type: 'object',
-            list: true,
-            label: 'Testimonials Section',
-            name: 'testimonials',
-            fields: [
-              {
-                type: 'string',
-                label: 'Title',
-                name: 'title'
-              },
-              {
-                type: 'string',
-                label: 'Sub-Title',
-                name: 'subTitle'
-              },
-              {
-                type: 'object',
-                list: true,
-                label: 'Testimonials Section Card Details',
-                name: 'testimonialsCardDetail',
-                ui: {
-                  itemProps: (item) => ({
-                    label: `Testimonial of ${item?.personName}`
-                  }),
-                },
-                fields: [
-                  {
-                    type: 'image',
-                    label: 'Image',
-                    name: 'image'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Image Alt Tag',
-                    name: 'imageAltTag'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Title',
-                    name: 'title'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Quote',
-                    name: 'quote'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Description',
-                    name: 'description'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Person Name',
-                    name: 'personName'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Person Title',
-                    name: 'personTitle'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Group/Class',
-                    name: 'group'
-                  },
-                ]
-              },
-
             ]
           },
         ],
