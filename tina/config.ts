@@ -490,6 +490,7 @@ export default defineConfig({
               },
             ]
           },
+
           {
             type: 'object',
             list: true,
@@ -562,6 +563,7 @@ export default defineConfig({
 
             ]
           },
+
           {
             type: "string",
             label: "CTA Card Title",
@@ -569,6 +571,7 @@ export default defineConfig({
           },
         ]
       },
+
       {
         name: "aboutUs",
         label: "About Us",
@@ -851,6 +854,162 @@ export default defineConfig({
           },
         ]
       },
+
+      {
+        name: "admissions",
+        label: "Admissions",
+        path: "src/content/admissions",
+        fields: [
+          { type: "string", name: "pageTitle", label: "Page Title" },
+          { type: "string", name: "pageDescription", label: "Page Description" },
+
+          { 
+            type: "object",
+            name: "admissionProcess",
+            label: "Admission Process",
+            fields: [
+              { type: "string", name: "sectionHeading", label: "Section Heading" },
+
+              {
+                type: "object",
+                list: true,
+                name: "admissionProcessSteps",
+                label: "Admission Process Steps",
+                fields: [
+                 {
+                  type: "object",
+                  name: "item1",
+                  label: "Admission Process Step 1",
+                  fields: [
+                    { type: "string", name: "listHeadingNum1", label: "List Heading No." },
+                    { type: "string", name: "listHeading1", label: "List Heading 1" },
+                    { type: "rich-text", name: "listDescription1", label: "List Description 1" },
+                    {
+                      type: "object",
+                      list: true,
+                      name: "gradeAge",
+                      label: "Table",
+                      fields: [
+                        { type: "string", name: "grade", label: "Grade" },
+                        { type: "string", name: "age", label: "Age" },
+                      ]
+                    }
+                  ]
+                 },
+
+                 {
+                  type: "object",
+                  name: "item2",
+                  label: "Admission Process Step 2",
+                  fields: [
+                    { type: "string", name: "listHeadingNum2", label: "List Heading No." },
+                    { type: "string", name: "listHeading2", label: "List Heading 2" },
+                    { type: "rich-text", name: "listDescription2", label: "List Description 2" },
+                  ]
+                 },
+
+                 {
+                  type: "object",
+                  name: "item3",
+                  label: "Admission Process Step 3",
+                  fields: [
+                    { type: "string", name: "listHeadingNum3", label: "List Heading No." },
+                    { type: "string", name: "listHeading3", label: "List Heading 3" },
+                    { type: "rich-text", name: "listDescription3", label: "List Description 3" },
+                  ]
+                 },
+                ]
+              },
+
+              
+            ]
+          },
+
+          {
+            type: 'object',
+            list: true,
+            label: 'Testimonials Section',
+            name: 'testimonials',
+            fields: [
+              {
+                type: 'string',
+                label: 'Title',
+                name: 'title'
+              },
+              {
+                type: 'string',
+                label: 'Sub-Title',
+                name: 'subTitle'
+              },
+              {
+                type: 'object',
+                list: true,
+                label: 'Testimonials Section Card Details',
+                name: 'testimonialsCardDetail',
+                ui: {
+                  itemProps: (item) => ({
+                    label: `Testimonial of ${item?.personName}`
+                  }),
+                },
+                fields: [
+                  {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Image Alt Tag',
+                    name: 'imageAltTag'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Title',
+                    name: 'title'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Quote',
+                    name: 'quote'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Description',
+                    name: 'description'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Person Name',
+                    name: 'personName'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Person Title',
+                    name: 'personTitle'
+                  },
+                  {
+                    type: 'string',
+                    label: 'Group/Class',
+                    name: 'group'
+                  },
+                ]
+              },
+
+            ]
+          },
+        ],
+      },
+
+      {
+        name: "franchise",
+        label: "Franchise",
+        path: "src/content/franchise",
+        fields: [
+          { type: "string", name: "pageTitle1", label: "Page Title" },
+          { type: "string", name: "pageDescription1", label: "Page Description" },
+        ]
+      },
+
       {
         name: "blogs",
         label: "Blogs",
