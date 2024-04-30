@@ -197,7 +197,7 @@ testimonials:
           was not at all social and this was a major worry for us. She is very
           shy and was born during the pandemic which meant she didn’t get to
           mingle with other people very much. After coming to Little Elly there
-          has been a great change. Our daily and friends have also pointed out
+          has been a great change. Our family and friends have also pointed out
           to us that there is a visible change. 
         personName: 'Mrs. Aylin Shaila,'
         personTitle: Mother of Aileen
