@@ -62,8 +62,10 @@ import testimonial2 from '../images/testimonial/2.jpeg';
 import testimonial3 from '../images/testimonial/3.jpeg';
 import Faq from "../components/faq.astro";
 
-// import { getEntry } from 'astro:content';
-// const { data } = await getEntry('franchise', 'franchise');
+import { getEntry } from 'astro:content';
+const  {data } = await getEntry('franchise', 'franchise');
+console.log(data, "kundan");
+
 
 
 

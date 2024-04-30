@@ -1,41 +1,5 @@
 ---
 sectionTitle: Admission Process
-pageTitle: 'Happy Child, Happy Families'
-pageDescription: Admissions open from Toddler program to UKG
-admissionProcess:
-  sectionHeading: Admission Process
-  admissionProcessSteps:
-    - item1:
-        listHeadingNum1: '01'
-        listHeading1: IDENTIFYING THE RIGHT PROGRAM
-        listDescription1: >
-          The age criteria is calculated as on June i.e. beginning of the
-          academic year.
-
-          Eg: for a child to be eligible for nursery for AY 2024/25, he/she
-          should be 2+ as of June 2024.
-      item2:
-        listHeadingNum2: '02'
-        listHeading2: ONLINE APPLICATION FORM
-        listDescription2: "To apply, you can either click the Apply Now button on our website to send us your inquiry, or call us at\_+91 99725 27072. Pre - admission meeting between the center head and the child along with the parents / guardian is mandatory.\n"
-      item3:
-        listHeadingNum3: '03'
-        listHeading3: DOCUMENT SUBMISSIONS
-        listDescription3: >
-          You are required to submit the following documents to the school:
-
-
-          * • Application for admission form and student profile - fully
-          completed and signed,
-
-          * •  One updated copy of Medical / Immunization record of the student,
-
-          * •  Four (4) passport size photographs of the student,
-
-          * •  One copy of student's birth certificate,
-
-          * •  Letter of Reference (Academic / Behaviour) and Report Card from
-          the last school attended (Applicable only for KG admissions)
 testimonials:
   - title: Testimonials
     subTitle: Hear from our Parents!
@@ -101,5 +65,52 @@ testimonials:
         personName: 'Mrs. Asha and Mr. Gururaj,'
         personTitle: Parents of Agasthya
         group: Playgroup
+pageTitle: 'Happy Child, Happy Families'
+pageDescription: Admissions open from Toddler program to UKG
+admissionProcess:
+  sectionHeading: Admission Process
+  admissionProcessSteps:
+    - title: IDENTIFYING THE RIGHT PROGRAM
+      color: '#A5D27C'
+      roundNumberColor: 'radial-gradient(50%_50%_at_50%_50%,_#A5D27C_0%,_#89BB5B_100%)'
+      description: >
+        The age criteria is calculated as on June i.e. beginning of the academic
+        year. Eg: for a child to be eligible for nursery for AY 2024/25, he/she
+        should be 2+ as of June 2024.
+      table:
+        - leftValue: Grade
+          rightValue: Age
+        - leftValue: Toddler
+          rightValue: 1 Years
+        - leftValue: Playgroup
+          rightValue: 2 Years
+        - leftValue: Nursery
+          rightValue: 3 Years
+        - leftValue: LKG
+          rightValue: 4 Years
+        - leftValue: UKG
+          rightValue: 5 Years
+    - title: ONLINE APPLICATION FORM
+      color: '#FF7162'
+      roundNumberColor: '#FF7162'
+      description: "To apply, you can either click the Apply Now button on our website to send us your inquiry, or call us at\_[+91 99725 27072](tel:+919972527072). Pre - admission meeting between the center head and the child along with the parents / guardian is mandatory.\n"
+    - title: ' DOCUMENT SUBMISSIONS'
+      color: '#B892F9'
+      roundNumberColor: 'radial-gradient(50%_50%_at_50%_50%,_#C8AEF5_0%,_#A87BF6_100%)'
+      description: >
+        You are required to submit the following documents to the school:
+
+
+        * • Application for admission form and student profile - fully completed
+        and signed,
+
+        * • One updated copy of Medical / Immunization record of the student,
+
+        * • Four (4) passport size photographs of the student,
+
+        * • One copy of student's birth certificate,
+
+        * • Letter of Reference (Academic / Behaviour) and Report Card from the
+        last school attended (Applicable only for KG admissions)
 ---
 

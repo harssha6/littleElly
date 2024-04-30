@@ -878,6 +878,7 @@ export default defineConfig({
                 fields: [
                   { type: "string", name: "title", label: "Title" },
                   { type: "string", name: "color", label: "Color" },
+                  { type: "string", name: "roundNumberColor", label: "Number Color" },
                   { type: "rich-text", name: "description", label: "Description" },
                   {
                     type: "object",

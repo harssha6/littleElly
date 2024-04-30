@@ -49,24 +49,26 @@ import { displayvideo } from "googleapis/build/src/apis/displayvideo";
 const { data } = await getEntry('admissions', 'admissions');
 const { pageTitle, pageDescription } = data;
 // console.log(data);
-const {sectionHeading} = data?.admissionProcess;
+const {sectionHeading, admissionProcessSteps} = data?.admissionProcess;
+console.log(admissionProcessSteps[0].table, "kundan");
 
-const [i] = data?.admissionProcess.admissionProcessSteps;
-const {item1, item2, item3} = i;
-const {listHeadingNum1, listHeading1, listDescription1} = item1;
-const {listHeadingNum2, listHeading2, listDescription2} = item2;
-const {listHeadingNum3, listHeading3, listDescription3} = item3;
 
-const listDescription2Part1 = listDescription2.slice(0, listDescription2.indexOf("+"));
-const listDescription2Part1Html = marked.parse(listDescription2Part1);
-const listDescription2Part2 = listDescription2.slice(listDescription2.indexOf("."));
-const listDescription2Part2Html = marked.parse(listDescription2Part2);
-const listDescription1Html = marked.parse(listDescription1);
-const listDescription3Html = marked.parse(listDescription3);
+// const [i] = data?.admissionProcess.admissionProcessSteps;
+// const {item1, item2, item3} = i;
+// const {listHeadingNum1, listHeading1, listDescription1} = item1;
+// const {listHeadingNum2, listHeading2, listDescription2} = item2;
+// const {listHeadingNum3, listHeading3, listDescription3} = item3;
 
-const mobileNo = listDescription2.slice(listDescription2.indexOf("+"),listDescription2.indexOf("."));
+// const listDescription2Part1 = listDescription2.slice(0, listDescription2.indexOf("+"));
+// const listDescription2Part1Html = marked.parse(listDescription2Part1);
+// const listDescription2Part2 = listDescription2.slice(listDescription2.indexOf("."));
+// const listDescription2Part2Html = marked.parse(listDescription2Part2);
+// const listDescription1Html = marked.parse(listDescription1);
+// const listDescription3Html = marked.parse(listDescription3);
 
-const finalDescription1Html = `<p class="flex">${listDescription2Part1Html}<a class ="underline" href="tel:${mobileNo}">${mobileNo}</a></p>${listDescription2Part2Html}`;
+// const mobileNo = listDescription2.slice(listDescription2.indexOf("+"),listDescription2.indexOf("."));
+
+// const finalDescription1Html = `<p class="flex">${listDescription2Part1Html}<a class ="underline" href="tel:${mobileNo}">${mobileNo}</a></p>${listDescription2Part2Html}`;
 
 
 
@@ -284,37 +286,35 @@ const testimonialsData = {
         <Text type="h1" class="text-[#253B70]">{sectionHeadingStarting} <span class="not-italic text-red-400"> {sectionHeadingEnding}</span></Text>
         <div class="pt-[60px] max-md:pt-[20px]"></div>
         <div class="flex flex-col gap-10">
-          <div  class="flex flex-row max-md:flex-col gap-10 max-md:gap-2 p-[20px] max-md:p-[0px]">
+
+          {admissionProcessSteps.map((item, index) =>
+           <div  class="flex flex-row max-md:flex-col gap-10 max-md:gap-2 p-[20px] max-md:p-[0px]">
             <div class="flex flex-col max-md:items-start items-center">
               <!-- <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text> -->
-              <div class="w-[150px] h-[150px] max-md:w-[80px] max-md:h-[80px] bg-[radial-gradient(50%_50%_at_50%_50%,_#A5D27C_0%,_#89BB5B_100%)] flex justify-center items-center rounded-full border-2 border-[#B6E28E] rotate-[-21.75deg]">
-                <Text type="h2" class="text-white relative top-4 !text-[96px] max-md:!text-[36px] max-md:self-start" style="text-shadow: 0px 1.554px 0px #76A848;">{listHeadingNum1}</Text>
+              <div class={`w-[150px] h-[150px] max-md:w-[80px] max-md:h-[80px] bg-[${item.roundNumberColor}] flex justify-center items-center rounded-full border-2 border-[${item.color}] rotate-[-21.75deg]`}>
+                <Text type="h2" class="text-white relative top-4 !text-[96px] max-md:!text-[36px] max-md:self-start" style="text-shadow: 0px 1.554px 0px #76A848;">{index <= 8 ? "0"+(index+1) : index+1}</Text>
               </div>
             </div>
             <div>
-              <Text type="h2" class="text-[#A5D27C] max-md:text-[22px] uppercase">
-                {listHeading1}
+              <Text type="h2" class={`text-[${item?.color}] max-md:text-[22px] uppercase`}>
+                {item.title}
               </Text>
               <div class="p-1 max-md:p-1"></div>
-              <Text type="base" set:html={listDescription1Html}>
-              </Text>
+              <Text type="base" set:html={marked.parse(item?.description)}></Text>
             <div class="pt-4">
-              <div class="flex flex-row gap-[20px] max-md:gap-[10px]">
+              {item?.table &&  <div class="flex flex-row gap-[20px] max-md:gap-[10px]">
                 <div class="w-[20%] max-md:w-[150px]">
                   <Text
                     type="base"
                     class="bg-[#FFE3C1] py-[7px] text-primary font-bold text-center"
                   >
-                    Grade
+                   {item.table[index]?.leftValue}
                   </Text>
                   <div
                     class="w-full py-[30px] max-md:py-[15px] max-md:px-[30px] flex flex-col gap-[13px] bg-white text-primary text-center [&>*]:min-w-max"
                   >
-                    <Text type="base">Toddler</Text>
-                    <Text type="base">Playgroup</Text> 
-                    <Text type="base">Nursery</Text>
-                    <Text type="base">LKG</Text>
-                    <Text type="base">UKG</Text>
+                  {item.table.map((value, i)=> i>0 && <Text type="base">{value.leftValue}</Text>) }
+
                   </div>
                 </div>
                 <div class="w-[20%] max-md:w-[150px]">
@@ -322,62 +322,58 @@ const testimonialsData = {
                     type="base"
                     class="bg-[#FFE3C1] py-[7px] text-black font-bold text-center"
                   >
-                    Age
+                  {item.table[index]?.rightValue}
                   </Text>
                   <div
                     class="w-full py-[30px] max-md:py-[15px] px-[48px] max-md:px-[20px] flex flex-col gap-[13px] bg-white text-black text-center [&>*]:min-w-max"
                   >
-                    <Text type="base">1 Years</Text>
-                    <Text type="base">2 Years</Text>
-                    <Text type="base">3 Years</Text>
-                    <Text type="base">4 Years</Text>
-                    <Text type="base">5 Years</Text>
+
+                  {item.table.map((value, i)=> i>0 && <Text type="base">{value.rightValue}</Text>) }
+
                   </div>
                 </div>
-              </div>
+              </div>}
+             
             </div>
             </div>
           </div>
-          <div  data-appear class="flex pt-10 max-md:pt-0 flex-row gap-10 max-md:gap-2 max-md:flex-col max-md:items-start">
+        )} 
+          
+
+          <!-- <div  data-appear class="flex pt-10 max-md:pt-0 flex-row gap-10 max-md:gap-2 max-md:flex-col max-md:items-start">
             <div class="flex flex-col items-center">
               <div class="w-[150px] h-[150px] max-md:w-[80px] max-md:h-[80px] bg-[#FF7162] flex justify-center items-center rounded-full border-2 border-[#F9A3A4] rotate-[-21.75deg]">
-                <Text type="h2" class="text-white relative top-2 !text-[96px] max-md:!text-[36px]" style="text-shadow: 0px 1.554px 0px #E26265;">{listHeadingNum2}</Text>
+                <Text type="h2" class="text-white relative top-2 !text-[96px] max-md:!text-[36px]" style="text-shadow: 0px 1.554px 0px #E26265;">{"listHeadingNum2"}</Text>
               </div>
             </div>
             <div>
               <Text type="h2" class="text-[#FF7162] max-md:text-[22px]">
-                {listHeading2}
+                {"listHeading2"}
               </Text>
               <div class="p-1 max-md:p-1"></div>
-              <Text type="base" class="" set:html={finalDescription1Html}>
+              <Text type="base" class="" set:html={"finalDescription1Html"}>
 
-                <!-- To apply, you can either click the Apply Now button on our website to send us your inquiry, or call us at <a class ="underline" href="tel:+919972527072">+91 99725 27072</a>. Pre - admission  meeting between the center head and the child along with the parents / guardian is mandatory. -->
               
               </Text>
             </div>
           </div>
+
           <div data-appear  class="flex pt-10 max-md:pt-0 flex-row gap-10 max-md:gap-2 max-md:flex-col max-md:items-start">
             <div class="flex flex-col items-center">
               <div class="w-[150px] h-[150px] max-md:w-[80px] max-md:h-[80px] bg-[radial-gradient(50%_50%_at_50%_50%,_#C8AEF5_0%,_#A87BF6_100%)] flex justify-center items-center rounded-full border-2 border-[#C7ADF5] rotate-[-21.75deg]">
-                <Text type="h2" class="text-white relative top-2 !text-[96px] max-md:!text-[36px]" style="text-shadow: 0px 1.554px 0px #A073EE;">{listHeadingNum3}</Text>
+                <Text type="h2" class="text-white relative top-2 !text-[96px] max-md:!text-[36px]" style="text-shadow: 0px 1.554px 0px #A073EE;">{"listHeadingNum3"}</Text>
               </div>
             </div>
             <div>
               <Text type="h2" class="text-[#B892F9] max-md:text-[22px]">
-                {listHeading3}
+                {"listHeading3"}
               </Text>
               <div class="p-1 max-md:p-1"></div>
-              <Text type="base" set:html={listDescription3Html}>
-                <!-- You are required to submit the following documents to the school: <ul>
-                  <li> • Application for admission form and student profile - fully completed and signed,</li>
-                  <li> • One updated copy of Medical / Immunization record of the student,</li>
-                  <li> • Four (4) passport size photographs of the student,</li>
-                  <li> • One copy of student's birth certificate,</li>
-                  <li> • Letter of Reference (Academic / Behaviour) and Report Card from the last school attended (Applicable only for KG admissions)</li>
-                </ul> -->
+              <Text type="base" set:html={"listDescription3Html"}>
+     
               </Text>
             </div>
-          </div>
+          </div> -->
         </div>
       </Section>
 
