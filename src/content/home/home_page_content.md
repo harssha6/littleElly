@@ -189,7 +189,7 @@ testimonials:
         imageAltTag: image
         title: I am glad I chose Little Elly because
         quote: >-
-          this is Aylin Shaila’s first step to schooling and we didn’t want to
+          This is Aylin Shaila’s first step to schooling and we didn’t want to
           make a mistake.
         description: >-
           We were looking for the best preschool in the area. We visited about
