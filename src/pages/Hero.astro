@@ -10,6 +10,7 @@ const {
   showCta = true,
   className,
   style,
+  buttonDetails,
   contentDirection = "item-center",
   bgImageBgColor = "linear-gradient(360deg, rgba(27, 34, 38, 0.8) 0%, rgba(5, 43, 76, 0.2) 52.08%, rgba(19, 112, 167, 0.2) 100%)",
 } = Astro.props;
@@ -20,6 +21,7 @@ const title = config?.title;
 const subHeading = config?.subHeading;
 const topHeading = config?.topHeading;
 const description = config?.description;
+
 ---
 
 <div
@@ -40,7 +42,7 @@ const description = config?.description;
             {
               slide,
               position,
-              type,
+              type = 'image',
             }: { slide: string; position: string; type: string },
             i: number
           ) =>
@@ -128,7 +130,7 @@ const description = config?.description;
           </slot>
         </div>
         <slot name="ctaButton">
-          {showCta ? <a href="/admissions"><Button>Enquire Now!</Button></a> : null}
+          {showCta ? <a href={buttonDetails?.buttonHypelink}><Button>{buttonDetails?.buttonName}</Button></a> : null}
         </slot>
       </div>
       <slot name="description">
