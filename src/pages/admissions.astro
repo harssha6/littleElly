@@ -47,10 +47,11 @@ import { getEntry } from 'astro:content';
 import { marked } from "marked";
 import { displayvideo } from "googleapis/build/src/apis/displayvideo";
 const { data } = await getEntry('admissions', 'admissions');
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
 const { pageTitle, pageDescription } = data;
 // console.log(data);
 const {sectionHeading, admissionProcessSteps} = data?.admissionProcess;
-console.log(admissionProcessSteps[0].table, "kundan");
+
 
 
 // const [i] = data?.admissionProcess.admissionProcessSteps;
@@ -291,12 +292,12 @@ const testimonialsData = {
            <div  class="flex flex-row max-md:flex-col gap-10 max-md:gap-2 p-[20px] max-md:p-[0px]">
             <div class="flex flex-col max-md:items-start items-center">
               <!-- <Text type="subtitle" class="text-[#1C1C1C]/50">STEP</Text> -->
-              <div class={`w-[150px] h-[150px] max-md:w-[80px] max-md:h-[80px] bg-[${item.roundNumberColor}] flex justify-center items-center rounded-full border-2 border-[${item.color}] rotate-[-21.75deg]`}>
-                <Text type="h2" class="text-white relative top-4 !text-[96px] max-md:!text-[36px] max-md:self-start" style="text-shadow: 0px 1.554px 0px #76A848;">{index <= 8 ? "0"+(index+1) : index+1}</Text>
+              <div class="w-[150px] h-[150px] max-md:w-[80px] max-md:h-[80px]  flex justify-center items-center rounded-full border-2  rotate-[-21.75deg]" style={{backgroundColor: item?.color, border: item?.color}}>  
+                <Text type="h2" class="text-white relative top-4 !text-[96px] max-md:!text-[36px] max-md:self-start" style={{textShadow: `0px 1.554px 0px ${item.color}`}}>{index <= 8 ? "0"+(index+1) : index+1}</Text>
               </div>
             </div>
             <div>
-              <Text type="h2" class={`text-[${item?.color}] max-md:text-[22px] uppercase`}>
+              <Text type="h2" class={" max-md:text-[22px] uppercase"} style={{color: item?.color}}>
                 {item.title}
               </Text>
               <div class="p-1 max-md:p-1"></div>
@@ -378,7 +379,7 @@ const testimonialsData = {
       </Section>
 
 
-  <Testimonial data={data.testimonials[0]}/>
+      <Testimonial data={homePageCmsData.testimonials[0]}/>
 
     <Footer />
 

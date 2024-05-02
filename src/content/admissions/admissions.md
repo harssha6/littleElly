@@ -96,7 +96,7 @@ admissionProcess:
       description: "To apply, you can either click the Apply Now button on our website to send us your inquiry, or call us at\_[+91 99725 27072](tel:+919972527072). Pre - admission meeting between the center head and the child along with the parents / guardian is mandatory.\n"
     - title: ' DOCUMENT SUBMISSIONS'
       color: '#B892F9'
-      roundNumberColor: 'radial-gradient(50%_50%_at_50%_50%,_#C8AEF5_0%,_#A87BF6_100%)'
+      roundNumberColor: '#B892F9'
       description: >
         You are required to submit the following documents to the school:
 

@@ -100,10 +100,13 @@ const admissionsCollection = defineCollection({
 const franchiseCollection = defineCollection({
   type: 'content',
   schema: () => z.object({
-
-    pageTitle1: z.any().optional(),
-    pageDescription1: z.any().optional(),
-
+    title: z.any().optional(),
+    ourPresenceSection: z.any().optional(),
+    littleAllySection: z.any().optional(),
+    whyYouShouldSection: z.any().optional(),
+    howToStartSection: z.any().optional(),
+    partnersSection: z.any().optional(),
+    faqSection: z.any().optional(),
   }),
 });
 
