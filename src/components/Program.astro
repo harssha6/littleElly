@@ -12,6 +12,7 @@ import Button from './system/Button.astro'
 
 import rabbit from '../image/decorations/gifs/rabbit.gif'
 import deer from '../image/decorations/gifs/deer.gif'
+import { coloredText } from '../utils';
 
 export const programData = [
     {
@@ -57,10 +58,10 @@ export const programData = [
 const {data} = Astro.props;
 const {heading,buttonText,buttonLink,ourPrograms} = data[0];
 const headingColor = ["text-purple", "text-red-200", "text-green-200", "text-orange-200", "text-purple", "text-primary", "text-green-200", "text-orange-200"];
-const finalColoredHeading = [...headingColor,...headingColor]
 const headingLength = heading.split(' ').length;
 const simpleHeading = heading.split(' ').slice(0,headingLength-1).join(' ');
 const coloredHeading = heading.split(' ').slice(-1)[0];
+const finalColoredHeading = coloredText(coloredHeading, headingColor);
 
 
 

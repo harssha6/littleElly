@@ -262,6 +262,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
 import { getEntry } from 'astro:content';
 import { marked } from "marked";
+import { coloredText } from "../utils";
 
 const { data } = await getEntry('curriculum', 'curriculum')
 const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
@@ -275,9 +276,9 @@ const titleStarting = title.split(' ').slice(0, titleLength-3).join(' ');
 const titlemid = title.split(' ').slice(-3)[0]
 const titleEnding = title.split(' ').slice(-2).join(' ')
 const happyCurriculumColor = ["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]
-const happyCurriculumExtendedColor = [...happyCurriculumColor, ...happyCurriculumColor]
 const happyCurriculumHeadingLength = happyCurriculumSection[0].heading.split(' ').length;
-const happyCurriculumHeadingStarting = happyCurriculumSection[0].heading.split(' ')[0];
+const happyCurriculumHeadingColored = happyCurriculumSection[0].heading.split(' ')[0];
+const happyCurriculumExtendedColor = coloredText(happyCurriculumHeadingColored,happyCurriculumColor)
 const happyCurriculumHeadingRest = happyCurriculumSection[0].heading.split(' ').slice(1,happyCurriculumHeadingLength).join('');
 const descriptionTopHtml = marked.parse(happyCurriculumSection[0]?.descriptionTop)
 const descriptionLeftHtml = marked.parse(happyCurriculumSection[0]?.descriptionLeft)
@@ -346,7 +347,7 @@ heroImagesMobile.forEach((obj,i) => {obj,obj.type ='image'})
         <Text type="h2" class="text-center">
           <MultiStyleText
             classes={happyCurriculumExtendedColor}
-             text={happyCurriculumHeadingStarting}/>
+             text={happyCurriculumHeadingColored}/>
           </Text>
         <Text type="h2" class="text-primary">{happyCurriculumHeadingRest}</Text>
        </div>
