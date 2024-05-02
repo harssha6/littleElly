@@ -800,29 +800,20 @@ export default defineConfig({
               { type: 'string', label: 'Subtitle', name: 'subtitle' },
               { type: 'image', label: 'Image', name: 'image' },
               { type: 'string', label: 'Image Alt Tag', name: 'imageAltTag' },
-              { type: 'string', label: 'Title Color Code', name: 'titleClass' },
-              { type: 'string', label: 'Subtitle Color Code', name: 'subTitleClass' },
+              { type: 'string', label: 'Title Color Code', name: 'titleClass', ui: {component: "color",colorFormat: "hex" }},
+              { type: 'string', label: 'Subtitle Color Code', name: 'subTitleClass', ui: {component: "color",colorFormat: "hex"}},
               { type: 'string', label: 'Subtitle Text', name: 'subText' },
               { type: 'string', label: 'Description', name: 'desc' },
-              { type: 'image', label: 'Decoration Image', name: 'decorationImage' },
               {
-                type: 'object',
+                type: 'string',
                 list: true,
                 required: false,
                 label: 'Skills',
                 name: 'skills',
-                ui: {
-                  itemProps: (item) => ({
-                    label: item?.title
-                  }),
-                },
-                fields: [
-                  { type: 'string', label: 'Title', name: 'title' },
-                ]
               },
             ]
           },
-          { type: "string", label: "CTA Card Title", name: "ctaCardTitleOurPrograms" }]
+]
       },
       {
         name: "curriculum",
@@ -831,78 +822,30 @@ export default defineConfig({
         fields: [
           { type: 'string', label: 'Hero sectio Title text', name: 'title' },
           {
-            type: 'object', label: 'Hero Images Desktop', name: 'heroImages',
-            list: true,
-            ui: {
-              itemProps: (item) => ({
-                label: item?.imageAlt
-              }),
-            },
-            fields: [
-              { type: 'image', label: 'Image', name: 'slide' },
-              { type: 'string', label: 'Position', name: 'position' }
-            ]
-          },
-          {
-            type: 'object', label: 'Hero Images Mobile', name: 'heroImagesMobile',
-            list: true,
-            ui: {
-              itemProps: (item) => ({
-                label: item?.imageAlt
-              }),
-            },
-            fields: [
-              { type: 'image', label: 'Image', name: 'slide' },
-              { type: 'string', label: 'Position', name: 'position' }
-            ]
-          },
-          {
             type: 'object',
-            list: true,
-            label: 'Happy Curriculum Section',
-            name: 'happyCurriculumSection',
-
+            list: false,
+            label: 'Hero Section',
+            name: 'heroSection',
             fields: [
-              {
-                type: 'string',
-                label: 'Heading',
-                name: 'heading'
-              },
-              {
-                type: 'rich-text',
-                label: 'Description Top',
-                name: 'descriptionTop'
-              },
-              {
-                type: 'rich-text',
-                label: 'Description Left',
-                name: 'descriptionLeft'
-              },
               {
                 type: 'object',
                 list: true,
-                label: 'Animation Area',
-                name: 'animationArea',
-                ui: {
-                  itemProps: (item) => ({
-                    label: item?.title
-                  }),
-                },
+                label: 'Hero Section Desktop Images',
+                name: 'heroSectionDesktop',
                 fields: [
-                  {
-                    type: 'string',
-                    label: 'Title',
-                    name: 'title'
-                  },
-                  {
-                    type: 'string',
-                    label: 'Description',
-                    name: 'description'
-                  },
-                ]
-              }
-            ]
-          },
+                  { type: 'image', label: 'Image', name: 'slide' },
+                  { type: 'string', label: 'Position', name: 'position' }
+               ]},
+                {
+                  type: 'object',
+                  list: true,
+                  label: 'Hero Section Mobile Images',
+                  name: 'heroSectionMobile',
+                  fields: [
+                    { type: 'image', label: 'Image', name: 'slide' },
+                    { type: 'string', label: 'Position', name: 'position' }
+                  ]},
+            ]},
           {
             type: 'object',
             list: true,
@@ -918,7 +861,7 @@ export default defineConfig({
               {
                 type: 'object',
                 list: true,
-                label: 'Item lists',
+                label: ' Learning Areas',
                 name: 'itemLists',
                 ui: {
                   itemProps: (item) => ({
@@ -960,7 +903,7 @@ export default defineConfig({
               {
                 type: 'object',
                 list: true,
-                label: 'lists',
+                label: 'Approaches',
                 name: 'list',
                 ui: {
                   itemProps: (item) => ({
@@ -1001,7 +944,7 @@ export default defineConfig({
               {
                 type: 'object',
                 list: true,
-                label: 'Box Content ',
+                label: 'Approaches ',
                 name: 'boxContent',
                 ui: {
                   itemProps: (item) => ({
@@ -1071,7 +1014,7 @@ export default defineConfig({
               {
                 type: 'object',
                 list: true,
-                label: 'Circle Content ',
+                label: 'Approaches ',
                 name: 'circleContent',
                 ui: {
                   itemProps: (item) => ({

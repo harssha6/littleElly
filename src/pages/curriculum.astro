@@ -264,7 +264,12 @@ import { getEntry } from 'astro:content';
 import { marked } from "marked";
 
 const { data } = await getEntry('curriculum', 'curriculum')
-const {title, heroImages,heroImagesMobile, happyCurriculumSection, areaOflearning, multiFacetedSection, montessoriApproach, waldorfApproach, gardnerApproach, bloomApproach, learningStyleTheorySection} = data;
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
+
+const happyCurriculumSection = homePageCmsData.happyCurriculumSection;
+
+
+const {title, heroImages, heroImagesMobile, areaOflearning, multiFacetedSection, montessoriApproach, waldorfApproach, gardnerApproach, bloomApproach, learningStyleTheorySection} = data;
 const titleLength = title.split(' ').length;
 const titleStarting = title.split(' ').slice(0, titleLength-3).join(' ');
 const titlemid = title.split(' ').slice(-3)[0]
@@ -301,11 +306,10 @@ const learningStyleTheoryDescriptionHtml = marked.parse(learningStyleTheoryDescr
 const bloomApproachDescriptionTopHtml = marked.parse(bloomApproachDescriptionTop)
 const bloomApproachDescriptionBottomHtml = marked.parse(bloomApproachDescriptionBottom)
 
-const desktopHeroImages = heroImages
-const mobileHeroImages = heroImagesMobile
-desktopHeroImages.forEach((obj,i) => {obj,obj.type ='image'})
-mobileHeroImages.forEach((obj,i) => {obj,obj.type ='image'})
-// console.log(desktopHeroImages)
+
+heroImages.forEach((obj,i) => {obj,obj.type ='image'})
+heroImagesMobile.forEach((obj,i) => {obj,obj.type ='image'})
+// console.log('hero',montessoriDescriptionHtml)
 
 ---
 
@@ -315,11 +319,11 @@ mobileHeroImages.forEach((obj,i) => {obj,obj.type ='image'})
     <div
     class="h-[76svh] max-md:h-[70svh] flex"
   >
-  <Hero
+   <Hero
   config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
   showSlide={true}
-  slideImages={desktopHeroImages}
-  mobileSlideImages={mobileHeroImages}
+  slideImages={heroImages}
+  mobileSlideImages={heroImagesMobile}
   contentDirection="items-end"
   className="overflow-hidden font-roundo"
 >

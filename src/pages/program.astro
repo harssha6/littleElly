@@ -137,6 +137,7 @@ const programData = [
     },
 ]
 
+// console.log(programList)
 ---
 
 <Layout
@@ -170,7 +171,7 @@ const programData = [
 
     <div class="flex flex-col gap-[60px] items-center">
       {
-        programList.map((item, index )=> {
+        programList?.map((item, index )=> {
           return (
             <div data-appear={index === 0 ? false : index}>
               <div class="flex gap-xl max-sm:flex-col items-center">
@@ -190,7 +191,7 @@ const programData = [
                       return (
                       <div class="flex items-center gap-r">
                       <Marker color={item.subTitleClass.replace('text-', '').replace('[', '').replace(']', '')} />
-                        <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-[0]`}>{skill.title}</Text>
+                        <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] leading-[0]`}>{skill}</Text>
 
                         </div>
                       )
@@ -213,7 +214,7 @@ const programData = [
 
     <DaycareFacilities data={homePageCmsData.dayCaresSection[0]} />
     </Section>
-    <GoToCta className="!bg-[#FDF2E5]" data={ctaCardTitleOurPrograms} />
+    <GoToCta data={homePageCmsData.ctaCardTitle} />
 
     <Footer />
 </div>

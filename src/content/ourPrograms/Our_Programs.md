@@ -1,4 +1,5 @@
 ---
+ctaCardTitleOurPrograms: Admissions Open for <span>2024-25!!</span>
 heading: Our Programs
 buttonText: Enquire Now!
 buttonLink: /admissions
@@ -23,13 +24,12 @@ programList:
       rapid physical and cognitive development. The emphasis is on creating a
       supportive and engaging atmosphere for toddlers' growth and development
       through their critical years of learning.
-    decorationImage: /images/bird-sun.png
     skills:
-      - title: Constructive play
-      - title: Sensory exploration
-      - title: Mark making learning
-      - title: Artistic movement
-      - title: Emergent Literacy
+      - Constructive play
+      - Sensory exploration
+      - Mark making learning
+      - Artistic movement
+      - Emergent Literacy
   - title: Play Group
     subtitle: age 2 Years +
     image: /images/program1.png
@@ -44,17 +44,17 @@ programList:
       an engaging package of hands-on activities blended with STEM-based
       learning.
     skills:
-      - title: Pre-writing skills
-      - title: Cognitive development
-      - title: Social and emotional learning
-      - title: Gross and fine motor skills
-      - title: Language and communication skills
-      - title: Exploring the world through themes
-      - title: Early literacy and pre- math concepts
+      - Pre-writing skills
+      - Cognitive development
+      - Social and emotional learning
+      - Gross and fine motor skills
+      - Language and communication skills
+      - Exploring the world through themes
+      - Early literacy and pre- math concepts
   - title: nursery
     subtitle: age 3 Years +
     image: /images/program3.png
-    imageAltTag: 'Program: Nursery'
+    imageAltTag: 'Program: nursery'
     titleClass: '#78ADF9'
     subTitleClass: '#78ADF9'
     subText: '(Adult to child ratio- 2:18)'
@@ -63,16 +63,15 @@ programList:
       mould our little tots as inquisitive learners. The education journey of a
       child is fostered through the love for learning. The focus is to strike a
       balance between play based learning blending it with structured learning.
-    decorationImage: /images/flowers.png
     skills:
-      - title: Communication Skills
-      - title: Dramatic play and role play
-      - title: Story Time
-      - title: Visual stimulation through play
-      - title: Hands on learning
-      - title: Literacy and Math concepts
-      - title: Introduction of Phonics
-      - title: Sensory based learning
+      - Communication Skills
+      - Dramatic play and role play
+      - Story Time
+      - Visual stimulation through play
+      - Hands on learning
+      - Literacy and Math concepts
+      - Introduction of Phonics
+      - Sensory based learning
   - title: LKG
     subtitle: age 4 Years +
     image: /images/program5.png
@@ -86,14 +85,13 @@ programList:
       encourage them to express themselves by building a strong vocabulary. We
       create an environment to set up a clear and consistent routine for the
       children.
-    decorationImage: /images/rainbows.png
     skills:
-      - title: Mindful activities
-      - title: Spoken language
-      - title: Social skills and creative arts
-      - title: Pre-reading skills
-      - title: Regional languages
-      - title: General awareness
+      - Mindful activities
+      - Spoken language
+      - Social skills and creative arts
+      - Pre-reading skills
+      - Regional languages
+      - General awareness
   - title: UKG
     subtitle: age 5 Years +
     image: /images/program1.png
@@ -108,12 +106,11 @@ programList:
       stimulating learning environment and prepare them to build a strong
       foundation for formal schooling.
     skills:
-      - title: Independent reading and writing skills
-      - title: Mathematical concepts
-      - title: Advance phonics skills
-      - title: Logical learning
-      - title: Problem solving skills
-      - title: Environmental awareness
-ctaCardTitleOurPrograms: Admissions Open for <span>2024-25!!</span>
+      - Independent reading and writing skills
+      - Mathematical concepts
+      - Advance phonics skills
+      - Logical learning
+      - Problem solving skills
+      - Environmental awareness
 ---
 

@@ -1,5 +1,4 @@
 ---
-title: H.A.P.P.Y Curriculum & Elly’s Approach
 heroImages:
   - slide: /images/curriculum-desktop.png
     position: center
@@ -44,6 +43,14 @@ happyCurriculumSection:
           curiosity by creating a vibrant atmosphere of enthusiasm that fuels
           their learning and development during these crucial early years of
           childhood.
+title: H.A.P.P.Y Curriculum & Elly’s Approach
+heroSection:
+  heroSectionDesktop:
+    - slide: /images/curriculum-desktop.png
+      position: center
+  heroSectionMobile:
+    - slide: /images/curriculum-mobile.png
+      position: center
 areaOflearning:
   - title: Areas Of Learning And Development
     itemLists:
