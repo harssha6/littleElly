@@ -1,4 +1,5 @@
-import { defineConfig } from "tinacms";
+import React from 'react'
+import { defineConfig, wrapFieldsWithMeta } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -800,8 +801,16 @@ export default defineConfig({
               { type: 'string', label: 'Subtitle', name: 'subtitle' },
               { type: 'image', label: 'Image', name: 'image' },
               { type: 'string', label: 'Image Alt Tag', name: 'imageAltTag' },
+<<<<<<< HEAD
               { type: 'string', label: 'Title Color Code', name: 'titleClass', ui: {component: "color",colorFormat: "hex" }},
               { type: 'string', label: 'Subtitle Color Code', name: 'subTitleClass', ui: {component: "color",colorFormat: "hex"}},
+=======
+              { type: 'string', label: 'Title Color Code', name: 'titleClass', ui: {
+                component: 'color',
+                colorFormat: 'hex'
+              } },
+              { type: 'string', label: 'Subtitle Color Code', name: 'subTitleClass' },
+>>>>>>> 8d114468721f7a5d17370e268270c53e9d85ccb3
               { type: 'string', label: 'Subtitle Text', name: 'subText' },
               { type: 'string', label: 'Description', name: 'desc' },
               {
