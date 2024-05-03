@@ -876,6 +876,11 @@ export default defineConfig({
                 list: true,
                 name: "admissionProcessSteps",
                 label: "Admission Process Steps",
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.title
+                  }),
+                },
                 fields: [
                   { type: "string", name: "title", label: "Title" },
                   { type: "string", name: "color", label: "Color", ui: {component: "color",colorFormat: "hex" } },
@@ -883,6 +888,11 @@ export default defineConfig({
                   {
                     type: "object",
                     list: true,
+                    ui: {
+                      itemProps: (item) => ({
+                        label: (item?.leftValue)? (item?.leftValue) + ", " + item?.rightValue : null
+                      }),
+                    },
                     name: "table",
                     label: "Table",
                     fields: [
@@ -911,15 +921,7 @@ export default defineConfig({
             label: "Our Presence Section",
             fields: [
               { type: "string", name: "ourPresenceSectionHeading", label: "Section Heading" },
-              {
-                type: "object",
-                list: true,
-                name: "ourPresenceSectionPara",
-                label: "Section paragraph",
-                fields: [
-                  { type: "rich-text", name: "para", label: "Paragraph" },
-                ]
-                  },
+              { type: "rich-text", name: "ourPresenceSectionPara", label: "Section Paragraph" },
               {
                 type: 'image',
                 label: 'Image',
@@ -942,6 +944,11 @@ export default defineConfig({
               {
                 type: "object",
                 list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.title)? (item?.title): null
+                  }),
+                },
                 name: "requirements",
                 label: "Franchise Requirements",
                 fields: [
@@ -962,6 +969,11 @@ export default defineConfig({
               {
                 type: "object",
                 list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.title)? (item?.title) : null
+                  }),
+                },
                 name: "opportunities",
                 label: "Opportunities",
                 fields: [
@@ -999,6 +1011,11 @@ export default defineConfig({
               {
                 type: "object",
                 list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.partnerName)? (item?.partnerName): null
+                  }),
+                },
                 name: "partners",
                 label: "Partners Card Details",
                 fields: [
@@ -1024,6 +1041,11 @@ export default defineConfig({
               {
                 type: "object",
                 list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.question)? (item?.question): null
+                  }),
+                },
                 name: "faqs",
                 label: "FAQ",
                 fields: [

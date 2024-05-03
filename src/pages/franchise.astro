@@ -99,8 +99,9 @@ const partnersSectionHeadingEnding = partnersSectionHeading.split(" ").slice(-1)
 const whyYouSectionDescriptionHtml = marked.parse(whyYouSectionDescription).replaceAll('<strong>','<strong class="text-[#EE7F82] font-[700]">').replaceAll('&lt;','<').replaceAll('&gt;','>');
 
   const howToStartSectionSubtitleHtml = marked.parse(howToStartSectionSubtitle).replaceAll('<strong>','<strong class="text-[#CB9131] font-[700]">').replaceAll('&lt;','<').replaceAll('&gt;','>')
-console.log(faqs, "ktk");
 
+const ourPresenceSectionParaHtml = marked.parse(ourPresenceSectionPara)
+console.log(ourPresenceSectionParaHtml, "ktk");
 
 
 
@@ -304,11 +305,10 @@ const partnerss = [
             </div>
         </div>
         <div class="flex gap-6 w-full justify-between mt-l max-md:flex-col max-md:items-center max-md:mt-0">
-         <div>
-          {ourPresenceSectionPara.map((item) => <Text type="base" class="!text-[22px] max-md:!text-[18px] !font-[400] !text-[#1B2226] !leading-[160%] md:mb-[32px] max-w-[70ch] mt-r max-md:mt-0" set:html={marked.parse(item.para)}>
-            
-            </Text>)}
-         </div>
+
+            <Text type="base" class="!text-[22px] max-md:!text-[18px] !font-[400] !text-[#1B2226] !leading-[160%] md:mb-[32px] max-w-[70ch] mt-r max-md:mt-0" set:html={ourPresenceSectionParaHtml}>
+            </Text>
+
           <Image src={image} width={560} height={580} alt={imageAltTag} class={"max-w-[560px] max-h-[580px] basis-[40%] max-md:max-w-[340px] max-md:max-h-[360px]"} />
         </div>
         

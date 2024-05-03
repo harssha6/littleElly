@@ -3,19 +3,18 @@ pageTitle1: ' Own India''s Most'
 pageDescription1: ''
 title: Own India's Most Admired Preschool
 ourPresenceSection:
-  ourPresenceSectionHeading: Our Presence & Rich History
-  ourPresenceSectionPara:
-    - para: >
-        With a notable presence in early childhood education, we stand out for
-        our creative curriculum and dedication to excellence. As a franchisee,
-        you'll be part of a community dedicated to holistic child development,
-        leveraging a trusted reputation and a successful business model to make
-        a lasting impact on young learners' lives.
-    - para: >
-        By aligning with us, you embark on a fulfilling journey, contributing to
-        a legacy of excellence and shaping the future of education. Together,
-        we'll nurture the potential of each child, fostering a love for learning
-        that lasts a lifetime.
+  ourPresenceSectionHeading: Our Presence & Rich History heekwe
+  ourPresenceSectionPara: >
+    With a notable presence in early childhood education, we stand out for our
+    creative curriculum and dedication to excellence. As a franchisee, you'll be
+    part of a community dedicated to holistic child development, leveraging a
+    trusted reputation and a successful business model to make a lasting impact
+    on young learners' lives. <br/> <br/>
+
+    By aligning with us, you embark on a fulfilling journey, contributing to a
+    legacy of excellence and shaping the future of education. Together, we'll
+    nurture the potential of each child, fostering a love for learning that
+    lasts a lifetime.
   image: /images/schoolMap.png
   imageAltTag: School Map
 littleAllySection:

@@ -82,7 +82,7 @@ const pageTitleEnding = pageTitle.split(" ").slice(-1).join(" ");
 
 
 const sectionHeadingStarting = sectionHeading.split(" ").slice(0,1).join(" ")
-const sectionHeadingEnding = sectionHeading.split(" ").slice(-1).join(" ");
+const sectionHeadingEnding = sectionHeading.split(" ").slice(1).join(" ");
 
 
 
@@ -248,7 +248,7 @@ const testimonialsData = {
             <div
               class="flex flex-col items-start max-md:items-center max-md:mb-2 max-md:pl-10 max-md:pr-10 "
             >
-              <Text type="h1" class="text-white text-center">
+              <Text type="h1" class="text-white text-left">
                 {pageTitleStarting}<br class="hidden max-md:block" />
                 <MultiStyleText
                 text={pageTitleEnding}
