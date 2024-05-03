@@ -64,7 +64,11 @@ const pages = [
 const page = pages.find(page => page.name === slug)?.page
 const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
 
+const check = page?.addressTitle ? true : false
 
+if(!check){
+  page.addressTitle = `Little Elly, ${page?.subtitle}`
+}
 ---
 
 <Layout
