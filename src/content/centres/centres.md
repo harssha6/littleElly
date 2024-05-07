@@ -544,7 +544,9 @@ centers:
                   is to help foster your child’s growth during the first five
                   crucial years with a child-centered & child directed approach
                   to learning.
-              addressTitle: 'Little Elly, Banashankari 3rd Stage, Bangalore'
+              addressTitle: >-
+                57, 2nd Cross, 1st Main Rd, behind Anna Kuteera, Banashankari
+                3rd Stage, Bengaluru, Karnataka 560085
               address: >-
                 57, 2nd Cross, 1st Main Rd, behind Anna Kuteera, Banashankari
                 3rd Stage, Bengaluru, Karnataka 560085
