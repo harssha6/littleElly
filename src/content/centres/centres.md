@@ -3993,7 +3993,7 @@ centers:
               address: >-
                 Old No.91, New No. 19, BMS House, 2nd Main Road, Perumal Nagar,
                 Old Pallavaram, Chennai – 600 117
-              telephone: +91 9940673825
+              telephone: +91 98847 79006
               email: pallavaram@littleelly.com
           - centre: Perambur
             page:
