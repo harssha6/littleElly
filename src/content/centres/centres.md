@@ -546,8 +546,8 @@ centers:
                   to learning.
               addressTitle: 'Little Elly, Banashankari 3rd Stage, Bangalore'
               address: >-
-                Sapthagiri #57, 2nd Cross, 1st Main, Banashankari, 3rd Stage,
-                3rd Phase, 4th Block,Kathriguppe, Bangalore - 560 085
+                57, 2nd Cross, 1st Main Rd, behind Anna Kuteera, Banashankari
+                3rd Stage, Bengaluru, Karnataka 560085
               telephone: +91 8792771757
               email: bsk3rdstage@littleelly.com
           - centre: Basavanagar
