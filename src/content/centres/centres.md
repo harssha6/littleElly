@@ -85,7 +85,9 @@ centers:
           - centre: Masthenahalli
             page:
               subtitle: 'Little Elly, Masthenahalli'
-              addressTitle: 'Little Elly, Masthenahalli, Bangalore'
+              addressTitle: >-
+                No 69/3, Near DLF Apartments, Masthenahalli, Hennagara Post,
+                Anekal Taluk, Jigani ,Bangalore-560105
               address: >-
                 No 69/3, Near DLF Apartments, Masthenahalli, Hennagara Post,
                 Anekal Taluk, Jigani ,Bangalore-560105
