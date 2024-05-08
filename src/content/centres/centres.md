@@ -1,5 +1,13 @@
 ---
 centers:
+  - state: Karnataka
+    poweredBy: true
+    page:
+      subtitle: Vijayashree Public School (ICSE / STATE)
+      addressTitle: 'Opp MEI layout Mallasandra, Hesarghatta Rd, Bengaluru, Karnataka 560057'
+      address: 'Opp MEI layout Mallasandra, Hesarghatta Rd, Bengaluru, Karnataka 560057'
+      telephone: 9663355775 / 080-28399899
+      email: info@vijayashreepublicschool.com
   - state: Tamilnadu
     poweredBy: true
     page:
