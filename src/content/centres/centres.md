@@ -76,7 +76,9 @@ centers:
           - centre: Shanthi Nagar - Devanahalli
             page:
               subtitle: Little Elly Shanthi Nagar - Devanahalli
-              addressTitle: 'Little Elly,Shanthi Nagar, Devanahalli, Bangalore'
+              addressTitle: >-
+                Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
+                Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
               address: >-
                 Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
                 Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
