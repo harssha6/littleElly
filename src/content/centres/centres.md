@@ -1,5 +1,16 @@
 ---
 centers:
+  - state: Tamilnadu
+    poweredBy: true
+    page:
+      subtitle: RKV Nursery & Primary School
+      addressTitle: >-
+        126, Railway Feeder Road, Sattur, Virudhunagar District, Tamil Nadu -
+        626203
+      address: >-
+        126, Railway Feeder Road, Sattur, Virudhunagar District, Tamil Nadu -
+        626203
+      telephone: '9361150444'
   - state: Nepal
   - state: Karnataka
     districts:
