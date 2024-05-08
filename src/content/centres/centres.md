@@ -65,6 +65,9 @@ centers:
           - centre: Attibele
             page:
               subtitle: Attibele
+              addressTitle: >-
+                #58/10, Shamayya Reddy Building,Sarjapur Road,Behind Mayura
+                bakery,Attibele,Bangalore -562107
               address: >-
                 #58/10, Shamayya Reddy Building,Sarjapur Road,Behind Mayura
                 bakery,Attibele,Bangalore -562107
