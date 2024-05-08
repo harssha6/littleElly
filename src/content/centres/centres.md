@@ -3707,6 +3707,17 @@ centers:
     districts:
       - district: Chennai
         centres:
+          - centre: Kovilambakkam
+            page:
+              subtitle: 'Kovilambakkam, Chennai'
+              addressTitle: >-
+                "No.14C, Hasthinapuram Road, 1st cross street, Nanmangalam,
+                kovilambakkam,  chennai- 600129"
+              address: >-
+                "No.14C, Hasthinapuram Road, 1st cross street, Nanmangalam,
+                kovilambakkam,  chennai- 600129"
+              telephone: '9677749104'
+              email: kovilambakkam.che@littleelly.com
           - centre: Guduvancheri
             page:
               subtitle: Guduvancheri
