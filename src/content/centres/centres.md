@@ -8,6 +8,9 @@ centers:
           - centre: Channapatana
             page:
               subtitle: Channapatana
+              addressTitle: >-
+                Ikshu', #1620, 2nd cross road, Next to district court complex,
+                new housing board layout, Channapatana, Hassan 573201
               address: >-
                 Ikshu', #1620, 2nd cross road, Next to district court complex,
                 new housing board layout, Channapatana, Hassan 573201
