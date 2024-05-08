@@ -25,6 +25,9 @@ centers:
           - centre: Kannamangala Gate
             page:
               subtitle: Kannamangala Gate
+              addressTitle: >-
+                #105, Udayagiri. Next to Hotel Krishna Garden Kannamangala Gate
+                Devanahalli Main Road , Bangalore Rural 562110
               address: >-
                 #105, Udayagiri. Next to Hotel Krishna Garden Kannamangala Gate
                 Devanahalli Main Road , Bangalore Rural 562110
