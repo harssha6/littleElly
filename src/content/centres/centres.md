@@ -11,6 +11,7 @@ centers:
         126, Railway Feeder Road, Sattur, Virudhunagar District, Tamil Nadu -
         626203
       telephone: '9361150444'
+      email: rkvschool@outlook.com
   - state: Nepal
   - state: Karnataka
     districts:
