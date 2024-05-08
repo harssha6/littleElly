@@ -15,6 +15,13 @@ centers:
               email: nhb.hassan@littleelly.com
       - district: Bangalore
         centres:
+          - centre: Sahakarnagar
+            page:
+              subtitle: Sahakarnagar
+              addressTitle: '#89 4th Cross Road Defence Layout Sahakarnagar Bengaluru 560092'
+              address: '#89 4th Cross Road Defence Layout Sahakarnagar Bengaluru 560092'
+              telephone: '9035775787'
+              email: sahakarnagar.blr@littleelly.com
           - centre: Kannamangala Gate
             page:
               subtitle: Kannamangala Gate
