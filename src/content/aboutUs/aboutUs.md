@@ -3,13 +3,10 @@ personTitle: test
 heroImages:
   - slide: /images/1.png
     position: center
-    type: image
   - slide: /images/3.png
     position: center
-    type: image
   - slide: /images/4.png
     position: center
-    type: image
 herotitle: About Us
 visionAndMissionSection:
   - title: Vision and Mission
@@ -57,7 +54,7 @@ ourTeamSection:
       - image: /images/Amit-Tiwari.png
         imageAlt: vittal
         personName: Amit Tiwari
-        personRole: Chief Operating Officer
+        personRole: Chief Executive Officer
       - image: /images/Preeti-Alva.png
         imageAlt: vittal
         personName: Preeti Alva
