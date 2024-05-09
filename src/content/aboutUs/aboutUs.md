@@ -51,7 +51,7 @@ ourTeamSection:
         imageAlt: vittal
         personName: Preeti Bhandary
         personRole: Head of Curriculum Innovation and Founder
-      - image: /images/Amit-Tiwari.png
+      - image: /images/Amit12.JPG
         imageAlt: vittal
         personName: Amit Tiwari
         personRole: Chief Executive Officer
