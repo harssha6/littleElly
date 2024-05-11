@@ -1,4 +1,5 @@
 import { z, defineCollection } from 'astro:content';
+import type Franchise from '../pages/franchise.astro';
 
 const centerHeadSchema = z.object({
   title: z.string().optional().nullable(),
@@ -59,6 +60,53 @@ const centresCollection = defineCollection({
         ).optional(),
       })
     ).optional(),
+  }),
+});
+
+// const admissionsCollection = defineCollection({
+//   type: 'content',
+//   schema: () => z.object({
+//     centers: z.array(
+//       z.object({
+//         pageTitle: z.any().optional(),
+//         pageDescription: z.any().optional(),
+//         admissionProcess: z.any().optional(),
+//         testimonials: z.any().optional(),
+//       })
+//     ).optional(),
+//   }),
+// });
+
+const admissionsCollection = defineCollection({
+  type: 'content',
+  schema: () => z.object({
+
+    pageTitle: z.any().optional(),
+    pageDescription: z.any().optional(),
+    admissionProcess: z.any().optional(),
+    testimonials: z.any().optional(),
+
+  }),
+});
+
+// const franchiseCollection = defineCollection({
+//   type: 'content',
+//   schema: () => z.object({
+//     pageTitle1: z.any().optional(),
+//     pageDescription1: z.any().optional(),
+//   }),
+// });
+
+const franchiseCollection = defineCollection({
+  type: 'content',
+  schema: () => z.object({
+    title: z.any().optional(),
+    ourPresenceSection: z.any().optional(),
+    littleAllySection: z.any().optional(),
+    whyYouShouldSection: z.any().optional(),
+    howToStartSection: z.any().optional(),
+    partnersSection: z.any().optional(),
+    faqSection: z.any().optional(),
   }),
 });
 
@@ -200,5 +248,8 @@ const aboutUsCollection = defineCollection({
 export const collections = {
   'centres': centresCollection,
   'home': homeCollection,
-  'aboutUs': aboutUsCollection
+  'aboutUs': aboutUsCollection,
+  'admissions': admissionsCollection,
+  'franchise': franchiseCollection,
+
 };
