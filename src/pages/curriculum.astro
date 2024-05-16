@@ -77,27 +77,27 @@ for(let i=1 ; i<=9 ; i++){
 const areaOfLearingAndDevelopment =[
   {icon: communication,
   title: 'Communication, Language & Literacy',
-  color : '#B892F9'  
+  color : '#B892F9'
   },
   {icon: physical,
   title: 'Physical Development',
-  color : '#78ADF9'  
+  color : '#78ADF9'
   },
   {icon: social,
   title: 'Social and Emotional Development',
-  color : '#F6BD60'  
+  color : '#F6BD60'
   },
   {icon: cognitive,
   title: 'Mathematics Development',
-  color : '#EE7F82'   
+  color : '#EE7F82'
   },
   {icon: understanding,
   title: 'Understanding the World',
-  color : '#A5D27C'   
+  color : '#A5D27C'
   },
   {icon: expressiveArt,
    title: 'Expressive<br class="max-md:hidden block" /> Arts',
-   color : '#EE7F82'    
+   color : '#EE7F82'
    },
 ]
 
@@ -260,6 +260,58 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   return current
 })
 
+import { getEntry } from 'astro:content';
+import { marked } from "marked";
+import { coloredText } from "../utils";
+
+const { data } = await getEntry('curriculum', 'curriculum')
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
+
+const happyCurriculumSection = homePageCmsData.happyCurriculumSection;
+
+
+const {title, heroImages, heroImagesMobile, areaOflearning, multiFacetedSection, montessoriApproach, waldorfApproach, gardnerApproach, bloomApproach, learningStyleTheorySection} = data;
+const titleLength = title.split(' ').length;
+const titleStarting = title.split(' ').slice(0, titleLength-3).join(' ');
+const titlemid = title.split(' ').slice(-3)[0]
+const titleEnding = title.split(' ').slice(-2).join(' ')
+const happyCurriculumColor = ["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]
+const happyCurriculumHeadingLength = happyCurriculumSection[0].heading.split(' ').length;
+const happyCurriculumHeadingColored = happyCurriculumSection[0].heading.split(' ')[0];
+const happyCurriculumExtendedColor = coloredText(happyCurriculumHeadingColored,happyCurriculumColor)
+const happyCurriculumHeadingRest = happyCurriculumSection[0].heading.split(' ').slice(1,happyCurriculumHeadingLength).join('');
+const descriptionTopHtml = marked.parse(happyCurriculumSection[0]?.descriptionTop)
+const descriptionLeftHtml = marked.parse(happyCurriculumSection[0]?.descriptionLeft)
+const curriculumArr = happyCurriculumSection[0].animationArea
+const areaOfLearningAndDevelopmentList = areaOflearning[0]?.itemLists
+areaOfLearningAndDevelopmentList.forEach((arr,i)=> {arr[i],arr.color = areaOfLearingAndDevelopment[i].color })
+const multifacedSection = (multiFacetedSection[0])
+const multifacedSectionHeading = multiFacetedSection[0].title;
+const multifacedSectionHeadingStart = multifacedSectionHeading.split(' ').slice(0,multifacedSectionHeading.split(' ').length - 1).join(' ');
+const multifacedSectionHeadingEnd = multifacedSectionHeading.split(' ').slice(-1).join(' ');
+const multifacedDescriptionHtml = marked.parse(multiFacetedSection[0].description)
+const multifacedlist = multiFacetedSection[0].list
+const {title: montessoriTitle,description : montessoriDescription,boxContent : montessoriBoxContent} = montessoriApproach[0];
+const montessoriDescriptionHtml = marked.parse(montessoriDescription).replaceAll('<strong>','<strong class="text-[#F6BD60]">').replaceAll('&lt;','<').replaceAll('&gt;','>')
+
+const {title:waldorfTitle,description:waldropDescription,image:waldropImage,imageAltTag:waldropImageAlt} = waldorfApproach[0];
+const waldropDescriptionHtml = marked.parse(waldropDescription).replaceAll('<strong>','<strong class="text-[#8E64D5]">').replaceAll('&lt;','<').replaceAll('&gt;','>')
+const {title:gardnerApproachTitle,description:gardnerApproachDescription,circleContent} = gardnerApproach[0];
+const gardnerApproachDescriptionHtml = marked.parse(gardnerApproachDescription).replaceAll('<strong>','<strong class="text-[#A5D27C]">').replaceAll('&lt;','<').replaceAll('&gt;','>')
+
+const {title:learningStyleTheoryTitle,description:learningStyleTheoryDescription,image:imagelearningStyleTheoryImage,imageAltTag:learningStyleTheoryImageAlt} = learningStyleTheorySection[0];
+const learningStyleTheoryDescriptionHtml = marked.parse(learningStyleTheoryDescription).replaceAll('<strong>','<strong class="text-[#B85457]">').replaceAll('&lt;','<').replaceAll('&gt;','>')
+
+  const {title:bloomApproachTitle,descriptionTop:bloomApproachDescriptionTop,
+    descriptionlist: bloomApproachDescriptionList, descriptionBottom:bloomApproachDescriptionBottom,image:bloomApproachImage,imageAltTag:bloomApproachImageAlt} = bloomApproach[0];
+const bloomApproachDescriptionTopHtml = marked.parse(bloomApproachDescriptionTop)
+const bloomApproachDescriptionBottomHtml = marked.parse(bloomApproachDescriptionBottom)
+
+
+heroImages.forEach((obj,i) => {obj,obj.type ='image'})
+heroImagesMobile.forEach((obj,i) => {obj,obj.type ='image'})
+// console.log('hero',montessoriDescriptionHtml)
+
 ---
 
 <Layout title="Curriculum at Little Elly | Committed to Excellence in Preschool." description ='' keywords='  '>
@@ -268,27 +320,22 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <div
     class="h-[76svh] max-md:h-[70svh] flex"
   >
-  <Hero
+   <Hero
   config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
   showSlide={true}
-  slideImages={[
-    { slide: slide1, position: "center 10%", type: "image" },
-    // { slide: slide2.src, position: "top 20%", type: "image" },
-    // { slide: slide3.src, position: "top 64%", type: "image" },
-  ]}
-  mobileSlideImages={[
-    { slide: slide1MB, position: "top 10%", type: "image" },
-  ]}
+  slideImages={heroImages}
+  mobileSlideImages={heroImagesMobile}
   contentDirection="items-end"
   className="overflow-hidden font-roundo"
 >
     <div slot="title">
       <!-- <div class="p-20"></div> -->
-      <Text type="h1Sm" tag class="flex flex-col  max-md:gap-2 ">
-        H.A.P.P.Y Curriculum
-        <p class='text-orange-200'> <span class='text-[#fff]'> & </span> Elly’s Approach</p>
-       </Text>
 
+      <Text type="h2" class="flex flex-col  max-md:gap-2 ">
+       {titleStarting}
+        <p class='text-orange-200'> <span class='text-[#fff]'> {titlemid} </span> {titleEnding}</p>
+
+       </Text>
     </div>
 </Hero>
   </div>
@@ -301,21 +348,21 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <div>
         <Text type="h2" class="text-center">
           <MultiStyleText
-            classes={["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"]}
-             text="Happy"/>
+            classes={happyCurriculumExtendedColor}
+             text={happyCurriculumHeadingColored}/>
           </Text>
-        <Text type="h2" class="text-primary">Curriculum</Text>
+        <Text type="h2" class="text-primary">{happyCurriculumHeadingRest}</Text>
        </div>
     <Image src={wavvyLine} alt='wavvy line' class='lg:w-[250px] w-[178px] sm:w-[175px]'/>
   </span>
 
-<Text type="base" class="mt-6">A child's inherent intelligence isn't determined by the number of brain cells they're born with, but rather by the connections formed between those cells. These connections, <strong>crucial for cognitive development</strong>, are cultivated through the experiences and stimuli provided in the early years.</Text>
+<Text type="base" class="mt-6" set:html={descriptionTopHtml}></Text>
 
 <div class="my-8 flex xl:flex-row flex-col justify-between">
-  <Text type="base" class="md:pr-10 ">The H.A.P.P.Y curriculum takes a unique approach to nurturing these connections by creating a diverse and engaging environment that stimulates various aspects of a child's brain. It is a <strong>handpicked blend of renowned educational methodologies</strong> and incorporates diverse perspectives and methodologies. Caregivers and educators provide a <strong>multifaceted environment</strong> that encourages exploration, critical thinking, and curiosity, laying the groundwork for a child's holistic development.</Text>
+  <Text type="base" class="md:pr-10 " set:html={descriptionLeftHtml}></Text>
   <div>
     <div class=" xl:w-[800px] max-xl:mt-5
-    
+
     2xl:w-[950px]">
       <div class="flex flex-row overflow-hidden max-md:h-[200px] h-auto">
         {boards.map((board, i) => (
@@ -333,27 +380,27 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
             <div data-shadow class="w-[106px] max-md:h-auto max-md:w-[80%] mt-[20px] max-md:mt-0 max-md:left-[10px] max-md:top-[-20px] left-[11px] max-md:flex-1 h-[10px] relative" set:html={shadow(board.textColor)}></div>
             <div class="mt-[20px] block max-md:hidden" />
             <Text data-title type="h4" class="font-[600] max-md:hidden relative max-md:left-0 left-[8px] text-center max-w-[150px]" style={{ color: board.secondaryColor }}>
-              {board.title}
+              {curriculumArr[i]?.title}
             </Text>
           </div>
         ))}
       </div>
 
       <div class="pt-[40px] max-md:hidden" />
-    
+
       <div class="relative max-md:mt-[-50px] mt-0 mb-0 max-md:mb-[50px]">
           <div class="opacity-0">
-            <div 
+            <div
               class:list={[
                 "[&.active]:h-full [&.active]:opacity-100 opacity-0 h-[none] w-[4px] absolute top-0 left-0",
-              ]} 
+              ]}
               style={{
                 background: boardWithLongestDescription.primaryColor
               }}>
             </div>
             <div>
               <Text
-                type="base" 
+                type="base"
                 class:list={[
                   "mt-[10px] transition-opacity font-display font-[400] text-[#4C4C4C] [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto",
                   boardWithLongestDescription.class
@@ -365,20 +412,20 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
           </div>
           {boards.map((board, i) =>  (
             <div class="absolute top-0 left-0 flex flex-row items-center gap-6">
-              <div 
+              <div
                 data-description-line
                 class:list={[
                   "h-[0px] w-[4px] flex-shrink-0 duration-700 transition-[height]",
                   i === 0 ? "active" : "none",
                   board.lineClass
-                ]} 
+                ]}
                 style={{
                   background: board.primaryColor
                 }}>
               </div>
               <div data-description class="duration-700 transition-opacity [&.active]:opacity-100 opacity-0 pointer-events-none [&.active]:pointer-events-auto">
                 <Text
-                  type="lg" 
+                  type="lg"
                   class:list={[
                     "mt-[10px] font-display font-[600] max-md:!text-[20px] !tracking-[1px] max-md:block hidden",
                     i === 0 ? "active" : "none",
@@ -387,17 +434,17 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
                   style={{
                     color: board.secondaryColor
                   }}
-                  set:html={board.title}
+                  set:html={curriculumArr[i].title}
                 >
                 </Text>
                 <Text
-                  type="base" 
+                  type="base"
                   class:list={[
                     "mt-[10px] font-display font-[400] text-[#4C4C4C]",
                     i === 0 ? "active" : "none",
                     board.class
                   ]}
-                  set:html={board.description}
+                  set:html={curriculumArr[i].description}
                 >
                 </Text>
               </div>
@@ -410,13 +457,13 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
 <div class="xl:mt-[200px] max-md:rounded-3xl  sm:mt-[130px]  lg:mt-[150px] relative md:mx-[27px] p-5 sm:p-[60px] rounded-[100px] border border-[#B892F9] bg-[#FAFAFA] h- max-sm:mt-[240px] w-full  flex  justify-center">
      <div class="w-full">
-      <p class="text-[40px] font-display max-sm:my-5 text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">Areas of Learning & Development</p>
+      <p class="text-[40px] font-display max-sm:my-5 text-center capitalize max-md:text-3xl font-extrabold text-[#FF7162]">{areaOflearning[0]?.title}</p>
 
       <div class='grid grid-cols-2 max-sm:grid-cols-1  md:grid-cols-3 pt-4 sm:py-8 justify-between max-md:mx-0 max-md:mr-0 mr-[70px] gap-10 2xl:mx-[188px]'>
 
-      {areaOfLearingAndDevelopment.map(items=> 
+      {areaOfLearningAndDevelopmentList.map(items=>
       <div class="flex flex-col  pl-20 max-md:pl-0 items-center ">
-          <Image src={items.icon} alt="icons" class="w-[75px] h-[75px]"  />
+          <Image src={items.iconImage} alt="icons" height={75} width={75} class="w-[75px] h-[75px]"  />
           <p class={`text-[26px] leading-[120%] [text-shadow:_0_1.5px_0_rgb(246_189_96_/_80%)] font-display max-md:text-lg text-[${items.color}] sm:w-[219px] text-center  font-extrabold uppercase mt-4`} set:html={items.title} />
           </div>
           )}
@@ -431,7 +478,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
   </div>
 
  <div class="pb-[42px]  mb-[60px]" style={{background: 'linear-gradient(279deg, #E5F0FF -1.4%, rgba(255, 255, 255, 0.00) 99.99%)'}}>
-  
+
   <div class="flex">
     {roundedboxesarr.map(arr =><Image src={roundSvg} alt='round img' width={250} class=' w-[100px] md:w-[250px]' />)}
   </div>
@@ -441,16 +488,16 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <span class="flex flex-col justify-center relative items-center ">
       <div class='text-center'>
         <Text type="h2" class="text-center  text-[#B892F9] relative">
-          Our Multi-faceted
+          {multifacedSectionHeadingStart}
         </Text>
-        <Text type="h2" class="text-primary "> Approach</Text>
+        <Text type="h2" class="text-primary "> {multifacedSectionHeadingEnd}</Text>
        </div>
     <Image src={wavvyLine} alt='wavvy line' class='lg:w-[97%] w-[70%] sm:w-[78%]'/>
   </span>
   <Image src={sun} alt='sun' class='max-sm:scale-50' />
   </div>
    <div class="2xl:px-[225px] xl:px-[180px] lg:px-[150px] md:px-[100px] sm:px-[100px]  px-[20px] flex max-md:mt-4 mt-8">
-    <Text type="base" class="text-center ">At Little Elly we firmly believe in tailoring the educational experience to suit each child's individual needs. We adopt a combination of philosophies and take a unique approach that aligns with the values and goals of our parents and the needs of our children. </Text>
+    <Text type="base" class="text-center " set:html={multifacedDescriptionHtml}></Text>
    </div>
    <div class="2xl:px-[103px] xl:px-[80px] py-[40px] pb-[60px] lg:gap-[80px] items-center lg:px-[20px] gap-[86px] max-sm:gap-[0] max-sm:mt-[-7rem]  mt-8 flex flex-col lg:flex-row lg:justify-center" >
    <div class="relative flex-shrink-0 scale-50 sm:scale-90 xl:scale-100 w-[500px] h-[500px] mt-0 max-md:mt-4">
@@ -458,24 +505,22 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
     <div class="box-1  hoverEffect" id="1" >
     <Image src={unionBlue} alt={'shapeblue'} class=' w-[273px] absolute top-[0px] left-[113px]'  />
     <span class=" text-center left-[192px] top-[30px] absolute" >
-      <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Gardner<br>
-        Approach</p>
+      <p class="font-bold tracking-tight text-[22px] font-display w-20 text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >{multifacedlist[0].title}
     </span>
   </div>
 
     <div class="box-2  hoverEffect absolute bottom-[186px] right-[6px]" id="2">
       <Image src={unionGreen} alt={'shapegreen'} class=' w-[171px]  ' />
       <span  class=" text-center max-md:rotate-[75deg] right-[18px] max-sm:left-[30px] top-[107px] absolute" >
-        <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0] max-md:text-[1.6rem]  [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Montessori<br>
-          Approach</p>
+        <p class="font-bold tracking-tight text-[22px] w-28 font-display text-[#FFF7F0] max-md:text-[1.6rem]  [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >{multifacedlist[1].title}
       </span>
     </div>
 
     <div class="box-3  hoverEffect absolute right-[23px] bottom-[10px]" id="3">
       <Image src={unionPurple} alt={'shapepurple'} class=' w-[225px] ' />
       <span class=" text-center max-md:right-[64px] max-md:-rotate-[37deg] right-[95px] lg:right-[83px] lg:bottom-[54px] bottom-[70px] absolute" >
-        <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Waldorf<br>
-          Approach</p>
+        <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >{multifacedlist[2].title}
+         </p>
       </span>
      </div>
 
@@ -483,8 +528,7 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <div>
     <Image src={unionRed} alt={'shapered'} class=' w-[222px] ' />
     <span class=" text-center max-md:rotate-[39deg] max-md:left-[70px] lg:bottom-[65px] lg:left-[73px] bottom-[70px] absolute" >
-      <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem]  [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Bloom<br>
-        Approach</p>
+      <p class="font-bold tracking-tight text-[22px] w-20 font-display text-[#FFF7F0]  max-md:text-[1.6rem]  [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >{multifacedlist[3].title}</p>
     </span>
   </div>
 </div>
@@ -492,14 +536,13 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
  <div class="box-5  hoverEffect  absolute bottom-[180px]" id="5">
   <Image src={unionOrange} alt={'shapeorange'} class=' w-[181px] ' />
   <span class=" text-center max-md:-rotate-[80deg] left-[30px] max-md:top-[90px] top-[110px]  absolute" >
-    <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >Learning  <br>
-      Style <br> Theory
+    <p class="font-bold tracking-tight text-[22px] font-display text-[#FFF7F0]  w-20 max-md:text-[1.6rem] [text-shadow:_0_2.5px_0_rgb(0_0_0_/_30%)]" >{multifacedlist[4].title}
     </p>
   </span>
  </div>
 
 
-   
+
 
     <Image src={unionShadow} alt={'shadow'} class=' w-[422px]  absolute bottom-[-60px] right-[8%]' />
     <Image src={unionCircle} alt={'shadow'} class=' w-[217px]  absolute bottom-[140px] right-[143px]' />
@@ -513,13 +556,9 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
       <Text type="h3" class="text-primary">Approach</Text>
      </div>
 
-    
-    
 
-    
-    
    </div>
-   
+
 <div class="flex gap-5 lg:w-[500px] ">
   <div class="w-[3.8px]  h-[0px] coloredDiv hidden md:block self-center bg-[#F6BD60]  "/>
    <div class="flex flex-col max-sm:mt-[-5rem] px-5 md:w-[565px] justify-center  text-4xl max-md:text-lg">
@@ -536,57 +575,47 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
  <div class="flex flex-col montessori items-center bg-[#FDFFF9] relative sm:px-[35px] ">
 
 <div class="flex relative  items-center pb-0 max-sm:pb-4 mb-2 md:mb-10 flex-col">
-  <Text type="h2" class="text-[#F6BD60] max-sm:text-[1.7rem]" >Montessori Approach</Text>
+  <Text type="h2" class="text-[#F6BD60] max-sm:text-[1.7rem]" >{montessoriTitle}</Text>
   <Image src={redUnderline} alt='underline' class="sm:w-[321px] w-[274px] md:w-[488px]"/>
 <Image src={yellowRainbow} alt='rainbow' class='absolute sm:right-[-148px] md:right-[-200px] lg:right-[-273px] hidden sm:block bottom-[22px]' />
 </div>
 
-<Text type="base" class="px-[1.25rem] leading-[160%] md:px-[100px] text-center">
-  The H.A.P.P.Y Curriculum applies the <span class="text-[#E1AA53] font-bold">Montessori approach</span> through the implementation of self-directed learning, independence and hands-on exploration. Each Little Elly centre has a motor skills room dedicated to introducing children to work in an independent Montessori environment. This is a prepared environment that is conducive to learning. Children are exposed to a variety of practical and sensory materials to promote <span class="text-[#E1AA53] font-bold">hands-on learning and discovery.</span>
-  
-</br>
-</br>
-  
-  Our teachers observe each child's interests, strengths and needs to tailor instruction accordingly. Children are provided with the freedom to express and pursue their interests. This aligns with the Montessori approach in a way that each child is respected and valued in a supportive environment.
+<Text type="base" class="px-[1.25rem] leading-[160%] md:px-[100px] text-center" set:html={montessoriDescriptionHtml}>
+
   </Text>
 
 <div class="2xl:px-[250px] xl:px-[140px] lg:px-[130px] justify-center py-[45px] sm:flex sm:flex-wrap  sm:gap-[50px] md:px-[100px] sm:px-[50px] grid grid-cols-2">
 
-  {montessoriBoxes.map((boxContent,i)=> 
+  {montessoriBoxContent.map((boxContent,i)=>
   <div class="relative group">
    <div class={`relative yellow-boxes scale-75 sm:scale-100`}>
     <Image src={squareYellowBox} alt='icon' class='w-[196px]' />
     <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-10">
       <div class='flex flex-col items-center w-[194px]'>
-        <Image src={boxContent.icon} alt='icon' class='mb-2 scale-90' />
-        <p class="sm:text-[26px] max-md:mt-2 mt-0 font-display text-[20px] font-semibold text-center w-[74px] sm:w-auto text-white leading-[1] " set:html={boxContent.text} />
+        <Image src={boxContent.imageIcon} alt='icon' height={58} width={58} class='mb-2 scale-90 ' />
+        <p class="sm:text-[26px] max-md:mt-2 mt-0 font-display text-[20px] font-semibold text-center min-w-[74px] sm:max-w-[150px] text-white leading-[1] " set:html={boxContent.title} />
       </div>
     </div>
   </div>
   <Image src={boxShadow} alt='boxshadow'  class='group-hover:scale-100 scale-0 transition-transform duration-500 transition-smooth absolute yellowBoxShadow left-7 sm:bottom-[-20px] sm:left-[41px]' />
 </div>
- 
+
   )}
 </div>
 <Image src={childColoredHands} alt='underline' class='absolute w-[200px] md:w-auto max-sm:scale-75 bottom-0 right-0' />
  </div>
 
  <div class=" relative w-full flex waldorf flex-col py-[20px] md:py-[80px] items-center px-[20px]  bg-[#FCF9FF]">
-  <Text type="h2" class="text-[#B892F9]" >Waldorf Approach</Text>
+  <Text type="h2" class="text-[#B892F9]">{waldorfTitle}</Text>
   <Image src={redUnderline} alt='underline' class="md:w-[407px] w-[276px]"/>
 
   <div class="flex items-center  flex-col md:flex-row mt-5 md:mt-[24px] gap-2 md:gap-10 lg:px-[70px]">
     <div class="px-0 md:px-10">
-    <Text type="base" class="text-start">
-      The <span class="text-[#8E64D5] font-bold">Waldorf approach</span> mainly focuses on holistic development. This is deeply rooted in the H.A.P.P.Y curriculum wherein a theme is chosen each month and these themes and concepts dictate each month's activities. Children are exposed to natural materials and a lot of imaginative play throughout the month. A nurturing environment is created where children are provided with means for artistic expression through rhythm, music, movement and routines.
-
-   </br>
-   </br>
-      Little Elly also strongly encourages reading as a habit and prioritises storytime and oral recitations which are endorsed strongly by the Waldorf approach. Teachers often tell stories in our <span class="text-[#8E64D5] font-bold">reading corner orally</span> or through puppetry in our dedicated puppet theatre using rich language and imagery to engage children’s imagination.
+    <Text type="base" class="text-start" set:html={waldropDescriptionHtml}>
     </Text>
   </div>
     <div class="flex items-center justify-center ">
-    <Image src={group} alt='tree' class='md:w-[2000px] w-[300px] my-6 max-md:' />
+    <Image src={waldropImage} alt={waldropImageAlt} width={2000} height={2000} class='md:w-[2000px] w-[300px] my-6 max-md:' />
   </div>
   </div>
   <Image src={purpleThreads} alt="threads" class='absolute hidden md:block max-sm:scale-50 max-sm:top-[67px] max-sm:left-[-75px] left-0 top-0' />
@@ -594,118 +623,114 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 
  <div class=" flex flex-col gardner items-center pb-[30px] md:pb-[60px] relative" style={{background: 'linear-gradient(180deg, rgba(244, 254, 235, 0.00) 0%, #F4FEEB 100%)'}}>
   <Image src={graphLines} alt="threads" class='absolute w-full opacity-10 top-0' />
-  <Text type="h2" class="text-[#A5D27C] mt-[30px] md:mt-[80px] " >Gardner Approach</Text>
+  <Text type="h2" class="text-[#A5D27C] mt-[30px] md:mt-[80px] " >{gardnerApproachTitle}</Text>
   <Image src={redUnderline} alt='underline' class="lg:w-[407px] w-[280px] md:w-[425px]"/>
   <div class="xl:px-[70px] max-md:px-2 mt-6">
     <div class="px-[10px] md:px-[31px]" >
-       <Text type="base" class="text-center">
-        <span class="text-[#A5D27C] font-bold">Howard Gardner's</span> theory of multiple intelligences suggests that individuals have different types of intelligences, and these should be recognized and nurtured in education. The H.A.P.P.Y curriculum recognises that intelligence is not a singular trait but is a collection of different bits of intelligence.
-       </br>
-       </br>
-        All the age-appropriate activities designed at Little Elly are created keeping the 8 unique intelligences in mind ranging from musical to interpersonal. The child is then observed to understand how they process the information provided to them and how they <span class="text-[#618C39] font-bold">interact with the world around them.</span>
+       <Text type="base" class="text-center" set:html={gardnerApproachDescriptionHtml}>
+
         </Text>
     </div>
     <div class="flex w-full justify-center mt-[10px] md:mt-[39px] gap-[30px] md:gap-[46px] pt-[35px] xl:px-[319px] flex-wrap">
 
-    {gardnerCircle.map(items=>
+    {circleContent.map(items=>
       <div class="relative group">
         <div class="w-[131px] group max-md:scale-90 h-[131px] circle rounded-full border-[4px] flex flex-col items-center justify-center border-[#A5D27C]" style={{background: 'linear-gradient(180deg, #A5D27C 0%, #679F35 100%)'}} >
-          <Image src={items.icon} alt='icon'  />
-          <Text type="lg" class="text-[#fff]">{items.text}</Text>
-        </div> 
+          <Image src={items.imageIcon} width={46} height={45} alt='icon'  />
+          <Text type="lg" class="text-[#fff]">{items.title}</Text>
+        </div>
         <Image src={circleShadow} alt='shadow' class='absolute group-hover:scale-100 scale-0 transition-smooth transition-transform duration-500  bottom-0 right-[17px]' />
       </div>
     )}
       <Image src={rightFly} alt='butterflyIcon' class="absolute hidden md:block bottom-[60px] right-[290px]"/>
       <Image src={leftFly} alt='butterflyIcon' class="absolute hidden md:block left-[270px] top-[400px]"/>
-      
+
       </div>
   <Image src={treeBranch} alt='treeBranch' class='absolute hidden md:block top-0 right-0'/>
 
  </div>
- 
+
 </div>
 
      <div class=" bg-[#EFF6FF] p-5 relative bloom md:p-[60px] flex flex-col items-center">
-      <Text type="h2" class="text-[#78ADF9]  text-center" >Bloom Approach</Text>
+      <Text type="h2" class="text-[#78ADF9]  text-center" >{bloomApproachTitle}</Text>
       <Image src={blueRainbow} alt='underline' class="absolute left-[50px] top-[50px] hidden md:block"/>
 
       <Image src={redUnderline} alt='underline' class="md:w-[380px] w-[254px]"/>
       <div class="my-6  xl:px-[81px]">
-      <Text type="base" class="text-center max-md:text-start">Bloom’s Taxonomy is a powerful tool that ensures that the H.A.P.P.Y Curriculum is well-rounded. Through its implementation, we ensure that children are engaged in activities that target different levels of thinking and not just memorization. This approach classifies learning objectives into three major domains: </Text>
+      <Text type="base" class="text-center max-md:text-start" set:html={bloomApproachDescriptionTopHtml}> </Text>
 
 
     </div>
     <div class="flex flex-col items-center gap-[24px]">
       <ul class="flex flex-col gap-6">
-        <li>
-          <Text type='base' class="flex items-start" ><Image src={list} alt='listIcon' class='mt-[-5px] mr-2'/><div><span class="text-[#3964A1] font-bold ">Cognitive:</span>   Deals with remembering, understanding and applying knowledge </div></Text>
+        {bloomApproachDescriptionList.map(lists =>
+           <li>
+          <Text type='base' class="flex items-start" ><Image src={list} alt='listIcon' class='mt-[-5px] mr-2'/><div><span class="text-[#3964A1] font-bold "> {lists.title}:</span> {lists.description} </div></Text>
         </li>
-        <li>
-          <Text type='base' class="flex items-start" ><Image src={list} alt='listIcon' class='mt-[-5px] mr-2'/><div><span class="text-[#3964A1] font-bold "> Affective:</span> Deals with emotions, attitudes and values</div></Text>
-        </li>
-        <li>
-          <Text type='base' class="flex items-start" ><Image src={list} alt='listIcon' class='mt-[-5px] mr-2'/><div><span class="text-[#3964A1] font-bold ">Psychomotor:</span>  Involves practical skills and coordination.</div></Text>
-        </li>
-        
+        )}
+
       </ul>
 
-      <Text type="base" class="text-center max-md:text-start xl:px-[81px]">The H.A.P.PY curriculum is most concerned with the Cognitive aspect and it is actively considered in our process of Evaluation and Assessment. As preschoolers are still in an early development stage, we at Little Elly focus on creating a fun and engaging learning environment that uses a variety of activities to target all levels of Bloom's Taxonomy.</Text>
+      <Text type="base" class="text-center max-md:text-start xl:px-[81px]" set:html={bloomApproachDescriptionBottomHtml}></Text>
 
 
-      <Image src={graphStairs} alt="image" class="max-w-[712px] w-[90%]"/>
+      <Image src={bloomApproachImage} alt={bloomApproachImageAlt} width={754} height={538} class="max-w-[712px] w-[90%]"/>
 
-     
+
     </div>
      </div>
      <div class="md:px-[222px] learning px-5 relative flex flex-col items-center bg-[#FFF8F9] py-5 md:py-20">
       <Text type="h2" class="text-[#EE7F82] text-center" style={{
         textShadow: '0px 3.716px 0px #F6BD60'
-      }}>Learning Style Theory</Text>
+      }}>{learningStyleTheoryTitle}</Text>
       <Image src={redUnderline} alt='underline' class="w-[345px] md:w-[500px] "/>
       <Image src={purpleThreads} alt='underline' class="absolute lg:block hidden top-0 left-0"/>
-      <Text type="base" class="mt-6 text-center">
-        Applying the <span class="text-[#B85457] font-bold">Learning style theory</span> to the H.A.P.P.Y Curriculum helps us recognise how each child is best able to absorb information. According to the theory Learning Styles are broadly categorized into 4 learning styles: <span class="text-[#B85457] font-bold">Visual, Auditory, Kinesthetic and Written.</span>
-      </br>
-      </br>
-      
-        At Little Elly, our main focus is on identifying how each child prefers to absorb information. Our teachers accommodate a flexible approach to their instruction to accommodate all the different kinds of learners thus creating a more inclusive and effective learning environment where children of diverse learning styles can thrive.
-        
+      <Text type="base" class="mt-6 text-center" set:html={learningStyleTheoryDescriptionHtml}>
        </Text>
-      <Image src={theory} alt='learning style theory image' class='w-[438px] my-6' />
+      <Image src={imagelearningStyleTheoryImage} height={493} width={506} alt={learningStyleTheoryImageAlt} class='w-[438px] my-6' />
      </div>
- 
+
   <Footer />
-  
+
 </Layout>
 
 <script>
+  import { getEntry } from 'astro:content';
+  const { data } = await getEntry('curriculum', 'curriculum')
 
-const curriculumData = [
-  {title: 'Gardner Approach',
-   description: 'Howard Gardner proposed the theory of multiple intelligences which differentiates human intelligence into specific modalities.',
-   color: '#78ADF9'
-},
-{title: 'Montessori Approach',
-   description: 'Maria Montessori\'s kinesthetic educational model allows the child to pursue their independence and individual interests.',
-   color: '#A5D27C'
-},
-{title: 'Waldorf Approach',
-   description: 'The Waldorf Approach focuses on nurturing children\'s overall development by integrating arts, nature, and age-appropriate learning experiences.',
-   color: '#B892F9'
-},
-{title: 'Bloom Approach',
-   description: 'Benjamin Bloom\'s Taxonomy is a set of 3 hierarchical models: cognitive, affective and psychomotor domains.',
-   color: '#EE7F82'
-},
-{title: 'Learning style theory',
-   description: 'Individuals have distinct preferred methods for absorbing and processing information that impacts their educational experiences and results.',
-   color: '#E2AA4F'
-}
-]
+  const color = ['#78ADF9','#A5D27C','#B892F9','#EE7F82','#E2AA4F']
+  const colorArr = [...color,...color]
+  const curriculumData = data?.multiFacetedSection[0]?.list
+  curriculumData.forEach((obj,i)=> {obj[i],obj.color= color[i]})
+
+  console.log(curriculumData)
+
+// const curriculumData = [
+//   {title: 'Gardner Approach',
+//    description: 'Howard Gardner proposed the theory of multiple intelligences which differentiates human intelligence into specific modalities.',
+//    color: '#78ADF9'
+// },
+// {title: 'Montessori Approach',
+//    description: 'Maria Montessori\'s kinesthetic educational model allows the child to pursue their independence and individual interests.',
+//    color: '#A5D27C'
+// },
+// {title: 'Waldorf Approach',
+//    description: 'The Waldorf Approach focuses on nurturing children\'s overall development by integrating arts, nature, and age-appropriate learning experiences.',
+//    color: '#B892F9'
+// },
+// {title: 'Bloom Approach',
+//    description: 'Benjamin Bloom\'s Taxonomy is a set of 3 hierarchical models: cognitive, affective and psychomotor domains.',
+//    color: '#EE7F82'
+// },
+// {title: 'Learning style theory',
+//    description: 'Individuals have distinct preferred methods for absorbing and processing information that impacts their educational experiences and results.',
+//    color: '#E2AA4F'
+// }
+// ]
 
 
-  
+
   const readMoreBtns = document.querySelectorAll('[data-read-more-btn]')
 
   readMoreBtns.forEach(readMoreBtn => {
@@ -727,51 +752,6 @@ const curriculumData = [
     })
   })
 
-  
-// const gardnerSection = document.querySelector('.gardner');
-// const montessoriSection = document.querySelector('.montessori');
-// const waldorfSection = document.querySelector('.waldorf');
-// const bloomSection = document.querySelector('.bloom');
-// const learningSection = document.querySelector('.learning');
-// const explore = document.querySelector('.explore');
- 
-// const arr = [gardnerSection,montessoriSection,waldorfSection,bloomSection,learningSection];
-
-// console.log(explore)
-
-// explore.addEventListener('click',function(){
-//   arr[1]?.scrollIntoView({behavior:"smooth"})
-// })
-
-
-  // adding shadow functionality to yellow boxes at Montessori Approach
-
-//   const yellowBoxContainer = document.querySelectorAll('.yellow-boxes')
-//   const yellowBoxShadow = document.querySelectorAll('.yellowBoxShadow');
-
-// for(let i=0; i<yellowBoxContainer.length ; i++){
-//   yellowBoxContainer[i].addEventListener('mouseenter',function(){
-//   yellowBoxShadow[i]?.classList.remove('hidden')
-// })
-
-// yellowBoxContainer[i].addEventListener('mouseleave',function(){
-//   yellowBoxShadow[i]?.classList.add('hidden')
-// })
-// }
-
-// adding shadow functionality to yellow boxes at Gardner Approach
-
-// const circleContainer = document.querySelectorAll('.circle');
-// const circleShadow = document.querySelectorAll('.circleShadow');
-
-// for(let i=0; i<circleContainer.length; i++){
-//   circleContainer[i].addEventListener('mouseenter',function(){
-//     circleShadow[i].classList.remove('hidden')
-//   })
-//   circleContainer[i].addEventListener('mouseleave', function(){
-//     circleShadow[i].classList.add('hidden')
-//   })
-// }
 
 const hoverCircle = document.querySelectorAll('.hoverEffect');
 
@@ -796,13 +776,13 @@ for(let i=0; i<hoverCircle.length; i++){
       const contentArray = [gardnerSection,montessoriSection,waldorfSection,bloomSection,learningSection];
 
       let hover = false
-      
+
 
       const removeall = ()=>{
         boxes.forEach((e,i)=> e.classList.remove(`box-${i+1}-js`));
-      
+
       };
-    
+
       const hoverhandler = (value)=> {
         let hover = value
         if(hover){
@@ -810,13 +790,13 @@ for(let i=0; i<hoverCircle.length; i++){
           setTimeout(()=> coloredDiv.classList.add('smooth') ,500)
 
       };
-       
+
         console.log(hover)
         if(hover=== true) return;
 
      }
 
-     
+
      let mainInter;
      let firstInter;
      let secondInter;
@@ -830,7 +810,7 @@ for(let i=0; i<hoverCircle.length; i++){
             coloredDiv.classList.remove('smooth')
           },3000)
         }
-  
+
          function start(a=0) {
          clearInterval(mainInter)
          clearInterval(firstInter)
@@ -839,7 +819,7 @@ for(let i=0; i<hoverCircle.length; i++){
           // let a= 0;
           mainInter =  setInterval(()=>{
           a+=1
-       
+
           boxes.forEach((el,i)=> el.addEventListener('mouseenter', ()=> {
             a = 0
           }))
@@ -861,7 +841,7 @@ for(let i=0; i<hoverCircle.length; i++){
             boxes[a-2].classList.remove(`box-${a-1}-js`)
           }
         }
-       
+
         if(a>5){
           a = 1
           boxes[4].classList.remove(`box-5-js`)
@@ -873,12 +853,12 @@ for(let i=0; i<hoverCircle.length; i++){
           description.textContent = curriculumData[a-1].description
         }
         },3000)}
- 
+
         start()
         startdivAnimation()
 
       boxes.forEach((el,i)=> el.addEventListener('mouseenter', ()=> {
-        
+
         clearInterval(mainInter)
         clearInterval(firstInter)
         clearInterval(secondInter)
@@ -890,7 +870,7 @@ for(let i=0; i<hoverCircle.length; i++){
         explore.style.color= curriculumData[i].color;
         description.textContent = curriculumData[i].description;
         coloredDiv.style.background = curriculumData[i].color;
-       
+
         explore.addEventListener('click',function(){
           contentArray[i].scrollIntoView({
             behavior : "smooth"
@@ -904,9 +884,9 @@ for(let i=0; i<hoverCircle.length; i++){
         let current = +el.id
         start(current)
         startdivAnimation()
-        setTimeout(()=> hoverhandler(false),5000)  
+        setTimeout(()=> hoverhandler(false),5000)
         //  coloredDiv.style.background = 'none'
-        
+
         const coloredDivs = setTimeout(()=> el.classList.remove(`box-${i+1}-js`),3000)
         clearInterval(coloredDivs)
       }))
@@ -934,11 +914,11 @@ for(let i=0; i<hoverCircle.length; i++){
       //    hoverCircle[i].addEventListener('mouseleave',function(e){
       //     coloredDiv.classList.remove('smooth')
       //    })
-        
+
       //   }
 
       //   const divcolorChange = () =>{
-          
+
       //   }
 
       //   let a= 0;
@@ -970,7 +950,7 @@ for(let i=0; i<hoverCircle.length; i++){
       //       boxes[a-2].classList.remove(`box-${a-1}-js`)
       //     }
       //   }
-       
+
       //   if(a>5){
       //     a = 1
       //     boxes[4].classList.remove(`box-5-js`)
@@ -982,7 +962,7 @@ for(let i=0; i<hoverCircle.length; i++){
       //     description.textContent = curriculumData[a-1].description
       //   }
       //   },3000)
- 
+
       //   clearInterval()
 
 
@@ -1004,7 +984,7 @@ for(let i=0; i<hoverCircle.length; i++){
   }
 
   let closeAutoPlay = () => {}
-  let startAutoPlayTimer = null 
+  let startAutoPlayTimer = null
   boards.forEach((board, i) => {
     board.addEventListener('mouseenter', () => {
       closeAutoPlay()
@@ -1015,7 +995,7 @@ for(let i=0; i<hoverCircle.length; i++){
           clearTimeout(startAutoPlayTimer)
           currentBoard = 0
           closeAutoPlay = startAutoPlay()
-        }, 2000) 
+        }, 2000)
       }
     })
     board.addEventListener('mouseleave', () => {
@@ -1116,7 +1096,7 @@ for(let i=0; i<hoverCircle.length; i++){
   .box-2{
     transition: all 0.3s linear 0s;
     cursor: pointer;
-    
+
   }
   /* .box-2:hover{
     transform: translateX(15px) translateY(-8px) scale(1.1) ;
@@ -1129,7 +1109,7 @@ for(let i=0; i<hoverCircle.length; i++){
   .box-3{
     transition: all 0.3s linear 0s;
     cursor: pointer;
-    
+
   }
 
   /* .box-3:hover{

@@ -245,10 +245,41 @@ const aboutUsCollection = defineCollection({
   }),
 });
 
+const ourProgramsCollection = defineCollection({
+  type: 'content',
+  schema: () => z.object({
+    heading: z.any().optional(),
+    buttonText: z.any().optional(),
+    buttonLink: z.any().optional(),
+    heroImages: z.any().optional(),
+    programList: z.any().optional(),
+    ctaCardTitleOurPrograms: z.any().optional(),
+  }),
+});
+
+const curriculumCollection = defineCollection({
+  type: 'content',
+  schema: () => z.object({
+    title: z.any().optional(),
+    heroImages: z.any().optional(),
+    heroImagesMobile: z.any().optional(),
+    happyCurriculumSection: z.any().optional(),
+    areaOflearning: z.any().optional(),
+    multiFacetedSection: z.any().optional(),
+    montessoriApproach: z.any().optional(),
+    waldorfApproach: z.any().optional(),
+    gardnerApproach: z.any().optional(),
+    bloomApproach: z.any().optional(),
+    learningStyleTheorySection: z.any().optional(),
+  }),
+});
+
 export const collections = {
   'centres': centresCollection,
   'home': homeCollection,
   'aboutUs': aboutUsCollection,
+  'ourPrograms': ourProgramsCollection,
+  'curriculum' : curriculumCollection
   'admissions': admissionsCollection,
   'franchise': franchiseCollection,
 

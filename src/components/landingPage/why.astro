@@ -21,20 +21,21 @@ import cloud from "../../image/decorations/gifs/clouds.gif"
 
 import gift from "../../image/decorations/gifs/gift.gif"
 import clouds from "../../image/decorations/gifs/clouds.gif"
+import { coloredText } from "../../utils";
 
 const {data} =Astro.props;
 const{ title ,subtitle, whyChooseLittileElly} = data[0];
 const titleLength = title.split(' ').length;
 const subtitleLength = subtitle.split(' ').length;
-const colors = ["text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200","text-purple","text-green-200","text-[#F6BD60]","text-purple","text-primary",];
+const colors = ["text-purple","text-blue","text-green-200", "text-orange-200", "text-orange-200"];
 const colorForSubTitle = ["text-purple","text-purple","text-purple","text-purple","text-green-200", "text-green-200", "text-green-200","text-green-200", "text-yellow-200", "text-yellow-200", "text-yellow-200", "text-primary", "text-purple" ];
-const finalColorHeading = [...colors,...colors]
-const finalcolorForSubTitle = [...colorForSubTitle,...colorForSubTitle]
 const startingLineOfHeading = title.split(' ').slice(0,titleLength-2).join(' ')
 const coloredHeading = title.split(' ').slice(-1)[0];
+const finalColorHeading = coloredText(coloredHeading,colors);
 const primaryHeading = title.split(' ').slice(-2)[0];
 const startingLineOfSubTitle = subtitle.split(' ').slice(0,subtitleLength-2).join(' ')
 const coloredSubTitle = subtitle.split(' ').slice(-1)[0];
+const finalcolorForSubTitle =  coloredText(coloredSubTitle,colorForSubTitle);
 const primarySubTitle = subtitle.split(' ').slice(-2)[0];
 // const quote = data.quote.replaceAll('<span>','<span class=\'text-[#EE7F82] font-[700] \'>')
 

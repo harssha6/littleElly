@@ -6,6 +6,7 @@ import wavvyLine from '../../images/curriculum/wavvy-line.svg';
 import { Image } from 'astro:assets'
 import starGif from '../../image/decorations/gifs/gif2.webp'
 import { marked } from 'marked';
+import { coloredText } from '../../utils';
 
 
 const boardSVG = (primaryColor = "#F6BD60", secondaryColor = "#A97B33") => `<svg width="100%" height="100%" viewBox="0 0 88 197" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,8 +116,8 @@ const boardWithLongestDescription = boards.reduce((prev, current) => {
 const {data} = Astro.props;
 const {heading,descriptionTop,descriptionLeft,animationArea:curriculumArray} = data[0];
 const headingColor = ["text-purple","text-blue-300","text-green-200","text-orange-200","text-primary"];
-const finalColoredHeading = [...headingColor,...headingColor]
 const coloredHeading = heading.split(' ')[0];
+const finalColoredHeading = coloredText(coloredHeading,headingColor);
 const headingLength = heading.split(' ').length;
 const primaryTitle = heading.split(' ').slice(1,headingLength).join(' ');
 const descriptionTopHtml = marked.parse(descriptionTop)

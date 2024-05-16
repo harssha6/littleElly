@@ -28,6 +28,19 @@ import slide1 from "../images/slides/1.png";
 import slide2 from "../images/slides/3.png";
 import slide3 from "../images/slides/4.png";
 
+import { getEntry } from 'astro:content';
+
+const  {data}  = await getEntry('ourPrograms', 'our_programs');
+const {heading,buttonText,buttonLink,heroImages,programList,ctaCardTitleOurPrograms} = data;
+const headingLength = heading.split(' ').length;
+const headingStarting = heading.split(' ').slice(0,headingLength-1).join(' ')
+const headingEnding = heading.split(' ').slice(-1).join(' ')
+const heroSectionButtonDetails = {
+  buttonName: buttonText,
+  buttonHypelink: buttonLink
+}
+const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
+
 const programData = [
     {
         title: 'Toddler',
@@ -124,9 +137,6 @@ const programData = [
     },
 ]
 
-import { getEntry } from 'astro:content';
-
-const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
 
 ---
 
@@ -141,38 +151,34 @@ const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
     <div
       class="h-[76svh] flex"
     >
-    <Hero
+    <Hero buttonDetails={heroSectionButtonDetails}
     config={{ title: "Welcome to Little Elly", bgImage: campus1 }}
     showSlide={true}
-    slideImages={[
-      { slide: slide1.src, position: "center 64%", type: "image" },
-      { slide: slide2.src, position: "top 20%", type: "image" },
-      { slide: slide3.src, position: "top 64%", type: "image" },
-    ]}
+    slideImages={heroImages}
     contentDirection="items-end"
     className="overflow-hidden font-roundo"
   >
       <div slot="title">
         <!-- <div class="p-20"></div> -->
         <Text type="h1Sm">
-          Our  <span class="text-yellow">Programs</span>
+          {headingStarting} {' '} <span class="text-yellow">{headingEnding}</span>
          </Text>
 
       </div>
-  </Hero>
+  </Hero >
     </div>
     <Section class="bg-[#FDF2E5]">
 
     <div class="flex flex-col gap-[60px] items-center">
       {
-        programData.map((item, index )=> {
+        programList?.map((item, index )=> {
           return (
             <div data-appear={index === 0 ? false : index}>
               <div class="flex gap-xl max-sm:flex-col items-center">
-                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} src={item.image} alt={'Program: ' + item.title}/>
+                <Image class={`${index % 2 !== 0 && 'order-1 max-sm:order-[unset]'} object-contain max-md:mt-5 max-h-[300px] max-w-[300px]`} width={300} height={300} src={item.image} alt={'Program: ' + item.title}/>
                 <div class="flex flex-col">
-                  <Text type="h3" class={`text-2xl font-bold ${item.titleClass} uppercase`}>{item.title}</Text>
-                  <Text type="base" class={`text-xl font-bold ${item.subTitleClass} uppercase font-[700] max-md:text-[20px] font-display`}>{item.subtitle}</Text>
+                  <Text type="h3" class={`text-2xl font-bold text-[${item.titleClass}] uppercase`}>{item.title}</Text>
+                  <Text type="base" class={`text-xl font-bold text-[${item.subTitleClass}] uppercase font-[700] max-md:text-[20px] font-display`}>{item.subtitle}</Text>
                   <Text type="base" class={`text-xl text-black/70 font-[700] font-display`}>{item.subText}</Text>
 
                   <Text type="base" class={`text-xl font-sans text-dark-gray font-[400] mt-r leading-[160%] max-w-[62ch]`}>{item.desc}</Text>
@@ -208,7 +214,7 @@ const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
 
     <DaycareFacilities data={homePageCmsData.dayCaresSection[0]} />
     </Section>
-    <GoToCta className="!bg-[#FDF2E5]" data="Admissions Open for <span>2024-25!!</span>" />
+    <GoToCta data={homePageCmsData.ctaCardTitle} />
 
     <Footer />
 </div>

@@ -65,14 +65,14 @@ const rightCloudSVG = `<svg width="802" height="1146" viewBox="0 0 802 1146" fil
 </linearGradient>
 </defs>
 </svg>`
-
+import {coloredText} from '../utils.ts';
 const {data} = Astro.props;
 const heading = data.heading;
 const headingLength = heading.split(' ').length;
 const primaryHeading = heading.split(' ').slice(0,headingLength-1).join(' ');
 const headingMulticoloredText =  heading.split(' ').slice(-1)[0];
 const colors = ["text-purple","text-primary","text-green-200","text-[#F6BD60]","text-primary","text-purple","text-green-200","text-[#F6BD60]","text-purple","text-primary",];
-const finalColor = [...colors,...colors]
+const finalColor = coloredText(headingMulticoloredText , colors)
 const heroDescription = data.description;
 const heroButtonText = data.buttonText;
 const heroButtonLink = data.buttonLink;
@@ -80,7 +80,6 @@ const quote = data.quote.replaceAll('<span>','<span class=\'text-[#EE7F82] font-
 const quotePersonName = data.quotePersonName;
 const quoteImage = data.quoteImage;
 const quoteImageAlt = data.quoteImageAlt;
-
 
 ---
 
