@@ -1,10 +1,77 @@
 ---
 centers:
+  - state: Tamilnadu
+    poweredBy: true
+    page:
+      subtitle: RKV Nursery & Primary School
+      addressTitle: >-
+        126, Railway Feeder Road, Sattur, Virudhunagar District, Tamil Nadu -
+        626203
+      address: >-
+        126, Railway Feeder Road, Sattur, Virudhunagar District, Tamil Nadu -
+        626203
+      telephone: '9361150444'
+      email: rkvschool@outlook.com
   - state: Nepal
   - state: Karnataka
     districts:
+      - district: Hassan
+        centres:
+          - centre: Channapatana
+            page:
+              subtitle: Channapatana
+              addressTitle: >-
+                Ikshu', #1620, 2nd cross road, Next to district court complex,
+                new housing board layout, Channapatana, Hassan 573201
+              address: >-
+                Ikshu', #1620, 2nd cross road, Next to district court complex,
+                new housing board layout, Channapatana, Hassan 573201
+              telephone: '7411583273'
+              email: nhb.hassan@littleelly.com
       - district: Bangalore
         centres:
+          - centre: Sahakarnagar
+            page:
+              subtitle: Sahakarnagar
+              addressTitle: '#89 4th Cross Road Defence Layout Sahakarnagar Bengaluru 560092'
+              address: '#89 4th Cross Road Defence Layout Sahakarnagar Bengaluru 560092'
+              telephone: '9035775787'
+              email: sahakarnagar.blr@littleelly.com
+          - centre: Kannamangala Gate
+            page:
+              subtitle: Kannamangala Gate
+              addressTitle: >-
+                #105, Udayagiri. Next to Hotel Krishna Garden Kannamangala Gate
+                Devanahalli Main Road , Bangalore Rural 562110
+              address: >-
+                #105, Udayagiri. Next to Hotel Krishna Garden Kannamangala Gate
+                Devanahalli Main Road , Bangalore Rural 562110
+              telephone: '9916659966'
+              email: ug_devanahalli.blr@littleelly.com
+          - centre: Koramangala
+            page:
+              subtitle: Koramangala
+              address: >-
+                No 525, 17th d main, 6th block, 6th cross, Koramangala,
+                bangalore 560095
+              telephone: '8618228487'
+              email: koramangala.blr@littleelly.com
+          - centre: Thalaghattapura
+            page:
+              subtitle: Thalaghattapura
+              address: >-
+                SARANG, # 410, 8th Main road, Judicial layout, Talaghattapura,
+                Bengaluru 560109
+              telephone: '8197802616'
+              email: talaghattapura.blr@littleelly.com
+          - centre: Manyata Tech Park
+            page:
+              subtitle: Manyata Tech Park
+              address: >-
+                No. 16, 2nd Cross, P&T Layout, Rachenahalli Main Road, Bangalore
+                - 560077
+              telephone: '7619674772, 7619644772'
+              email: manyata.blr@littleelly.com
           - centre: Kannamangala
             page:
               subtitle: Kannamangala
@@ -16,6 +83,9 @@ centers:
           - centre: Attibele
             page:
               subtitle: Attibele
+              addressTitle: >-
+                #58/10, Shamayya Reddy Building,Sarjapur Road,Behind Mayura
+                bakery,Attibele,Bangalore -562107
               address: >-
                 #58/10, Shamayya Reddy Building,Sarjapur Road,Behind Mayura
                 bakery,Attibele,Bangalore -562107
@@ -24,7 +94,9 @@ centers:
           - centre: Shanthi Nagar - Devanahalli
             page:
               subtitle: Little Elly Shanthi Nagar - Devanahalli
-              addressTitle: 'Little Elly,Shanthi Nagar, Devanahalli, Bangalore'
+              addressTitle: >-
+                Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
+                Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
               address: >-
                 Shanthi Nagar, Ward no 22, Near to Sri Venugopalswami Badmonton
                 Stadium, Sulibele Road, Devanahalli, Karnataka - 562110
@@ -33,7 +105,9 @@ centers:
           - centre: Masthenahalli
             page:
               subtitle: 'Little Elly, Masthenahalli'
-              addressTitle: 'Little Elly, Masthenahalli, Bangalore'
+              addressTitle: >-
+                No 69/3, Near DLF Apartments, Masthenahalli, Hennagara Post,
+                Anekal Taluk, Jigani ,Bangalore-560105
               address: >-
                 No 69/3, Near DLF Apartments, Masthenahalli, Hennagara Post,
                 Anekal Taluk, Jigani ,Bangalore-560105
@@ -502,10 +576,12 @@ centers:
                   is to help foster your child’s growth during the first five
                   crucial years with a child-centered & child directed approach
                   to learning.
-              addressTitle: 'Little Elly, Banashankari 3rd Stage, Bangalore'
+              addressTitle: >-
+                57, 2nd Cross, 1st Main Rd, behind Anna Kuteera, Banashankari
+                3rd Stage, Bengaluru, Karnataka 560085
               address: >-
-                Sapthagiri #57, 2nd Cross, 1st Main, Banashankari, 3rd Stage,
-                3rd Phase, 4th Block,Kathriguppe, Bangalore - 560 085
+                57, 2nd Cross, 1st Main Rd, behind Anna Kuteera, Banashankari
+                3rd Stage, Bengaluru, Karnataka 560085
               telephone: +91 8792771757
               email: bsk3rdstage@littleelly.com
           - centre: Basavanagar
@@ -2117,78 +2193,6 @@ centers:
                 Town, Next to GM Infinite E-City, Bangalore –560 099
               telephone: +91 7338365777
               email: neotown@littleelly.com
-          - centre: NOBO Nagar
-            page:
-              subtitle: Little Elly NOBO Nagar
-              centreHead:
-                title: Centre Head
-                name: Ms. Sreedevi Ravichand / Ms. Ekta Mitra
-                img: /images/Centers/subcenter/nobonagar-centerhead.jpg
-                experience: ''
-                description: >
-                  The Centre is led by Mrs. Ekta Mitra and Mrs. Sreedevi
-                  Ravichand who have over a decade of experience each in the
-                  field of “Early Childcare and Development”.
-
-
-                  Mrs. Ekta Mitra started her career as a lecturer and being a
-                  mom who thoroughly enjoyed the company of her kids, soon took
-                  up to her passion and started “Little Elly” branches at
-                  Arekere and Nobo Nagar. To further pursue her interest in
-                  childcare, she also took up advance studies on “Early
-                  Childhood Education” and “Counselling” in Canada. She also won
-                  the best Entrepreneur Award in the year 2017.
-
-
-                  Mrs. Sreedevi Ravichand started her career as a teacher and
-                  developed a passion for working with little children. She
-                  joined “Little Elly” in 2010 and has a decade of experience in
-                  Early Childcare and Development. She has worked in multiple
-                  capacities as a teacher and Co-Ordinator.
-
-
-                  She is also the recipient of the “Best Co-Ordinator” award at
-                  “Little Elly” for two years in a row.
-              centreCoordinator:
-                title: ''
-                name: ''
-                img: ''
-                experience: ''
-                description: ''
-              aboutUs:
-                text: Welcome
-                description: >
-                  It is the aim of every parent to find the right school for
-                  their child, preferably a home away from home, one that takes
-                  care of the child’s learning, equips them with life skills as
-                  well as helps them in their overall development. We at “Little
-                  Elly” Arekere strongly believe in what Bill Gates once
-                  famously said, “The first five years have so much to do with
-                  how the next 80 turn out.” Research shows that the first five
-                  years of childhood are the most formative and incredible
-                  learning period during which vital mental and cognitive
-                  development occurs.
-
-
-                  The role and importance of early childhood education in
-                  shaping our lives cannot be understated. Beyond the ABCD and
-                  rhymes this phase is equally important for the all-round
-                  development of the child. Our programs are tailor-made to
-                  foster every child’s emotional, intellectual and aesthetic
-                  quotient. Started in 2008, “Little Elly” Arekere has been one
-                  of the best preschools in this locality and the distinguishing
-                  feature which sets us apart is our staff, who have been
-                  associated with us for more than a decade. We nurture warm
-                  relationships among Children, Teachers, Staff and Parents.
-                  Teachers and staff build a close personal connection with each
-                  child in their care.
-              addressTitle: 'Little Elly, NOBO Nagar, Bangalore'
-              address: >-
-                No.41, Kalena Agrahara, 2nd Main, 2nd Sector, Landmark : Near
-                Meenakshi Temple, Nobonagar, Bannerghatta Road, Bangalore – 560
-                076
-              telephone: +91 7619217778
-              email: pragyaam@littleelly.com
           - centre: Padmanabha Nagar
             page:
               subtitle: Little Elly Padmanabha Nagar
@@ -3505,6 +3509,11 @@ centers:
           email: vijayapur@littleelly.com
         centres: []
       - district: Mysuru
+        page:
+          subtitle: ''
+          address: ''
+          telephone: ''
+          email: nhb.hassan@littleelly.com
         centres:
           - centre: Gokulam
             page:
@@ -3730,6 +3739,17 @@ centers:
     districts:
       - district: Chennai
         centres:
+          - centre: Kovilambakkam
+            page:
+              subtitle: 'Kovilambakkam, Chennai'
+              addressTitle: >-
+                "No.14C, Hasthinapuram Road, 1st cross street, Nanmangalam,
+                kovilambakkam,  chennai- 600129"
+              address: >-
+                "No.14C, Hasthinapuram Road, 1st cross street, Nanmangalam,
+                kovilambakkam,  chennai- 600129"
+              telephone: '9677749104'
+              email: kovilambakkam.che@littleelly.com
           - centre: Guduvancheri
             page:
               subtitle: Guduvancheri
@@ -4018,7 +4038,7 @@ centers:
               address: >-
                 Old No.91, New No. 19, BMS House, 2nd Main Road, Perumal Nagar,
                 Old Pallavaram, Chennai – 600 117
-              telephone: +91 9940673825
+              telephone: +91 98847 79006
               email: pallavaram@littleelly.com
           - centre: Perambur
             page:
@@ -4618,6 +4638,15 @@ centers:
   - state: Assam
     poweredBy: true
     districts:
+      - district: 'Hojai '
+        page:
+          subtitle: 'Hojai '
+      - district: Sualkuchi
+        page:
+          subtitle: Sualkuchi
+          addressTitle: 'PK road, near Fire Service Station, Sualkuchi, Kamrup, PIN - 781103'
+          address: ''
+          telephone: +91 96784 60755
       - district: Dhemaji
         page:
           subtitle: Dhemaji
@@ -4629,6 +4658,12 @@ centers:
           telephone: '8638081507'
       - district: Guwahati
         centres:
+          - centre: Bhetapara
+            page:
+              addressTitle: >-
+                By lane no. 4, Rohit Bala Path, Bhetapara road, Near Maa
+                Medicos, Bhetapara - 781028
+              telephone: +91 9678460755
           - centre: Beltola
             page:
               centreHead:
@@ -4777,59 +4812,6 @@ centers:
               address: 'Ananda Nagar, House No. 42, Sixmile, Guwahati - 781022'
               telephone: +91- 9678460755
               email: sixmile@littleelly.com
-          - centre: Sualkuchi
-            page:
-              centreHead:
-                description: ''
-              centreCoordinator:
-                description: ''
-              aboutUs:
-                text: Powered by Little Elly
-                description: >
-                  With “Powered by Little Elly”, we foster an atmosphere of
-                  caring, respect, and understanding of one another and our
-                  world.  We are committed to working together with parents,
-                  teachers, and children to ensure a high quality and world
-                  class preschool experience for all of our students.
-
-
-                  Our goal at centres “Powered by Little Elly” is to help foster
-                  and focus on your child’s growth during the first five crucial
-                  years with a child-centered & child directed approach to
-                  learning.
-              addressTitle: 'Little Elly Preschool, Sualkuchi'
-              address: >-
-                PK road, near Fire Service Station, Sualkuchi, Kamrup, PIN -
-                781103
-              telephone: +91- 9678460755
-              email: ''
       - district: Kamrup
-        centres:
-          - centre: Bhetapara
-            page:
-              centreHead:
-                description: ''
-              centreCoordinator:
-                description: ''
-              aboutUs:
-                text: Powered by Little Elly
-                description: >
-                  With “Powered by Little Elly”, we foster an atmosphere of
-                  caring, respect, and understanding of one another and our
-                  world.  We are committed to working together with parents,
-                  teachers, and children to ensure a high quality and world
-                  class preschool experience for all of our students.
-
-
-                  Our goal at centres “Powered by Little Elly” is to help foster
-                  and focus on your child’s growth during the first five crucial
-                  years with a child-centered & child directed approach to
-                  learning.
-              addressTitle: 'Little Elly Preschool, Bhetapara'
-              address: >-
-                By lane no. 4, Rohit Bala Path, Bhetapara road, Near Maa
-                Medicos, Bhetapara - 781028
-              telephone: +91 9678460755
-              email: ''
 ---
 

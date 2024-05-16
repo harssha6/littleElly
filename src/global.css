@@ -64,6 +64,12 @@ dd {
   /* height: calc(100svh - 120px); */
   /* height: calc(100vh - 120px); */
 }
+
+ul{
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 @media not all and (min-width: 1000px) {
   /* .hero {
     height: calc(85svh - 80px);
@@ -159,3 +165,9 @@ html.lenis {
   /* transition-duration: .5s !important; */
   /* transition-delay: .1s !important; */
 }
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+

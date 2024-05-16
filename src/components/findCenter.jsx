@@ -43,6 +43,27 @@ const FindCentre = (props) => {
   let { data } = props;
   let { centers: centersData } = data;
 
+  const objShort = (a,b) => {
+   if(a.state < b.state) return -1;
+   if(a.state > b.state) return 1;
+    return 0;
+  }
+  const objShortdistricts = (a,b) => {
+    if(a.district < b.district) return -1;
+    if(a.district > b.district) return 1;
+     return 0;
+   }
+   const objShortCenter = (a,b) => {
+    if(a.centre < b.centre) return -1;
+    if(a.centre > b.centre) return 1;
+     return 0;
+   }
+
+   centersData.sort(objShort).forEach(centers => centers.districts && centers.districts.sort(objShortdistricts).forEach(city=> city.centres && city.centres.sort(objShortCenter)))
+
+
+
+
   const [centers, setCenters] = React.useState(centersData);
   const [searchQuery, setSearchQuery] = React.useState("");
   const [currentState, setCurrentState] = React.useState("");
@@ -90,7 +111,7 @@ const FindCentre = (props) => {
 
   const onPillClick = (type, name) => {
     const pillData = getPillData(type, name);
-    console.log("clickk...", type, name, pillData);
+    // console.log("clickk...", type, name, pillData);
     if (pillData.page && pillData.page.address) {
       if (typeof window !== "undefined") {
         window.location.href = `${baseURL}/centre/${name}`;
@@ -170,6 +191,7 @@ const FindCentre = (props) => {
             <CenterPill
               onClick={() => {
                 onPillClick(pill.type, pill.label);
+
               }}
               label={pill.label}
             />
@@ -184,15 +206,18 @@ const FindCentre = (props) => {
         pillsDataGroupByPoweredByBoolean["notPoweredBy"].length > 0 ? (
           <div>
             <h3 className="my-2 text-2xl font-bold capitalize py-2">
-              Elly Centres
+              Elly Centers
             </h3>
             <div className="flex flex-row flex-wrap gap-4 w-full items-center">
               {pillsDataGroupByPoweredByBoolean["notPoweredBy"].map(
                 (pill, i) => {
                   return (
                     <CenterPill
+                    key={i}
                       onClick={() => {
                         onPillClick(pill.type, pill.label);
+
+
                       }}
                       label={pill.label}
                     />
@@ -217,8 +242,10 @@ const FindCentre = (props) => {
               {pillsDataGroupByPoweredByBoolean["poweredBy"].map((pill, i) => {
                 return (
                   <CenterPill
+                  key={i}
                     onClick={() => {
                       onPillClick(pill.type, pill.label);
+
                     }}
                     label={pill.label}
                   />
@@ -282,10 +309,10 @@ const FindCentre = (props) => {
 
   const activeBreadCrumbClass = "text-[#1c1c1c] underline";
 
-  console.log("isStateView" && isStateView);
+  // console.log("isStateView" && isStateView);
 
   return (
-    <div className="flex flex-col gap-l items-center p-[60px] px-[90px] max-md:px-[20px] max-md:py-[40px]">
+    <div className="flex flex-col gap-l items-center findcenter p-[60px] px-[90px] max-md:px-[20px] max-md:py-[40px]">
       <div data-appear>
         <Text type="h2" className="text-center">
           Our
@@ -452,7 +479,7 @@ const FindCentre = (props) => {
           className="flex flex-row max-md:flex-col items-center max-md:items-start gap-1 max-md:gap-0"
         >
           <span class="font-bold flex-shrink-0 flex flex-row max-md:flex-col gap-1">
-            Elly Centres <span class="max-md:hidden block">-</span>
+            Elly Centers <span class="max-md:hidden block">-</span>
           </span>
           <br class="hidden max-md:block" />
           Schools carry Little Elly brand and are managed by our family of

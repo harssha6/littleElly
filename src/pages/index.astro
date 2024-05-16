@@ -31,7 +31,7 @@ import { getEntry } from 'astro:content';
 
 const { data } = await getEntry('centres', 'centres')
 const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
-// console.log('titlecc',homePageCmsData.ctaCardTitle)
+
 
 
 ---
@@ -55,6 +55,7 @@ const {data: homePageCmsData}  = await getEntry('home', 'home_page_content')
     <Program data={homePageCmsData.ourPrograms} />
     <DaycareFacilities data={homePageCmsData.dayCaresSection[0]} />
     <!-- <FindCenter/> -->
+    <div id='find-a-center' />
     <FindCenterReact client:load data={data} />
     <Events data={homePageCmsData.newsAndEvent[0]} />
     <Testimonial data={homePageCmsData.testimonials[0]}/>

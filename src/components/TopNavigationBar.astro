@@ -31,8 +31,8 @@ const menu: Array<Menu> = [
     link: "/curriculum",
   },
   {
-    title: "Find a Centre",
-    link: "/#findcentre", 
+    title: "Find a Center",
+    link: "/#find-a-center",
   },
   {
     title: "Admissions",
@@ -62,7 +62,7 @@ const ctaButtons: Array<{
   className?: string;
   menu?: boolean;
 }> = [
- 
+
   // {
   //   title: 'Login',
   //   link: config.ctaLink,
@@ -82,7 +82,7 @@ const removeHash = url => {
 }
 
 const shouldBeActive = (item, activePath) => {
-  // item.link === activePath || 
+  // item.link === activePath ||
   // item.submenu.map(({ link }) => removeHash(link)).includes(activePath)
   const submenuItem = item.submenu.find(({ link }) => {
     const active = removeHash(link) === activePath
@@ -100,18 +100,18 @@ const maxsm = (stringOfClasses) => {
 }
 ---
 <div class="fixed z-[999]">
-  
+
   <header
-    class=`font-roundo w-screen m relative  py-1 
-    pl-10 px-14 box-border flex flex-row 
-    justify-between items-center h-[130px] max-sm:h-[60px] 
+    class=`font-roundo w-screen m relative  py-1
+    pl-10 px-14 box-border flex flex-row
+    justify-between items-center h-[130px] max-sm:h-[60px]
     max-sm:bg-white max-sm:mt-3 max-sm:w-[95vw]
     max-sm:border-[2px] max-sm:border-[#F6BD60] max-sm:border-solid max-sm:py-[19px]
     max-sm:rounded-[5rem] max-sm:mx-[2.5vw] max-sm:px-[28px]
     max-sm:mt-[20px]
     `
     >
-    <div class="flex flex-row items-center">    
+    <div class="flex flex-row items-center">
       <a href="/" class="relative z-[9999] daisy daisy-fixed daisy-1 w-[195px] max-sm:w-[60%] max-sm:max-w-[260px] max-md:pl-4 max-sm:p-0">
         <img src={logo.src} alt="Little Elly's Logo" class="w-[135px] max-md:w-[80px]" />
       </a>
@@ -138,7 +138,7 @@ const maxsm = (stringOfClasses) => {
           if (item.submenu && item.submenu.length > 0) {
             return (
               <div
-                class={`relative menu-parent cursor-pointer daisy daisy-2 daisy-fixed`}
+                class={`relative menu-parent cursor-pointer daisy daisy-2 daisy-fixed `}
               >
                 <div
                   class:list={[
@@ -157,7 +157,7 @@ const maxsm = (stringOfClasses) => {
                       {item.title}
                     </a>
                   ) : (
-                    <span 
+                    <span
                       class:list={["text-black font-semibold title-section hover:underline font-display uppercase",
                       shouldBeActive(item, activePath) && "!text-primary",
                     ]}
@@ -229,32 +229,32 @@ const maxsm = (stringOfClasses) => {
         })
       }
     </div>
-  
-  
-    
-  
+
+
+
+
     <div class="mobileMenu z-[999] fixed top-0 left-0 w-screen h-screen bg-[#fff6ea] flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
       {menu.map(item => {
         if (item.submenu && item.submenu.length > 0) {
           return (
             <div class='mobileMenuParent'>
-              <div class='relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
+              <div class='relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{
                 borderBottom: '1px solid rgba(0, 0, 0, 0.2)'
               }}>
                 <div class='flex flex-row w-full'>
-                  <span 
+                  <span
                     class="text-black font-semibold hover:underline"
                   >{item.title}</span>
                   <div class='w-6 h-6 ml-1 -rotate-90 menu-arrow'>
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" fill="black"/>
-                    </svg>					
+                    </svg>
                   </div>
                 </div>
               </div>
               <div class="subMenu flex flex-col">
                 {item.submenu.map((subMenuItem) => (
-                  <a 
+                  <a
                     href={subMenuItem.link}
                     data-menu-mobile-item
                     class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full text-black font-semibold hover:underline pl-10"
@@ -271,7 +271,7 @@ const maxsm = (stringOfClasses) => {
         } else {
           return (
             <div class='mobileMenuParent'>
-              <a data-menu-mobile-item href={item.link} class='text-black font-semibold hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
+              <a data-menu-mobile-item href={item.link} class='text-black font-semibold hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{
                 borderBottom: '1px solid rgba(0, 0, 0, 0.2)'
               }}>
                   {item.title}
@@ -281,7 +281,7 @@ const maxsm = (stringOfClasses) => {
         }
       })}
     </div>
-  
+
     <div class="hidden">
       <div
         style={{
@@ -391,7 +391,7 @@ const maxsm = (stringOfClasses) => {
     transform-origin: 0% 100%;
   }
 
-  /* 
+  /*
   * Transform all the slices of hamburger
   * into a crossmark.
   */
@@ -502,7 +502,7 @@ const maxsm = (stringOfClasses) => {
 
     mobileMenu.classList.toggle("visible");
 
-  
+
   });
   const mobileMenuParents = document.querySelectorAll(
     ".mobileMenuParent"

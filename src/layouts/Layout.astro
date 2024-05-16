@@ -28,28 +28,30 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords}>
-		
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
-			<link 
+			<link
 			href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap"
-			rel="stylesheet" 
+			rel="stylesheet"
 			type="text/css"
 			media="print"
-			onload="this.media='all'" 
+			onload="this.media='all'"
 		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="canonical" href="https://www.littleelly.com/" />
 
-
-		<script async
+	<script async
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&loading=async&libraries=places">
 	</script>
+
+	<meta name="google-site-verification" content="NJ4tgmOseMGl6oc_xeQT-UQKw1vbx2owj9meIVjGwR4" />
 
 		<!-- <l	ink rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
@@ -81,7 +83,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			fbq('track', 'PageView');
 		</script>
 		<!-- End Meta Pixel Code -->
-	
+
 	</head>
 	<body>
 
@@ -89,7 +91,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			src="https://www.facebook.com/tr?id=4034878356533640&ev=PageView&noscript=1"
 			/></noscript>
 
-			
+
 		<slot />
 
 		<div class="float w-12 h-12 bottom-10 right-10 max-md:w-10 max-md:y-6 max-md:bottom-1 max-md:right-2">
@@ -153,14 +155,14 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		p5s.parentNode.insertBefore(p5, p5s);
 	})();
 
-	importScripts('https://littleelly.com/Pg_P5_Sw.js');
 </script>
+	<!-- importScripts('https://littleelly.com/Pg_P5_Sw.js'); -->
 
 <script>
-  
+
 
 	import { gsap } from "gsap";
-      
+
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 	import Lenis from '@studio-freight/lenis'
@@ -214,7 +216,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			duration: 0.6,
 			// easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
 		})
-	
+
 		lenis.on('scroll', ScrollTrigger.update)
 
 	}
@@ -224,7 +226,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		gsap.ticker.add((time)=>{
 			lenis.raf(time * 1000)
 		})
-	
+
 		gsap.ticker.lagSmoothing(0)
 	}
 
@@ -244,7 +246,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			y: -230,
 			duration: 0.7 + i * 0.2,
 			delay: 0.1 + i * 0.1,
-			
+
 		});
 	})
 
@@ -254,7 +256,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			y: -230,
 			duration: 0.7 + i * 0.2,
 			delay: 0.1 + i * 0.1,
-			
+
 		});
 	})
 
@@ -264,13 +266,13 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
     opacity: 0,
     duration: 3,
     scrollTrigger: {
-      trigger: '[data-parent="hero-student"]', 
+      trigger: '[data-parent="hero-student"]',
 			start: "0% 48%",
 			end: "40% 20%",
       scrub: true,
     }
   });
-	
+
 	heroTopAnimal.forEach((animal, i) => {
 		gsap.to(animal, {
 			y: (20 + i * 80) * -1,
@@ -279,7 +281,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			// opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: '[data-parent="hero-student"]', 
+				trigger: '[data-parent="hero-student"]',
 				start: "0% 48%",
 				end: "40% 20%",
 				scrub: true,
@@ -295,7 +297,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: document.querySelector('[data-parent="hero-container"]'), 
+				trigger: document.querySelector('[data-parent="hero-container"]'),
 				start: "100% 50%",
 				end: "140% 20%",
 				scrub: true,
@@ -309,7 +311,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		y: -80 * 2.8,
 		duration: 3,
 		scrollTrigger: {
-			trigger: '[data-hero-section-parallax]', 
+			trigger: '[data-hero-section-parallax]',
 			start: "70% 90%",
 			end: "70% 0%",
 			scrub: true,
@@ -319,7 +321,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 
 
 	const appearElements = document.querySelectorAll('[data-appear]')
-	
+
 
 	appearElements.forEach(element => {
 		if (element.dataset.appear === "false") return
@@ -329,7 +331,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		console.log('appearMb --> ', appearMb)
 		if (appearMb === "false" && isPhone) return
 		const trigger = element.dataset.trigger
-			? document.querySelector(`[data-parent="${element.dataset.trigger}"]`) 
+			? document.querySelector(`[data-parent="${element.dataset.trigger}"]`)
 			: element
 
 		let delay = element.dataset.delay || 0 + (0.1 * order)
@@ -348,7 +350,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			delay,
 			duration,
 			scrollTrigger: {
-				trigger, 
+				trigger,
 				start: "10% 80%",
 				end: "100% 70%",
 			}
@@ -364,7 +366,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		y: -80 * 2.2,
 		duration: 3,
 		scrollTrigger: {
-			trigger: '[data-character-trigger]', 
+			trigger: '[data-character-trigger]',
 			start: "0% 100%",
 			end: "100% 0%",
 			scrub: true,
@@ -376,7 +378,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		y: -80,
 			duration: 3,
 			scrollTrigger: {
-				trigger: '[data-character-trigger]', 
+				trigger: '[data-character-trigger]',
 				start: "0% 100%",
 				end: "100% 0%",
 				scrub: true,
@@ -387,7 +389,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		y: -100 * 2.5,
 		duration: 3,
 		scrollTrigger: {
-			trigger: '[data-character-trigger]', 
+			trigger: '[data-character-trigger]',
 			start: "0% 100%",
 			end: "100% 0%",
 			scrub: true,
@@ -397,7 +399,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		y: -90 * 4.2,
 		duration: 3,
 		scrollTrigger: {
-			trigger: '[data-character-trigger]', 
+			trigger: '[data-character-trigger]',
 			start: "0% 100%",
 			end: "100% 00%",
 			scrub: true,
@@ -407,31 +409,31 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		y: -80 * 7.5,
 		duration: 3,
 		scrollTrigger: {
-			trigger: '[data-character-trigger]', 
+			trigger: '[data-character-trigger]',
 			start: "0% 100%",
 			end: "100% 0%",
 			scrub: true,
 		}
 	});
-	
-	
+
+
 	document.addEventListener("DOMContentLoaded", function() {
 		initSwiper()
 		initTicker()
-  
+
 	});
-  
+
 	function initSwiper() {
 	//   const swiperData = JSON.parse(document.querySelectorAll(`.hero-swiper`))
-	  
+
 	  const swiperLine = document.querySelector('[swiper-line]')
 	  const swiperLabel = document.querySelector('[swiper-label]')
-  
+
 	  const prevBtn = document.querySelectorAll('[data-prev="hero-swiper"]')
 	  const nextBtn = document.querySelectorAll('[data-next="hero-swiper"]')
 	  const swipers = document.querySelectorAll('.hero-swiper')
 		if (!swipers || !prevBtn || !nextBtn) return
-	  
+
 	  swipers.forEach(item => {
 		const swiper = new Swiper(item, {
 		// Optional parameters
@@ -452,7 +454,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			swiperLine.classList.add('hide-line')
 			swiperLabel.classList.add('hide-text')
 	  })
-  
+
 	  swiper.on('sliderMove', () => {
 			swiperLine.classList.add('hide-line')
 			swiperLabel.classList.add('hide-text')
@@ -472,14 +474,14 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			swiper.slideNext()
 	  })
 	  })
-  
-	  
+
+
 	  })
-	 
-	  
+
+
 	}
-	
-	
+
+
 	function initTicker() {
 	  const tickers = document.querySelectorAll('[data-ticker]');
 	  console.log('tickers', tickers)
@@ -490,13 +492,13 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 		ticker.appendChild(clone);
 		slider(ticker)
 	  })
-  
+
 	  }
 	  function slider(ticker){
 		// const event = new CustomEvent('reinit-sliders');
 		// document.dispatchEvent(event);
-  
-  
+
+
 		let currentScroll = 0;
 		const maxScroll = ticker.scrollWidth / 2;
 		const scrollSpeed = 2;
@@ -521,7 +523,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 				currentScroll += scrollSpeed;
 			}
 
-  
+
 			if (currentScroll >= maxScroll) {
 				scriptResetScroll = true;
 				ticker.scrollLeft = 0;
@@ -529,17 +531,17 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			} else {
 				ticker.scrollLeft = currentScroll;
 			}
-  
+
 			requestAnimationFrame(updateScroll);
 		}
 		updateScroll();
-  
+
 		  function handleManualScroll() {
 			  if (scriptResetScroll) {
 				  scriptResetScroll = false;
 				  return;
 			  }
-  
+
 			  const newScrollLeft = ticker.scrollLeft;
 			  // console.log('newScrollLeft', newScrollLeft)
 			  if (newScrollLeft <= 0) {
@@ -554,25 +556,25 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 				  currentScroll = 0;
 			  }
 		  }
-  
+
 		  ticker.addEventListener('scroll', handleManualScroll);
-  
+
 		  ticker.addEventListener('mouseenter', () => {
 			  isManualScrolling = true;
 			  isCursorOverTicker = true;
 		  });
-  
+
 		  ticker.addEventListener('touchstart', () => {
 			isManualScrolling = true;
 			isCursorOverTicker = true;
 		  });
-		  
+
 		  ticker.addEventListener('mouseleave', () => {
 			  isManualScrolling = false;
 			  isCursorOverTicker = false;
 			  currentScroll = ticker?.scrollLeft
 		  });
-  
+
 		  ticker.addEventListener('touchend', () => {
 			  isManualScrolling = false;
 			  isCursorOverTicker = false;
@@ -594,7 +596,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			scale: 1.1,
 			duration: 3,
 			scrollTrigger: {
-				trigger: '[data-hero-section-parallax]', 
+				trigger: '[data-hero-section-parallax]',
 				start: "70% 90%",
 				end: "90% 0%",
 				// markers: true,
@@ -607,7 +609,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			duration: 3,
 			scrollTrigger: {
 				immediateRender: false,
-				trigger: '[data-hero-section-parallax]', 
+				trigger: '[data-hero-section-parallax]',
 				start: "70% 90%",
 				end: "90% 0%",
 				// markers: true,
@@ -622,7 +624,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			// opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
+				trigger: heroSectionBg,
 				start: "100% 90%",
 				end: "180% 40%",
 				scrub: true
@@ -635,7 +637,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			// opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionBg, 
+				trigger: heroSectionBg,
 				start: "100% 90%",
 				end: "180% 40%",
 				scrub: true,
@@ -646,7 +648,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			y: -240,
 			duration: 3,
 			scrollTrigger: {
-				trigger: '[data-hero-section-parallax]', 
+				trigger: '[data-hero-section-parallax]',
 				start: "75% 90%",
 				end: "180% 40%",
 				scrub: true,
@@ -657,13 +659,13 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			scale: 0.1,
 			duration: 3,
 			scrollTrigger: {
-				trigger: '[data-hero-section-parallax]', 
+				trigger: '[data-hero-section-parallax]',
 				start: "75% 90%",
 				end: "180% 40%",
 				scrub: true,
 			}
 		})
-  
+
 		gsap.to('[data-bottom-cloud]', {
 			scale: 1.1,
 			opacity: 1,
@@ -672,7 +674,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			// opacity: 0,
 			duration: 3,
 			scrollTrigger: {
-				trigger: heroSectionParallax, 
+				trigger: heroSectionParallax,
 				start: "100% 130%",
 				end: "180% 40%",
 				scrub: true,
@@ -681,11 +683,11 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 
 
 		document.addEventListener("DOMContentLoaded", function() {
-			// select all the links that ends with #, 
+			// select all the links that ends with #,
 			// if it starts with #, then prevent default and smooth scroll to the target - 100px
-			// if it starts with /, then prevent default, 
+			// if it starts with /, then prevent default,
 			//     --> if current url is not the same as the target
-			//     		--> navigate to the target 
+			//     		--> navigate to the target
 			//     --> if current url is same as the target
 			//     		--> prevent default and smooth scroll to the target - 100px
 
@@ -697,6 +699,23 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 			const getHash = (url) => {
 				return url.replace(/.*#/, '');
 			}
+
+			// if the load page is / and hash is present, then scroll to the target
+
+			if (window.location.pathname === '/' && window.location.hash) {
+				const target = document.getElementById(getHash(window.location.hash));
+				if (target) {
+					setTimeout(() => {
+						const top = target.offsetTop - 100;
+						console.log('top load...', top)
+						window.scrollTo({
+							top: top,
+							behavior: 'smooth'
+						});
+					}, 300)
+				}
+			}
+
 
 			const links = document.querySelectorAll('a[href*="#"]');
 
@@ -712,8 +731,10 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 					if (href.startsWith('#')) {
 						// e.preventDefault();
 							const target = document.getElementById(getHash(href));
+							console.log('top click...', top)
+
 							if (target) {
-								const top = target.getBoundingClientRect().top + window.pageYOffset;
+								const top = target.offsetTop - 80;
 								window.scrollTo({
 									top: top,
 									behavior: 'smooth'
@@ -727,9 +748,9 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 						} else {
 							const target = document.getElementById(getHash(href));
 							if (target) {
-								const top = target.getBoundingClientRect().top + window.pageYOffset;
+								const top = target.offsetTop - 80;
+								console.log('top click...', top)
 
-								console.log('target Hitt...', target, top)
 								window.scrollTo({
 									top: top,
 									behavior: 'smooth'
@@ -743,5 +764,10 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 
 
 		});
-  
+
+		const findCenter = document.querySelector("a[href^='/#find-a-center']")
+			findCenter?.addEventListener('click', ()=> {
+				window.location.href = '/#find-a-center'
+		})
+
   </script>

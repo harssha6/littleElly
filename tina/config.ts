@@ -1,5 +1,4 @@
-import React from 'react'
-import { defineConfig, wrapFieldsWithMeta } from "tinacms";
+import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -196,7 +195,7 @@ export default defineConfig({
           {
             type: 'object',
             list: true,
-            label: 'Clouds Data',
+            label: 'Overview Section',
             name: 'cloudData',
             ui: {
               itemProps: (item) => ({
@@ -219,7 +218,7 @@ export default defineConfig({
           {
             type: 'object',
             list: true,
-            label: 'Why Choose littleElly section',
+            label: 'Why Choose Little Elly Section',
             name: 'whyChooseLittileElly',
             fields: [
               {
@@ -304,7 +303,7 @@ export default defineConfig({
               {
                 type: 'object',
                 list: true,
-                label: 'Animation Area',
+                label: 'Happy Curriculum Animation',
                 name: 'animationArea',
                 ui: {
                   itemProps: (item) => ({
@@ -387,7 +386,7 @@ export default defineConfig({
           {
             type: 'object',
             list: true,
-            label: 'DayCares Facility Section',
+            label: 'Day Care Facility Section',
             name: 'dayCaresSection',
             fields: [
               {
@@ -491,6 +490,7 @@ export default defineConfig({
               },
             ]
           },
+
           {
             type: 'object',
             list: true,
@@ -512,6 +512,11 @@ export default defineConfig({
                 list: true,
                 label: 'Testimonials Section Card Details',
                 name: 'testimonialsCardDetail',
+                ui: {
+                  itemProps: (item) => ({
+                    label: `Testimonial of ${item?.personName}`
+                  }),
+                },
                 fields: [
                   {
                     type: 'image',
@@ -558,6 +563,7 @@ export default defineConfig({
 
             ]
           },
+
           {
             type: "string",
             label: "CTA Card Title",
@@ -565,6 +571,7 @@ export default defineConfig({
           },
         ]
       },
+
       {
         name: "aboutUs",
         label: "About Us",
@@ -642,7 +649,7 @@ export default defineConfig({
           },
           {
             type: 'object',
-            label: 'Our Team Section',
+            label: 'Our Philosophy Section',
             name: 'ourPhilosophySection',
             list: true,
             fields: [
@@ -1208,6 +1215,211 @@ export default defineConfig({
           },
         ]
       },
+
+      {
+        name: "admissions",
+        label: "Admissions",
+        path: "src/content/admissions",
+        fields: [
+          { type: "string", name: "pageTitle", label: "Page Title" },
+          { type: "string", name: "pageDescription", label: "Page Description" },
+
+          { 
+            type: "object",
+            name: "admissionProcess",
+            label: "Admission Process",
+            fields: [
+              { type: "string", name: "sectionHeading", label: "Section Heading" },
+
+              {
+                type: "object",
+                list: true,
+                name: "admissionProcessSteps",
+                label: "Admission Process Steps",
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.title
+                  }),
+                },
+                fields: [
+                  { type: "string", name: "title", label: "Title" },
+                  { type: "string", name: "color", label: "Color", ui: {component: "color",colorFormat: "hex" } },
+                  { type: "rich-text", name: "description", label: "Description" },
+                  {
+                    type: "object",
+                    list: true,
+                    ui: {
+                      itemProps: (item) => ({
+                        label: (item?.leftValue)? (item?.leftValue) + ", " + item?.rightValue : null
+                      }),
+                    },
+                    name: "table",
+                    label: "Table",
+                    fields: [
+                      { type: "string", name: "leftValue", label: "Left Table Value" },
+                      { type: "string", name: "rightValue", label: "Right Table Value" },
+                    ]
+                  }
+                ]
+              },
+
+              
+            ]
+          },
+        ],
+      },
+
+      {
+        name: "franchise",
+        label: "Franchise",
+        path: "src/content/franchise",
+        fields: [
+          { type: "string", name: "title", label: "Title" },
+          {
+            type: "object",
+            name: "ourPresenceSection",
+            label: "Our Presence Section",
+            fields: [
+              { type: "string", name: "ourPresenceSectionHeading", label: "Section Heading" },
+              { type: "rich-text", name: "ourPresenceSectionPara", label: "Section Paragraph" },
+              {
+                type: 'image',
+                label: 'Image',
+                name: 'image'
+              },
+              {
+                type: 'string',
+                label: 'Image Alt Tag',
+                name: 'imageAltTag'
+              },
+            ]
+          },
+          {
+            type: "object",
+            name: "littleAllySection",
+            label: "Little Elly Franchise Section",
+            fields: [
+              { type: "string", name: "littleAllySectionHeading", label: "Section Heading" },
+              { type: "string", name: "littleAllySectionDescription", label: "Section Description" },
+              {
+                type: "object",
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.title)? (item?.title): null
+                  }),
+                },
+                name: "requirements",
+                label: "Franchise Requirements",
+                fields: [
+                  { type: "image", name: "icon", label: "Icon" },
+                  { type: "string", name: "title", label: "Title" },
+                  { type: "string", name: "color", label: "Color", ui: {component: "color",colorFormat: "hex" }},
+                ]
+                  },
+            ]
+          },
+          {
+            type: "object",
+            name: "whyYouShouldSection",
+            label: "Why You Should Section",
+            fields: [
+              { type: "string", name: "whyYouSectionHeading", label: "Section Heading" },
+              { type: "rich-text", name: "whyYouSectionDescription", label: "Section Description" },
+              {
+                type: "object",
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.title)? (item?.title) : null
+                  }),
+                },
+                name: "opportunities",
+                label: "Opportunities",
+                fields: [
+                  { type: "image", name: "icon", label: "Icon" },
+                  { type: "string", name: "title", label: "Title" },
+                  { type: "string", name: "color", label: "Color", ui: {component: "color",colorFormat: "hex" }},
+                  { type: "string", name: "bgColor", label: "Background Color", ui: {component: "color",colorFormat: "hex" }},
+                ]
+              },
+            ]
+          },
+
+          {
+            type: "object",
+            name: "howToStartSection",
+            label: "How To Start Section",
+            fields: [
+              { type: "string", name: "howToStartSectionHeading", label: "Section Heading" },
+              { type: "rich-text", name: "howToStartSectionSubtitle", label: "Section Sub-Title" },
+              { type: "rich-text", name: "howToStartSectionDescription", label: "Section Description" },
+              { type: "image", name: "franchiseSteps", label: "Franchise Steps" },
+              { type: "string", name: "franchiseStepsAlt", label: "Image Alt Tag" },
+              { type: "image", name: "franchiseStepsMb", label: "Franchise Steps Mobile" },
+            
+            ]
+          },
+
+          {
+            type: "object",
+            name: "partnersSection",
+            label: "Partners Section",
+            fields: [
+              { type: "string", name: "partnersSectionHeading", label: "Section Heading" },
+              { type: "string", name: "partnersSectionSubtitle", label: "Section Sub-Title" },
+              {
+                type: "object",
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.partnerName)? (item?.partnerName): null
+                  }),
+                },
+                name: "partners",
+                label: "Partners Card Details",
+                fields: [
+                  { type: "image", name: "partnerImage", label: "Partner Image" },
+                  { type: "string", name: "partnerImageAlt", label: "Partner Image Alt Tag" },
+                  { type: "string", name: "partnerName", label: "Partner Name" },
+                  { type: "string", name: "partnerTitle", label: "Partner Title" },
+                  { type: "string", name: "embedId", label: "Video Id" },
+                ]
+              },
+            
+            ]
+          },
+
+          {
+            type: "object",
+            name: "faqSection",
+            label: "FAQs Section",
+            fields: [
+              
+              { type: "string", name: "faqSectionSubtitle", label: "Section Sub-Title" },
+              { type: "string", name: "faqSectionHeading", label: "Section Heading" },
+              {
+                type: "object",
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: (item?.question)? (item?.question): null
+                  }),
+                },
+                name: "faqs",
+                label: "FAQ",
+                fields: [
+                  { type: "string", name: "question", label: "Question" },
+                  { type: "rich-text", name: "answer", label: "Answer" },
+                ]
+              },
+            
+            ]
+          },
+        ]
+        },
+      
+
       {
         name: "blogs",
         label: "Blogs",

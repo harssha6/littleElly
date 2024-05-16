@@ -3,13 +3,10 @@ personTitle: test
 heroImages:
   - slide: /images/1.png
     position: center
-    type: image
   - slide: /images/3.png
     position: center
-    type: image
   - slide: /images/4.png
     position: center
-    type: image
 herotitle: About Us
 visionAndMissionSection:
   - title: Vision and Mission
@@ -54,10 +51,10 @@ ourTeamSection:
         imageAlt: vittal
         personName: Preeti Bhandary
         personRole: Head of Curriculum Innovation and Founder
-      - image: /images/Amit-Tiwari.png
+      - image: /images/Amit12.JPG
         imageAlt: vittal
         personName: Amit Tiwari
-        personRole: Chief Operating Officer
+        personRole: Chief Executive Officer
       - image: /images/Preeti-Alva.png
         imageAlt: vittal
         personName: Preeti Alva
